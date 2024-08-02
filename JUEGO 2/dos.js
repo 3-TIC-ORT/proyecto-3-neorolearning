@@ -57,7 +57,7 @@ function destapar(id) {
 
             if (aciertos == 6) {
                 clearInterval(tiemporegresivoId);
-                alert('¡Felicidades! Has encontrado todas las parejas.');
+
             }
         } else {
             // Mostrar momentáneamente valores y volver a tapar
