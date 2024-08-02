@@ -1,0 +1,25 @@
+h1 {
+
+    text-align: center;
+   
+}
+
+.jugar {
+
+    font-size: 90px;
+    color: #000;
+    background-color: rgb(201, 145, 81);
+    border: none;
+    padding: 40px 50px;
+    cursor: pointer;
+}
+
+.aprender {
+
+    font-size: 90px;
+    color: #000;
+    background-color: rgb(201, 145, 81);
+    border: none;
+    padding: 40px 150px;
+    cursor: pointer;
+}
