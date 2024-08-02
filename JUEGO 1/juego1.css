@@ -1,0 +1,29 @@
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+.letras, .objetivo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.letra, .zona-soltar {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+    text-align: center;
+}
+.zona-soltar {
+    width: 50px;
+    height: 50px;
+}
+.zona-soltar.arrastrando-encima {
+    background-color: #ccc;
+}
+img {
+    width: 100px;
+    margin-bottom: 20px;
+}
