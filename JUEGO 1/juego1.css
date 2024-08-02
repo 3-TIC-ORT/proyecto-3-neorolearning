@@ -1,29 +1,25 @@
-.contenedor {
+.container {
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    height: 100vh;
+    margin: 20px;
 }
-.letras, .objetivo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.letra, .zona-soltar {
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid #000;
-    cursor: pointer;
-    text-align: center;
-}
-.zona-soltar {
-    width: 50px;
-    height: 50px;
-}
-.zona-soltar.arrastrando-encima {
-    background-color: #ccc;
-}
-img {
+.rectangulo {
     width: 100px;
-    margin-bottom: 20px;
+    height: 100px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.letras {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.letra {
+    margin: 0 10px;
+    font-size: 24px;
+    cursor: pointer;
 }
