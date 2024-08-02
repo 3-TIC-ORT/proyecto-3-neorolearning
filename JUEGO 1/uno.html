@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Arrastrar y Soltar</title>
+    <title>Juego de Letras</title>
     <link rel="stylesheet" href="juego1.css">
 </head>
 <body>
-    <div class="contenedor">
-        <div class="letras">
-            <img src="ruta_de_tu_imagen" alt="barco">
-            <div id="B" class="letra" draggable="true">B</div>
-            <div id="A" class="letra" draggable="true">A</div>
-            <div id="R" class="letra" draggable="true">R</div>
-            <div id="C" class="letra" draggable="true">C</div>
-            <div id="O" class="letra" draggable="true">O</div>
-        </div>
-        <div class="objetivo">
-            <div class="zona-soltar" data-letra="B"></div>
-            <div class="zona-soltar" data-letra="A"></div>
-            <div class="zona-soltar" data-letra="R"></div>
-            <div class="zona-soltar" data-letra="C"></div>
-            <div class="zona-soltar" data-letra="O"></div>
-        </div>
+    <div class="container">
+        <div class="rectangulo" id="rect1"></div>
+        <div class="rectangulo" id="rect2"></div>
+        <div class="rectangulo" id="rect3"></div>
+        <div class="rectangulo" id="rect4"></div>
+        <div class="rectangulo" id="rect5"></div>
+    </div>
+    <div class="letras">
+        <!-- Las letras se añadirán acá -->
     </div>
     <script src="uno.js"></script>
 </body>
