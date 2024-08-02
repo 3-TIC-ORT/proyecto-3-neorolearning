@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memotest</title>
+    <style>
+        table {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        td {
+            width: 33%;
+            height: 100px;
+            text-align: center;
+            border: 1px solid #000;
+            padding: 0;
+        }
+        button {
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+            padding: 0;
+            border: none;
+            background: none;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Memotest</h1>
+    <table>
+        <tr>
+            <td><button id="0" onclick="destapar(0)"></button></td>
+            <td><button id="1" onclick="destapar(1)"></button></td>
+            <td><button id="2" onclick="destapar(2)"></button></td>
+        </tr>
+        <tr>
+            <td><button id="3" onclick="destapar(3)"></button></td>
+            <td><button id="4" onclick="destapar(4)"></button></td>
+            <td><button id="5" onclick="destapar(5)"></button></td>
+        </tr>
+        <tr>
+            <td><button id="6" onclick="destapar(6)"></button></td>
+            <td><button id="7" onclick="destapar(7)"></button></td>
+            <td><button id="8" onclick="destapar(8)"></button></td>
+        </tr>
+        <tr>
+            <td><button id="9" onclick="destapar(9)"></button></td>
+            <td><button id="10" onclick="destapar(10)"></button></td>
+            <td><button id="11" onclick="destapar(11)"></button></td>
+        </tr>
+    </table>
+
+    <script src="dos.js"></script>
+</body>
+</html>
