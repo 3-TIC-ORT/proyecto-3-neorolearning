@@ -1,9 +1,28 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+
 h1 {
 
     text-align: center;
+    font-size: 50px;
    
 }
-
+.pantalla{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
 .jugar {
 
     font-size: 90px;
@@ -12,6 +31,12 @@ h1 {
     border: none;
     padding: 40px 50px;
     cursor: pointer;
+    margin: 0;
+    height: 29vh;
+    justify-content: center;
+    align-items: center;
+
+
 }
 
 .aprender {
@@ -22,4 +47,16 @@ h1 {
     border: none;
     padding: 40px 150px;
     cursor: pointer;
+    margin: 0;
+    height: 29vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonera{
+    display: flex;
+    justify-content:space-around;
+    align-items: flex-end;
+    width: 100vw;
+    margin: 10vh;
 }
