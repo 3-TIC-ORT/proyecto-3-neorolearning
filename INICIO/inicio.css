@@ -23,7 +23,7 @@ h1 {
     align-items: center;
     flex-direction: column;
 }
-.jugar {
+.aprender {
 
     font-size: 90px;
     color: #000;
@@ -39,7 +39,7 @@ h1 {
 
 }
 
-.aprender {
+.jugar {
 
     font-size: 90px;
     color: #000;
