@@ -1,5 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .pantalla {
 
     text-align: center;
     font-size: 30px;
+    width: 1;
+}
+.container{
+    display: flex;
+    align-items: flex-end;
+}
+.caja {
+
+    width: 400px;
+    height: 380px;
+    background-color: rgb(138, 170, 197);
+    text-align: center;
+    align-content: center;
+    font-size: 40px;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin: 30px;
+    margin-top: 60px;
+}
+
+.arrow_back{
+    width: 6vw;
+    height: 12vh;
+    margin-top: 20px;
+    margin-left: -1280px;
+}
+
+.titulo{
+    margin-top: -50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
 }
