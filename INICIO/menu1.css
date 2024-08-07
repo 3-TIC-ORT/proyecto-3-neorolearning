@@ -11,26 +11,31 @@
 .container{
     display: flex;
     align-items: flex-end;
+    justify-content: space-around;
 }
 .caja {
 
-    width: 350px;
-    height: 300px;
+    width: 320px;
+    height: 280px;
+    color: #000;
     background-color: rgb(138, 170, 197);
     text-align: center;
-    align-content: center;
+    align-items: center;
     font-size: 40px;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    margin: 10px;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+    justify-content: center;
     margin-top: 85px;
 }
 
 .arrow_back{
     width: 6vw;
     height: 12vh;
-    margin-top: 20px;
+    margin-top: 36px;
     margin-left: -1280px;
 }
 

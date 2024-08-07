@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 .pantalla {
 
@@ -14,17 +14,20 @@
 }
 .caja {
 
-    width: 400px;
-    height: 380px;
+    width: 395px;
+    height: 350px;
     background-color: rgb(138, 170, 197);
     text-align: center;
-    align-content: center;
+    align-items: center;
     font-size: 40px;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
     margin: 30px;
     margin-top: 60px;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
 }
 
 .arrow_back{
