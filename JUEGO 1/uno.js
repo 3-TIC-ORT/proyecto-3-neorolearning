@@ -41,6 +41,7 @@ function manejarClickLetra(e) {
         // Encuentra el índice del rectángulo vacío
         const rectangulo = rectangulos[indiceOrden];
         rectangulo.textContent = letraSeleccionada; // Muestra la letra en el rectángulo
+        
 
         // Avanza al siguiente índice en el orden correcto
         indiceOrden++;
