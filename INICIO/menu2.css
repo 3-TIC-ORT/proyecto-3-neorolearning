@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.pantalla {
+
+    text-align: center;
+    font-size: 30px;
+    width: 1;
+}
+.container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.caja {
+
+    width: 395px;
+    height: 350px;
+    color: #000;
+    background-color: rgb(138, 170, 197);
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    border: none;
+    padding: 0px;
+    cursor: pointer;
+    justify-content: center;
+    position: relative;
+    top: 40px;
+}
+
+.arrow_back{
+
+    width: 6vw;
+    height: 12vh;
+    position: relative;
+    right: 642px;
+
+}
+
+.titulo{
+
+   position: relative;
+   bottom: 30px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.pedro{
+    height: 0cm;
+}
