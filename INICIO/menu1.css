@@ -37,10 +37,14 @@
     width: 6vw;
     height: 12vh;
     position: relative;
-    right: 100vh;
+    
 
 }
 
+.leo{
+    position: relative;
+    right: 100vh;
+}
 .titulo{
 
 position: relative;
