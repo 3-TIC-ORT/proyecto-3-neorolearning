@@ -1,3 +1,22 @@
+.pantalla {
+
+    text-align: center;
+    font-size: 30px;
+}
+.arrow_back{
+
+    width: 6vw;
+    height: 12vh;
+    position: relative;
+    
+
+}
+
+.leo{
+    position: relative;
+    right: 100vh;
+}
+
 .container {
     display: flex;
     justify-content: space-around;
