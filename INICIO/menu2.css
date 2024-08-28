@@ -38,14 +38,18 @@
     width: 6vw;
     height: 12vh;
     position: relative;
-    right: 642px;
 
+}
+
+.leo{
+    position: relative;
+    right: 100vh;
 }
 
 .titulo{
 
-   position: relative;
-   bottom: 30px;
+position: relative;
+bottom: 30px;
     width: 100vw;
     display: flex;
     justify-content: center;

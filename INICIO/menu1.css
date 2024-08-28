@@ -6,7 +6,6 @@
 
     text-align: center;
     font-size: 30px;
-    width: 1;
 }
 .container{
     display: flex;
@@ -15,8 +14,8 @@
 }
 .caja {
 
-    width: 320px;
-    height: 280px;
+    width: 395px;
+    height: 350px;
     color: #000;
     background-color: rgb(138, 170, 197);
     text-align: center;
@@ -38,14 +37,18 @@
     width: 6vw;
     height: 12vh;
     position: relative;
-    right: 642px;
+    
 
 }
 
+.leo{
+    position: relative;
+    right: 100vh;
+}
 .titulo{
 
-   position: relative;
-   bottom: 30px;
+position: relative;
+bottom: 30px;
     width: 100vw;
     display: flex;
     justify-content: center;
