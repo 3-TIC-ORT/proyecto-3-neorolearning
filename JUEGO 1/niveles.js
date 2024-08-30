@@ -3,7 +3,7 @@ import fs from "fs";
 
 // Leer los datos de los archivos JSON
 let palabras = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
-let palabrasusadas = JSON.parse(fs.readFileSync("palabrasusadas.json", "utf-8"));
+let palabrasusadas = JSON.parse(fs.readFileSync("palabrasusadas.json", "utf-8") || "{}");
 
 function guardarpalabrasusadas() {
     fs.writeFileSync("palabrasusadas.json", JSON.stringify(palabrasusadas, null, 2), "utf-8");
@@ -12,7 +12,7 @@ function guardarpalabrasusadas() {
 // Solicitar nivel 
 let nivel;
 while (isNaN(nivel) || nivel < 1 || nivel > 3) {
-  nivel = parseInt(readlineSync.question("¿Qué nivel queres jugar del 1 al 3?"), 10);
+  nivel = parseInt(readlineSync.question("¿Qué nivel quieres jugar del 1 al 3?"), 10);
   if (isNaN(nivel) || nivel < 1 || nivel > 3) {
     console.log("Por favor, ingresa un número válido entre 1 y 3.");
   }
@@ -32,10 +32,10 @@ function obtenerPalabraAleatoria(nivel) {
     for (let i = 0; i < todasLasPalabras.length; i++) {
         let palabraActual = todasLasPalabras[i].palabra;
 
-        // Verificar si la palabra actual ya ha sido usada
+        // Verificar si la palabra actual ya se ha usado
         let palabraUsada = palabrasusadas[nivel_palabra_aleatoria]?.includes(palabraActual);
         
-        // Si la palabra no ha sido usada, agregarla a las disponibles
+        // Si la palabra no se ha usado, agregarla a las disponibles
         if (!palabraUsada) {
             palabrasDisponibles.push(todasLasPalabras[i]);
         }
@@ -72,3 +72,4 @@ if (palabraSeleccionada) {
 }
 
 console.log("¡Gracias por jugar!");
+
