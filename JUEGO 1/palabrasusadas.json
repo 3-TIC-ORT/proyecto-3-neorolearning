@@ -1,1 +1,12 @@
-{}
+{
+  "nivel_1": [
+    "agua",
+    "árbol",
+    "fruta",
+    "nieve",
+    "luna"
+  ],
+  "nivel_2": [
+    "camisa"
+  ]
+}
