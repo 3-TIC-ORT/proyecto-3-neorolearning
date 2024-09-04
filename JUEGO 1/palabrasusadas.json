@@ -4,9 +4,14 @@
     "árbol",
     "fruta",
     "nieve",
-    "luna"
+    "luna",
+    "coche",
+    "lago",
+    "mesa",
+    "sol"
   ],
   "nivel_2": [
-    "camisa"
+    "camisa",
+    "zanahoria"
   ]
 }
