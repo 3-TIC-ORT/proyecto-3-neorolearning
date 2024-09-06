@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "mi-juego",
+  "version": "1.0.0",
+  "description": "Descripción del proyecto",
+  "main": "niveles.js",
+  "scripts": {
+    "start": "node niveles.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
