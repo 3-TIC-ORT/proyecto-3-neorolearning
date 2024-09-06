@@ -1,17 +1,30 @@
 {
   "nivel_1": [
+    "leche",
+    "lago",
+    "flor",
+    "sol",
+    "cielo",
+    "casa",
+    "lámpara",
+    "ratón",
+    "nube",
+    "coche",
+    "vaca",
+    "mesa",
     "agua",
     "árbol",
-    "fruta",
-    "nieve",
+    "silla",
     "luna",
-    "coche",
-    "lago",
-    "mesa",
-    "sol"
-  ],
-  "nivel_2": [
-    "camisa",
-    "zanahoria"
+    "pez",
+    "fruta",
+    "bola",
+    "barco",
+    "pan",
+    "pelo",
+    "puerta",
+    "nieve",
+    "vela",
+    "tren"
   ]
 }
