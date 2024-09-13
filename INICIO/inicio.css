@@ -13,7 +13,6 @@ h1 {
 
     text-align: center;
     font-size: 50px;
-   
 }
 .pantalla{
     width: 100vw;
@@ -23,7 +22,7 @@ h1 {
     align-items: center;
     flex-direction: column;
 }
-.aprender {
+.comenzar {
 
     font-size: 90px;
     color: #000;
@@ -31,25 +30,11 @@ h1 {
     border: none;
     padding: 40px 50px;
     cursor: pointer;
-
     height: 29vh;
     justify-content: center;
     align-items: center;
 
 
-}
-
-.jugar {
-
-    font-size: 90px;
-    color: #000;
-    background-color: rgb(201, 145, 81);
-    border: none;
-    padding: 40px 150px;
-    cursor: pointer;
-    height: 29vh;
-    justify-content: center;
-    align-items: center;
 }
 
 .botonera{

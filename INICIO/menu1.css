@@ -7,15 +7,29 @@
     text-align: center;
     font-size: 30px;
 }
-.container{
+
+section{
+
+    width: 100vw;
+    height: 50vh;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container{
+    width: 50vw;
+    height: 50vh;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 .caja {
 
-    width: 395px;
-    height: 350px;
+    width: 200px;
+    height: 200px;
     color: #000;
     background-color: rgb(138, 170, 197);
     text-align: center;
@@ -24,12 +38,12 @@
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    border: none;
+    display: flex;
+        border: none;
     padding: 0px;
     cursor: pointer;
     justify-content: center;
     position: relative;
-    top: 70px;
 }
 
 .arrow_back{
@@ -57,5 +71,5 @@ bottom: 30px;
 
 
 .pedro{
-    height: 0cm;
+    text-decoration: none;
 }
