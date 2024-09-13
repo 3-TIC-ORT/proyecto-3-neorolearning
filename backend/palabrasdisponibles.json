@@ -1,32 +1,113 @@
 {
   "nivel_1": [
-    {
-      "palabra": "sol",
-      "imagen": ""
-    },
-    {
-      "palabra": "flor",
-      "imagen": ""
-    }
+    {"palabra": "sol", "imagen": ""},
+    {"palabra": "flor", "imagen": ""},
+    {"palabra": "luna", "imagen": ""},
+    {"palabra": "pez", "imagen": ""},
+    {"palabra": "árbol", "imagen": ""},
+    {"palabra": "mesa", "imagen": ""},
+    {"palabra": "ratón", "imagen": ""},
+    {"palabra": "agua", "imagen": ""},
+    {"palabra": "pan", "imagen": ""},
+    {"palabra": "casa", "imagen": ""},
+    {"palabra": "lago", "imagen": ""},
+    {"palabra": "cielo", "imagen": ""},
+    {"palabra": "silla", "imagen": ""},
+    {"palabra": "leche", "imagen": ""},
+    {"palabra": "vaca", "imagen": ""},
+    {"palabra": "luna", "imagen": ""},
+    {"palabra": "coche", "imagen": ""},
+    {"palabra": "lámpara", "imagen": ""},
+    {"palabra": "ratón", "imagen": ""},
+    {"palabra": "flor", "imagen": ""},
+    {"palabra": "fruta", "imagen": ""},
+    {"palabra": "barco", "imagen": ""},
+    {"palabra": "nube", "imagen": ""},
+    {"palabra": "pelo", "imagen": ""},
+    {"palabra": "lago", "imagen": ""},
+    {"palabra": "bola", "imagen": ""},
+    {"palabra": "tren", "imagen": ""},
+    {"palabra": "puerta", "imagen": ""},
+    {"palabra": "vela", "imagen": ""},
+    {"palabra": "nieve", "imagen": ""},
+    {"palabra": "lago", "imagen": ""},
+    {"palabra": "árbol", "imagen": ""},
+    {"palabra": "flor", "imagen": ""}
   ],
   "nivel_2": [
-    {
-      "palabra": "perro",
-      "imagen": ""
-    },
-    {
-      "palabra": "cielo",
-      "imagen": ""
-    }
+    {"palabra": "perro", "imagen": ""},
+    {"palabra": "cielo", "imagen": ""},
+    {"palabra": "pelota", "imagen": ""},
+    {"palabra": "ratón", "imagen": ""},
+    {"palabra": "coche", "imagen": ""},
+    {"palabra": "piedra", "imagen": ""},
+    {"palabra": "avión", "imagen": ""},
+    {"palabra": "camión", "imagen": ""},
+    {"palabra": "silla", "imagen": ""},
+    {"palabra": "ventana", "imagen": ""},
+    {"palabra": "madera", "imagen": ""},
+    {"palabra": "elefante", "imagen": ""},
+    {"palabra": "desayuno", "imagen": ""},
+    {"palabra": "escuela", "imagen": ""},
+    {"palabra": "recreo", "imagen": ""},
+    {"palabra": "tiburón", "imagen": ""},
+    {"palabra": "murciélago", "imagen": ""},
+    {"palabra": "ciudad", "imagen": ""},
+    {"palabra": "camarón", "imagen": ""},
+    {"palabra": "sombrero", "imagen": ""},
+    {"palabra": "carroza", "imagen": ""},
+    {"palabra": "hormiga", "imagen": ""},
+    {"palabra": "plátano", "imagen": ""},
+    {"palabra": "vampiro", "imagen": ""},
+    {"palabra": "ratón", "imagen": ""},
+    {"palabra": "camisa", "imagen": ""},
+    {"palabra": "frutero", "imagen": ""},
+    {"palabra": "galleta", "imagen": ""},
+    {"palabra": "lámpara", "imagen": ""},
+    {"palabra": "peluche", "imagen": ""},
+    {"palabra": "pelota", "imagen": ""},
+    {"palabra": "tortuga", "imagen": ""},
+    {"palabra": "zanahoria", "imagen": ""},
+    {"palabra": "pintura", "imagen": ""},
+    {"palabra": "camiseta", "imagen": ""},
+    {"palabra": "espejo", "imagen": ""}
   ],
   "nivel_3": [
-    {
-      "palabra": "elefante",
-      "imagen": ""
-    },
-    {
-      "palabra": "mariposa",
-      "imagen": ""
-    }
+    {"palabra": "elefante", "imagen": ""},
+    {"palabra": "mariposa", "imagen": ""},
+    {"palabra": "dinosaurio", "imagen": ""},
+    {"palabra": "colegio", "imagen": ""},
+    {"palabra": "cachorro", "imagen": ""},
+    {"palabra": "lámpara", "imagen": ""},
+    {"palabra": "avión", "imagen": ""},
+    {"palabra": "tiburón", "imagen": ""},
+    {"palabra": "fabulista", "imagen": ""},
+    {"palabra": "murciélago", "imagen": ""},
+    {"palabra": "chocolate", "imagen": ""},
+    {"palabra": "bañadera", "imagen": ""},
+    {"palabra": "recreo", "imagen": ""},
+    {"palabra": "camarón", "imagen": ""},
+    {"palabra": "peluche", "imagen": ""},
+    {"palabra": "tortuga", "imagen": ""},
+    {"palabra": "ratón", "imagen": ""},
+    {"palabra": "sombrero", "imagen": ""},
+    {"palabra": "explorador", "imagen": ""},
+    {"palabra": "paraguas", "imagen": ""},
+    {"palabra": "carroza", "imagen": ""},
+    {"palabra": "cavernícola", "imagen": ""},
+    {"palabra": "anaranjado", "imagen": ""},
+    {"palabra": "crepuscular", "imagen": ""},
+    {"palabra": "elefante", "imagen": ""},
+    {"palabra": "avioneta", "imagen": ""},
+    {"palabra": "vampiro", "imagen": ""},
+    {"palabra": "tiburón", "imagen": ""},
+    {"palabra": "salvavidas", "imagen": ""},
+    {"palabra": "pintura", "imagen": ""},
+    {"palabra": "juguetería", "imagen": ""},
+    {"palabra": "perezoso", "imagen": ""},
+    {"palabra": "servilleta", "imagen": ""},
+    {"palabra": "camisa", "imagen": ""}
   ]
 }
+
+  
