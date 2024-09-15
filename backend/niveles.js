@@ -4,17 +4,15 @@ import fs from "fs";
 // Leer los datos de los archivos JSON
 let palabras = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
 let palabrasusadas = JSON.parse(fs.readFileSync("palabrasusadas.json", "utf-8") || "{}");
-let puntaje = JSON.parse(fs.readFileSync("puntaje.json", "utf-8") || "{}");
+let puntajes = JSON.parse(fs.readFileSync("puntaje.json", "utf-8") || "{}");
 
 function guardarpalabrasusadas() {
     fs.writeFileSync("palabrasusadas.json", JSON.stringify(palabrasusadas, null, 2), "utf-8");
 }
 
 function guardarPuntaje() {
-    fs.writeFileSync("puntaje.json", JSON.stringify(puntaje, null, 2), "utf-8");
+    fs.writeFileSync("puntaje.json", JSON.stringify(puntajes, null, 2), "utf-8");
 }
-
-
 
 // Solicitar nivel 
 let nivel;
@@ -68,13 +66,31 @@ function obtenerPalabraAleatoria(nivel) {
     return palabraSeleccionada;
 }
 
+// Función para actualizar el puntaje
+function actualizarPuntaje(nivel) {
+    let nivel_clave = `juego_${nivel}`;
+    
+    // Si el nivel nunca ha sido jugado, asignar 10 puntos por cada palabra correcta
+    if (!puntajes[nivel_clave]) {
+        puntajes[nivel_clave] = { puntaje: 10 }; // Primera vez
+    } else {
+        // Si ya ha sido jugado antes, asignar 5 puntos por cada palabra correcta
+        puntajes[nivel_clave].puntaje += 5; // Segunda vez o más
+    }
+
+    guardarPuntaje();
+}
+
 // Obtener la palabra y mostrarla
 let palabraSeleccionada = obtenerPalabraAleatoria(nivel);
 if (palabraSeleccionada) {
     console.log(`\nNivel ${nivel}:`);
     console.log(`Palabra: ${palabraSeleccionada.palabra}`);
     console.log(`Imagen: ${palabraSeleccionada.imagen}\n`);
+
+    // Actualizar el puntaje dependiendo de si es la primera o segunda vez que se juega el nivel
+    actualizarPuntaje(nivel);
+    console.log(`Puntaje actualizado: ${puntajes[`juego_${nivel}`].puntaje} puntos`);
+} else {
+    console.log("No hay palabras disponibles para este nivel.");
 }
-
-
-
