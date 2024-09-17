@@ -3,32 +3,38 @@
     padding: 0;
 }
 
-.hola{
-
-    width: 6vw;
-    height: 12vh;
-    position: relative;
-    
+header{
+        width: 100vw;
+        height: 15vh;
 }
 
-.pedro{
-    width: 0;
+main{
+    width: 100vw;
+    height: 70vh;
 }
-.flecha {
 
-    width: 6vw;
-    height: 13vh;
-    transform: scale(-1);
-    position: relative;
-    right: -200vh;
-
+footer{
+    width: 100vw;
+    height: 15vh;
 }
+
+header a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+footer a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 
 .titulo {
 
     text-align: center;
     font-size: 30px;
-    width: 1;
     position: relative;
     top: -24px;
     width: 100vw;
@@ -36,17 +42,9 @@
     justify-content: center;
 }
 
-.todo{
-
-height: 100vh;
-width: 100vw;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-}
-
 .video{
 width: 100vw;
 display: flex;
 justify-content: center;
 }
+
