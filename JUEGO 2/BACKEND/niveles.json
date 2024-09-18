@@ -1,0 +1,29 @@
+{
+    "nivel_1": [
+      {"palabra": "Azul", "imagen": ""},
+      {"palabra": "Amarillo", "imagen": ""},
+      {"palabra": "Naranja", "imagen": ""},
+      {"palabra": "Rojo", "imagen": ""},
+      {"palabra": "Violeta", "imagen": ""},
+      {"palabra": "Rosa", "imagen": ""},
+     
+    ],
+    "nivel_2": [
+      {"palabra": "Alegria", "imagen": ""},
+      {"palabra": "Tristeza", "imagen": ""},
+      {"palabra": "Miedo", "imagen": ""},
+      {"palabra": "Enojo", "imagen": ""},
+      {"palabra": "Desagrado", "imagen": ""},
+      {"palabra": "Confusión", "imagen": ""},
+    ],
+    "nivel_3": [
+        {"palabra": "Alegria", "imagen": ""},
+        {"palabra": "Tristeza", "imagen": ""},
+        {"palabra": "Miedo", "imagen": ""},
+        {"palabra": "Enojo", "imagen": ""},
+        {"palabra": "Desagrado", "imagen": ""},
+        {"palabra": "Confusión", "imagen": ""},
+    ]
+  }
+  
+    
