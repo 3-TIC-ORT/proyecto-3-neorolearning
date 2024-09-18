@@ -70,17 +70,16 @@ function obtenerPalabraAleatoria(nivel) {
 function actualizarPuntaje(nivel) {
     let nivel_clave = `juego_${nivel}`;
     
-    // Si el nivel nunca ha sido jugado, asignar 10 puntos por cada palabra correcta
+    // Si el nivel nunca se jugo, asignar 10 puntos por cada palabra correcta
     if (!puntajes[nivel_clave]) {
         puntajes[nivel_clave] = { puntaje: 10 }; // Primera vez
     } else {
-        // Si ya ha sido jugado antes, asignar 5 puntos por cada palabra correcta
+        // Si ya se jugo antes, asignar 5 puntos por cada palabra correcta
         puntajes[nivel_clave].puntaje += 5; // Segunda vez o más
     }
 
     guardarPuntaje();
 }
-// alex estuvo aqui
 // Obtener la palabra y mostrarla
 let palabraSeleccionada = obtenerPalabraAleatoria(nivel);
 if (palabraSeleccionada) {
