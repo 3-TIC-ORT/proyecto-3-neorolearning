@@ -80,7 +80,7 @@ function actualizarPuntaje(nivel) {
 
     guardarPuntaje();
 }
-
+// alex estuvo aqui
 // Obtener la palabra y mostrarla
 let palabraSeleccionada = obtenerPalabraAleatoria(nivel);
 if (palabraSeleccionada) {
