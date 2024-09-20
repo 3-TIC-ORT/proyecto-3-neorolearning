@@ -1,52 +1,45 @@
-const palabra = ['b', 'a', 'r', 'c', 'o']; // Letras a mostrar
-const ordenCorrecto = ['b', 'a', 'r', 'c', 'o']; // Orden correcto para los rectángulos
+let palabraArray = [];
+let palabra;
+let contador = 0;
+let divCuadrados = document.getElementById("cuadrados")
+let div = document.getElementById("divCajitas")
+function getPalabra(){
+    palabra = "brigitte";
+    for (let i = 0; i < palabra.length; i++) {
+        palabraArray.push(palabra[i]);
+        crearCuadrado()
+    }
+    magia()
+}
 
-// Selecciona los elementos del DOM
-const rectangulos = document.querySelectorAll('.rectangulo');
-const letrasContainer = document.querySelector('.letras');
-
-// Mezcla las letras para mostrar en un orden aleatorio
-function mezclarArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1)); // Índice aleatorio
-        [array[i], array[j]] = [array[j], array[i]]; // Intercambia elementos
+function magia (){
+    let shuffle = palabraArray.sort((a, b) => 0.5 - Math.random());
+    console.log(shuffle)
+    for (let index = 0; index < shuffle.length; index++) {
+        crearCajitas(shuffle[index])        
     }
 }
-
-// Inicializa el juego
-function inicializarJuego() {
-    mezclarArray(palabra);
-
-    // Crea los botones de letras y los agrega al contenedor
-    palabra.forEach(letra => {
-        const boton = document.createElement('div');
-        boton.textContent = letra;
-        boton.classList.add('letra');
-        boton.dataset.letra = letra; // Guarda la letra en un atributo de datos
-        boton.addEventListener('click', manejarClickLetra);
-        letrasContainer.appendChild(boton);
-    });
-
-    // Inicializa los rectángulos vacíos
-    rectangulos.forEach(rect => rect.textContent = '');
+//mica capa
+function crearCajitas(data){
+    let cajita = document.createElement("h2");
+    cajita.addEventListener("click",()=>{
+        verificar(data)
+    })
+    cajita.setAttribute("class","cajita");
+    cajita.innerText = data;
+    div.appendChild(cajita)
 }
 
-// Maneja el clic en una letra
-let indiceOrden = 0; // Controla el orden correcto de las letras
-function manejarClickLetra(e) {
-    const letraSeleccionada = e.target.dataset.letra;
+function crearCuadrado(){
+    let cuadrado = document.createElement("h2");
+    cuadrado.setAttribute("class","cuadrado");
+    divCuadrados.appendChild(cuadrado)
+}
 
-    // Verifica si la letra seleccionada es la correcta en el orden actual
-    if (letraSeleccionada === ordenCorrecto[indiceOrden]) {
-        // Encuentra el índice del rectángulo vacío
-        const rectangulo = rectangulos[indiceOrden];
-        rectangulo.textContent = letraSeleccionada; // Muestra la letra en el rectángulo
-        
-
-        // Avanza al siguiente índice en el orden correcto
-        indiceOrden++;
+function verificar (data){
+    if (data === palabraArray[0]) {
+    
     }
 }
+getPalabra()
 
-// Inicia el juego al cargar la página
-document.addEventListener('DOMContentLoaded', inicializarJuego);

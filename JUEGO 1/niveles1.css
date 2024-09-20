@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100vw;
+    height: 15vh;
+
+}
+
+header a{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+main{
+width: 100vw;
+height: 70vh;
+}
+
+footer{
+width: 100vw;
+height: 15vh;
+}
+
+footer a{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
