@@ -1,0 +1,20 @@
+{
+    "nivel_1": [
+      {"palabra": "Perro", "imagen": ""},
+      {"palabra": "Pato", "imagen": ""},
+      {"palabra": "Pez", "imagen": ""},
+     
+    ],
+    "nivel_2": [
+      {"palabra": "Manzana", "imagen": ""},
+      {"palabra": "Banana", "imagen": ""},
+      {"palabra": "Naranja", "imagen": ""},
+    ],
+    "nivel_3": [
+        {"palabra": "Fideos", "imagen": ""},
+        {"palabra": "Carne", "imagen": ""},
+        {"palabra": "Hamburguesa", "imagen": ""},
+    ]
+  }
+  
+    
