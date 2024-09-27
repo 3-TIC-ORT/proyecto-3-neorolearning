@@ -5,24 +5,23 @@
       {"palabra": "Naranja", "imagen": ""},
       {"palabra": "Rojo", "imagen": ""},
       {"palabra": "Violeta", "imagen": ""},
-      {"palabra": "Rosa", "imagen": ""},
-     
+      {"palabra": "Verde", "imagen": ""}
     ],
     "nivel_2": [
-      {"palabra": "Alegria", "imagen": ""},
-      {"palabra": "Tristeza", "imagen": ""},
+      {"palabra": "Feliz", "imagen": ""},
+      {"palabra": "Triste", "imagen": ""},
       {"palabra": "Miedo", "imagen": ""},
       {"palabra": "Enojo", "imagen": ""},
       {"palabra": "Desagrado", "imagen": ""},
-      {"palabra": "Confusión", "imagen": ""},
+      {"palabra": "Confusión", "imagen": ""}
     ],
     "nivel_3": [
-        {"palabra": "Alegria", "imagen": ""},
-        {"palabra": "Tristeza", "imagen": ""},
-        {"palabra": "Miedo", "imagen": ""},
-        {"palabra": "Enojo", "imagen": ""},
-        {"palabra": "Desagrado", "imagen": ""},
-        {"palabra": "Confusión", "imagen": ""},
+        {"palabra": "Manzana", "imagen": ""},
+        {"palabra": "Frutilla", "imagen": ""},
+        {"palabra": "Banana", "imagen": ""},
+        {"palabra": "Sandía", "imagen": ""},
+        {"palabra": "Uva", "imagen": ""},
+        {"palabra": "Pera", "imagen": ""}
     ]
   }
   
