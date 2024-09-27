@@ -11,6 +11,7 @@ header{
 main{
     width: 100vw;
     height: 70vh;
+
 }
 
 footer{
@@ -35,16 +36,16 @@ footer a{
 
     text-align: center;
     font-size: 30px;
-    position: relative;
-    top: -24px;
     width: 100vw;
     display: flex;
     justify-content: center;
+    margin-top: -3%;
 }
 
 .video{
 width: 100vw;
 display: flex;
 justify-content: center;
+margin-top: 3%;
 }
 
