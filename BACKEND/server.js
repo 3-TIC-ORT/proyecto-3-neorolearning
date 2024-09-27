@@ -52,5 +52,5 @@ onEvent('obtenerNivel', (data, callback) => {
 
 
 
-startServer()
+startServer();
 

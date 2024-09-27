@@ -87,6 +87,5 @@ onEvent('iniciarJuego', (data) => {
 });
 
 // Iniciar el servidor de SoqueTIC
-startServer(3000, () => {
-    console.log("Servidor SoqueTIC iniciado en el puerto 3000.");
+startServer () 
 });
