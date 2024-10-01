@@ -17,13 +17,18 @@ header a{
 main{
     width: 100vw;
     height: 85vh;
+    display: flex;
+    justify-content: center;
 }
 
 table {
-    width: 100%;
-    max-width: 400px;
+    width: 80%;
+    height: 80%;
     margin: auto;
     border-collapse: collapse;
+    justify-content: center;
+    table-layout: fixed;
+    
 }
 td {
     width: 33%;
@@ -45,4 +50,8 @@ img {
     width: 90%;
     height: 90%;
     object-fit: cover;
+    max-width: 90px;
+    max-height: 90px;
 }
+
+
