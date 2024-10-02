@@ -1,6 +1,7 @@
 const x="X";
 const o="O";
 let estadoJuego="P1";
+const modal =document.querySelector("dialog")
 const cuadrados=document.querySelectorAll(".cuadrado");
 cuadrados.forEach(cuadrado, i)=> {
     cuadrado.addEventListener("click",()=>{
@@ -60,4 +61,8 @@ function ganar(posicionGanadora){
         cuadrados[posicion].classList.toggle("ganador",true);
         //HACER UNA CLASE EN CSS DE GANADOR QUE SE PONGA EN OTRO COLOR
     })
+    mostrarModal()
+}
+function mostrarModal(){
+    modal.showModal();
 }
