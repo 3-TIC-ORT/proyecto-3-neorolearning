@@ -19,7 +19,7 @@ function magia (){
         crearCajitas(shuffle[index])        
     }
 }
-//mica capa
+
 function crearCajitas(data){
     let cajita = document.createElement("h2");
     cajita.addEventListener("click",()=>{

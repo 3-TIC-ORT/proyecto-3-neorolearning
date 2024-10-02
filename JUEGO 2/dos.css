@@ -1,24 +1,34 @@
-.pantalla {
-
-    text-align: center;
-    font-size: 30px;
+*{
+    margin: 0;
+    padding: 0;
 }
-.arrow_back{
 
-    width: 6vw;
-    height: 12vh;
-    position: relative;
+header{
+    width: 100vw;
+    height: 15vh;
 }
-.leo{
-    position: relative;
-    right: 100vh;
+
+header a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+main{
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
 }
 
 table {
-    width: 100%;
-    max-width: 400px;
+    width: 80%;
+    height: 80%;
     margin: auto;
     border-collapse: collapse;
+    justify-content: center;
+    table-layout: fixed;
+    
 }
 td {
     width: 33%;
@@ -40,4 +50,8 @@ img {
     width: 90%;
     height: 90%;
     object-fit: cover;
+    max-width: 90px;
+    max-height: 90px;
 }
+
+
