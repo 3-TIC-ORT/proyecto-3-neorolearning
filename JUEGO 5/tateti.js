@@ -2,27 +2,28 @@ const x="X";
 const o="O";
 let estadoJuego="P1";
 const modal =document.querySelector("dialog")
-const cuadrados=document.querySelectorAll(".cuadrado");
+const textoModal=modal.queryselector("h2");
+const cuadrados=Array.from(document.querySelectorAll(".cuadrado"));
+
 cuadrados.forEach(cuadrado, i)=> {
     cuadrado.addEventListener("click",()=>{
 
         if(estadoJuego === "PAUSA") return;
         if(cuadrado.Textcontent)
         cuadrado.innerText= estadoJuego==="P1" ? x:o;
-        estadoJuego=estadoJuego==="P1" ?"P2":"P1";
         const posicionGanadora = revisarSiHayGanador();
         if(typeof posicionGanadora === "object"){
             ganar(posicionGanadora);
             return
         }
         if (posicionGanadora==="empate"){
-            console.log("EMPATE")
+            mostrarModal("Empate");
         }
+        estadoJuego=estadoJuego==="P1" ?"P2":"P1";
     })
 } )
 function revisarSiHayGanador(){
-    const tablero=Array.from(cuadrados).map(cuadrado=>cuadrado.Textcontent)
-    console.log(tablero)
+    const tablero=cuadrados.map(cuadrado=>cuadrado.Textcontent)
     //Revisar horizontales
     for (let i=0;i<=9, i+=3){
         if (tablero[i]&&
@@ -55,14 +56,24 @@ function revisarSiHayGanador(){
     
 }
 function ganar(posicionGanadora){
-    console.log("ganador",posicionGanadora);
-    estadoJuego="PAUSA";
     posicionGanadora.forEach(posicion=> {
         cuadrados[posicion].classList.toggle("ganador",true);
         //HACER UNA CLASE EN CSS DE GANADOR QUE SE PONGA EN OTRO COLOR
     })
-    mostrarModal()
+    mostrarModal("Ganador: "estadoJuego)
+    
 }
 function mostrarModal(){
-    modal.showModal();
+    textoModal.innerText=texto;
+    modal.showModal(texto);
 }
+modal.querySelector("button").addEventListener("click",()=>{
+    cuadrados.forEach(cuadrado=>{
+        cuadrado.Textcontent="";
+        cuadrado.classList.toggle(".ganador"false);
+        modal.close();
+        estadoJuego="P1"
+    });
+}
+
+)

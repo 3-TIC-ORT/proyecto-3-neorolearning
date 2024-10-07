@@ -1,52 +1,32 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-header{
-    width: 100vw;
-    height: 15vh;
-}
-
-header a{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-main{
-    width: 75vw;
-    height: 85%;
-}
-
-nav{
-    width: 25vw;
-    height: 100%;
-}
-
-.cajita{
-    width: 5vw;
-    height: 5vw;
-    border: 1px solid black;
+.cajitas{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-
-.divCajitas{
-
-}
-
-.cuadrados{
-    display: flex;
-    direction: row;
-}
-.cuadrado{
+    border: 1px solid black;
     width: 7vw;
     height: 7vw;
-    border: 1px solid black;
+}
+
+.divCajitas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.letras{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
+    width: 5vw;
+    height: 5vw;
 }
 
+.divLetras{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
