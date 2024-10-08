@@ -7,7 +7,7 @@ let wordArray = [];
 let listaCajitas = [];
 let shuffleWord = [];
 const getWord = async () => {
-    word = "A lan";
+    word = "mayte";
     
     for (let index = 0; index < word.length; index++) {
         wordArray.push(word[index]);  
