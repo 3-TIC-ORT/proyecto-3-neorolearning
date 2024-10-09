@@ -1,6 +1,7 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
 import { actualizarPuntaje } from './JUEGO1/niveles.js';
+import { palabraSeleccionada } from './JUEGO1/niveles.js';
 // Leer los datos de los archivos JSON
 let niveles = {};
 try {
@@ -23,14 +24,9 @@ onEvent("juego",recibirjuego);
     console.log(` Nivel recibido: ${data.msg}`);
     return { msg: `Nivel ${nivel} procesado correctamente.` };
 };
-onEvent("nivel",recibirjuego);
- 
-  function recibirnivel(data){
-    const { nivel } = data;
-    console.log(` Nivel recibido: ${nivel}`);
-    return { msg: `Nivel ${nivel} procesado correctamente.` };
-};
 onEvent("nivel",recibirnivel);
+ 
+
 
 // Enviar palabra
  function enviarpalabra(data){ 
