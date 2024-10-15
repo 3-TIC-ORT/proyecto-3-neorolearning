@@ -42,7 +42,7 @@ onEvent("nivel",recibirnivel);
   }
 }
  
-  onEvent('palabraSeleccionada', enviarpalabra ); 
+  sendEvent('palabraSeleccionada', enviarpalabra ); 
   
 
   // enviar el puntaje

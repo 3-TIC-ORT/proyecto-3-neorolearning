@@ -14,7 +14,7 @@ function guardarPuntaje() {
     fs.writeFileSync("puntaje.json", JSON.stringify(puntajes, null, 2), "utf-8");
 }
 
-// Solicitar nivel 
+// con el nivel q me pasa juli
 let nivel;
 while (isNaN(nivel) || nivel < 1 || nivel > 3) {
   nivel = parseInt(readlineSync.question("¿Qué nivel quieres jugar del 1 al 3?"), 10);
