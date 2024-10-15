@@ -1,19 +1,10 @@
+import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
-let palabras = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
-let palabrasusadas = JSON.parse(fs.readFileSync("palabrasusadas.json", "utf-8") || "{}");
-let puntajes = JSON.parse(fs.readFileSync("puntaje.json", "utf-8") || "{}");
-function guardarpalabrasusadas() {
-    fs.writeFileSync("palabrasusadas.json", JSON.stringify(palabrasusadas, null, 2), "utf-8");
-}
 
-function guardarPuntaje() {
-    fs.writeFileSync("puntaje.json", JSON.stringify(puntajes, null, 2), "utf-8");
-}
 
 // con el juego q me pasa juli
 function recibirjuego(data){
     const { juego } = data;
-    let juego = data.juego;
     console.log(` juego recibido: ${juego}`);
     return { msg: `Juego ${juego} procesado correctamente.` };
     
@@ -22,23 +13,40 @@ function recibirjuego(data){
   //recibir que nivel es del front
   function recibirnivel(data){
     const { nivel } = data;
-    let nivel = nivel.juego;
     console.log(` Nivel recibido: ${data.msg}`);
-    return { msg: `Nivel ${nivel} procesado correctamente.` };
-};
+    jugarjuego(nivel);
+}
 onEvent("nivel",recibirnivel);
- if (juego===1){
-    function jugarjuego1(nivel){
 
+function jugarjuego(nivel) {
+    // Lógica para determinar cuál juego ejecutar
+    if (nivel === 1) {
+        jugarjuego1(nivel);
+    } else if (nivel === 2) {
+        jugarjuego2(nivel);
+    } else if (nivel === 3) {
+        jugarjuego3(nivel);
+    } else {
+        console.log("Nivel no válido.");
+    }
+}
 
+function jugarjuego1(nivel){
+    console.log(`Iniciando juego 1 en el nivel ${nivel}`);
+    let palabras = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
+    let palabrasusadas = JSON.parse(fs.readFileSync("palabrasusadas.json", "utf-8") || "{}");
+    let puntajes = JSON.parse(fs.readFileSync("puntaje.json", "utf-8") || "{}");
+    function guardarpalabrasusadas() {
+    fs.writeFileSync("palabrasusadas.json", JSON.stringify(palabrasusadas, null, 2), "utf-8");
+}
 
-         // Función para obtener una palabra aleatoria de un nivel específico
-         function obtenerPalabraAleatoria(nivel) {
+function guardarPuntaje() {
+    fs.writeFileSync("puntaje.json", JSON.stringify(puntajes, null, 2), "utf-8");
+}
+    function obtenerPalabraAleatoria(nivel) {
         let nivel_palabra_aleatoria = `nivel_${nivel}`;
-        
         // Crear un array vacío para almacenar las palabras disponibles
         let palabrasDisponibles = [];
-        
         // Obtener todas las palabras para el nivel actual
         let todasLasPalabras = palabras[nivel_palabra_aleatoria];
         
@@ -75,6 +83,22 @@ onEvent("nivel",recibirnivel);
         return palabraSeleccionada;
     }
     
+// Enviar palabra
+     function enviarpalabra(data){ 
+        const { nivel, palabraSeleccionada } = data;
+        const nivelClave = `nivel_${nivel}`;
+        const palabrasDelNivel = niveles[nivelClave]|| []; 
+        if (palabrasDelNivel.includes(palabraSeleccionada)) {
+        console.log(`Palabra enviada: ${palabraSeleccionada}`);
+        return { msg: `Palabra ${palabraSeleccionada} enviada correctamente.` };
+    } else {
+      console.log(`Palabra no encontrada en el nivel ${nivel}`);
+      return { msg: `Palabra no encontrada en el nivel ${nivel}.` };
+    }
+  }
+   
+    sendEvent('palabraSeleccionada', enviarpalabra ); 
+    
     // Función para actualizar el puntaje
     function actualizarPuntaje(nivel) {
         let nivel_clave = `juego_${nivel}`;
@@ -88,6 +112,16 @@ onEvent("nivel",recibirnivel);
         }
     
         guardarPuntaje();
+        // enviar el puntaje
+        function enviarpuntaje(data){
+        const { actualizarPuntaje } = data;
+        console.log(`Puntaje recibido: ${actualizarPuntaje}`);
+ }
+ sendEvent(puntajes[nivel_clave], enviarpuntaje);
+
+
+}
+
     }
     // Obtener la palabra y mostrarla
     let palabraSeleccionada = obtenerPalabraAleatoria(nivel);
@@ -102,14 +136,103 @@ onEvent("nivel",recibirnivel);
     } else {
         console.log("No hay palabras disponibles para este nivel.");
     }
-    
+}
+// Función para jugar el juego 2
+function jugarjuego2(nivel) {
+    console.log(`Iniciando juego 2 en el nivel ${nivel}`);
+    let niveles = JSON.parse(fs.readFileSync("niveles.json", "utf-8") || "{}");
+    let puntajes = JSON.parse(fs.readFileSync("puntaje.json", "utf-8") || "{}");
+
+// Guardar los puntajes en puntaje.json
+    function guardarPuntaje() {
+    fs.writeFileSync("puntaje.json", JSON.stringify(puntajes, null, 2), "utf-8");
+}
+    // Mostrar palabras e imágenes en el frontend (simulado aquí con console.log)
+    // Obtener las palabras del nivel específico
+    let nivelClave = `nivel_${nivel}`;
+    let palabrasDelNivel = palabras[nivelClave] || []; // Asegúrate de que 'palabras' esté definido correctamente
+
+    if (palabrasDelNivel.length === 0) {
+        console.log(`No hay palabras disponibles para el nivel ${nivel}.`);
+        return; // Salir si no hay palabras
+    }
+
+    // Mostrar palabras e imágenes en el frontend (simulado aquí con console.log)
+    console.log(`\nNivel ${nivel}:`);
+    palabrasDelNivel.forEach((item) => {
+        console.log(`Palabra: ${item.palabra} - Imagen: ${item.imagen}`);
+  });
+
+  // Actualizar el puntaje dependiendo de si es la primera o segunda vez que se juega el nivel
+  actualizarPuntaje(nivel);
+  console.log(`Puntaje actualizado: ${puntajes[`juego_${nivel}`].puntaje} puntos`);
+}
+
+// Función para actualizar el puntaje
+function actualizarPuntaje(nivel) {
+  let nivelClave = `juego_${nivel}`;
+
+  // Si es la primera vez que se juega el nivel, asignar 10 puntos
+  if (!puntajes[nivelClave]) {
+    puntajes[nivelClave] = { puntaje: 10 };
+  } else {
+    // Si ya se jugó antes, asignar 5 puntos
+    puntajes[nivelClave].puntaje += 5;
+  }
+
+  // Guardar los puntajes actualizados
+  guardarPuntaje();
 }
 
 
+// Función para jugar el juego 3
+function jugarjuego3(nivel) {
+    console.log(`Iniciando juego 3 en el nivel ${nivel}`);
+    // Leer los datos de los archivos JSON
+    let palabras = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
+    let palabrasUsadas = JSON.parse(fs.readFileSync("palabrasusadas.json", "utf-8") || "{}");
+    let puntajes = JSON.parse(fs.readFileSync("puntaje.json", "utf-8") || "{}");
+    function guardarPalabrasUsadas() {
+    fs.writeFileSync("palabrasusadas.json", JSON.stringify(palabrasUsadas, null, 2), "utf-8");
+}
+function obtenerPalabraAleatoria(nivel, juego) {
+    let nivelPalabraAleatoria = `nivel_${nivel}`;
+    let palabrasDisponibles = [];
+    let todasLasPalabras = palabras[juego][nivelPalabraAleatoria];
 
-
+    // Verificar las palabras disponibles
+    for (let i = 0; i < todasLasPalabras.length; i++) {
+        let palabraActual = todasLasPalabras[i].palabra;
+        let palabraUsada = palabrasUsadas[juego]?.[nivelPalabraAleatoria]?.includes(palabraActual);
+        if (!palabraUsada) {
+            palabrasDisponibles.push(todasLasPalabras[i]);
+        }
     }
 
- }
+    if (palabrasDisponibles.length === 0) {
+        console.log(`¡Has completado todas las palabras en el Nivel ${nivel} del juego ${juego}!`);
+        return null; // No hay palabras disponibles
+    }
 
-   
+    let randomIndex = Math.floor(Math.random() * palabrasDisponibles.length);
+    let palabraSeleccionada = palabrasDisponibles[randomIndex];
+
+    if (!palabrasUsadas[juego]) {
+        palabrasUsadas[juego] = {};
+    }
+    if (!palabrasUsadas[juego][nivelPalabraAleatoria]) {
+        palabrasUsadas[juego][nivelPalabraAleatoria] = [];
+    }
+    palabrasUsadas[juego][nivelPalabraAleatoria].push(palabraSeleccionada.palabra);
+    guardarPalabrasUsadas();
+
+    return palabraSeleccionada; // Retorna la palabra seleccionada del juego
+}
+
+    function guardarPuntaje() {
+    fs.writeFileSync("puntaje.json", JSON.stringify(puntajes, null, 2), "utf-8");
+}
+
+    
+}
+startServer();
