@@ -1,6 +1,6 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
-import { actualizarPuntaje } from './JUEGO1/niveles.js';
+import { actualizarPuntaje } from './JUEGO1/niveles.js' ;
 import { palabraSeleccionada } from './JUEGO1/niveles.js';
 // Leer los datos de los archivos JSON
 let niveles = {};
