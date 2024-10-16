@@ -11,8 +11,7 @@ const startButton = document.getElementById("start")
 const recordinging = document.getElementById("recordinging")
 const scoreHTML = document.getElementById("score")
 const perdisteMsg = document.getElementById("perdisteMsg")
-let bandera = 1
-
+let randomPatron;
 
 function agregarColorPatron(){
     nRandom = Math.ceil(Math.random()*4)
@@ -53,26 +52,22 @@ async function multiColor(){
     }
 }
 azul.addEventListener("click", ()=>{
-    if(bandera === 0){
         patronIngresado.push(1)
         // vamos a ponerle el n1 a la lista del patron ingresado
-    }
+    
 })
 verde.addEventListener("click", ()=>{
-    if(bandera === 0){
+
     patronIngresado.push(2)
-        }// vamos a ponerle el n2 a la lista del patron ingresado
+        // vamos a ponerle el n2 a la lista del patron ingresado
 })
 amarillo.addEventListener("click", ()=>{
-    if(bandera === 0){
 
-    patronIngresado.push(3)}
+    patronIngresado.push(3)
         // vamos a ponerle el n3 a la lista del patron ingresado
 })
 rojo.addEventListener("click", ()=>{
-    if(bandera === 0){
-
-    patronIngresado.push(4)}
+    patronIngresado.push(4)
         // vamos a ponerle el n4 a la lista del patron ingresado
 })
 async function comprobarArrays(arr, vuelta){
@@ -85,6 +80,7 @@ async function comprobarArrays(arr, vuelta){
         };
         checkLength();
 });
+//  prometo que ese evento va a terminar de cierta forma y puedo evaluar si se cumplió o no 
 }
 async function comprobarPatron(){
     // ver si el nene lo hce bien
@@ -97,6 +93,9 @@ async function comprobarPatron(){
         if(patron[j]!=patronIngresado[j]){
             startButton.style.display="flex"
             perdisteMsg.style.display="block"
+            document.querySelectorAll(".boton").forEach(e=>{
+                e.setAttribute("state", "off")
+            })
             return 0
             // si sos medio loser y perdiste
         }
@@ -109,18 +108,30 @@ async function comprobarPatron(){
 
 startButton.addEventListener("click", empezar)
 async function empezar(){
+    document.querySelectorAll(".boton").forEach(e=>{
+        e.setAttribute("state", "on")
+    })
+
+    
     patron = []
-    score = -1 // what
+    for(let i=0;i<3;i++){
+        randomPatron=Math.ceil(Math.random()*4)
+        if(randomPatron==0){
+            randomPatron=1
+        }
+        patron.push(randomPatron);
+    }
+    score = -1 // arranca y le suma uno pero yo quiero que este en cero
     perdisteMsg.style.display="none"
     // no mostrarlo siempre
     agregarColorPatron()
     await multiColor()
-    bandera = 0
+
     comprobarPatron()
 }
 
 async function pasarNivel(){
-    bandera = 1
+
     agregarColorPatron()
     await multiColor()
     comprobarPatron()

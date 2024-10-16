@@ -8,7 +8,7 @@ let aciertos = 0;
 let tiemporegresivoId = null;
 
 
-let emociones = ['alegria', 'tristeza', 'enojo', 'desagrado', 'confusion', 'miedo', 'sorpresa', 'vergüenza'];
+let emociones = ['alegria', 'tristeza', 'enojo', 'desagrado', 'confusion', 'miedo'];
 let elementos = emociones.concat(emociones.map(e => `${e}.png`)); 
 
 elementos = elementos.sort(() => Math.random() - 0.5);

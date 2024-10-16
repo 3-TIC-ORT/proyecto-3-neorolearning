@@ -59,7 +59,7 @@ main{
     background-color:#c00;
     border-radius: 0 0 100% 0;
 }
-.boton:active{
+.boton[state="on"]:active{
     filter: brightness(150%) !important;
     transform: scale(.95);
     box-shadow: none;
