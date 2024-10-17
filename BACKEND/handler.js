@@ -91,15 +91,15 @@ function obtenerPalabraAleatoria(nivel) {
         const palabrasDelNivel = niveles[nivelClave]|| []; 
         if (palabrasDelNivel.includes(palabraSeleccionada)) {
         console.log(`Palabra enviada: ${palabraSeleccionada}`);
+        onEvent('palabraSeleccionada', enviarpalabra ); 
+
         return { msg: `Palabra ${palabraSeleccionada} enviada correctamente.` };
+        
     } else {
       console.log(`Palabra no encontrada en el nivel ${nivel}`);
       return { msg: `Palabra no encontrada en el nivel ${nivel}.` };
     }
   }
-   
-    sendEvent('palabraSeleccionada', enviarpalabra ); 
-    
     // Función para actualizar el puntaje
     function actualizarPuntaje(nivel) {
         let nivel_clave = `juego_${nivel}`;
@@ -118,7 +118,7 @@ function obtenerPalabraAleatoria(nivel) {
         const { actualizarPuntaje } = data;
         console.log(`Puntaje recibido: ${actualizarPuntaje}`);
  }
- sendEvent(puntajes[nivel_clave], enviarpuntaje);
+ OnEvent(puntajes[nivel_clave], enviarpuntaje);
 
 
 }
@@ -137,7 +137,7 @@ function obtenerPalabraAleatoria(nivel) {
     } else {
         console.log("No hay palabras disponibles para este nivel.");
     }
-}
+    
 // Función para jugar el juego 2
 function jugarjuego2(nivel) {
     console.log(`Iniciando juego 2 en el nivel ${nivel}`);
