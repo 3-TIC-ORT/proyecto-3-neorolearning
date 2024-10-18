@@ -3,110 +3,58 @@
       {"palabra": "Perro", "imagen": ""},
       {"palabra": "Pato", "imagen": ""},
       {"palabra": "Conejo", "imagen": ""},
-      {"palabra": "GATO", "imagen": ""},
 
       {"palabra": "Elefante", "imagen": ""},
       {"palabra": "JIRAFA", "imagen": ""},
       {"palabra": "Ratón", "imagen": ""},
-      {"palabra": "Tortuga", "imagen": ""},
 
-      {"palabra": "PERRO", "imagen": ""},
+      {"palabra": "Zebra", "imagen": ""},
       {"palabra": "León", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""},
-      {"palabra": "Oso", "imagen": ""},
-
-      {"palabra": "LEÓN", "imagen": ""},
-      {"palabra": "Oso", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""},
-      {"palabra": "Conejo", "imagen": ""},
-
-      {"palabra": "Oso", "imagen": ""},
-      {"palabra": "ELEFANTE", "imagen": ""},
-      {"palabra": "Jirafa", "imagen": ""},
-      {"palabra": "Perro", "imagen": ""},
-
-      {"palabra": "Conejo", "imagen": ""},
-      {"palabra": "Jirafa", "imagen": ""},
       {"palabra": "Gato", "imagen": ""},
-      {"palabra": "OSO", "imagen": ""},
 
-      {"palabra": "Pato", "imagen": ""},
-      {"palabra": "CONEJO", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""},
       {"palabra": "Tortuga", "imagen": ""},
+      {"palabra": "Oso", "imagen": ""},
+      {"palabra": "Koala", "imagen": ""},
 
-      {"palabra": "TORTUGA", "imagen": ""},
-      {"palabra": "León", "imagen": ""},
-      {"palabra": "Jirafa", "imagen": ""},
-      {"palabra": "Pato", "imagen": ""},
 
-      {"palabra": "PATO", "imagen": ""},
-      {"palabra": "Gato", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""},
-      {"palabra": "Conejo", "imagen": ""},
-
-      {"palabra": "RATÓN", "imagen": ""},
-      {"palabra": "Tortuga", "imagen": ""},
-      {"palabra": "León", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""}
-
+      
      
     ],
     "nivel_2": [
-      {"palabra": "Perro", "imagen": ""},
-      {"palabra": "Pato", "imagen": ""},
-      {"palabra": "Conejo", "imagen": ""},
-      {"palabra": "GATO", "imagen": ""},
+      {"palabra": "Mesa", "imagen": ""},
+      {"palabra": "Puerta", "imagen": ""},
+      {"palabra": "Silla", "imagen": ""},
+    
 
-      {"palabra": "Elefante", "imagen": ""},
-      {"palabra": "JIRAFA", "imagen": ""},
-      {"palabra": "Ratón", "imagen": ""},
-      {"palabra": "Tortuga", "imagen": ""},
+      {"palabra": "Libro", "imagen": ""},
+      {"palabra": "Biblioteca", "imagen": ""},
+      {"palabra": "Lapiz", "imagen": ""},
+  
 
-      {"palabra": "PERRO", "imagen": ""},
-      {"palabra": "León", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""},
-      {"palabra": "Oso", "imagen": ""},
+      {"palabra": "Carpeta", "imagen": ""},
+      {"palabra": "Cuaderno", "imagen": ""},
+      {"palabra": "Diario", "imagen": ""},
 
-      {"palabra": "LEÓN", "imagen": ""},
-      {"palabra": "Oso", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""},
-      {"palabra": "Conejo", "imagen": ""},
+      {"palabra": "Televisión", "imagen": ""},
+      {"palabra": "Celular", "imagen": ""},
+      {"palabra": "Computadora", "imagen": ""},
+     
+     
 
-      {"palabra": "Oso", "imagen": ""},
-      {"palabra": "ELEFANTE", "imagen": ""},
-      {"palabra": "Jirafa", "imagen": ""},
-      {"palabra": "Perro", "imagen": ""},
-
-      {"palabra": "Conejo", "imagen": ""},
-      {"palabra": "Jirafa", "imagen": ""},
-      {"palabra": "Gato", "imagen": ""},
-      {"palabra": "OSO", "imagen": ""},
-
-      {"palabra": "Pato", "imagen": ""},
-      {"palabra": "CONEJO", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""},
-      {"palabra": "Tortuga", "imagen": ""},
-
-      {"palabra": "TORTUGA", "imagen": ""},
-      {"palabra": "León", "imagen": ""},
-      {"palabra": "Jirafa", "imagen": ""},
-      {"palabra": "Pato", "imagen": ""},
-
-      {"palabra": "PATO", "imagen": ""},
-      {"palabra": "Gato", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""},
-      {"palabra": "Conejo", "imagen": ""},
-
-      {"palabra": "RATÓN", "imagen": ""},
-      {"palabra": "Tortuga", "imagen": ""},
-      {"palabra": "León", "imagen": ""},
-      {"palabra": "Elefante", "imagen": ""}
+  
     ],
     "nivel_3": [
         {"palabra": "Fideos", "imagen": ""},
         {"palabra": "Carne", "imagen": ""},
         {"palabra": "Hamburguesa", "imagen": ""}
+
+        {"palabra": "Pollo", "imagen": ""},
+        {"palabra": "Pizza", "imagen": ""},
+        {"palabra": "Empanadas", "imagen": ""}
+
+        {"palabra": "Ensalada", "imagen": ""},
+        {"palabra": "Manzana", "imagen": ""},
+        {"palabra": "Banana", "imagen": ""}
     ]
   }
   
