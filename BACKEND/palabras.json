@@ -1,0 +1,66 @@
+{
+    "juego_1": {
+      "nivel_1": [
+        {"palabra": "sol", "imagen": "url_externa_sol"},
+        {"palabra": "mesa", "imagen": "url_externa_mesa"},
+        {"palabra": "mano", "imagen": "url_externa_mano"},
+        {"palabra": "agua", "imagen": "url_externa_agua"},
+        {"palabra": "casa", "imagen": "url_externa_casa"},
+        {"palabra": "nube", "imagen": "url_externa_nube"},
+        {"palabra": "auto", "imagen": "url_externa_auto"},
+        {"palabra": "tren", "imagen": "url_externa_tren"},
+        {"palabra": "luna", "imagen": "url_externa_luna"},
+        {"palabra": "mono", "imagen": "url_externa_mono"}
+      ],
+      "nivel_2": [
+        {"palabra": "perro", "imagen": "url_externa_perro"},
+        {"palabra": "silla", "imagen": "url_externa_silla"},
+        {"palabra": "avión", "imagen": "url_externa_avion"},
+        {"palabra": "árbol", "imagen": "url_externa_arbol"},
+        {"palabra": "gorro", "imagen": "url_externa_gorro"},
+        {"palabra": "fuego", "imagen": "url_externa_fuego"},
+        {"palabra": "piano", "imagen": "url_externa_piano"},
+        {"palabra": "carpa", "imagen": "url_externa_carpa"},
+        {"palabra": "lápiz", "imagen": "url_externa_lapiz"},
+        {"palabra": "globo", "imagen": "url_externa_globo"}
+      ]
+    },
+    "juego_2": {
+      "nivel_1": [
+        {"palabra": "Azul", "imagen": "url_externa_azul"},
+        {"palabra": "Amarillo", "imagen": "url_externa_amarillo"},
+        {"palabra": "Naranja", "imagen": "url_externa_naranja"},
+        {"palabra": "Rojo", "imagen": "url_externa_rojo"},
+        {"palabra": "Violeta", "imagen": "url_externa_violeta"},
+        {"palabra": "Verde", "imagen": "url_externa_verde"}
+      ],
+      "nivel_2": [
+        {"palabra": "Feliz", "imagen": "url_externa_feliz"},
+        {"palabra": "Triste", "imagen": "url_externa_triste"},
+        {"palabra": "Miedo", "imagen": "url_externa_miedo"},
+        {"palabra": "Enojo", "imagen": "url_externa_enojo"},
+        {"palabra": "Desagrado", "imagen": "url_externa_desagrado"},
+        {"palabra": "Confusión", "imagen": "url_externa_confusion"}
+      ]
+    },
+    "juego_3": {
+      "nivel_1": {
+        "grupo_1": [
+          {"palabra": "Perro", "imagen": "url_externa_perro"},
+          {"palabra": "Pato", "imagen": "url_externa_pato"},
+          {"palabra": "Conejo", "imagen": "url_externa_conejo"}
+        ],
+        "grupo_2": [
+          {"palabra": "Elefante", "imagen": "url_externa_elefante"},
+          {"palabra": "Jirafa", "imagen": "url_externa_jirafa"},
+          {"palabra": "Ratón", "imagen": "url_externa_raton"}
+        ],
+        "grupo_3": [
+          {"palabra": "Zebra", "imagen": "url_externa_zebra"},
+          {"palabra": "León", "imagen": "url_externa_leon"},
+          {"palabra": "Gato", "imagen": "url_externa_gato"}
+        ]
+      }
+    }
+  }
+  
