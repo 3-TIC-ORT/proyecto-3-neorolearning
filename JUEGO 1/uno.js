@@ -6,6 +6,7 @@ let word;
 let wordArray = [];
 let listaCajitas = [];
 let shuffleWord = [];
+
 const getWord = async () => {
     await postData("nivel", "", (data)=>{word = data.palabra
         imagen = data.imagen

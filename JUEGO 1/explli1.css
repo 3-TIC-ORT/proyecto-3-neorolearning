@@ -3,32 +3,10 @@
     padding: 0;
 }
 
-header{
-        width: 100vw;
-        height: 15vh;
-}
-
 main{
     width: 100vw;
     height: 70vh;
 
-}
-
-footer{
-    width: 100vw;
-    height: 15vh;
-}
-
-header a{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-footer a{
-    height: 100%;
-    display: flex;
-    align-items: center;
 }
 
 
@@ -43,7 +21,6 @@ footer a{
 }
 
 .video{
-width: 100vw;
 display: flex;
 justify-content: center;
 margin-top: 3%;

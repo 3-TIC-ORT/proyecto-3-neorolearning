@@ -3,16 +3,7 @@
     padding: 0;
 }
 
-header{
-    width: 100vw;
-    height: 15vh;
-}
 
-header a{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
 
 main{
     width: 100vw;
@@ -25,10 +16,19 @@ main{
 section{
 
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('Opciones\ de\ juego.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .grid-container{
@@ -57,19 +57,8 @@ section{
     padding: 0px;
     cursor: pointer;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 10%;
 }
-
-.titulo {
-
-    text-align: center;
-    font-size: 30px;    
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    margin-top: -3%;
-}
-
 
 .link{
     text-decoration: none;
