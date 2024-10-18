@@ -1,3 +1,7 @@
+body{
+    background-color: #2AD7D7;
+}
+
 .cajitas{
     display: flex;
     justify-content: center;

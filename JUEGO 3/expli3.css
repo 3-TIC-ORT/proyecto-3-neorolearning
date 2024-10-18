@@ -31,7 +31,9 @@ footer a{
     align-items: center;
 }
 
-
+body{
+    background-color: #16D161;
+}
 .titulo {
 
     text-align: center;

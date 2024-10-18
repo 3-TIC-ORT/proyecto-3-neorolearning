@@ -1,22 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 
-header{
-        width: 100vw;
-        height: 15vh;
-}
 
 main{
     width: 100vw;
     height: 70vh;
 
-}
-
-footer{
-    width: 100vw;
-    height: 15vh;
 }
 
 header a{
@@ -31,6 +18,9 @@ footer a{
     align-items: center;
 }
 
+body{
+    background-color: #4A33A7;
+}
 
 .titulo {
 
