@@ -35,6 +35,7 @@ function iniciarJuego() {
 }
 
 function colocarPieza() {
+    console.dir(this);
     if (juegoTerminado) {
         return; // Si el juego ha terminado, no hacer nada.
     }
@@ -124,9 +125,9 @@ function verificarGanador() {
 function declararGanador(r, c) {
     let ganador = document.getElementById("winner");
     if (tablero[r][c] == jugadorRojo) {
-        ganador.innerText = "¡Gana el Rojo!";             
+        ganador.innerText = "¡Gana el Amarillo!";             
     } else {
-        ganador.innerText = "¡Gana el Amarillo!";
+        ganador.innerText = "¡Gana el Verde!";
     }
     juegoTerminado = true; // Establecer el juego como terminado
 }

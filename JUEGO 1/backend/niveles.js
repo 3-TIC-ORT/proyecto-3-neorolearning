@@ -1,5 +1,6 @@
 import readlineSync from "readline-sync";
 import fs from "fs";
+import { startServer, onEvent } from 'soquetic'
 
 // Leer los datos de los archivos JSON
 let palabras = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
@@ -93,3 +94,5 @@ if (palabraSeleccionada) {
 } else {
     console.log("No hay palabras disponibles para este nivel.");
 }
+
+
