@@ -7,20 +7,21 @@ let palabrasUsadas = JSON.parse(fs.readFileSync('palabrasusadas.json', 'utf8') |
 let puntajes = JSON.parse(fs.readFileSync('puntaje.json', 'utf8') || '{}');
 
 // Función para manejar el evento de recibir el juego
-onEvent("juego", (data) => {
-    const { juego } = data;
-    console.log(`Juego recibido: ${juego}`);
-    return { msg: `Juego ${juego} procesado correctamente.` };
+onEvent("juego_nivel", (data) => {
+    console.log(`Juego recibido: ${data.juego} ${data.nivel} `);
+    return { msg: `Juego ${data.juego} Nivel ${data.nivel} procesado correctamente.` };
+
 });
 
+
 // Función para manejar el evento de recibir el nivel
-onEvent("nivel", (data) => {
-    const { juego, nivel } = data;
+/* onEvent("nivel", (data) => {
     console.log(`Nivel recibido: ${nivel} para el juego ${juego}`);
     const resultado = jugarJuego(juego, nivel);
     return resultado; // Devuelve el resultado al frontend
-});
+}); */
 
+/*
 // Función para determinar cuál juego ejecutar
 function jugarJuego(juego, nivel) {
     if (juego === 1) {
@@ -101,6 +102,6 @@ function actualizarPuntaje(juego, nivel) {
     fs.writeFileSync('puntaje.json', JSON.stringify(puntajes, null, 2), 'utf8');
     console.log(`Puntaje actualizado: ${puntajes[claveNivel].puntaje} puntos`);
 }
-
+*/
 startServer();
 
