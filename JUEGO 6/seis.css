@@ -34,9 +34,9 @@ body{
 }
 
 .pieza-roja {
-    background-color: red;
+    background-color: yellow;
 }
 
 .pieza-amarilla {
-    background-color: yellow;
+    background-color: green;
 }

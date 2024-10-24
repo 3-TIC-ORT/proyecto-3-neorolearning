@@ -8,7 +8,8 @@ let listaCajitas = [];
 let shuffleWord = [];
 
 const getWord = async () => {
-    await postData("nivel", "", (data)=>{word = data.palabra
+    await postData("nivel", "", (data) => {
+        word = data.palabra
         imagen = data.imagen
     }) 
     
@@ -20,6 +21,10 @@ const getWord = async () => {
     shuffleWord = shuffleWord.sort((a, b) => 0.5 - Math.random())
 
 };
+
+fetchData('traerObjetos', (data) => {
+    console.log(data)
+})
 
 const crearCajitas = async () => {
     await getWord();
@@ -33,6 +38,8 @@ const crearCajitas = async () => {
     });
     console.log(listaCajitas);
 }
+
+
 
 
 const crearLetras = () => {
