@@ -7,16 +7,6 @@ const juego = document.getElementById("juego");
 const nivel = document.getElementById("nivel");
 
 
-/* form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (input.value) {
-    postData("message", { msg: input.value }, (data) => {
-      a.innerHTML = data.msg;
-    });
-    input.value = "";
-  }
-}); */
-
 form.addEventListener("submit", onFormSubmit);
 function onFormSubmit(event) {
 	event.preventDefault();
@@ -41,11 +31,24 @@ function onFormSubmit(event) {
     nivel = "";
   }
 }
+
+form2.addEventListener("submit", onFormSubmit);
+function onFormSubmit(event) {
+	event.preventDefault();
+	const data = new FormData(event.target);
+	const juego = data.get("juego");
+	console.log(`Juego: ${juego}`);
+  postData("Comenzar", juego);
+
+}
+
+receive("accion",botonApretado)
 /*
 fetchData("juego", (data) => {
   date.innerText = data;
 });
 */
+
 receive("second", () => {
   seconds.innerText = parseInt(seconds.innerText) + 1;
 });

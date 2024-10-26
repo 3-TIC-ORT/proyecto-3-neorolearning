@@ -18,7 +18,48 @@ onEvent("juego_nivel", (data) => {
     //return { msg: `Juego ${data.juego} Nivel ${data.nivel} ouput: ${JSON.stringify(salida)}  ` };
     return {salida };
 });
-//
+
+// El front me debe mandar el número de juego a comenzar. Debe ser un número
+// le paso el tipo de juego al hard
+onEvent("Comenzar", juego) => {
+    juego = parseInt(juego)
+    console.log(`Juego recibido: ${juego} `);
+    
+    if (juego >=1 && juego <4) {
+        let salida = ("Juegos");
+        port.write(salida);
+      }
+
+    if (juego ===4) {
+        let salida = ("Simon");
+        port.write(salida);
+      }
+
+    if (juego >=5 && juego <7) {
+        let salida = ("Pares");
+        port.write(salida);
+    }    
+};
+
+// Color a prender para el Simon. El front debe mandar  R, G, B, Y
+onEvent("ColorLed", color) => {
+    // evento recibido 
+    console.log(`color a prender: ${color} `);
+    port.write(color);  
+};
+
+// Para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
+onEvent("jugadorJugando", jugador) => {
+    // evento recibido 
+    console.log(`jugador jugando: ${jugador} `);
+    port.write(jugador);  
+};
+onEvent("terminoJuego", juego) => {
+    if palabrasData
+    // evento recibido 
+    console.log(`jugador jugando: ${jugador} `);
+    port.write(jugador);  
+};
 
 // Función para determinar cuál juego ejecutar
 function jugarJuego(juego, nivel) {
@@ -46,6 +87,15 @@ function jugarJuego(juego, nivel) {
         return { error: "Juego no válido." };
     }
 }
+
+// Lo único que me manda el hard es que botón presionó. Se lo mando al front
+port.on("data", data) {
+    let accion = data.toString().trim();
+    //let ledOn = status === "on";
+    sendEvent("accion", accion);
+  };
+
+/*
 // Función para obtener una palabra aleatoria no utilizada
 function obtenerPalabraAleatoria(juego, nivel) {
     let palabrasDisponibles = palabrasData[juego][nivel].filter(p => !palabrasUsadas[juego]?.[nivel]?.includes(p.palabra));
@@ -70,7 +120,8 @@ function obtenerPalabraAleatoria(juego, nivel) {
     
     return palabraSeleccionada;
 }
-
+*/
+/*
 // Función para el Juego 1 (palabras desordenadas)
 function jugarJuego1(nivel) {
     console.log(`Iniciando juego 1 en el nivel ${nivel}`);
@@ -121,3 +172,4 @@ function actualizarPuntaje(juego, nivel) {
 
 startServer();
 
+*/
