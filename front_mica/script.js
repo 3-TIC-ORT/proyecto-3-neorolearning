@@ -27,8 +27,15 @@ function onFormSubmit(event) {
 
   // FALTA INVOCAR con postData y message
   if (juego && nivel) {
+    // postData tiene 3 parámetros: el primero es el evento que se activa y va a trabajar el backend}
+    // el segundo parámetro son los datos que le envía al backend para que responda al evento
+    // el tercero es donde recibe la salida del return del backend, es decir lo que responde el backend
+    // esa salida queda en el frontend en la variable data
+    // luego de la respuesta del backend sigue ejecutando instrucciones propias del frontend
+    // utilizando la nueva información disponible en la variable data
     postData("juego_nivel", { juego: juego , nivel:nivel}, (data) => {
-      a.innerHTML = data.msg;
+      //a.innerHTML = data.msg;
+      a.innerHTML = JSON.stringify(data);
     });
     juego = "";
     nivel = "";
