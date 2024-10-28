@@ -12,7 +12,7 @@ onEvent("juego_nivel", (data) => {
     console.log(`Juego recibido: ${data.juego} ${data.nivel} `);
     
     // llamo a la función jugar_juego
-    let salida = jugarJuego(data.juego, data.nivel);
+    let salida = jugarJuego(data);
     
     // Confirmar que procese bien
     //return { msg: `Juego ${data.juego} Nivel ${data.nivel} ouput: ${JSON.stringify(salida)}  ` };
@@ -21,17 +21,14 @@ onEvent("juego_nivel", (data) => {
 //
 
 // Función para determinar cuál juego ejecutar
-function jugarJuego(juego, nivel) {
+function jugarJuego(data) {
     let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
-    juego= parseInt(juego)
-    let numeroNivel = parseInt(nivel)
-    let texto ="nivel_";
-    nivel = texto.concat(numeroNivel);
-    console.log(nivel); 
+   let juego = parseInt(data.juego)
+    let nivel = parseInt(data.nivel)
     //nivel = `nivel_${numeroNivel}`;  // Crea "nivel_n"
 
     if (juego === 1) {
-        return jugarJuego1(nivel); // Retorna la palabra y la imagen
+        return jugarJuego1(`nivel_${nivel}`); // Retorna la palabra y la imagen
     } else if (juego === 2) {
         let nivelJuego2 = palabrasData["juego_2"][nivel];
 
@@ -48,11 +45,14 @@ function jugarJuego(juego, nivel) {
 }
 // Función para obtener una palabra aleatoria no utilizada
 function obtenerPalabraAleatoria(juego, nivel) {
+    let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
+    let palabrasUsadas = JSON.parse(fs.readFileSync('palabrasusadas.json', 'utf8'));
+
     let palabrasDisponibles = palabrasData[juego][nivel].filter(p => !palabrasUsadas[juego]?.[nivel]?.includes(p.palabra));
 
     if (palabrasDisponibles.length === 0) {
         palabrasUsadas[juego] = {};
-        return obtenerPalabraAleatoria(juego, nivel); // Intentar nuevamente
+        return "" // Intentar nuevamente
     }
 
     let randomIndex = Math.floor(Math.random() * palabrasDisponibles.length);
@@ -75,7 +75,7 @@ function obtenerPalabraAleatoria(juego, nivel) {
 function jugarJuego1(nivel) {
     console.log(`Iniciando juego 1 en el nivel ${nivel}`);
     
-    let palabraSeleccionada = obtenerPalabraAleatoria(`juego_1`, `nivel_${nivel}`);
+    let palabraSeleccionada = obtenerPalabraAleatoria(`juego_1`, nivel);
     
     if (palabraSeleccionada) {
         console.log(`Palabra: ${palabraSeleccionada.palabra}, Imagen: ${palabraSeleccionada.imagen}`);

@@ -34,15 +34,13 @@ body{
     justify-content: space-between;
     gap: 20px;
 }
-
 .caja {
-
     width: 380px;
     height: 230px;
     color: #000;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 20px;
-    border: 16px #000;
+    border: 10px solid rgba(000, 000, 000, 0.8); 
     text-align: center;
     align-items: center;
     font-size: 40px;
@@ -50,14 +48,22 @@ body{
     font-weight: 500;
     font-style: normal;
     display: flex;
-    border: none;
     padding: 0px;
     cursor: pointer;
     justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .link{
     width: auto;
     height: auto;
     text-decoration: none;
+}
+
+
+.caja:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 100px 80px rgba(0, 0, 0, 0.3); 
+    z-index: 10;
+    background-color: aqua ;
 }

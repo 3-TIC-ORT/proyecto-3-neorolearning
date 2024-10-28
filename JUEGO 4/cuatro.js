@@ -14,9 +14,12 @@ const perdisteMsg = document.getElementById("perdisteMsg")
 let randomPatron;
 
 function agregarColorPatron(){
-    nRandom = Math.ceil(Math.random()*4)
+    
     // rendondeo al n entero + cercano (entre 1 y 4)
-    patron.push(nRandom)
+        nRandom = Math.ceil(Math.random()*4)
+        patron.push(nRandom)
+        
+    
     
     score++;
 }
@@ -31,6 +34,7 @@ async function singColor(color){
 }
 
 async function multiColor(){
+    
     for(let i=0;i<patron.length;i++){
         await setTimeout(()=>{
             switch(patron[i]){
@@ -50,6 +54,7 @@ async function multiColor(){
             // recorre el patron y muestra el color que hay que apretar
         }, i*(delay+delay*.6))
     }
+   
 }
 azul.addEventListener("click", ()=>{
         patronIngresado.push(1)
@@ -114,7 +119,7 @@ async function empezar(){
 
     
     patron = []
-    for(let i=0;i<3;i++){
+    for(let i=0;i<=4;i++){
         randomPatron=Math.ceil(Math.random()*4)
         if(randomPatron==0){
             randomPatron=1
