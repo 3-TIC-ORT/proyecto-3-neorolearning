@@ -33,7 +33,7 @@ main{
     filter: brightness(50%);
 }
 .azul{
-    background-color: #00c;
+    background-color: #c00;
     border-radius: 100% 0 0 0;
 }
 .verde{
@@ -45,7 +45,7 @@ main{
     border-radius: 0 0 0 100%;
 }
 .rojo{
-    background-color:#c00;
+    background-color: #00c ;
     border-radius: 0 0 100% 0;
 }
 .boton[state="on"]:active{

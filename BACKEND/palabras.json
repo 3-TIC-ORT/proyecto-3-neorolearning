@@ -1,40 +1,40 @@
 {
   "juego_1": {
     "nivel_1": [
-      {"palabra": "sol", "imagen": "url_externa_sol"},
-      {"palabra": "mesa", "imagen": "url_externa_mesa"},
-      {"palabra": "mano", "imagen": "url_externa_mano"},
-      {"palabra": "agua", "imagen": "url_externa_agua"},
-      {"palabra": "casa", "imagen": "url_externa_casa"},
-      {"palabra": "nube", "imagen": "url_externa_nube"},
-      {"palabra": "auto", "imagen": "url_externa_auto"},
-      {"palabra": "tren", "imagen": "url_externa_tren"},
-      {"palabra": "luna", "imagen": "url_externa_luna"},
-      {"palabra": "mono", "imagen": "url_externa_mono"}
+      {"palabra": "sol", "imagen": "url_externa_sol", "usada":"no"},
+      {"palabra": "mesa", "imagen": "url_externa_mesa", "usada":"no"},
+      {"palabra": "mano", "imagen": "url_externa_mano", "usada":"no"},
+      {"palabra": "agua", "imagen": "url_externa_agua", "usada":"no"},
+      {"palabra": "casa", "imagen": "url_externa_casa", "usada":"no"},
+      {"palabra": "nube", "imagen": "url_externa_nube", "usada":"no"},
+      {"palabra": "auto", "imagen": "url_externa_auto", "usada":"no"},
+      {"palabra": "tren", "imagen": "url_externa_tren", "usada":"no"},
+      {"palabra": "luna", "imagen": "url_externa_luna", "usada":"no"},
+      {"palabra": "mono", "imagen": "url_externa_mono","usada":"no"}
     ],
     "nivel_2": [
-      {"palabra": "perro", "imagen": "url_externa_perro"},
-      {"palabra": "silla", "imagen": "url_externa_silla"},
-      {"palabra": "avión", "imagen": "url_externa_avion"},
-      {"palabra": "árbol", "imagen": "url_externa_arbol"},
-      {"palabra": "gorro", "imagen": "url_externa_gorro"},
-      {"palabra": "fuego", "imagen": "url_externa_fuego"},
-      {"palabra": "piano", "imagen": "url_externa_piano"},
-      {"palabra": "carpa", "imagen": "url_externa_carpa"},
-      {"palabra": "lápiz", "imagen": "url_externa_lapiz"},
-      {"palabra": "globo", "imagen": "url_externa_globo"}
+      {"palabra": "perro", "imagen": "url_externa_perro", "usada":"no"},
+      {"palabra": "silla", "imagen": "url_externa_silla", "usada":"no"},
+      {"palabra": "avión", "imagen": "url_externa_avion", "usada":"no"},
+      {"palabra": "árbol", "imagen": "url_externa_arbol", "usada":"no"},
+      {"palabra": "gorro", "imagen": "url_externa_gorro", "usada":"no"},
+      {"palabra": "fuego", "imagen": "url_externa_fuego", "usada":"no"},
+      {"palabra": "piano", "imagen": "url_externa_piano", "usada":"no"},
+      {"palabra": "carpa", "imagen": "url_externa_carpa", "usada":"no"},
+      {"palabra": "lápiz", "imagen": "url_externa_lapiz", "usada":"no"},
+      {"palabra": "globo", "imagen": "url_externa_globo", "usada":"no"}
     ],
     "nivel_3": [
-      {"palabra": "tigre", "imagen": "url_externa_tigre"},
-      {"palabra": "foca", "imagen": "url_externa_foca"},
-      {"palabra": "caballo", "imagen": "url_externa_caballo"},
-      {"palabra": "ballena", "imagen": "url_externa_ballena"},
-      {"palabra": "águila", "imagen": "url_externa_aguila"},
-      {"palabra": "murciélago", "imagen": "url_externa_murcielago"},
-      {"palabra": "ratón", "imagen": "url_externa_raton"},
-      {"palabra": "loro", "imagen": "url_externa_loro"},
-      {"palabra": "sapo", "imagen": "url_externa_sapo"},
-      {"palabra": "cebra", "imagen": "url_externa_cebra"}
+      {"palabra": "tigre", "imagen": "url_externa_tigre", "usada":"no"},
+      {"palabra": "foca", "imagen": "url_externa_foca", "usada":"no"},
+      {"palabra": "caballo", "imagen": "url_externa_caballo", "usada":"no"},
+      {"palabra": "ballena", "imagen": "url_externa_ballena", "usada":"no"},
+      {"palabra": "águila", "imagen": "url_externa_aguila", "usada":"no"},
+      {"palabra": "murciélago", "imagen": "url_externa_murcielago", "usada":"no"},
+      {"palabra": "ratón", "imagen": "url_externa_raton", "usada":"no"},
+      {"palabra": "loro", "imagen": "url_externa_loro", "usada":"no"},
+      {"palabra": "sapo", "imagen": "url_externa_sapo", "usada":"no"},
+      {"palabra": "cebra", "imagen": "url_externa_cebra", "usada":"no"}
     ]
   },
   "juego_2": {
