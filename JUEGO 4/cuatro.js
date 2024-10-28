@@ -54,20 +54,17 @@ async function multiColor(){
             // recorre el patron y muestra el color que hay que apretar
         }, i*(delay+delay*.6))
     }
-   
+
 }
 azul.addEventListener("click", ()=>{
-        patronIngresado.push(1)
-        // vamos a ponerle el n1 a la lista del patron ingresado
-    
+    patronIngresado.push(1)
+    // vamos a ponerle el n1 a la lista del patron ingresado
 })
 verde.addEventListener("click", ()=>{
-
     patronIngresado.push(2)
         // vamos a ponerle el n2 a la lista del patron ingresado
 })
 amarillo.addEventListener("click", ()=>{
-
     patronIngresado.push(3)
         // vamos a ponerle el n3 a la lista del patron ingresado
 })
@@ -96,6 +93,7 @@ async function comprobarPatron(){
         await comprobarArrays(patronIngresado, j)
         // comprobar si cada elemento coincide
         if(patron[j]!=patronIngresado[j]){
+            window.location.reload();
             startButton.style.display="flex"
             perdisteMsg.style.display="block"
             document.querySelectorAll(".boton").forEach(e=>{
@@ -136,7 +134,6 @@ async function empezar(){
 }
 
 async function pasarNivel(){
-
     agregarColorPatron()
     await multiColor()
     comprobarPatron()
