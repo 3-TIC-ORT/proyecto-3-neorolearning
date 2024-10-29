@@ -1,0 +1,64 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+header{
+    width: 100vw;
+    height: 15vh;
+}
+
+header a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+footer{
+    width: 100vw;
+    height: 15vh;
+
+}
+
+footer a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.flechar{
+
+    width: 7vw;
+    height: 12vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+.volver{
+    width: 0;
+}
+.flechab {
+
+    width: 7vw;
+    height: 12vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: scale(-1);
+
+}
+
+.todo{
+
+height: 100vh;
+width: 100vw;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+
+
+
