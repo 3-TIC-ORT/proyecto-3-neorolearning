@@ -1,34 +1,37 @@
 let cajitas = document.getElementById('divCajitas');
 let letras = document.getElementById('divLetras');
 let correcto = document.getElementById("correcto")
+let indednmkmasmkdsa = document.createElement("p")
 let img = document.getElementById("img")
-let word;
+let word = "";
 let wordArray = [];
 let listaCajitas = [];
 let shuffleWord = [];
 
-const getWord = async () => {
-    await postData("nivel", "", (data) => {
-        word = data.palabra
-        imagen = data.imagen
-    }) 
-    
+const getWord = () => {
+   postData("juego_nivel", { juego: 1 , nivel: 1}, (data) => {
+        //a.innerHTML = data.msg;
+      //  img.src = data.imagen
+      word =  data["salida"]["palabra"]
+        
+    });
+   
+
+};
+
+
+
+const crearCajitas = async() => {
+    getWord();
+    console.log(word)
     for (let index = 0; index < word.length; index++) {
         wordArray.push(word[index]);  
         shuffleWord.push(word[index]);    
     }
     
     shuffleWord = shuffleWord.sort((a, b) => 0.5 - Math.random())
-
-};
-
-fetchData('traerObjetos', (data) => {
-    console.log(data)
-})
-
-const crearCajitas = async () => {
-    await getWord();
     crearLetras();
+    console.log(word)
     wordArray.forEach((letter,i) => {
         listaCajitas.push({index:i,letter:letter});
         let div = document.createElement('h2');

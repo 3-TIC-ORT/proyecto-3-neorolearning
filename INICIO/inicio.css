@@ -29,3 +29,12 @@ body{
     height: auto;
 
 }
+
+.comenzar img {
+    transition: transform 0.3s ease; 
+}
+
+.comenzar:hover img {
+    transform: scale(1.1); 
+    cursor: pointer; 
+}

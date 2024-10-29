@@ -6,13 +6,39 @@ let segundoresultado = null;
 let movimientos = 0;
 let aciertos = 0;
 let tiemporegresivoId = null;
+let messi = 1
+let elementos;
 
-
-let emociones = ['alegria', 'tristeza', 'enojo', 'desagrado', 'confusion', 'miedo'];
-let elementos = emociones.concat(emociones.map(e => `${e}.png`)); 
-
+let emociones = {
+    nivel_1: [
+       "azul", 
+       "amarillo", 
+       "naranja", 
+       "rojo", 
+       "violeta", 
+       "verde",     ],
+    nivel_2: [
+       "feliz", 
+       "triste", 
+       "miedo", 
+       "enojo", 
+       "desagrado", 
+       "confusión",     ],
+    nivel_3: [
+         "manzana", 
+         "frutilla", 
+         "banana", 
+         "sandía", 
+         "uva", 
+         "pera",     ]
+}
+function armarCartas() {
+   elementos = emociones[`nivel_${messi}`].concat(emociones[`nivel_${messi}`].map(e => `${e}.png`)); 
 elementos = elementos.sort(() => Math.random() - 0.5);
 console.log(elementos);
+}
+armarCartas()
+
 
 
 function destapar(id) {
@@ -50,7 +76,15 @@ function destapar(id) {
 
             aciertos++;
 
-            if (aciertos == 6) {
+            if (aciertos === 6) {
+                messi ++
+                for (let index = 0; index < 12; index++) {
+                    let element = document.getElementById(index)
+                    element.disabled = false
+                    element.innerHTML = ""
+                    tarjetasdestapadas = 0                    
+                }
+                armarCartas()
                 clearInterval(tiemporegresivoId);
 
             }

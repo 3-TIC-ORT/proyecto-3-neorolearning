@@ -1,1 +1,15 @@
-{}
+{
+  "juego_1": {
+    "nivel_1": [
+      "agua",
+      "sol",
+      "auto",
+      "mano",
+      "casa",
+      "tren",
+      "nube",
+      "mono",
+      "luna"
+    ]
+  }
+}

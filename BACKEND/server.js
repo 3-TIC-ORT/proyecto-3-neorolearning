@@ -11,7 +11,7 @@ onEvent("juego_nivel", (data) => {
     console.log(`Juego recibido: ${data.juego} ${data.nivel} `);
     
     // llamo a la función jugar_juego
-    let salida = jugarJuego(data.juego, data.nivel);
+    let salida = jugarJuego(data);
     
     // Confirmar que procese bien
     //return { msg: `Juego ${data.juego} Nivel ${data.nivel} ouput: ${JSON.stringify(salida)}  ` };
@@ -67,17 +67,14 @@ onEvent("terminoJuego", (juego) => {
 });*/
 
 // Función para determinar cuál juego ejecutar
-function jugarJuego(juego, nivel) {
+function jugarJuego(data) {
     let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
-    juego= parseInt(juego)
-    let numeroNivel = parseInt(nivel)
-    let texto ="nivel_";
-    nivel = texto.concat(numeroNivel);
-    console.log(nivel); 
+   let juego = parseInt(data.juego)
+    let nivel = parseInt(data.nivel)
     //nivel = `nivel_${numeroNivel}`;  // Crea "nivel_n"
 
     if (juego === 1) {
-        return jugarJuego1(nivel); // Retorna la palabra y la imagen
+        return jugarJuego1(`nivel_${nivel}`); // Retorna la palabra y la imagen
     } else if (juego === 2) {
         let nivelJuego2 = palabrasData["juego_2"][nivel];
 
@@ -101,8 +98,35 @@ port.on("data", (data) =>{
     sendEvent("accion", accion);
   });
 
+/*
+// Función para obtener una palabra aleatoria no utilizada
+function obtenerPalabraAleatoria(juego, nivel) {
+    let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
+    let palabrasUsadas = JSON.parse(fs.readFileSync('palabrasusadas.json', 'utf8'));
 
+    let palabrasDisponibles = palabrasData[juego][nivel].filter(p => !palabrasUsadas[juego]?.[nivel]?.includes(p.palabra));
 
+    if (palabrasDisponibles.length === 0) {
+        palabrasUsadas[juego] = {};
+        return "" // Intentar nuevamente
+    }
+
+    let randomIndex = Math.floor(Math.random() * palabrasDisponibles.length);
+    let palabraSeleccionada = palabrasDisponibles[randomIndex];
+
+    if (!palabrasUsadas[juego]) {
+        palabrasUsadas[juego] = {};
+    }
+    if (!palabrasUsadas[juego][nivel]) {
+        palabrasUsadas[juego][nivel] = [];
+    }
+    
+    palabrasUsadas[juego][nivel].push(palabraSeleccionada.palabra);
+    fs.writeFileSync('palabrasusadas.json', JSON.stringify(palabrasUsadas, null, 2), 'utf8');
+    
+    return palabraSeleccionada;
+}
+*/
 // Función para el Juego 1 (palabras desordenadas)
 
 
@@ -137,71 +161,36 @@ function jugarJuego1(nivel) {
  //Función para el Juego 2 (memotest)
 
 function jugarJuego2(nivel) {
-    const nivelJuego2 = palabrasData.juego_2[nivel];
+    const nivelJuego2 = palabrasData.juego_2.[nivel];
     console.log(nivelJuego2); 
     console.log(`Iniciando juego 2 en el nivel ${nivel}`);
     return {nivelJuego2};
     
 }
 
-
- //Función para el Juego 3 (pregunta de opciones)
+/*
+ Función para el Juego 3 (pregunta de opciones)
 function jugarJuego3(nivel) {
-   //tirar grupo aleatorio
-   let nivelJuego3 = palabrasData["juego_3"][nivel];
-   let gruposDisponibles=Object.keys(nivelJuego3);
-   //let grupo= palabrasData["juego_3"][nivel][grupo];
-   let largoNivel = nivelJuego1.length;
-   while (gruposDisponibles.length > 0) {
-    let grupoAleatorio = gruposDisponibles[Math.floor(Math.random() * gruposDisponibles.length)];
-    let grupo = nivelJuego3[grupoAleatorio];
-    let palabrasNoUsadas = grupo.filter(elemento => elemento.usada === "no");
+    console.log(`Iniciando juego 3 en el nivel ${nivel}`);
+    // Lógica para el juego 3
+    return { msg: "Juego 3 iniciado", nivel };
+}
 
-    if (palabrasNoUsadas.length > 0) {
-        let palabraSeleccionada = palabrasNoUsadas[Math.floor(Math.random() * palabrasNoUsadas.length)];
-        palabraSeleccionada.usada = "si";
-        fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
-        return { palabra: palabraSeleccionada.palabra, imagen: palabraSeleccionada.imagen }; // Retorna la palabra y la imagen
+
+
+Función para actualizar el puntaje
+function actualizarPuntaje(juego, nivel) {
+    let claveNivel = `${juego}_${nivel}`;
+    if (!puntajes[claveNivel]) {
+        puntajes[claveNivel] = { puntaje: 10 };
     } else {
-        let nuevosGruposDisponibles = [];
-        for (let i = 0; i < gruposDisponibles.length; i++) {
-            if (gruposDisponibles[i] !== grupoAleatorio) {
-            nuevosGruposDisponibles.push(gruposDisponibles[i]);
+        puntajes[claveNivel].puntaje += 5;
     }
+    fs.writeFileSync('puntaje.json', JSON.stringify(puntajes, null, 2), 'utf8');
+    console.log(`Puntaje actualizado: ${puntajes[claveNivel].puntaje} puntos`);
 }
-gruposDisponibles = nuevosGruposDisponibles;
-}
-
-return { msg: `nivel finalizado: Juego_3 ${nivel}` };
-}
-   // Usando filter para contar
-  /* let cantidadUsadaNo = grupo.filter(elemento => elemento.usada === "no").length;
-   if (cantidadUsadaNo > 0){
-       let numeroAleatorio = Math.floor(Math.random() * 3)+1 ;
-       console.log(grupo[numeroAleatorio],grupo[numeroAleatorio]["usada"])
-       let usada= grupo[numeroAleatorio]["usada"]
-       while ( usada=== "no") {
-           numeroAleatorio = Math.floor(Math.random() * largoNivel) ;
-       }
-       let filaAleatoria = grupo[numeroAleatorio];
-       // Modificar el valor de "usada" en el primer elemento (índice 0)
-       filaAleatoria.usada = "si"; 
-       fs.writeFileSync('prueba.json', JSON.stringify(nivelJuego1, null, 2), 'utf8');
-       // Cambia "sí" por el valor que necesites
-       return {filaAleatoria}; // Devuelve la palabra y la imagen
-   }else {
-       console.log("No hay palabras disponibles para este nivel.");
-       console.log(`Nivel  ${nivel} finalizado`)
-       return { msg: `nivel finalizado: Juego_1 ${nivel}` };
-   }
-} 
 
 */
-
-
-
-
-
 //reinicar
 onEvent("reiniciado", (data) => {
     const juego = data.juego; // Obtener juego del data
@@ -217,5 +206,4 @@ onEvent("reiniciado", (data) => {
 
     
 });
-}
 startServer();
