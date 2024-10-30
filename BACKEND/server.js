@@ -161,24 +161,43 @@ function jugarJuego1(nivel) {
  //Función para el Juego 2 (memotest)
 
 function jugarJuego2(nivel) {
-    const nivelJuego2 = palabrasData.juego_2.[nivel];
+    const nivelJuego2 = palabrasData.juego_2[nivel];
     console.log(nivelJuego2); 
     console.log(`Iniciando juego 2 en el nivel ${nivel}`);
     return {nivelJuego2};
     
 }
 
-/*
- Función para el Juego 3 (pregunta de opciones)
+
+ //Función para el Juego 3 (pregunta de opciones)
 function jugarJuego3(nivel) {
-    console.log(`Iniciando juego 3 en el nivel ${nivel}`);
-    // Lógica para el juego 3
-    return { msg: "Juego 3 iniciado", nivel };
+    let nivelJuego3 = palabrasData["juego_3"][nivel];
+    let gruposNoUsados = Object.values(nivelJuego3).filter(grupo => grupo[grupo.length - 1]["usada"] === "no");
+    
+    // Verificar si quedan grupos no usados
+    if (gruposNoUsados.length === 0) {
+        console.log("No hay palabras disponibles para este nivel.");
+        console.log(`Nivel ${nivel} finalizado`);
+        return { msg: `Nivel finalizado: Juego_3 ${nivel}` };
+    }
+
+    // Seleccionar un grupo al azar entre los no usados
+    let grupoAleatorio = gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
+    grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; // Marcar el grupo como usado
+
+    fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+    console.log(grupoAleatorio);
+    
+    return { grupoAleatorio }; 
 }
 
 
+    
 
-Función para actualizar el puntaje
+
+
+
+//Función para actualizar el puntaje
 function actualizarPuntaje(juego, nivel) {
     let claveNivel = `${juego}_${nivel}`;
     if (!puntajes[claveNivel]) {
@@ -190,7 +209,7 @@ function actualizarPuntaje(juego, nivel) {
     console.log(`Puntaje actualizado: ${puntajes[claveNivel].puntaje} puntos`);
 }
 
-*/
+
 //reinicar
 onEvent("reiniciado", (data) => {
     const juego = data.juego; // Obtener juego del data
