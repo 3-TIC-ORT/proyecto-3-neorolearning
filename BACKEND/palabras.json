@@ -66,56 +66,162 @@
   "juego_3": {
     "nivel_1": {
       "grupo_1": [
-        {"palabra": "Perro", "imagen": "url_externa_perro"},
-        {"palabra": "Pato", "imagen": "url_externa_pato"},
-        {"palabra": "Conejo", "imagen": "url_externa_conejo"}
+        {
+          "palabra": "Perro",
+          "imagen": "url_externa_perro"
+        },
+        {
+          "palabra": "Pato",
+          "imagen": "url_externa_pato"
+        },
+        {
+          "palabra": "Conejo",
+          "imagen": "url_externa_conejo"
+        },
+        {
+          "usada": "no"
+        }
       ],
       "grupo_2": [
-        {"palabra": "Elefante", "imagen": "url_externa_elefante"},
-        {"palabra": "Jirafa", "imagen": "url_externa_jirafa"},
-        {"palabra": "Ratón", "imagen": "url_externa_raton"}
+        {
+          "palabra": "Elefante",
+          "imagen": "url_externa_elefante"
+        },
+        {
+          "palabra": "Jirafa",
+          "imagen": "url_externa_jirafa"
+        },
+        {
+          "palabra": "Ratón",
+          "imagen": "url_externa_raton"
+        },
+        {
+          "usada": "no"
+        }
       ],
       "grupo_3": [
-        {"palabra": "Zebra", "imagen": "url_externa_zebra"},
-        {"palabra": "León", "imagen": "url_externa_leon"},
-        {"palabra": "Gato", "imagen": "url_externa_gato"}
+        {
+          "palabra": "Zebra",
+          "imagen": "url_externa_zebra"
+        },
+        {
+          "palabra": "León",
+          "imagen": "url_externa_leon"
+        },
+        {
+          "palabra": "Gato",
+          "imagen": "url_externa_gato"
+        },
+        {
+          "usada": "no"
+        }
       ]
     },
     "nivel_2": {
       "grupo_1": [
-        {"palabra": "Pez", "imagen": "url_externa_pez"},
-        {"palabra": "Pulpo", "imagen": "url_externa_pulpo"},
-        {"palabra": "Delfín", "imagen": "url_externa_delfin"}
+        {
+          "palabra": "Pez",
+          "imagen": "url_externa_pez"
+        },
+        {
+          "palabra": "Pulpo",
+          "imagen": "url_externa_pulpo"
+        },
+        {
+          "palabra": "Delfín",
+          "imagen": "url_externa_delfin"
+        },
+        {
+          "usada": "no"
+        }
       ],
       "grupo_2": [
-        {"palabra": "Tiburón", "imagen": "url_externa_tiburon"},
-        {"palabra": "Estrella", "imagen": "url_externa_estrella"},
-        {"palabra": "Caballito", "imagen": "url_externa_caballito"}
+        {
+          "palabra": "Tiburón",
+          "imagen": "url_externa_tiburon"
+        },
+        {
+          "palabra": "Estrella",
+          "imagen": "url_externa_estrella"
+        },
+        {
+          "palabra": "Caballito",
+          "imagen": "url_externa_caballito"
+        },
+        {
+          "usada": "no"
+        }
       ],
       "grupo_3": [
-        {"palabra": "Medusa", "imagen": "url_externa_medusa"},
-        {"palabra": "Cangrejo", "imagen": "url_externa_cangrejo"},
-        {"palabra": "Langosta", "imagen": "url_externa_langosta"}
+        {
+          "palabra": "Medusa",
+          "imagen": "url_externa_medusa"
+        },
+        {
+          "palabra": "Cangrejo",
+          "imagen": "url_externa_cangrejo"
+        },
+        {
+          "palabra": "Langosta",
+          "imagen": "url_externa_langosta"
+        },
+        {
+          "usada": "no"
+        }
       ]
     },
     "nivel_3": {
       "grupo_1": [
-        {"palabra": "Serpiente", "imagen": "url_externa_serpiente"},
-        {"palabra": "Iguana", "imagen": "url_externa_iguana"},
-        {"palabra": "Cocodrilo", "imagen": "url_externa_cocodrilo"}
+        {
+          "palabra": "Serpiente",
+          "imagen": "url_externa_serpiente"
+        },
+        {
+          "palabra": "Iguana",
+          "imagen": "url_externa_iguana"
+        },
+        {
+          "palabra": "Cocodrilo",
+          "imagen": "url_externa_cocodrilo"
+        },
+        {
+          "usada": "no"
+        }
       ],
       "grupo_2": [
-        {"palabra": "Tortuga", "imagen": "url_externa_tortuga"},
-        {"palabra": "Lagarto", "imagen": "url_externa_lagarto"},
-        {"palabra": "Camaleón", "imagen": "url_externa_camaleon"}
+        {
+          "palabra": "Tortuga",
+          "imagen": "url_externa_tortuga"
+        },
+        {
+          "palabra": "Lagarto",
+          "imagen": "url_externa_lagarto"
+        },
+        {
+          "palabra": "Camaleón",
+          "imagen": "url_externa_camaleon"
+        },
+        {
+          "usada": "no"
+        }
       ],
       "grupo_3": [
-        {"palabra": "Dragón", "imagen": "url_externa_dragon"},
-        {"palabra": "Dinosaurio", "imagen": "url_externa_dinosaurio"},
-        {"palabra": "Buho", "imagen": "url_externa_buho"}
+        {
+          "palabra": "Buho",
+          "imagen": "url_externa_buho"
+        },
+        {
+          "palabra": "Pájaro",
+          "imagen": "url_externa_pajaro"
+        },
+        {
+          "palabra": "Murciélago",
+          "imagen": "url_externa_murcielago"
+        },
+        {
+          "usada": "no"
+        }
       ]
     }
   }
 }
-
-  
