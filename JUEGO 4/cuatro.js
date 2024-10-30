@@ -1,4 +1,5 @@
-let patron,patronIngresado, score = 0, delay = 900
+let patron = []
+let patronIngresado, score = 0, delay = 900
 //todas las variables con el mismo valor
 let record = 0
 let azul = document.getElementById("azul")
