@@ -15,19 +15,27 @@
     </header>
     <main>
         <h2 id="winner"></h2> 
-        <div id="tablero"></div>
-
-        <div class="game-container">
-            <div class="player" id="player1">
-            <div class="token yellow"></div>
-            <p>Jugador 1</p>
+        <div class="tableyuruarios">
+            <div class="player player1" id="player1">
+                <div class="token yellow"></div>
+                <p>Jugador 1</p>
+                <b id="contador1">0</b>
             </div>
-
-            <div class="player" id="player2">
+    
+            <div id="tablero"></div>
+    
+            <div class="player player2 id="player2">
                 <div class="token green"></div>
                 <p>Jugador 2</p>
+                <b id="contador2">0</b>
             </div>
-            </div>
+        </div>
+
+        <div class="juegoTerminado" id="juegoTerminado" style="display: none;">
+            <p>Juego Terminado</p>
+            <button id="comfirmar">Volver a Jugar</button>
+            <button id="cancelar">Volver al Inicio</button>
+        </div>
     </main>
 </body>
 </html>

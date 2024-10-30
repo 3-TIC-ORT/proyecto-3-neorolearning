@@ -54,7 +54,8 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    box-shadow: 0 20px 0 #4866C2 inset;
+    /* box-shadow: 0 20px 0 #4866C2 inset; */
+    border-top: 30px solid #4866C2;
 }
 
 .tile {
@@ -72,4 +73,24 @@ body{
 
 .pieza-amarilla {
     background-color: green;
+}
+
+
+.tableyuruarios {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player1 {
+    margin-left: 7em;
+}
+
+.player2 {
+    margin-right: 7em;
+}
+
+.juegoTerminado {
+    position: absolute;
+    top: 0;
 }

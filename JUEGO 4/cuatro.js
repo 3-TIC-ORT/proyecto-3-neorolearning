@@ -1,4 +1,5 @@
-let patron,patronIngresado, score = 0, delay = 900
+let patron = []
+let patronIngresado, score = 0, delay = 900
 //todas las variables con el mismo valor
 let record = 0
 let azul = document.getElementById("azul")
@@ -14,14 +15,17 @@ const perdisteMsg = document.getElementById("perdisteMsg")
 let randomPatron;
 
 function agregarColorPatron(){
-    
-    // rendondeo al n entero + cercano (entre 1 y 4)
-        nRandom = Math.ceil(Math.random()*4)
-        patron.push(nRandom)
+        let seguir = true; 
+        while (seguir) {
+            nRandom = Math.ceil(Math.random()*4)
+            if (patron.length == 6) {
+                seguir = false;  
+                return 0; 
+            }
+            patron.push(nRandom)
+        }
         
-    
-    
-    score++;
+    //score++;
 }
 async function singColor(color){
     color.style.filter="brightness(150%)"
@@ -134,7 +138,10 @@ async function empezar(){
 }
 
 async function pasarNivel(){
-    agregarColorPatron()
+    if (agregarColorPatron() == 0) {
+        
+        return; 
+    }
     await multiColor()
     comprobarPatron()
 }
