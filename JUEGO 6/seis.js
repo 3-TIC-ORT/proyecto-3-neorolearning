@@ -137,7 +137,7 @@ function declararGanador(r, c) {
         setTimeout(() => {
             document.getElementById("juegoTerminado").style.display= "block";
             document.getElementById("comfirmar").addEventListener("click", async () =>{
-                reiniciarJuego(); a
+                reiniciarJuego(); 
                 document.getElementById("juegoTerminado").style.display= "none";
             });
             document.getElementById("cancelar").addEventListener("click", async () =>{
@@ -162,6 +162,8 @@ function declararGanador(r, c) {
         }
     }
     function reiniciarJuego() {
+        document.getElementById("juegoTerminado").style.display= "none";
+
         // Limpiar el tablero (remover clases de color y fichas ganadoras)
         let tiles = document.getElementsByClassName("tile");
         for (let tile of tiles) {

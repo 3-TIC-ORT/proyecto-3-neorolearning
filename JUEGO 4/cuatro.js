@@ -28,6 +28,7 @@ function agregarColorPatron(){
     //score++;
 }
 async function singColor(color){
+    
     color.style.filter="brightness(150%)"
     // iluminar el colorcito
     await setTimeout(()=>{
@@ -35,7 +36,9 @@ async function singColor(color){
     },delay)
     // par volverlo a poner como antes
 
-}
+} //document.querySelectorAll(".boton").forEach(e=>{
+    //e.setAttribute("state", "on")
+//}) // AYUDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 async function multiColor(){
     
