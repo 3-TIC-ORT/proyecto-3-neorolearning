@@ -60,7 +60,7 @@ function ganar(posicionGanadora){
         cuadrados[posicion].classList.toggle("ganador",true);
         //HACER UNA CLASE EN CSS DE GANADOR QUE SE PONGA EN OTRO COLOR
     })
-    mostrarModal("Ganador: "estadoJuego)
+    mostrarModal("Ganador", estadoJuego)
     
 }
 function mostrarModal(){
@@ -70,7 +70,7 @@ function mostrarModal(){
 modal.querySelector("button").addEventListener("click",()=>{
     cuadrados.forEach(cuadrado=>{
         cuadrado.Textcontent="";
-        cuadrado.classList.toggle(".ganador"false);
+        cuadrado.classList.toggle(".ganador", false);
         modal.close();
         estadoJuego="P1"
     });

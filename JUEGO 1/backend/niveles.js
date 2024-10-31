@@ -1,11 +1,12 @@
 import readlineSync from "readline-sync";
 import fs from "fs";
-import { startServer, onEvent } from 'soquetic'
+import { startServer, sendEvent, onEvent } from 'soquetic'
 
 // Leer los datos de los archivos JSON
 let palabras = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
 let palabrasusadas = JSON.parse(fs.readFileSync("palabrasusadas.json", "utf-8") || "{}");
 let puntajes = JSON.parse(fs.readFileSync("puntaje.json", "utf-8") || "{}");
+
 
 function guardarpalabrasusadas() {
     fs.writeFileSync("palabrasusadas.json", JSON.stringify(palabrasusadas, null, 2), "utf-8");
@@ -84,8 +85,8 @@ function actualizarPuntaje(nivel) {
 // Obtener la palabra y mostrarla
 let palabraSeleccionada = obtenerPalabraAleatoria(nivel);
 if (palabraSeleccionada) {
-    console.log(`\nNivel ${nivel}:`);
-    console.log(`Palabra: ${palabraSeleccionada.palabra}`);
+    console.log(`\nNivel: ${nivel}`);
+    console.log(`Palabras: ${seleccionarPalabras(nivel)}`); // llamo a la funcion para obtener 5 palabras --> juli
     console.log(`Imagen: ${palabraSeleccionada.imagen}\n`);
 
     // Actualizar el puntaje dependiendo de si es la primera o segunda vez que se juega el nivel
@@ -95,4 +96,41 @@ if (palabraSeleccionada) {
     console.log("No hay palabras disponibles para este nivel.");
 }
 
+function seleccionarPalabras(nivel) { // funcion para obtener 5 palabras random --> juli
+    let respuesta = [];
+    let rn;
+    switch (nivel) {
+        case 1:
+            for (let i = 0; i < 5; i++) {
+                rn = Math.ceil(Math.random() * 10);
+                if (rn === 0) {
+                    rn = 1;
+                }
+                respuesta.push(palabras["nivel_1"][rn]["palabra"]);
+            }
+            break;
+            
+        case 2:
+            for (let i = 0; i < 5; i++) {
+                rn = Math.ceil(Math.random() * 10);
+                if (rn === 0) {
+                    rn = 1;
+                }
+                respuesta.push(palabras["nivel_2"][rn]["palabra"]);
+            }
+            break;
+            
+        case 3:
+            for (let i = 0; i < 5; i++) {
+                rn = Math.ceil(Math.random() * 10);
+                if (rn === 0) {
+                    rn = 1;
+                }
+                respuesta.push(palabras["nivel_3"][rn]["palabra"]);
+            }
+            break;
+    }
+    return respuesta;
+}
 
+startServer();

@@ -52,3 +52,7 @@ fetchData("juego", (data) => {
 receive("second", () => {
   seconds.innerText = parseInt(seconds.innerText) + 1;
 });
+
+
+//-------------------------//
+

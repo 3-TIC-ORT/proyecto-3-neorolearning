@@ -1,4 +1,4 @@
-import { startServer, onEvent } from 'soquetic'
+import { startServer,sendEvent, onEvent } from 'soquetic'
 import fs from 'fs'
 
 onEvent('traerObjetos', conseguirObjetos)
@@ -8,5 +8,7 @@ function conseguirObjetos() {
 
     return objetos;
 }
+
+
 
 startServer()

@@ -8,15 +8,16 @@ let wordArray = [];
 let listaCajitas = [];
 let shuffleWord = [];
 
+
+console.log(postData("nivelSeleccionado", 1))
+
+
 const getWord = () => {
-   postData("juego_nivel", { juego: 1 , nivel: 1}, (data) => {
+    postData("juego_nivel", { juego: 1 , nivel: 1}, (data) => {
         //a.innerHTML = data.msg;
       //  img.src = data.imagen
-      word =  data["salida"]["palabra"]
-        
+    word =  data["salida"]["palabra"]
     });
-   
-
 };
 
 

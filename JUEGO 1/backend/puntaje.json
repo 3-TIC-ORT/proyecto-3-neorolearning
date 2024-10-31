@@ -1,1 +1,11 @@
-{}
+{
+  "juego_1": {
+    "puntaje": 20
+  },
+  "juego_2": {
+    "puntaje": 15
+  },
+  "juego_3": {
+    "puntaje": 10
+  }
+}
