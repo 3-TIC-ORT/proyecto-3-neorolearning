@@ -163,7 +163,7 @@ function jugarJuego3(nivel) {
 //terminó simon
 onEvent("termino", (data) => {
     let sitermino = data.toString().trim();
-    port.write(sitermino)
+    port.write(sitermino);
 });
 //secuencia esta bien
 onEvent("secuencia", (bienomal) => {
