@@ -91,6 +91,7 @@ async function comprobarArrays(arr, vuelta){
 });
 //  prometo que ese evento va a terminar de cierta forma y puedo evaluar si se cumplió o no 
 }
+
 async function comprobarPatron(){
     // ver si el nene lo hce bien
     startButton.style.display="none"
@@ -100,6 +101,7 @@ async function comprobarPatron(){
         await comprobarArrays(patronIngresado, j)
         // comprobar si cada elemento coincide
         if(patron[j]!=patronIngresado[j]){
+        alert("mal boton" + j)
             window.location.reload();
             startButton.style.display="flex"
             perdisteMsg.style.display="block"
@@ -109,15 +111,21 @@ async function comprobarPatron(){
             return 0
             // si sos medio loser y perdiste
         }
+        alert("bien boton" + j)
     }
-    setTimeout(()=>{
+    document.querySelectorAll(".boton").forEach(e=>{
+        e.setAttribute("state", "off")
+    })
+    
+     setTimeout(()=>{
         pasarNivel()
-    },800) // tiempo
-    // que muestre el siguiente color
+   },800) // tiempo
+    //que muestre el siguiente color
 }
 
 startButton.addEventListener("click", empezar)
 async function empezar(){
+
     document.querySelectorAll(".boton").forEach(e=>{
         e.setAttribute("state", "on")
     })
@@ -136,7 +144,6 @@ async function empezar(){
     // no mostrarlo siempre
     agregarColorPatron()
     await multiColor()
-
     comprobarPatron()
 }
 
@@ -146,7 +153,9 @@ async function pasarNivel(){
         return; 
     }
     await multiColor()
+    alert("antes 2")
     comprobarPatron()
+    alert("despues 2")
 }
 
 // siempre va a hacer estas 3 funciones 
