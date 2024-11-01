@@ -160,16 +160,25 @@ function jugarJuego3(nivel) {
     
     return { grupoAleatorio }; 
 }
-
-//reinicar
-onEvent("reiniciado", (data) => {
-
-    if (juego==="1"){
-        
-        
+//terminó simon
+onEvent("termino", (data) => {
+    let sitermino = data.toString().trim();
+    port.write(sitermino)
+});
+//secuencia esta bien
+onEvent("secuencia", (bienomal) => {
+    function bienomal(secuencia){
+        if secuencia===("bien"){
+            port.write("GANAR")
         }
-        
-        
+        else{
+            port.write("PERDER")
+        }
+
+    }
+
     
 });
+
+
 startServer();
