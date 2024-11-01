@@ -5,7 +5,7 @@ const modal =document.querySelector("dialog")
 const textoModal=modal.queryselector("h2");
 const cuadrados=Array.from(document.querySelectorAll(".cuadrado"));
 
-cuadrados.forEach(cuadrado, i)=> {
+cuadrados.forEach((cuadrado, i)=> {
     cuadrado.addEventListener("click",()=>{
 
         if(estadoJuego === "PAUSA") return;
@@ -28,29 +28,29 @@ function revisarSiHayGanador(){
     for (let i=0;i<=9, i+=3){
         if (tablero[i]&&
             tablero[i]===tablero[i+1] &&
-             tablero[i]=== tablero[i+2] ){
-                 return ([i,i+1,i+2]);
-             }
+                tablero[i]=== tablero[i+2] ){
+                return ([i,i+1,i+2]);
+            }
     }
     //revisar verticales
     for (let i=0;i<=3,i++, i++){
         if (tablero[i]&&
             tablero[i]===tablero[i+3] &&
-             tablero[i]=== tablero[i+6] ){
-                 return ([i,i+3,i+6]);
-             }
+            tablero[i]=== tablero[i+6] ){
+                return ([i,i+3,i+6]);
+            }
     }
     //revisar diagonales
     if (tablero[0]&&
         tablero[0]===tablero[4] &&
-         tablero[0]=== tablero[8] ){
-             return ([0,4,8]);
-         }
-     if (tablero[2]&&
+        tablero[0]=== tablero[8] ){
+            return ([0,4,8]);
+        }
+    if (tablero[2]&&
             tablero[2]===tablero[4] &&
-             tablero[2]=== tablero[6] ){
-                 return ([2,4,6]);
-             }
+            tablero[2]=== tablero[6] ){
+                return ([2,4,6]);
+            }
     if(tablero.includes(""))return false;
     return "empate"
     
@@ -60,7 +60,7 @@ function ganar(posicionGanadora){
         cuadrados[posicion].classList.toggle("ganador",true);
         //HACER UNA CLASE EN CSS DE GANADOR QUE SE PONGA EN OTRO COLOR
     })
-    mostrarModal("Ganador: "estadoJuego)
+    mostrarModal("Ganador", estadoJuego)
     
 }
 function mostrarModal(){
@@ -70,7 +70,7 @@ function mostrarModal(){
 modal.querySelector("button").addEventListener("click",()=>{
     cuadrados.forEach(cuadrado=>{
         cuadrado.Textcontent="";
-        cuadrado.classList.toggle(".ganador"false);
+        cuadrado.classList.toggle(".ganador", false);
         modal.close();
         estadoJuego="P1"
     });

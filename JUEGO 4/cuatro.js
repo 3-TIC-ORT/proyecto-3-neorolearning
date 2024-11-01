@@ -1,4 +1,5 @@
-let patron,patronIngresado, score = 0, delay = 900
+let patron = []
+let patronIngresado, score = 0, delay = 900
 //todas las variables con el mismo valor
 let record = 0
 let azul = document.getElementById("azul")
@@ -14,13 +15,20 @@ const perdisteMsg = document.getElementById("perdisteMsg")
 let randomPatron;
 
 function agregarColorPatron(){
-    nRandom = Math.ceil(Math.random()*4)
-    // rendondeo al n entero + cercano (entre 1 y 4)
-    patron.push(nRandom)
-    
-    score++;
+        let seguir = true; 
+        while (seguir) {
+            nRandom = Math.ceil(Math.random()*4)
+            if (patron.length == 6) {
+                seguir = false;  
+                return 0; 
+            }
+            patron.push(nRandom)
+        }
+        
+    //score++;
 }
 async function singColor(color){
+    
     color.style.filter="brightness(150%)"
     // iluminar el colorcito
     await setTimeout(()=>{
@@ -28,9 +36,12 @@ async function singColor(color){
     },delay)
     // par volverlo a poner como antes
 
-}
+} //document.querySelectorAll(".boton").forEach(e=>{
+    //e.setAttribute("state", "on")
+//}) // AYUDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 async function multiColor(){
+    
     for(let i=0;i<patron.length;i++){
         await setTimeout(()=>{
             switch(patron[i]){
@@ -50,19 +61,17 @@ async function multiColor(){
             // recorre el patron y muestra el color que hay que apretar
         }, i*(delay+delay*.6))
     }
+
 }
 azul.addEventListener("click", ()=>{
-        patronIngresado.push(1)
-        // vamos a ponerle el n1 a la lista del patron ingresado
-    
+    patronIngresado.push(1)
+    // vamos a ponerle el n1 a la lista del patron ingresado
 })
 verde.addEventListener("click", ()=>{
-
     patronIngresado.push(2)
         // vamos a ponerle el n2 a la lista del patron ingresado
 })
 amarillo.addEventListener("click", ()=>{
-
     patronIngresado.push(3)
         // vamos a ponerle el n3 a la lista del patron ingresado
 })
@@ -82,6 +91,7 @@ async function comprobarArrays(arr, vuelta){
 });
 //  prometo que ese evento va a terminar de cierta forma y puedo evaluar si se cumplió o no 
 }
+
 async function comprobarPatron(){
     // ver si el nene lo hce bien
     startButton.style.display="none"
@@ -91,6 +101,8 @@ async function comprobarPatron(){
         await comprobarArrays(patronIngresado, j)
         // comprobar si cada elemento coincide
         if(patron[j]!=patronIngresado[j]){
+        alert("mal boton" + j)
+            window.location.reload();
             startButton.style.display="flex"
             perdisteMsg.style.display="block"
             document.querySelectorAll(".boton").forEach(e=>{
@@ -99,22 +111,28 @@ async function comprobarPatron(){
             return 0
             // si sos medio loser y perdiste
         }
+        alert("bien boton" + j)
     }
-    setTimeout(()=>{
+    document.querySelectorAll(".boton").forEach(e=>{
+        e.setAttribute("state", "off")
+    })
+    
+     setTimeout(()=>{
         pasarNivel()
-    },800) // tiempo
-    // que muestre el siguiente color
+   },800) // tiempo
+    //que muestre el siguiente color
 }
 
 startButton.addEventListener("click", empezar)
 async function empezar(){
+
     document.querySelectorAll(".boton").forEach(e=>{
         e.setAttribute("state", "on")
     })
 
     
     patron = []
-    for(let i=0;i<3;i++){
+    for(let i=0;i<=4;i++){
         randomPatron=Math.ceil(Math.random()*4)
         if(randomPatron==0){
             randomPatron=1
@@ -126,15 +144,18 @@ async function empezar(){
     // no mostrarlo siempre
     agregarColorPatron()
     await multiColor()
-
     comprobarPatron()
 }
 
 async function pasarNivel(){
-
-    agregarColorPatron()
+    if (agregarColorPatron() == 0) {
+        
+        return; 
+    }
     await multiColor()
+    alert("antes 2")
     comprobarPatron()
+    alert("despues 2")
 }
 
 // siempre va a hacer estas 3 funciones 

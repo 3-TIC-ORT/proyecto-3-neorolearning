@@ -4,21 +4,6 @@ main{
 
 }
 
-header a{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-footer a{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-body{
-    background-color: #181446;
-}
 .titulo {
 
     text-align: center;

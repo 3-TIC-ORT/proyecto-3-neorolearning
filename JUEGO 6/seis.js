@@ -35,6 +35,7 @@ function iniciarJuego() {
 }
 
 function colocarPieza() {
+    console.dir(this);
     if (juegoTerminado) {
         return; // Si el juego ha terminado, no hacer nada.
     }
@@ -122,11 +123,59 @@ function verificarGanador() {
 }
 
 function declararGanador(r, c) {
-    let ganador = document.getElementById("winner");
-    if (tablero[r][c] == jugadorRojo) {
-        ganador.innerText = "¡Gana el Rojo!";             
+    let player1 = document.getElementById("contador1"); // puntaje amarillo
+    let player2 = document.getElementById("contador2");  // puntaje verde
+
+    if (tablero[r][c] == jugadorRojo) { 
+        player1.innerText = parseInt(player1.innerText) + 1; 
     } else {
-        ganador.innerText = "¡Gana el Amarillo!";
+        player2.innerText = parseInt(player2.innerText) + 1; 
     }
-    juegoTerminado = true; // Establecer el juego como terminado
-}
+
+    juegoTerminado = true; //terminooooooooo
+
+        setTimeout(() => {
+            document.getElementById("juegoTerminado").style.display= "block";
+            document.getElementById("comfirmar").addEventListener("click", async () =>{
+                reiniciarJuego(); 
+                document.getElementById("juegoTerminado").style.display= "none";
+            });
+            document.getElementById("cancelar").addEventListener("click", async () =>{
+                window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
+            });
+
+            if (respuesta) {
+            } else {
+                window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
+            }
+        }, 100);
+    }
+    
+    function resaltarFichasGanadoras(r, c) {
+        // Aquí puedes resaltar las fichas ganadoras (por ejemplo, cambiando su color o añadiendo una clase CSS)
+        // Esta es una implementación simplificada. Puedes adaptar esta función según tus necesidades.
+        for (let i = 0; i < 4; i++) {
+            let casilla = document.getElementById((r + i).toString() + "-" + (c + i).toString());
+            if (casilla) {
+                casilla.classList.add("ficha-ganadora"); // Añadir una clase CSS para resaltar
+            }
+        }
+    }
+    function reiniciarJuego() {
+        document.getElementById("juegoTerminado").style.display= "none";
+
+        // Limpiar el tablero (remover clases de color y fichas ganadoras)
+        let tiles = document.getElementsByClassName("tile");
+        for (let tile of tiles) {
+            tile.classList.remove("pieza-roja", "pieza-amarilla", "ficha-ganadora"); // Quitar colores de las casillas
+        }
+    
+        // Reiniciar el estado del juego
+        jugadorActual = jugadorRojo; // Restablecer el jugador actual
+        juegoTerminado = false; // Permitir continuar el juego
+    
+        // Reiniciar la lógica del tablero y las filas actuales disponibles
+        tablero = tablero.map(fila => fila.map(() => ' ')); // Limpiar los valores del tablero
+        currFilas = [5, 5, 5, 5, 5, 5, 5]; // Restablecer filas disponibles en cada columna
+    }
+    

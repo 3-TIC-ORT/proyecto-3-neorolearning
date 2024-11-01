@@ -14,10 +14,28 @@
         <a href="../JUEGO 6/expli6.html" class="volver"><img src="../—Pngtree—vector back icon_4190818.png" class="flechar"></a>
     </header>
     <main>
-        <h1>4 en línea</h1>
-        <h2 id="winner">Ganador:</h2> 
-        <div id="tablero"></div>
+        <h2 id="winner"></h2> 
+        <div class="tableyuruarios">
+            <div class="player player1" id="player1">
+                <div class="token yellow"></div>
+                <p>Jugador 1</p>
+                <b id="contador1">0</b>
+            </div>
+    
+            <div id="tablero"></div>
+    
+            <div class="player player2 id="player2">
+                <div class="token green"></div>
+                <p>Jugador 2</p>
+                <b id="contador2">0</b>
+            </div>
+        </div>
+
+        <div class="juegoTerminado" id="juegoTerminado" style="display: none;">
+            <p>Juego Terminado</p>
+            <button id="comfirmar">Volver a Jugar</button>
+            <button id="cancelar">Volver al Inicio</button>
+        </div>
     </main>
 </body>
 </html>
-

@@ -1,25 +1,7 @@
-
-
 main{
     width: 100vw;
     height: 70vh;
 
-}
-
-header a{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-footer a{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-body{
-    background-color: #4A33A7;
 }
 
 .titulo {
