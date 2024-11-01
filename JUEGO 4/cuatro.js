@@ -113,6 +113,22 @@ async function comprobarPatron(){
         }
         //alert("bien boton" + j) ------- VAMOSSSSSSSSSSSSSSSSSSSSSSSSS
     }
+    setTimeout(() => {
+        document.getElementById("juegoTerminado").style.display= "block";
+        document.getElementById("comfirmar").addEventListener("click", async () =>{
+            reiniciarJuego(); 
+            document.getElementById("juegoTerminado").style.display= "none";
+        });
+        document.getElementById("cancelar").addEventListener("click", async () =>{
+            window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
+        });
+
+        if (respuesta) {
+        } else {
+            window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
+        }
+    }, 100);
+    
     document.querySelectorAll(".boton").forEach(e=>{
         e.setAttribute("state", "off")
     })
@@ -157,5 +173,6 @@ async function pasarNivel(){
     comprobarPatron()
 
 }
+
 
 // siempre va a hacer estas 3 funciones 

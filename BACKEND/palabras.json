@@ -1,40 +1,40 @@
 {
   "juego_1": {
     "nivel_1": [
-      {"palabra": "sol", "imagen": "url_externa_sol", "usada":"no"},
-      {"palabra": "mesa", "imagen": "url_externa_mesa", "usada":"no"},
-      {"palabra": "mano", "imagen": "url_externa_mano", "usada":"no"},
-      {"palabra": "agua", "imagen": "url_externa_agua", "usada":"no"},
-      {"palabra": "casa", "imagen": "url_externa_casa", "usada":"no"},
-      {"palabra": "nube", "imagen": "url_externa_nube", "usada":"no"},
-      {"palabra": "auto", "imagen": "url_externa_auto", "usada":"no"},
-      {"palabra": "tren", "imagen": "url_externa_tren", "usada":"no"},
-      {"palabra": "luna", "imagen": "url_externa_luna", "usada":"no"},
-      {"palabra": "mono", "imagen": "url_externa_mono","usada":"no"}
+      {"palabra": "Sol", "imagen": "url_externa_sol", "usada":"no"},
+      {"palabra": "Mesa", "imagen": "url_externa_mesa", "usada":"no"},
+      {"palabra": "Mano", "imagen": "url_externa_mano", "usada":"no"},
+      {"palabra": "Cama", "imagen": "url_externa_agua", "usada":"no"},
+      {"palabra": "Casa", "imagen": "url_externa_casa", "usada":"no"},
+      {"palabra": "Nube", "imagen": "url_externa_nube", "usada":"no"},
+      {"palabra": "Auto", "imagen": "url_externa_auto", "usada":"no"},
+      {"palabra": "Tren", "imagen": "url_externa_tren", "usada":"no"},
+      {"palabra": "Luna", "imagen": "url_externa_luna", "usada":"no"},
+      {"palabra": "Mono", "imagen": "url_externa_mono","usada":"no"}
     ],
     "nivel_2": [
-      {"palabra": "perro", "imagen": "url_externa_perro", "usada":"no"},
-      {"palabra": "silla", "imagen": "url_externa_silla", "usada":"no"},
-      {"palabra": "avión", "imagen": "url_externa_avion", "usada":"no"},
-      {"palabra": "árbol", "imagen": "url_externa_arbol", "usada":"no"},
-      {"palabra": "gorro", "imagen": "url_externa_gorro", "usada":"no"},
-      {"palabra": "fuego", "imagen": "url_externa_fuego", "usada":"no"},
-      {"palabra": "piano", "imagen": "url_externa_piano", "usada":"no"},
-      {"palabra": "carpa", "imagen": "url_externa_carpa", "usada":"no"},
-      {"palabra": "lápiz", "imagen": "url_externa_lapiz", "usada":"no"},
-      {"palabra": "globo", "imagen": "url_externa_globo", "usada":"no"}
+      {"palabra": "Perro", "imagen": "url_externa_perro", "usada":"no"},
+      {"palabra": "Silla", "imagen": "url_externa_silla", "usada":"no"},
+      {"palabra": "Avión", "imagen": "url_externa_avion", "usada":"no"},
+      {"palabra": "Árbol", "imagen": "url_externa_arbol", "usada":"no"},
+      {"palabra": "Gorro", "imagen": "url_externa_gorro", "usada":"no"},
+      {"palabra": "Fuego", "imagen": "url_externa_fuego", "usada":"no"},
+      {"palabra": "Piano", "imagen": "url_externa_piano", "usada":"no"},
+      {"palabra": "Carpa", "imagen": "url_externa_carpa", "usada":"no"},
+      {"palabra": "Lápiz", "imagen": "url_externa_lapiz", "usada":"no"},
+      {"palabra": "Globo", "imagen": "url_externa_globo", "usada":"no"}
     ],
     "nivel_3": [
-      {"palabra": "tigre", "imagen": "url_externa_tigre", "usada":"no"},
-      {"palabra": "foca", "imagen": "url_externa_foca", "usada":"no"},
-      {"palabra": "caballo", "imagen": "url_externa_caballo", "usada":"no"},
-      {"palabra": "ballena", "imagen": "url_externa_ballena", "usada":"no"},
-      {"palabra": "águila", "imagen": "url_externa_aguila", "usada":"no"},
-      {"palabra": "murciélago", "imagen": "url_externa_murcielago", "usada":"no"},
-      {"palabra": "ratón", "imagen": "url_externa_raton", "usada":"no"},
-      {"palabra": "loro", "imagen": "url_externa_loro", "usada":"no"},
-      {"palabra": "sapo", "imagen": "url_externa_sapo", "usada":"no"},
-      {"palabra": "cebra", "imagen": "url_externa_cebra", "usada":"no"}
+      {"palabra": "Remera", "imagen": "url_externa_tigre", "usada":"no"},
+      {"palabra": "Elefante", "imagen": "url_externa_foca", "usada":"no"},
+      {"palabra": "Dientes", "imagen": "url_externa_caballo", "usada":"no"},
+      {"palabra": "Tijera", "imagen": "url_externa_ballena", "usada":"no"},
+      {"palabra": "Tomate", "imagen": "url_externa_aguila", "usada":"no"},
+      {"palabra": "Banana", "imagen": "url_externa_murcielago", "usada":"no"},
+      {"palabra": "Lluvia", "imagen": "url_externa_raton", "usada":"no"},
+      {"palabra": "Conejo", "imagen": "url_externa_loro", "usada":"no"},
+      {"palabra": "Galleta", "imagen": "url_externa_sapo", "usada":"no"},
+      {"palabra": "Helado", "imagen": "url_externa_cebra", "usada":"no"}
     ]
   },
   "juego_2": {
@@ -44,9 +44,8 @@
       {"palabra": "Naranja", "imagen": "url_externa_naranja"},
       {"palabra": "Rojo", "imagen": "url_externa_rojo"},
       {"palabra": "Violeta", "imagen": "url_externa_violeta"},
-      {"palabra": "Verde", "imagen": "url_externa_verde"}
-    ],
-    "nivel_2": [
+      {"palabra": "Verde", "imagen": "url_externa_verde"},
+
       {"palabra": "Feliz", "imagen": "url_externa_feliz"},
       {"palabra": "Triste", "imagen": "url_externa_triste"},
       {"palabra": "Miedo", "imagen": "url_externa_miedo"},
@@ -54,13 +53,21 @@
       {"palabra": "Desagrado", "imagen": "url_externa_desagrado"},
       {"palabra": "Confusión", "imagen": "url_externa_confusion"}
     ],
-    "nivel_3": [
-      {"palabra": "Calor", "imagen": "url_externa_calor"},
-      {"palabra": "Frío", "imagen": "url_externa_frio"},
-      {"palabra": "Humedad", "imagen": "url_externa_humedad"},
+
+    "nivel_2": [
+      {"palabra": "Soleado", "imagen": "url_externa_calor"},
+      {"palabra": "Arcoiris", "imagen": "url_externa_frio"},
+      {"palabra": "Nublado", "imagen": "url_externa_humedad"},
       {"palabra": "Viento", "imagen": "url_externa_viento"},
       {"palabra": "Nieve", "imagen": "url_externa_nieve"},
-      {"palabra": "Tormenta", "imagen": "url_externa_tormenta"}
+      {"palabra": "Tormenta", "imagen": "url_externa_tormenta"},
+
+      {"palabra": "Hamburguesa", "imagen": "url_externa_calor"},
+      {"palabra": "Pizza", "imagen": "url_externa_frio"},
+      {"palabra": "Ensalada", "imagen": "url_externa_humedad"},
+      {"palabra": "Fideos", "imagen": "url_externa_viento"},
+      {"palabra": "Milanesa", "imagen": "url_externa_nieve"},
+      {"palabra": "Arroz", "imagen": "url_externa_tormenta"}
     ]
   },
   "juego_3": {
