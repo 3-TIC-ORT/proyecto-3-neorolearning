@@ -5,7 +5,7 @@ const port = new SerialPort({
     //Completar con el puerto correcto
     path: "COM4",
     baudRate: 9600,
-  });
+});
 // Función para manejar el evento de recibir el juego
 onEvent("juego_nivel", (data) => {
     console.log(`Juego recibido: ${data.juego} ${data.nivel} `);
@@ -65,7 +65,7 @@ port.on("data", (data) => {
     let accion = data.toString().trim();
     console.log(`Acción recibida del Arduino: ${accion}`);
     sendEvent("accion");
-  });
+});
 
 
 /*
@@ -76,7 +76,7 @@ onEvent("terminoJuego", (juego) => {
     port.write(juegoterminado);        
     }
     else{
-       port.write("no terminó");
+    port.write("no terminó");
     }
 
 });*/
