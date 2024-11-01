@@ -21,6 +21,7 @@ onEvent("juego_nivel", (data) => {
 // El front me debe mandar el número de juego a comenzar. Debe ser un número
 // le paso el tipo de juego al hard
 // Evento para comenzar el juego
+
 onEvent("Comenzar", (juego) => {
     juego = parseInt(juego);
     console.log(`Juego recibido: ${juego}`);
@@ -90,7 +91,7 @@ function jugarJuego(data) {
     //nivel = `nivel_${numeroNivel}`;  // Crea "nivel_n"
 
     if (juego === 1) {
-        return jugarJuego1(`nivel_${nivel}`); // Retorna la palabra y la imagen
+        return jugarJuego1(nivel); // Retorna la palabra y la imagen
     } else if (juego === 2) {
         return jugarJuego2(nivel);
     } else if (juego === 3) {
