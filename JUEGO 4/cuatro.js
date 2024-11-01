@@ -101,7 +101,7 @@ async function comprobarPatron(){
         await comprobarArrays(patronIngresado, j)
         // comprobar si cada elemento coincide
         if(patron[j]!=patronIngresado[j]){
-        alert("mal boton" + j)
+        //alert("mal boton" + j)  ------- VAMOSSSSSSSSSSSSSSSSSSSSSSSSS
             window.location.reload();
             startButton.style.display="flex"
             perdisteMsg.style.display="block"
@@ -111,7 +111,7 @@ async function comprobarPatron(){
             return 0
             // si sos medio loser y perdiste
         }
-        alert("bien boton" + j)
+        //alert("bien boton" + j) ------- VAMOSSSSSSSSSSSSSSSSSSSSSSSSS
     }
     document.querySelectorAll(".boton").forEach(e=>{
         e.setAttribute("state", "off")
@@ -153,9 +153,9 @@ async function pasarNivel(){
         return; 
     }
     await multiColor()
-    alert("antes 2")
+    
     comprobarPatron()
-    alert("despues 2")
+
 }
 
 // siempre va a hacer estas 3 funciones 

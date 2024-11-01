@@ -20,7 +20,7 @@ postData( "juego", {juego: 1}, callBack1)
 
 function callBack2 (data) {
     let nivel = data.nivel
-    document.addEventListener("click", nivel 1, ).innerText = nivel;
+    //document.addEventListener("click", (nivel: "1") ).innerText = nivel;
 }
 
 postData("nivel", {nivel: 1}, callBack2)

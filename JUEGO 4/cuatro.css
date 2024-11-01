@@ -70,7 +70,7 @@ main{
     user-select: none;
     margin-top: 750px;
     position: absolute; 
-    
+    cursor: pointer;
 }
 
 .recording{
@@ -89,6 +89,7 @@ main{
     position: absolute;
     animation: recordAnimation 1s infinite alternate;
 }
+
 .perdisteMsg{
     height: 28px;
     width: fit-content;
