@@ -82,6 +82,7 @@ onEvent("terminoJuego", (juego) => {
 });*/
 
 // Función para determinar cuál juego ejecutar
+let palabrasData;
 function jugarJuego(data) {
     let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
     let juego = parseInt(data.juego)
@@ -163,16 +164,14 @@ function jugarJuego3(nivel) {
 //terminó simon
 onEvent("termino", (data) => {
     let sitermino = data.toString().trim();
-    port.write(sitermino)
+    port.write(sitermino);
 });
 //secuencia esta bien
 onEvent("secuencia", (bienomal) => {
-    function bienomal(secuencia){
-        if secuencia===("bien"){
-            port.write("GANAR")
-        }
-        else{
-            port.write("PERDER")
+    if (bienomal==="bien"){
+        port.write("GANAR");
+        } else{
+            port.write("PERDER");
         }
 
     }
