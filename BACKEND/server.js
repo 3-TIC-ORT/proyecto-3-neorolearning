@@ -3,7 +3,7 @@ import fs from "fs";
 import { SerialPort } from "serialport";
 const port = new SerialPort({
     //Completar con el puerto correcto
-    path: "COM3",
+    path: "COM4",
     baudRate: 9600,
   });
 // Función para manejar el evento de recibir el juego
@@ -61,10 +61,10 @@ onEvent("secuenciaSimon", (data) => {
     });
 });
 // Lo único que me manda el hard es que botón presionó. Se lo mando al front
-port.on("data", (data) =>{
+port.on("data", (data) => {
     let accion = data.toString().trim();
     console.log(`Acción recibida del Arduino: ${accion}`);
-    sendEvent("accion", accion);
+    sendEvent("accion");
   });
 
 
@@ -163,17 +163,13 @@ function jugarJuego3(nivel) {
 
 //reinicar
 onEvent("reiniciado", (data) => {
-    const juego = data.juego; // Obtener juego del data
-    const nivel = data.nivel; // Obtener nivel del data
-    console.log(`reiniciando juego:${juego} en el nivel:${nivel} `);
+
     if (juego==="1"){
-        for (let i = 0; i < nivelJuego1.length; i++) {
-            nivelJuego1[i].usada = "no";}
+        
+        
         }
         
-        // Escribir el nuevo estado en el archivo JSON
-        fs.writeFileSync('prueba.json', JSON.stringify(nivelJuego1, null, 2), 'utf8');
-
+        
     
 });
 startServer();
