@@ -9,16 +9,33 @@ let listaCajitas = [];
 let shuffleWord = [];
 
 
-console.log(postData("nivelSeleccionado", 1))
+function callBack1 (data) {
+    let palabra = data.palabra;
+    let imagen = data.imagen;
+    document.getElementById("mostrarPalabra").innerText = palabra;
+    document.getElementById("mostrarImagen").innerText = imagen;
+}
+
+postData( "juego", {juego: 1}, callBack1)
+
+function callBack2 (data) {
+    let nivel = data.nivel
+    document.addEventListener("click", nivel 1, ).innerText = nivel;
+}
+
+postData("nivel", {nivel: 1}, callBack2)
 
 
-const getWord = () => {
-    postData("juego_nivel", { juego: 1 , nivel: 1}, (data) => {
+
+
+
+//  const getWord = () => {
+    //postData("juego_nivel", { juego: 1 , nivel: 1}, (data) => {
         //a.innerHTML = data.msg;
       //  img.src = data.imagen
-    word =  data["salida"]["palabra"]
-    });
-};
+    //word =  data["salida"]["palabra"]
+    //});
+//};
 
 
 
@@ -59,7 +76,6 @@ const crearLetras = () => {
 
 const clickLetter = (letter) => {
     console.log(letter);
-    img.src = "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/15665/production/_107435678_perro1.jpg.webp"
         if(listaCajitas[0].letter === letter){
             let div = document.getElementById(`cajita${listaCajitas[0].index}`);
             div.innerHTML = letter;
