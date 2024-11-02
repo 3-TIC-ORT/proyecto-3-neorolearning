@@ -1,0 +1,36 @@
+main {
+    width: 100%; 
+    height: 70vh;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 30px;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    margin-top: -3%;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+button{ 
+    padding: 12px;
+    background-color: #ff50a8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+footer{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
