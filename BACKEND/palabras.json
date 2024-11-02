@@ -1,109 +1,266 @@
 {
   "juego_1": {
     "nivel_1": [
-      {"palabra": "Sol", "imagen": "url_externa_sol", "usada":"no"},
-      {"palabra": "Mesa", "imagen": "url_externa_mesa", "usada":"no"},
-      {"palabra": "Mano", "imagen": "url_externa_mano", "usada":"no"},
-      {"palabra": "Cama", "imagen": "url_externa_cama", "usada":"no"},
-      {"palabra": "Casa", "imagen": "url_externa_casa", "usada":"no"},
-      {"palabra": "Nube", "imagen": "url_externa_nube", "usada":"no"},
-      {"palabra": "Auto", "imagen": "url_externa_auto", "usada":"no"},
-      {"palabra": "Tren", "imagen": "url_externa_tren", "usada":"no"},
-      {"palabra": "Luna", "imagen": "url_externa_luna", "usada":"no"},
-      {"palabra": "Mono", "imagen": "url_externa_mono","usada":"no"}
+      {
+        "palabra": "sol",
+        "imagen": "url_externa_sol",
+        "usada": "no"
+      },
+      {
+        "palabra": "mesa",
+        "imagen": "url_externa_mesa",
+        "usada": "no"
+      },
+      {
+        "palabra": "mano",
+        "imagen": "url_externa_mano",
+        "usada": "no"
+      },
+      {
+        "palabra": "agua",
+        "imagen": "url_externa_agua",
+        "usada": "no"
+      },
+      {
+        "palabra": "casa",
+        "imagen": "url_externa_casa",
+        "usada": "no"
+      },
+      {
+        "palabra": "nube",
+        "imagen": "url_externa_nube",
+        "usada": "no"
+      },
+      {
+        "palabra": "auto",
+        "imagen": "url_externa_auto",
+        "usada": "no"
+      },
+      {
+        "palabra": "tren",
+        "imagen": "url_externa_tren",
+        "usada": "no"
+      },
+      {
+        "palabra": "luna",
+        "imagen": "url_externa_luna",
+        "usada": "no"
+      },
+      {
+        "palabra": "mono",
+        "imagen": "url_externa_mono",
+        "usada": "no"
+      }
     ],
     "nivel_2": [
-      {"palabra": "Perro", "imagen": "url_externa_perro", "usada":"no"},
-      {"palabra": "Silla", "imagen": "url_externa_silla", "usada":"no"},
-      {"palabra": "Avión", "imagen": "url_externa_avion", "usada":"no"},
-      {"palabra": "Árbol", "imagen": "url_externa_arbol", "usada":"no"},
-      {"palabra": "Gorro", "imagen": "url_externa_gorro", "usada":"no"},
-      {"palabra": "Fuego", "imagen": "url_externa_fuego", "usada":"no"},
-      {"palabra": "Piano", "imagen": "url_externa_piano", "usada":"no"},
-      {"palabra": "Carpa", "imagen": "url_externa_carpa", "usada":"no"},
-      {"palabra": "Lápiz", "imagen": "url_externa_lapiz", "usada":"no"},
-      {"palabra": "Globo", "imagen": "url_externa_globo", "usada":"no"}
+      {
+        "palabra": "perro",
+        "imagen": "url_externa_perro",
+        "usada": "no"
+      },
+      {
+        "palabra": "silla",
+        "imagen": "url_externa_silla",
+        "usada": "no"
+      },
+      {
+        "palabra": "avión",
+        "imagen": "url_externa_avion",
+        "usada": "no"
+      },
+      {
+        "palabra": "árbol",
+        "imagen": "url_externa_arbol",
+        "usada": "no"
+      },
+      {
+        "palabra": "gorro",
+        "imagen": "url_externa_gorro",
+        "usada": "no"
+      },
+      {
+        "palabra": "fuego",
+        "imagen": "url_externa_fuego",
+        "usada": "no"
+      },
+      {
+        "palabra": "piano",
+        "imagen": "url_externa_piano",
+        "usada": "no"
+      },
+      {
+        "palabra": "carpa",
+        "imagen": "url_externa_carpa",
+        "usada": "no"
+      },
+      {
+        "palabra": "lápiz",
+        "imagen": "url_externa_lapiz",
+        "usada": "no"
+      },
+      {
+        "palabra": "globo",
+        "imagen": "url_externa_globo",
+        "usada": "no"
+      }
     ],
     "nivel_3": [
-      {"palabra": "Remera", "imagen": "url_externa_remera", "usada":"no"},
-      {"palabra": "Elefante", "imagen": "url_externa_elefante", "usada":"no"},
-      {"palabra": "Dientes", "imagen": "url_externa_dientes", "usada":"no"},
-      {"palabra": "Tijera", "imagen": "url_externa_tijera", "usada":"no"},
-      {"palabra": "Tomate", "imagen": "url_externa_tomate", "usada":"no"},
-      {"palabra": "Banana", "imagen": "url_externa_banana", "usada":"no"},
-      {"palabra": "Lluvia", "imagen": "url_externa_lluvia", "usada":"no"},
-      {"palabra": "Conejo", "imagen": "url_externa_conejo", "usada":"no"},
-      {"palabra": "Galleta", "imagen": "url_externa_galleta", "usada":"no"},
-      {"palabra": "Helado", "imagen": "url_externa_helado", "usada":"no"}
+      {
+        "palabra": "tigre",
+        "imagen": "url_externa_tigre",
+        "usada": "no"
+      },
+      {
+        "palabra": "foca",
+        "imagen": "url_externa_foca",
+        "usada": "no"
+      },
+      {
+        "palabra": "caballo",
+        "imagen": "url_externa_caballo",
+        "usada": "no"
+      },
+      {
+        "palabra": "ballena",
+        "imagen": "url_externa_ballena",
+        "usada": "no"
+      },
+      {
+        "palabra": "águila",
+        "imagen": "url_externa_aguila",
+        "usada": "no"
+      },
+      {
+        "palabra": "murciélago",
+        "imagen": "url_externa_murcielago",
+        "usada": "no"
+      },
+      {
+        "palabra": "ratón",
+        "imagen": "url_externa_raton",
+        "usada": "no"
+      },
+      {
+        "palabra": "loro",
+        "imagen": "url_externa_loro",
+        "usada": "no"
+      },
+      {
+        "palabra": "sapo",
+        "imagen": "url_externa_sapo",
+        "usada": "no"
+      },
+      {
+        "palabra": "cebra",
+        "imagen": "url_externa_cebra",
+        "usada": "no"
+      }
     ]
   },
-  "juego_2": {
-    "nivel_1": [
-      {"palabra": "Azul", "imagen": "url_externa_azul"},
-      {"palabra": "Amarillo", "imagen": "url_externa_amarillo"},
-      {"palabra": "Naranja", "imagen": "url_externa_naranja"},
-      {"palabra": "Rojo", "imagen": "url_externa_rojo"},
-      {"palabra": "Violeta", "imagen": "url_externa_violeta"},
-      {"palabra": "Verde", "imagen": "url_externa_verde"},
-
-      {"palabra": "Feliz", "imagen": "url_externa_feliz"},
-      {"palabra": "Triste", "imagen": "url_externa_triste"},
-      {"palabra": "Miedo", "imagen": "url_externa_miedo"},
-      {"palabra": "Enojo", "imagen": "url_externa_enojo"},
-      {"palabra": "Desagrado", "imagen": "url_externa_desagrado"},
-      {"palabra": "Confusión", "imagen": "url_externa_confusion"}
+"juego_2": {
+  "nivel_1": {
+    "grupo_1": [
+      { "palabra": "Azul", "imagen": "url_externa_azul" },
+      { "palabra": "Amarillo", "imagen": "url_externa_amarillo" },
+      { "palabra": "Naranja", "imagen": "url_externa_naranja" },
+      { "palabra": "Rojo", "imagen": "url_externa_rojo" },
+      { "palabra": "Violeta", "imagen": "url_externa_violeta" },
+      { "palabra": "Verde", "imagen": "url_externa_verde" },
+      { "usada": "no" }
     ],
-
-    "nivel_2": [
-      {"palabra": "Cocodrilo", "imagen": "url_externa_cocodrilo"},
-      {"palabra": "Pájaro", "imagen": "url_externa_pajaro"},
-      {"palabra": "Ratón", "imagen": "url_externa_raton"},
-      {"palabra": "Tortuga", "imagen": "url_externa_tortuga"},
-      {"palabra": "Pez", "imagen": "url_externa_pez"},
-      {"palabra": "Oso", "imagen": "url_externa_oso"},
-
-      {"palabra": "Hamburguesa", "imagen": "url_externa_hamburguesa"},
-      {"palabra": "Pizza", "imagen": "url_externa_pizza"},
-      {"palabra": "Ensalada", "imagen": "url_externa_ensalada"},
-      {"palabra": "Fideos", "imagen": "url_externa_fideos"},
-      {"palabra": "Milanesa", "imagen": "url_externa_milanesa"},
-      {"palabra": "Arroz", "imagen": "url_externa_arroz"}
+    "grupo_2": [
+      { "palabra": "Feliz", "imagen": "url_externa_feliz" },
+      { "palabra": "Triste", "imagen": "url_externa_triste" },
+      { "palabra": "Miedo", "imagen": "url_externa_miedo" },
+      { "palabra": "Enojo", "imagen": "url_externa_enojo" },
+      { "palabra": "Desagrado", "imagen": "url_externa_desagrado" },
+      { "palabra": "Confusión", "imagen": "url_externa_confusion" },
+      { "usada": "no" }
     ],
-
-    "nivel_3": [
-      {"palabra": "Soleado", "imagen": "url_externa_soleado"},
-      {"palabra": "Arcoiris", "imagen": "url_externa_arcoiris"},
-      {"palabra": "Nublado", "imagen": "url_externa_nublado"},
-      {"palabra": "Viento", "imagen": "url_externa_viento"},
-      {"palabra": "Nieve", "imagen": "url_externa_nieve"},
-      {"palabra": "Tormenta", "imagen": "url_externa_tormenta"},
-
-      {"palabra": "Ojo", "imagen": "url_externa_ojo"},
-      {"palabra": "Boca", "imagen": "url_externa_boca"},
-      {"palabra": "Nariz", "imagen": "url_externa_nariz"},
-      {"palabra": "Hombro", "imagen": "url_externa_hombro"},
-      {"palabra": "Pie", "imagen": "url_externa_pie"},
-      {"palabra": "Oreja", "imagen": "url_externa_oreja"}
+    "grupo_3": [
+      { "palabra": "Contento", "imagen": "url_externa_contento" },
+      { "palabra": "Aburrido", "imagen": "url_externa_aburrido" },
+      { "palabra": "Sorpresa", "imagen": "url_externa_sorpresa" },
+      { "palabra": "Curioso", "imagen": "url_externa_curioso" },
+      { "palabra": "Calmo", "imagen": "url_externa_calmo" },
+      { "palabra": "Molesto", "imagen": "url_externa_molesto" },
+      { "usada": "no" }
     ]
   },
-  "juego_3": {
+  "nivel_2": {
+    "grupo_1": [
+      { "palabra": "Cocodrilo", "imagen": "url_externa_cocodrilo" },
+      { "palabra": "Pájaro", "imagen": "url_externa_pajaro" },
+      { "palabra": "Ratón", "imagen": "url_externa_raton" },
+      { "palabra": "Tortuga", "imagen": "url_externa_tortuga" },
+      { "palabra": "Pez", "imagen": "url_externa_pez" },
+      { "palabra": "Oso", "imagen": "url_externa_oso" },
+      { "usada": "no" }
+    ],
+    "grupo_2": [
+      { "palabra": "Hamburguesa", "imagen": "url_externa_hamburguesa" },
+      { "palabra": "Pizza", "imagen": "url_externa_pizza" },
+      { "palabra": "Ensalada", "imagen": "url_externa_ensalada" },
+      { "palabra": "Fideos", "imagen": "url_externa_fideos" },
+      { "palabra": "Milanesa", "imagen": "url_externa_milanesa" },
+      { "palabra": "Arroz", "imagen": "url_externa_arroz" },
+      { "usada": "no" }
+    ],
+    "grupo_3": [
+      { "palabra": "Manzana", "imagen": "url_externa_manzana" },
+      { "palabra": "Sandía", "imagen": "url_externa_sandia" },
+      { "palabra": "Uva", "imagen": "url_externa_uva" },
+      { "palabra": "Naranja", "imagen": "url_externa_naranja" },
+      { "palabra": "Plátano", "imagen": "url_externa_platano" },
+      { "palabra": "Frutilla", "imagen": "url_externa_frutilla" },
+      { "usada": "no" }
+    ]
+  },
+  "nivel_3": {
+    "grupo_1": [
+      { "palabra": "Soleado", "imagen": "url_externa_soleado" },
+      { "palabra": "Arcoiris", "imagen": "url_externa_arcoiris" },
+      { "palabra": "Nublado", "imagen": "url_externa_nublado" },
+      { "palabra": "Viento", "imagen": "url_externa_viento" },
+      { "palabra": "Nieve", "imagen": "url_externa_nieve" },
+      { "palabra": "Tormenta", "imagen": "url_externa_tormenta" },
+      { "usada": "no" }
+    ],
+    "grupo_2": [
+      { "palabra": "Ojo", "imagen": "url_externa_ojo" },
+      { "palabra": "Boca", "imagen": "url_externa_boca" },
+      { "palabra": "Nariz", "imagen": "url_externa_nariz" },
+      { "palabra": "Hombro", "imagen": "url_externa_hombro" },
+      { "palabra": "Pie", "imagen": "url_externa_pie" },
+      { "palabra": "Oreja", "imagen": "url_externa_oreja" },
+      { "usada": "no" }
+    ],
+    "grupo_3": [
+      { "palabra": "Cabello", "imagen": "url_externa_cabello" },
+      { "palabra": "Codo", "imagen": "url_externa_codo" },
+      { "palabra": "Mano", "imagen": "url_externa_mano" },
+      { "palabra": "Rodilla", "imagen": "url_externa_rodilla" },
+      { "palabra": "Espalda", "imagen": "url_externa_espalda" },
+      { "palabra": "Dedos", "imagen": "url_externa_dedos" },
+      { "usada": "no" }
+    ]
+  
+},
+
+"juego_3": {
     "nivel_1": {
       "grupo_1": [
         {
           "palabra": "Perro",
           "imagen": "url_externa_perro"
         },
-                {
-                  "palabra": "Pato",             
-                  "imagen": "url_externa_pato"
-                },
+        {
+          "palabra": "Pato",
+          "imagen": "url_externa_pato"
+        },
         {
           "palabra": "Conejo",
           "imagen": "url_externa_conejo"
-        },
-        {
-          "palabra": "Oso",
-          "imagen": "url_externa_oso"
         },
         {
           "usada": "no"
@@ -114,17 +271,13 @@
           "palabra": "Elefante",
           "imagen": "url_externa_elefante"
         },
-                {
-                  "palabra": "Jirafa",
-                  "imagen": "url_externa_jirafa"
-                },
+        {
+          "palabra": "Jirafa",
+          "imagen": "url_externa_jirafa"
+        },
         {
           "palabra": "Ratón",
           "imagen": "url_externa_raton"
-        },
-        {
-          "palabra": "Tortuga",
-          "imagen": "url_externa_tortuga"
         },
         {
           "usada": "no"
@@ -132,37 +285,31 @@
       ],
       "grupo_3": [
         {
-          "palabra": "medusa",
-          "imagen": "url_externa_medusa"
+          "palabra": "Zebra",
+          "imagen": "url_externa_zebra"
         },
-                {
-                  "palabra": "León",
-                  "imagen": "url_externa_leon"
-                },
+        {
+          "palabra": "León",
+          "imagen": "url_externa_leon"
+        },
         {
           "palabra": "Gato",
           "imagen": "url_externa_gato"
         },
         {
-          "palabra": "Cangrejo",
-          "imagen": "url_externa_cangrejo"
-        },
-        {
           "usada": "no"
         }
-      ],
-      "grupo_4": [
+      ]
+    },
+    "nivel_2": {
+      "grupo_1": [
         {
           "palabra": "Pez",
           "imagen": "url_externa_pez"
         },
-                {
-                  "palabra": "Pulpo",
-                  "imagen": "url_externa_pulpo"
-                },
         {
-          "palabra": "Pájaro",
-          "imagen": "url_externa_pajaro"
+          "palabra": "Pulpo",
+          "imagen": "url_externa_pulpo"
         },
         {
           "palabra": "Delfín",
@@ -172,46 +319,54 @@
           "usada": "no"
         }
       ],
-      "grupo_5": [
+      "grupo_2": [
         {
           "palabra": "Tiburón",
           "imagen": "url_externa_tiburon"
         },
-                {
-                  "palabra": "Búho",
-                  "imagen": "url_externa_buho"
-                },
         {
-          "palabra": "Cocodrilo",
-          "imagen": "url_externa_cocodrilo"
+          "palabra": "Estrella",
+          "imagen": "url_externa_estrella"
         },
         {
-          "palabra": "Serpiente",
-          "imagen": "url_externa_serpiente"
+          "palabra": "Caballito",
+          "imagen": "url_externa_caballito"
+        },
+        {
+          "usada": "no"
+        }
+      ],
+      "grupo_3": [
+        {
+          "palabra": "Medusa",
+          "imagen": "url_externa_medusa"
+        },
+        {
+          "palabra": "Cangrejo",
+          "imagen": "url_externa_cangrejo"
+        },
+        {
+          "palabra": "Langosta",
+          "imagen": "url_externa_langosta"
         },
         {
           "usada": "no"
         }
       ]
-    }
-  },
-    "nivel_2": {
+    },
+    "nivel_3": {
       "grupo_1": [
         {
-          "palabra": "Banana",
-          "imagen": "url_externa_banana"
+          "palabra": "Serpiente",
+          "imagen": "url_externa_serpiente"
         },
         {
-          "palabra": "Manzana",
-          "imagen": "url_externa_manzana"
+          "palabra": "Iguana",
+          "imagen": "url_externa_iguana"
         },
-                {
-                  "palabra": "Frutilla",
-                  "imagen": "url_externa_frutilla"
-                },
         {
-          "palabra": "Sandía",
-          "imagen": "url_externa_sandia"
+          "palabra": "Cocodrilo",
+          "imagen": "url_externa_cocodrilo"
         },
         {
           "usada": "no"
@@ -219,194 +374,39 @@
       ],
       "grupo_2": [
         {
-          "palabra": "Tomate",
-          "imagen": "url_externa_tomate"
+          "palabra": "Tortuga",
+          "imagen": "url_externa_tortuga"
         },
         {
-          "palabra": "Lechuga",
-          "imagen": "url_externa_lechuga"
+          "palabra": "Lagarto",
+          "imagen": "url_externa_lagarto"
         },
-                {
-                  "palabra": "Zanahoria",
-                  "imagen": "url_externa_zanahoria"
-                },
         {
-          "palabra": "Morrón",
-          "imagen": "url_externa_morron"
+          "palabra": "Camaleón",
+          "imagen": "url_externa_camaleon"
         },
         {
           "usada": "no"
         }
       ],
       "grupo_3": [
-                {
-                  "palabra": "Cereza",
-                  "imagen": "url_externa_cereza"
-                },
         {
-          "palabra": "Kiwi",
-          "imagen": "url_externa_kiwi"
+          "palabra": "Buho",
+          "imagen": "url_externa_buho"
         },
         {
-          "palabra": "Pera",
-          "imagen": "url_externa_pera"
+          "palabra": "Pájaro",
+          "imagen": "url_externa_pajaro"
         },
         {
-          "palabra": "Limón",
-          "imagen": "url_externa_limon"
+          "palabra": "Murciélago",
+          "imagen": "url_externa_murcielago"
         },
-        {
-          "usada": "no"
-        }
-      ],
-      "grupo_4": [
-                {
-                  "palabra": "Choclo",
-                  "imagen": "url_externa_choclo"
-                },
-        {
-          "palabra": "Palta",
-          "imagen": "url_externa_palta"
-        },
-        {
-          "palabra": "Calabaza",
-          "imagen": "url_externa_calabaza"
-        },
-        {
-          "palabra": "Huevo",
-          "imagen": "url_externa_huevo"
-        },
-        {
-          "usada": "no"
-        }
-      ],
-      "grupo_5": [
-        {
-          "palabra": "Melón",
-          "imagen": "url_externa_melón"
-        },
-        {
-          "palabra": "Naranja",
-          "imagen": "url_externa_naranja"
-        },
-        {
-          "palabra": "Coco",
-          "imagen": "url_externa_coco"
-        },
-                {
-                  "palabra": "Uva",
-                  "imagen": "url_externa_uva"
-                },
         {
           "usada": "no"
         }
       ]
-  },
-  "nivel_3": {
-    "grupo_1": [
-      {
-        "palabra": "Botas",
-        "imagen": "url_externa_botas"
-      },
-              {
-                "palabra": "Zapatillas",
-                "imagen": "url_externa_zapatillas"
-              },
-      {
-        "palabra": "Ojotas",
-        "imagen": "url_externa_ojotas"
-      },
-      {
-        "palabra": "Sandalias",
-        "imagen": "url_externa_sandalias"
-      },
-      {
-        "usada": "no"
-      }
-    ],
-    "grupo_2": [
-              {
-                "palabra": "Remera",
-                "imagen": "url_externa_remera"
-              },
-      {
-        "palabra": "Blusa",
-        "imagen": "url_externa_blusa"
-      },
-      {
-        "palabra": "Camisa",
-        "imagen": "url_externa_camisa"
-      },
-      {
-        "palabra": "Musculosa",
-        "imagen": "url_externa_musculosa"
-      },
-      {
-        "usada": "no"
-      }
-    ],
-    "grupo_3": [
-              {
-                "palabra": "Jean",
-                "imagen": "url_externa_jean"
-              },
-      {
-        "palabra": "Short",
-        "imagen": "url_externa_short"
-      },
-      {
-        "palabra": "Pollera",
-        "imagen": "url_externa_pollera"
-      },
-      {
-        "palabra": "Joggin",
-        "imagen": "url_externa_joggin"
-      },
-      {
-        "usada": "no"
-      }
-    ],
-    "grupo_4": [
-              {
-                "palabra": "Vestido",
-                "imagen": "url_externa_vestido"
-              },
-      {
-        "palabra": "Traje",
-        "imagen": "url_externa_traje"
-      },
-      {
-        "palabra": "Corbata",
-        "imagen": "url_externa_corbata"
-      },
-      {
-        "palabra": "Joyas",
-        "imagen": "url_externa_joyas"
-      },
-      {
-        "usada": "no"
-      }
-    ],
-    "grupo_5": [
-      {
-        "palabra": "Campera",
-        "imagen": "url_externa_campera"
-      },
-      {
-        "palabra": "Buzo",
-        "imagen": "url_externa_buho"
-      },
-      {
-        "palabra": "Pijama",
-        "imagen": "url_externa_pijama"
-      },
-              {
-                "palabra": "Medias",
-                "imagen": "url_externa_medias"
-              },
-      {
-        "usada": "no"
-      }
-    ]
+    }
   }
+}
 }

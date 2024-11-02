@@ -1,4 +1,4 @@
-import { onEvent, startServer } from "soquetic";
+import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
 import { SerialPort } from "serialport";
 const port = new SerialPort({
@@ -39,7 +39,20 @@ onEvent("Comenzar", (juego) => {
 onEvent("ColorLed", (color) => {
     // evento recibido 
     console.log(`color a prender: ${color} `);
-    port.write(color); 
+    let salidaColor = '';
+    if (color==="rojo"){
+        salidaColor ==='R'
+    }
+    else if (color==="verde"){
+        salidaColor === 'G'
+    }
+    else if (color==="azul"){
+        salidaColor=== 'B'
+    }
+    else if (color==="amarillo"){
+        salidaColor==='Y'
+    }
+    port.write(salidaColor); 
     return { mensaje: `Color LED encendido: ${color}` };
     
 });
@@ -51,37 +64,39 @@ onEvent("jugadorJugando", (jugador) => {
     port.write(jugador);  
     return { mensaje: `Jugador actual: ${jugador}` }; 
 });
-onEvent("secuenciaSimon", (data) => {
-    const secuencia = data.secuencia;
-    console.log(`Secuencia recibida del frontend: ${secuencia}`);
-    secuencia.forEach((color, index) => {
-        setTimeout(() => {
-            port.write(color);
-            console.log(`Color enviado al Arduino: ${color}`);
-        }, index * 500); 
-    });
-});
+
 // Lo único que me manda el hard es que botón presionó. Se lo mando al front
-port.on("data", (data) => {
-    let accion = data.toString().trim();
-    console.log(`Acción recibida del Arduino: ${accion}`);
-    sendEvent("accion");
+port.on("data", function(data) {
+    let data = data.toString().trim();
+    let color="";
+    // rojo = 1, verde = 2, azul = 3, amarillo = 4
+    if (data==="1"){
+        color="rojo";
+    } 
+    else if(data==="2"){
+        color="verde";
+    }
+    else if (data==="3"){
+        color="azul";
+    }
+    else if (data==="4"){
+        color="amarillo";
+    }
+    sendEvent("boton",color);
+
+    console.log(`Acción recibida del Arduino: ${color}`);
+    //sendEvent(");
+
+
 });
 
 
-/*
-onEvent("terminoJuego", (juego) => {
-    if juego==="{}"{
-    console.log(`termino juego: ${juego} `);
-    let juegoterminado= parseInt(juegoterminado)
-    port.write(juegoterminado);        
-    }
-    else{
-    port.write("no terminó");
-    }
 
-});*/
-
+onEvent("terminoJuego", (juego, resultado) => {
+    if (juego === "4") {
+        port.write(`1${resultado}`); 
+    }
+});
 // Función para determinar cuál juego ejecutar
 let palabrasData;
 function jugarJuego(data) {
@@ -104,40 +119,55 @@ function jugarJuego(data) {
 
 
 function jugarJuego1(nivel) {
-    let nivelJuego1 = palabrasData["juego_1"][nivel];
-    let largoNivel = nivelJuego1.length;
-
-    // Usando filter para contar
-    let cantidadUsadaNo = nivelJuego1.filter(elemento => elemento.usada === "no").length;
-    if (cantidadUsadaNo > 0){
-        let numeroAleatorio = Math.floor(Math.random() * largoNivel) ;
-        console.log(nivelJuego1[numeroAleatorio],nivelJuego1[numeroAleatorio]["usada"])
-        let usada= nivelJuego1[numeroAleatorio]["usada"]
-        while ( usada=== "no") {
-            numeroAleatorio = Math.floor(Math.random() * largoNivel) ;
+        let nivelJuego1 = palabrasData["juego_1"][nivel];
+        let largoNivel = nivelJuego1.length;
+    
+        // Contar cuántas palabras no se han usado
+        let cantidadUsadaNo = nivelJuego1.filter(elemento => elemento.usada === "no").length;
+        if (cantidadUsadaNo > 0) {
+            let numeroAleatorio = Math.floor(Math.random() * largoNivel);
+            
+            // Buscar una palabra no usada
+            while (nivelJuego1[numeroAleatorio].usada === "si") {
+                numeroAleatorio = Math.floor(Math.random() * largoNivel);
+            }
+    
+            let filaAleatoria = nivelJuego1[numeroAleatorio];
+            // Marcar la palabra como usada
+            filaAleatoria.usada = "si"; 
+            fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+            
+            return filaAleatoria; // Devuelve la palabra y la imagen
+        } else {
+            console.log("No hay palabras disponibles para este nivel.");
+            console.log(`Nivel ${nivel} finalizado`);
+            return { msg: `nivel finalizado: Juego_1 ${nivel}` };
         }
-        let filaAleatoria = nivelJuego1[numeroAleatorio];
-        // Modificar el valor de "usada" en el primer elemento (índice 0)
-        filaAleatoria.usada = "si"; 
-        fs.writeFileSync('prueba.json', JSON.stringify(nivelJuego1, null, 2), 'utf8');
-        // Cambia "sí" por el valor que necesites
-        return {filaAleatoria}; // Devuelve la palabra y la imagen
-    }else {
-        console.log("No hay palabras disponibles para este nivel.");
-        console.log(`Nivel  ${nivel} finalizado`)
-        return { msg: `nivel finalizado: Juego_1 ${nivel}` };
     }
-} 
+    
 
 
  //Función para el Juego 2 (memotest)
 
 function jugarJuego2(nivel) {
-    const nivelJuego2 = palabrasData.juego_2[nivel];
-    console.log(nivelJuego2); 
-    console.log(`Iniciando juego 2 en el nivel ${nivel}`);
-    return {nivelJuego2};
+    let nivelJuego2 = palabrasData["juego_2"][nivel];
+    let gruposNoUsados = Object.values(nivelJuego2).filter(grupo => grupo[grupo.length - 1]["usada"] === "no");
     
+    // Verificar si quedan grupos no usados
+    if (gruposNoUsados.length === 0) {
+        console.log("No hay palabras disponibles para este nivel.");
+        console.log(`Nivel ${nivel} finalizado`);
+        return { msg: `Nivel finalizado: Juego_3 ${nivel}` };
+    }
+
+    // Seleccionar un grupo al azar entre los no usados
+    let grupoAleatorio = gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
+    grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; // Marcar el grupo como usado
+
+    fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+    console.log(grupoAleatorio);
+    
+    return { grupoAleatorio }; 
 }
 
 
@@ -167,18 +197,11 @@ onEvent("termino", (data) => {
     let sitermino = data.toString().trim();
     port.write(sitermino);
 });
-//secuencia esta bien
-onEvent("secuencia", (bienomal) => {
-    if (bienomal==="bien"){
-        port.write("GANAR");
-        } else{
-            port.write("PERDER");
-        }
 
-    }
+
 
     
-});
+
 
 
 startServer();
