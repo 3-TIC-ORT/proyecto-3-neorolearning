@@ -57,10 +57,18 @@ onEvent("ColorLed", (color) => {
     
 });
 onEvent("secuenciasimon", (secuencia) => {
-    // evento recibido 
     console.log(`la secuencia es: ${secuencia} `);
-    port.write(secuencia); 
-    
+
+    // Convertimos la secuencia de colores en letras y la unimos con espacios
+    let secuenciaArduino = secuencia.split(', ').map(color => {
+        if (color === "rojo") return 'R';
+        if (color === "verde") return 'G';
+        if (color === "azul") return 'B';
+        if (color === "amarillo") return 'Y';
+    }).join(' ');
+
+    console.log(`Secuencia para Arduino: ${secuenciaArduino}`);
+    port.write(secuenciaArduino); 
 });
 
 // Para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
