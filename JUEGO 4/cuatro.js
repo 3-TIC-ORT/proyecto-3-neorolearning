@@ -14,6 +14,15 @@ const scoreHTML = document.getElementById("score")
 const perdisteMsg = document.getElementById("perdisteMsg")
 let randomPatron;
 
+function reiniciarJuego() {
+    patron = [];
+    patronIngresado = [];
+    score = 0;
+    delay = 900;
+    perdisteMsg.style.display = "none";
+    document.getElementById("juegoTerminado").style.display = "none";
+    startButton.style.display = "flex";
+}
 function agregarColorPatron(){
         let seguir = true; 
         while (seguir) {

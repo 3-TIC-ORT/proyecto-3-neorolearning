@@ -144,6 +144,8 @@ function declararGanador(r, c) {
         setTimeout(() => {
             document.getElementById("juegoTerminado").style.display= "block";
             document.getElementById("comfirmar").addEventListener("click", async () =>{
+                imagen1.style.display = "none"; 
+                imagen2.style.display = "none";
                 reiniciarJuego(); 
                 document.getElementById("juegoTerminado").style.display= "none";
             });
