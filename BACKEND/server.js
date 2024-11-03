@@ -56,6 +56,12 @@ onEvent("ColorLed", (color) => {
     return { mensaje: `Color LED encendido: ${color}` };
     
 });
+onEvent("secuenciasimon", (secuencia) => {
+    // evento recibido 
+    console.log(`la secuencia es: ${secuencia} `);
+    port.write(secuencia); 
+    
+});
 
 // Para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
 onEvent("jugadorJugando", (jugador) => {
