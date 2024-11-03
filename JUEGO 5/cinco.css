@@ -4,5 +4,6 @@ main{
 }
 
 body{
-    background-color: #4A33A7;
+    background-image: url('FABI.png');
+    background-size: cover; 
 }
