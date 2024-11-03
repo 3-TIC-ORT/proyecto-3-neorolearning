@@ -2,10 +2,14 @@ main {
     width: 100vw;
     height: 85vh;
     text-align: center;
+    
 }
 
 body{
-    background-color: #181446;
+        background-image: url('JUEGUITO.png'); 
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
 }
 .game-container {
     display: flex;
@@ -56,6 +60,7 @@ body{
     flex-wrap: wrap;
     /* box-shadow: 0 20px 0 #4866C2 inset; */
     border-top: 30px solid #4866C2;
+    margin-top: 50px;
 }
 
 .tile {
@@ -90,8 +95,28 @@ body{
     margin-right: 7em;
 }
 
-.juegoTerminado {
-    position: absolute;
+
+#imagen1, #imagen2 {
+    position: fixed; 
     top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; 
+    z-index: 1;
+    display: none; 
+}
+
+.juegoTerminado {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+}
+
+.flechar {
+    position: fixed;
+    z-index: 3;
 }
 

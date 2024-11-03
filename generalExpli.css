@@ -19,18 +19,20 @@ main {
 }
 
 button{ 
+    width: 150px;
+    height: 50px;
     padding: 12px;
-    background-color: #ff50a8;
-    color: white;
-    border: none;
+    background-color: white;
+    border-color: black;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+
 }
 
 footer{
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 10px;
+    padding-bottom: 100px;
 }
