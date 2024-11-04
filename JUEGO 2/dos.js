@@ -11,29 +11,31 @@ let elementos;
 
 let emociones = {
     nivel_1: [
-       "azul", 
-       "amarillo", 
-       "naranja", 
-       "rojo", 
-       "violeta", 
-       "verde",     ],
+    "azul", 
+    "amarillo", 
+    "naranja", 
+    "rojo", 
+    "violeta", 
+    "verde",     ],
     nivel_2: [
-       "feliz", 
-       "triste", 
-       "miedo", 
-       "enojo", 
-       "desagrado", 
-       "confusión",     ],
+    "feliz", 
+    "triste", 
+    "miedo", 
+    "enojo", 
+    "desagrado", 
+    "confusión",     ],
     nivel_3: [
-         "manzana", 
-         "frutilla", 
-         "banana", 
-         "sandía", 
-         "uva", 
-         "pera",     ]
+    "manzana", 
+    "frutilla", 
+    "banana", 
+    "sandía", 
+    "uva", 
+    "pera",     ]
 }
+
+
 function armarCartas() {
-   elementos = emociones[`nivel_${messi}`].concat(emociones[`nivel_${messi}`].map(e => `${e}.png`)); 
+elementos = emociones[`nivel_${messi}`].concat(emociones[`nivel_${messi}`].map(e => `${e}.png`)); 
 elementos = elementos.sort(() => Math.random() - 0.5);
 console.log(elementos);
 }
