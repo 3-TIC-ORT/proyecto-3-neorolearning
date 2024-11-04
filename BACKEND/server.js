@@ -18,22 +18,19 @@ onEvent("juego_nivel", (data) => {
     return salida ;
 });
 
-// El front me debe mandar el número de juego a comenzar. Debe ser un número
-// le paso el tipo de juego al hard
-// Evento para comenzar el juego
 
-onEvent("Comenzar", (juego) => {
-    juego = parseInt(juego);
-    console.log(`Juego recibido: ${juego}`);
 
-    let salida;
-    if (juego >= 1 && juego < 4) salida = "Juegos";
-    else if (juego === 4) salida = "Simon";
-    else if (juego >= 5 && juego < 7) salida = "Pares";
+juego = parseInt(juego);
+console.log(`Juego recibido: ${juego}`);
 
-    port.write(salida);
-    return { mensaje: `Juego iniciado: ${salida}` };  
-});
+let salida;
+if (juego >= 1 && juego < 4) salida = "Juegos";
+else if (juego === 4) salida = "Simon";
+else if (juego >= 5 && juego < 7) salida = "Pares";
+
+port.write(salida);
+return { mensaje: `Juego iniciado: ${salida}` };  
+
 
 //   let salida = ("Simon"); Color a prender para el Simon. El front debe mandar  R, G, B, Y
 onEvent("ColorLed", (color) => {
@@ -106,11 +103,10 @@ port.on("data", function(data) {
 
 
 
-onEvent("terminoJuego", (juego, resultado) => {
-    if (juego === "4") {
+onEvent("terminoJuego", (resultado) => {
         port.write(`1${resultado}`); 
     }
-});
+);
 // Función para determinar cuál juego ejecutar
 let palabrasData;
 function jugarJuego(data) {
@@ -206,12 +202,44 @@ function jugarJuego3(nivel) {
     
     return { grupoAleatorio }; 
 }
-//terminó simon
-onEvent("termino", (data) => {
-    let sitermino = data.toString().trim();
-    port.write(sitermino);
-});
+onEvent("reiniciar", (juego, nivel) => {
+    let palabrasData = JSON.parse(fs.readFileSync('prueba.json', 'utf8') || '{}');
+    function reiniciarJ2y3(juego, nivel) {
 
+        if (palabrasData[juego] && palabrasData[juego][nivel]) {
+            palabrasData[juego][nivel].usada = "no"; // Cambia "usada" en nivel a "no"
+            // Cambia "usada" a "no" en cada grupo del nivel
+            Object.values(palabrasData[juego][nivel]).forEach(grupo => {
+                if (grupo && typeof grupo === "object" && grupo.usada !== undefined) {
+                    grupo.usada = "no";
+                }
+            });
+    
+            fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2));
+        } else {
+            console.log("Error: el nivel o juego especificado no existe en el JSON.");
+        }
+    }
+    
+    function reiniciarNivel(juego, nivel) {
+        if(juego==="1"){
+            let p2 = `nivel_${nivel}`;
+            let palabrasNivel = palabrasData["juego_1"][p2];
+            palabrasNivel.forEach(palabra => palabra.usada = "no");
+            fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+            console.log(`Nivel ${nivel} de ${juego} reiniciado.`);
+        }
+        else if(juego==="2" || juego==="3"){
+            let p1 = `juego_${juego}`;
+            let p2 = `nivel_${nivel}`;
+            reiniciarJ2y3(p1, p2);
+        }
+        
+        fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2))
+    
+    }
+}
+);
 
 
     
