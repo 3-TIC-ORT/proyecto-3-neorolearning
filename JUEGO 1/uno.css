@@ -1,5 +1,11 @@
 body{
-    background-color: #2AD7D7;
+    background-image: url('JUEGO\ 5\ Crucigrama.png');
+    background-size: cover; 
+}
+
+main{
+    width: 100vw;
+    height: 85vh;
 }
 
 .cajitas{

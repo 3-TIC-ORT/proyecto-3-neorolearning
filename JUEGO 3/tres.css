@@ -1,5 +1,7 @@
 body{
-    background-color: #16D161;
+    background-image: url('what\ are\ you.png');
+    background-size: cover; 
+
 }
 
 main{

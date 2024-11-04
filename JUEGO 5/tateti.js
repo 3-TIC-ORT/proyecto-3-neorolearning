@@ -25,7 +25,7 @@ cuadrados.forEach((cuadrado, i)=> {
 function revisarSiHayGanador(){
     const tablero=cuadrados.map(cuadrado=>cuadrado.Textcontent)
     //Revisar horizontales
-    for (let i=0;i<=9, i+=3){
+    for (let i=0;i<=9, i+=3;){
         if (tablero[i]&&
             tablero[i]===tablero[i+1] &&
                 tablero[i]=== tablero[i+2] ){
@@ -33,7 +33,7 @@ function revisarSiHayGanador(){
             }
     }
     //revisar verticales
-    for (let i=0;i<=3,i++, i++){
+    for (let i=0;i<=3,i++, i++;){
         if (tablero[i]&&
             tablero[i]===tablero[i+3] &&
             tablero[i]=== tablero[i+6] ){
