@@ -3,6 +3,11 @@ body{
     background-size: cover; 
 }
 
+main{
+    width: 100vw;
+    height: 85vh;
+}
+
 .cajitas{
     display: flex;
     justify-content: center;
