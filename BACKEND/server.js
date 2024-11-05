@@ -114,6 +114,7 @@ port.on("data", function(data) {
 onEvent("terminoJuego", (resultado) => {
         port.write(`1`);
         port.write(resultado);
+        port.write(`1`);
     }
 );
 // Función para determinar cuál juego ejecutar
