@@ -1,7 +1,7 @@
 const x="X";
 const o="O";
 let estadoJuego="P1";
-const modal =document.querySelector("dialog")
+const modal =document.querySelector("dialog");
 const textoModal=modal.queryselector("h2");
 const cuadrados=Array.from(document.querySelectorAll(".cuadrado"));
 

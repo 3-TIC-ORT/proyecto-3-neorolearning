@@ -55,15 +55,12 @@ onEvent("ColorLed", (color) => {
 });
 onEvent("secuenciasimon", (secuencia) => {
     console.log(`la secuencia es: ${secuencia} `);
-
-    // Convertimos la secuencia de colores en letras y la unimos con espacios
     let secuenciaArduino = secuencia.split(', ').map(color => {
         if (color === "rojo") return 'R';
         if (color === "verde") return 'G';
         if (color === "azul") return 'B';
         if (color === "amarillo") return 'Y';
     }).join(' ');
-
     console.log(`Secuencia para Arduino: ${secuenciaArduino}`);
     port.write(secuenciaArduino); 
 });
@@ -104,7 +101,8 @@ port.on("data", function(data) {
 
 
 onEvent("terminoJuego", (resultado) => {
-        port.write(`1${resultado}`); 
+        port.write(`1`);
+        port.write(resultado);
     }
 );
 // Función para determinar cuál juego ejecutar
