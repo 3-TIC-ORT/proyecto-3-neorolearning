@@ -1,4 +1,6 @@
+
 let cajitas = document.getElementById('divCajitas');
+
 let letras = document.getElementById('divLetras');
 let correcto = document.getElementById("correcto")
 let indednmkmasmkdsa = document.createElement("p")
@@ -16,7 +18,12 @@ function callBack1 (data) {
     document.getElementById("mostrarImagen").innerText = imagen;
 }
 
-postData( "juego", {juego: 1}, callBack1)
+const nivelData = {
+    juego: 1,
+    nivel: 1
+}
+
+postData("juego_nivel", { nivelData }, callBack1)
 
 function callBack2 (data) {
     let nivel = data.nivel

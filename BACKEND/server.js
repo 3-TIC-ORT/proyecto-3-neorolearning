@@ -1,11 +1,14 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
+/*
 import { SerialPort } from "serialport";
 const port = new SerialPort({
     //Completar con el puerto correcto
     path: "COM4",
     baudRate: 9600,
 });
+*/
+
 // Función para manejar el evento de recibir el juego
 onEvent("juego_nivel", (data) => {
     console.log(`Juego recibido: ${data.juego} ${data.nivel} `);
@@ -18,18 +21,26 @@ onEvent("juego_nivel", (data) => {
     return salida ;
 });
 
+onEvent('nivel', hola)
+onEvent('juego', hola2)
 
+function hola() {
+    console.log('EVENTO NIVEL RECIBIDO')
+}
+function hola2() {
+    console.log('EVENTO NIVEL RECIBIDO')
+}
 
-juego = parseInt(juego);
-console.log(`Juego recibido: ${juego}`);
+//juego = parseInt(juego);
+//console.log(`Juego recibido: ${juego}`);
 
-let salida;
-if (juego >= 1 && juego < 4) salida = "Juegos";
-else if (juego === 4) salida = "Simon";
-else if (juego >= 5 && juego < 7) salida = "Pares";
+//let salida;
+//if (juego >= 1 && juego < 4) salida = "Juegos";
+//else if (juego === 4) salida = "Simon";
+//else if (juego >= 5 && juego < 7) salida = "Pares";
 
-port.write(salida);
-return { mensaje: `Juego iniciado: ${salida}` };  
+//port.write(salida);
+//return { mensaje: `Juego iniciado: ${salida}` };  
 
 
 //   let salida = ("Simon"); Color a prender para el Simon. El front debe mandar  R, G, B, Y
@@ -74,20 +85,21 @@ onEvent("jugadorJugando", (jugador) => {
 });
 
 // Lo único que me manda el hard es que botón presionó. Se lo mando al front
+/*
 port.on("data", function(data) {
-    let data = data.toString().trim();
+    let datos = data.toString().trim();
     let color="";
     // rojo = 1, verde = 2, azul = 3, amarillo = 4
-    if (data==="1"){
+    if (datos==="1"){
         color="rojo";
     } 
-    else if(data==="2"){
+    else if(datos==="2"){
         color="verde";
     }
-    else if (data==="3"){
+    else if (datos==="3"){
         color="azul";
     }
-    else if (data==="4"){
+    else if (datos==="4"){
         color="amarillo";
     }
     sendEvent("boton",color);
@@ -97,8 +109,7 @@ port.on("data", function(data) {
 
 
 });
-
-
+*/
 
 onEvent("terminoJuego", (resultado) => {
         port.write(`1`);
@@ -107,8 +118,9 @@ onEvent("terminoJuego", (resultado) => {
 );
 // Función para determinar cuál juego ejecutar
 let palabrasData;
+
 function jugarJuego(data) {
-    let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
+    palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
     let juego = parseInt(data.juego)
     let nivel = parseInt(data.nivel)
     //nivel = `nivel_${numeroNivel}`;  // Crea "nivel_n"
