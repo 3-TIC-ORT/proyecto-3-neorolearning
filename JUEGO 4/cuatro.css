@@ -1,5 +1,8 @@
 body{
     background-image: url('Juego\ 1\ Simon\ dice.png');
+    background-size: cover; 
+
+
 }
 
 main{
@@ -19,8 +22,8 @@ main{
 }
 
 .simon{
-    height: 700px;
-    width: 700px;
+    height: 500px;
+    width: 500px;
     border-radius: 50%;
     background-color: #000;
     display: flex;
@@ -73,7 +76,7 @@ main{
     justify-content: center;
     align-items: center;
     user-select: none;
-    margin-top: 800px;
+    margin-top: 600px;
     position: absolute; 
     cursor: pointer;
 }
