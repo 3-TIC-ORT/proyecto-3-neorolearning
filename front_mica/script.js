@@ -1,3 +1,4 @@
+/*
 connect2Server()
 const form = document.getElementById("form");
 const input = document.getElementById("input");
@@ -48,7 +49,7 @@ receive("accion",botonApretado)
 fetchData("juego", (data) => {
   date.innerText = data;
 });
-*/
+
 
 receive("second", () => {
   seconds.innerText = parseInt(seconds.innerText) + 1;

@@ -6,7 +6,6 @@ onEvent("juego_nivel", (data) => {
     
     // llamo a la función jugar_juego
     const salida = jugarJuego(data);
-    console.log(salida);
     // Confirmar que procese bien
     //return { msg: `Juego ${data.juego} Nivel ${data.nivel} ouput: ${JSON.stringify(salida)}  ` };
     return salida ;
