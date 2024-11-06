@@ -9,7 +9,7 @@
       {
         "palabra": "mesa",
         "imagen": "url_externa_mesa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mano",
@@ -29,12 +29,12 @@
       {
         "palabra": "nube",
         "imagen": "url_externa_nube",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "auto",
         "imagen": "url_externa_auto",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "tren",

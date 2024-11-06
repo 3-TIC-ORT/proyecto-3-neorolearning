@@ -20,17 +20,7 @@ onEvent("juego_nivel", (data) => {
     //return { msg: `Juego ${data.juego} Nivel ${data.nivel} ouput: ${JSON.stringify(salida)}  ` };
     return salida ;
 });
-/*
-onEvent('nivel', hola)
-onEvent('juego', hola2)
 
-function hola() {
-    console.log('EVENTO NIVEL RECIBIDO')
-}
-function hola2() {
-    console.log('EVENTO NIVEL RECIBIDO')
-}
- */
 
 //juego = parseInt(juego);
 //console.log(`Juego recibido: ${juego}`);
@@ -221,4 +211,6 @@ onEvent("reiniciar", (juego, nivel) => {
     }
 }
 )
+
+
 startServer();
