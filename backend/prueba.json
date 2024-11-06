@@ -14,17 +14,17 @@
       {
         "palabra": "mano",
         "imagen": "url_externa_mano",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "cama",
         "imagen": "url_externa_cama",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "casa",
         "imagen": "url_externa_casa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "nube",
@@ -39,17 +39,17 @@
       {
         "palabra": "tren",
         "imagen": "url_externa_tren",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "luna",
         "imagen": "url_externa_luna",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "mono",
         "imagen": "url_externa_mono",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_2": [

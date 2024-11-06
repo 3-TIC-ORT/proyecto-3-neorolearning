@@ -11,20 +11,23 @@ let shuffleWord = [];
 
 connect2Server();
 
+function sendClick (botonId){
+
+  postData("juego_nivel", {
+    juego: 1,
+    nivel: botonId,
+    }, callBack1)
+
 function callBack1(data) {
 let palabra = data.palabra;
 let imagen = data.imagen;
-document.getElementById("mostrarPalabra").innerText = palabra;
-document.getElementById("mostrarImagen").innerText = imagen;
+crearCajitas(palabra)
+document.getElementById("mostrarPalabra")
+document.getElementById("mostrarImagen")
 }
 
-const nivelData = {
-juego: 1,
-nivel: 1,
-};
 
-postData("juego_nivel", nivelData, callBack1);
-
+}
 
 
 //  const getWord = () => {
@@ -35,7 +38,7 @@ postData("juego_nivel", nivelData, callBack1);
 //});
 //};
 
-const crearCajitas = async () => {
+const crearCajitas = async (word) => {
 for (let index = 0; index < word.length; index++) {
     wordArray.push(word[index]);
     shuffleWord.push(word[index]);
