@@ -1,3 +1,4 @@
+connect2Server()
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const a = document.getElementById("a");
