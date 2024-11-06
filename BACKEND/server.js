@@ -130,7 +130,7 @@ function jugarJuego1(nivel) {
             let filaAleatoria = nivelJuego1[numeroAleatorio];
             // Marcar la palabra como usada
             filaAleatoria.usada = "si"; 
-            fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+            fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
             
             return filaAleatoria; // Devuelve la palabra y la imagen
         } else {
@@ -158,7 +158,7 @@ function jugarJuego2(nivel) {
     // Seleccionar un grupo al azar entre los no usados
     let grupoAleatorio = gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
     grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; 
-    fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+    fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
     console.log(grupoAleatorio);
     
     return { grupoAleatorio }; 
@@ -181,7 +181,7 @@ function jugarJuego3(nivel) {
     let grupoAleatorio = gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
     grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; // Marcar el grupo como usado
 
-    fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+    fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
     console.log(grupoAleatorio);
     
     return { grupoAleatorio }; 
@@ -198,20 +198,20 @@ function reiniciarJ2y3(juego, nivel) {
             }
         });
 
-        fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2));
+        fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2));
     } else {
         console.log("Error: el nivel o juego especificado no existe en el JSON.");
     }
 }
 
 onEvent("reiniciar", (juego, nivel) => {
-    let palabrasData = JSON.parse(fs.readFileSync('prueba.json', 'utf8') || '{}');
+    let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8') || '{}');
     
     if(juego==="1"){
         let p2 = `nivel_${nivel.data}`;
         let palabrasNivel = palabrasData["juego_1"][p2];
         palabrasNivel.forEach(palabra => palabra.usada = "no");
-        fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+        fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
         console.log(`Nivel ${nivel.data} de ${juego} reiniciado.`);
     }
     else if(juego==="2" || juego==="3"){
