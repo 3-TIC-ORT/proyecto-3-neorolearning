@@ -24,7 +24,7 @@
       {
         "palabra": "casa",
         "imagen": "url_externa_casa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "nube",
@@ -34,7 +34,7 @@
       {
         "palabra": "auto",
         "imagen": "url_externa_auto",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "tren",
