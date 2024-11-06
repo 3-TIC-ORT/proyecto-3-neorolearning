@@ -1,6 +1,6 @@
 //import { onEvent, startServer } from "soquetic";
 import fs from "fs";
-
+/*
 onEvent("juego_nivel", (data) => {
     console.log(`Juego recibido: ${data.juego} ${data.nivel} `);
     
@@ -10,6 +10,7 @@ onEvent("juego_nivel", (data) => {
     //return { msg: `Juego ${data.juego} Nivel ${data.nivel} ouput: ${JSON.stringify(salida)}  ` };
     return salida ;
 });
+
 let palabrasData;
 function jugarJuego(data) {
     let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
@@ -29,8 +30,8 @@ function jugarJuego(data) {
 }
 
 
-
-let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
+*/
+let palabrasData = JSON.parse(fs.readFileSync('prueba.json', 'utf8'));
 function jugarJuego1(nivel) {
         let nivelJuego1 = palabrasData["juego_1"][nivel];
         let largoNivel = nivelJuego1.length;
@@ -48,7 +49,7 @@ function jugarJuego1(nivel) {
             let filaAleatoria = nivelJuego1[numeroAleatorio];
             // Marcar la palabra como usada
             filaAleatoria.usada = "si"; 
-            fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+            fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
             console.log(filaAleatoria);
             return filaAleatoria; // Devuelve la palabra y la imagen
         } else {
@@ -119,5 +120,5 @@ onEvent("reiniciar", (juego, nivel) => {
         console.log(`Nivel ${nivel} de ${juego} reiniciado.`);
     }
 
-/*
-startServer(3000,false);
+*/
+
