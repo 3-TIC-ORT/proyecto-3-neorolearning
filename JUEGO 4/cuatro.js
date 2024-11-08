@@ -131,18 +131,13 @@ async function comprobarPatron(){
         document.getElementById("cancelar").addEventListener("click", async () =>{
             window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
         });
-
-        if (respuesta) {
-        } else {
-            window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
-        }
     }, 100);
     
     document.querySelectorAll(".boton").forEach(e=>{
         e.setAttribute("state", "off")
     })
     
-     setTimeout(()=>{
+    setTimeout(()=>{
         pasarNivel()
    },800) // tiempo
     //que muestre el siguiente color
