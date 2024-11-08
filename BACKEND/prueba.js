@@ -1,21 +1,65 @@
-//import { onEvent, startServer } from "soquetic";
+import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
-/*
-onEvent("juego_nivel", (data) => {
-    console.log(`Juego recibido: ${data.juego} ${data.nivel} `);
-    
-    // llamo a la función jugar_juego
-    const salida = jugarJuego(data);
-    // Confirmar que procese bien
-    //return { msg: `Juego ${data.juego} Nivel ${data.nivel} ouput: ${JSON.stringify(salida)}  ` };
-    return salida ;
+
+import { SerialPort } from "serialport";
+const port = new SerialPort({
+    //Completar con el puerto correcto
+    path: "COM4",
+    baudRate: 9600,
 });
 
+function elegirjuego(juego) {
+    let juego = 1;
+    juego = parseInt(juego);
+    console.log(`Juego recibido: ${juego}`);
+
+    let salida;
+    if (juego >= 1 && juego < 4) salida = "Juegos";
+    else if (juego === 4) salida = "Simon";
+    else if (juego >= 5 && juego < 7) salida = "Pares";
+
+    port.write(salida);
+    return { mensaje: `Juego iniciado: ${salida}` };
+}
+elegirjuego(juego);
+
+/*
+// Para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
+onEvent("jugadorJugando", (jugador) => {
+    // evento recibido 
+    console.log(`jugador jugando: ${jugador} `);
+    port.write(jugador);  
+    return { mensaje: `Jugador actual: ${jugador}` }; 
+});
+
+
+onEvent("terminoJuego", (resultado) => {
+    port.write(`1`);
+    port.write(resultado);
+}
+);
+let secuencia=("rojo, azul, amarillo")_;
+function secuenciasimon(secuencia);
+    console.log(`la secuencia es: ${secuencia} `);
+    let secuenciaArduino = secuencia.split(', ').map(color => {
+        if (color === "rojo") return 'R';
+        if (color === "verde") return 'G';
+        if (color === "azul") return 'B';
+        if (color === "amarillo") return 'Y';
+    }).join(' ');
+    console.log(`Secuencia para Arduino: ${secuenciaArduino}`);
+    port.write(secuenciaArduino); 
+});
+
+
+
+// Función para determinar cuál juego ejecutar
 let palabrasData;
+
 function jugarJuego(data) {
-    let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
-    let juego = parseInt(data.juego)
-    let nivel = parseInt(data.nivel)
+    palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
+    let juego = data.juego;
+    let nivel = `nivel_${data.nivel}`;
     //nivel = `nivel_${numeroNivel}`;  // Crea "nivel_n"
 
     if (juego === 1) {
@@ -29,9 +73,6 @@ function jugarJuego(data) {
     }
 }
 
-
-*/
-let palabrasData = JSON.parse(fs.readFileSync('prueba.json', 'utf8'));
 function jugarJuego1(nivel) {
         let nivelJuego1 = palabrasData["juego_1"][nivel];
         let largoNivel = nivelJuego1.length;
@@ -49,8 +90,8 @@ function jugarJuego1(nivel) {
             let filaAleatoria = nivelJuego1[numeroAleatorio];
             // Marcar la palabra como usada
             filaAleatoria.usada = "si"; 
-            fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
-            console.log(filaAleatoria);
+            fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+            
             return filaAleatoria; // Devuelve la palabra y la imagen
         } else {
             console.log("No hay palabras disponibles para este nivel.");
@@ -58,8 +99,7 @@ function jugarJuego1(nivel) {
             return { msg: `nivel finalizado: Juego_1 ${nivel}` };
         }
     }
-
-jugarJuego1("nivel_1");
+    
 
 
  //Función para el Juego 2 (memotest)
@@ -77,9 +117,8 @@ function jugarJuego2(nivel) {
 
     // Seleccionar un grupo al azar entre los no usados
     let grupoAleatorio = gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
-    grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; // Marcar el grupo como usado
-
-    fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+    grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; 
+    fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
     console.log(grupoAleatorio);
     
     return { grupoAleatorio }; 
@@ -102,23 +141,46 @@ function jugarJuego3(nivel) {
     let grupoAleatorio = gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
     grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; // Marcar el grupo como usado
 
-    fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+    fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
     console.log(grupoAleatorio);
     
     return { grupoAleatorio }; 
 }
-/*
-onEvent("reiniciar", (juego, nivel) => {
 
-    let palabrasData = JSON.parse(fs.readFileSync('prueba.json', 'utf8') || '{}');
+function reiniciarJ2y3(juego, nivel) {
+
+    if (palabrasData[juego] && palabrasData[juego][nivel]) {
+        palabrasData[juego][nivel].usada = "no"; // Cambia "usada" en nivel a "no"
+        // Cambia "usada" a "no" en cada grupo del nivel
+        Object.values(palabrasData[juego][nivel]).forEach(grupo => {
+            if (grupo && typeof grupo === "object" && grupo.usada !== undefined) {
+                grupo.usada = "no";
+            }
+        });
+
+        fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2));
+    } else {
+        console.log("Error: el nivel o juego especificado no existe en el JSON.");
+    }
+}
+
+onEvent("reiniciar", (juego, nivel) => {
+    let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8') || '{}');
     
     if(juego==="1"){
-        let p2 = `nivel_${nivel}`;
+        let p2 = `nivel_${nivel.data}`;
         let palabrasNivel = palabrasData["juego_1"][p2];
         palabrasNivel.forEach(palabra => palabra.usada = "no");
-        fs.writeFileSync('prueba.json', JSON.stringify(palabrasData, null, 2), 'utf8');
-        console.log(`Nivel ${nivel} de ${juego} reiniciado.`);
+        fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
+        console.log(`Nivel ${nivel.data} de ${juego} reiniciado.`);
     }
+    else if(juego==="2" || juego==="3"){
+        let p1 = `juego_${juego}`;
+        let p2 = `nivel_${nivel.data}`;
+        reiniciarJ2y3(p1, p2);
+    }
+}
+)
 
 */
-
+startServer();

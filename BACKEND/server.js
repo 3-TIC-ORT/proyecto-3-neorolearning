@@ -212,5 +212,5 @@ onEvent("reiniciar", (juego, nivel) => {
 }
 )
 
-
+/*
 startServer();
