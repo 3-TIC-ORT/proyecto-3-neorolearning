@@ -8,18 +8,35 @@ const port = new SerialPort({
     baudRate: 9600,
 });
 const parser = port.pipe(new ReadlineParser());
-
+/*PARES
 port.on("open", () => {
     setTimeout(() => {
         elegirjuego(5);
     }, 2000); 
     setTimeout(() => {
         recibirjugador("PONE");
-    }, 3000); 
+    }, 3000);
+    setTimeout(() => {
+        terminoJuego("GANAR");
+    }, 6000);  
+});
+*/
+//SIMON
+port.on("open", () => {
+    setTimeout(() => {
+        elegirjuego(4);
+    }, 2000); 
+    setTimeout(() => {
+        secuenciasimon(secuencia);
+    }, 6000);
+    setTimeout(() => {
+        terminoJuego("GANAR");
+    }, 12000);  
 });
 
+
 parser.on("data", (data) => {
-    console.log("HOLAAAAAAAAAAAAAA", data);
+    console.log(data.trim());
 });
 
 function elegirjuego(juego) {
@@ -32,10 +49,10 @@ function elegirjuego(juego) {
     else if (juego === 4) salida = "Simon";
     else if (juego >= 5 && juego < 7) salida = "Pares";
 
-    port.write(salida);
+    port.write(salida+"\n");
     return { mensaje: `Juego iniciado: ${salida}` };
 }
-elegirjuego("5");
+elegirjuego("4");
 
 
  //para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
@@ -43,35 +60,41 @@ elegirjuego("5");
     // evento recibido 
 
 function recibirjugador(jugador){
-
-    console.log(`jugador jugando: ${jugador} `);
-    port.write(jugador);  
+    port.write(jugador+"\n");  
     return { mensaje: `Jugador actual: ${jugador}` }; 
 };
 recibirjugador("PONE")
-/*
 
-onEvent("terminoJuego", (resultado) => {
-    port.write(`1`);
-    port.write(resultado);
+
+function terminoJuego(resultado) {
+    port.write(`1`+"\n");
+    port.write(resultado+"\n");
 }
-);
-let secuencia=("rojo, azul, amarillo")_;
-function secuenciasimon(secuencia);
-    console.log(`la secuencia es: ${secuencia} `);
+terminoJuego("GANAR")
+
+
+
+function secuenciasimon(secuencia) {
     let secuenciaArduino = secuencia.split(', ').map(color => {
         if (color === "rojo") return 'R';
         if (color === "verde") return 'G';
         if (color === "azul") return 'B';
         if (color === "amarillo") return 'Y';
+        return ''; // Si no se reconoce el color, se retorna un string vacío.
     }).join(' ');
-    console.log(`Secuencia para Arduino: ${secuenciaArduino}`);
-    port.write(secuenciaArduino); 
-});
+
+    port.write(secuenciaArduino+"\n"); 
+};
+
+// Ejemplo de cómo llamar la función
+let secuencia = "rojo, azul, amarillo";  // Se define una secuencia de colores
+secuenciasimon(secuencia);  // Llamada a la función con la secuencia
 
 
 
- Función para determinar cuál juego ejecutar
+
+/*
+ //Función para determinar cuál juego ejecutar
 let palabrasData;
 
 function jugarJuego(data) {
