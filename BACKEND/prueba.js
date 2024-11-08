@@ -1,16 +1,30 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
 
-import { SerialPort } from "serialport";
+import { SerialPort, ReadlineParser } from "serialport";
 const port = new SerialPort({
     //Completar con el puerto correcto
     path: "COM4",
     baudRate: 9600,
 });
+const parser = port.pipe(new ReadlineParser());
+
+port.on("open", () => {
+    setTimeout(() => {
+        elegirjuego(5);
+    }, 2000); 
+    setTimeout(() => {
+        recibirjugador("PONE");
+    }, 3000); 
+});
+
+parser.on("data", (data) => {
+    console.log("HOLAAAAAAAAAAAAAA", data);
+});
 
 function elegirjuego(juego) {
-    let juego = 1;
-    juego = parseInt(juego);
+    //let juego = 1;
+    //juego = parseInt(juego);
     console.log(`Juego recibido: ${juego}`);
 
     let salida;
@@ -21,17 +35,21 @@ function elegirjuego(juego) {
     port.write(salida);
     return { mensaje: `Juego iniciado: ${salida}` };
 }
-elegirjuego(juego);
+elegirjuego("5");
 
-/*
-// Para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
-onEvent("jugadorJugando", (jugador) => {
+
+ //para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
+//onEvent("jugadorJugando", (jugador) => {
     // evento recibido 
+
+function recibirjugador(jugador){
+
     console.log(`jugador jugando: ${jugador} `);
     port.write(jugador);  
     return { mensaje: `Jugador actual: ${jugador}` }; 
-});
-
+};
+recibirjugador("PONE")
+/*
 
 onEvent("terminoJuego", (resultado) => {
     port.write(`1`);
@@ -53,17 +71,17 @@ function secuenciasimon(secuencia);
 
 
 
-// Función para determinar cuál juego ejecutar
+ Función para determinar cuál juego ejecutar
 let palabrasData;
 
 function jugarJuego(data) {
     palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8'));
     let juego = data.juego;
     let nivel = `nivel_${data.nivel}`;
-    //nivel = `nivel_${numeroNivel}`;  // Crea "nivel_n"
+    //nivel = `nivel_${numeroNivel}`;  
 
     if (juego === 1) {
-        return jugarJuego1(nivel); // Retorna la palabra y la imagen
+        return jugarJuego1(nivel); 
     } else if (juego === 2) {
         return jugarJuego2(nivel);
     } else if (juego === 3) {
