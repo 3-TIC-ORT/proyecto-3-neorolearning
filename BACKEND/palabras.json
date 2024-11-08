@@ -4,156 +4,156 @@
       {
         "palabra": "sol",
         "imagen": "url_externa_sol",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mesa",
         "imagen": "url_externa_mesa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mano",
         "imagen": "url_externa_mano",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "cama",
         "imagen": "url_externa_cama",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "casa",
         "imagen": "url_externa_casa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "nube",
         "imagen": "url_externa_nube",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "auto",
         "imagen": "url_externa_auto",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "tren",
         "imagen": "url_externa_tren",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "luna",
         "imagen": "url_externa_luna",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mono",
         "imagen": "url_externa_mono",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_2": [
       {
         "palabra": "perro",
         "imagen": "url_externa_perro",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "silla",
         "imagen": "url_externa_silla",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "avión",
         "imagen": "url_externa_avion",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "árbol",
         "imagen": "url_externa_arbol",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "gorro",
         "imagen": "url_externa_gorro",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "fuego",
         "imagen": "url_externa_fuego",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "piano",
         "imagen": "url_externa_piano",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "carpa",
         "imagen": "url_externa_carpa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "lápiz",
         "imagen": "url_externa_lapiz",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "globo",
         "imagen": "url_externa_globo",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_3": [
       {
         "palabra": "remera",
         "imagen": "url_externa_remera",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "moneda",
         "imagen": "url_externa_moneda",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "dientes",
         "imagen": "url_externa_dientes",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "tijera",
         "imagen": "url_externa_tijera",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "tomate",
         "imagen": "url_externa_tomate",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "banana",
         "imagen": "url_externa_banana",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "lluvia",
         "imagen": "url_externa_lluvia",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "conejo",
         "imagen": "url_externa_conejo",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "galleta",
         "imagen": "url_externa_galleta",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "helado",
         "imagen": "url_externa_helado",
-        "usada": "no"
+        "usada": "si"
       }
     ]
   },
