@@ -20,18 +20,54 @@ onEvent("juego_nivel", (data) => {
     //return { msg: `Juego ${data.juego} Nivel ${data.nivel} ouput: ${JSON.stringify(salida)}  ` };
     return salida ;
 });
+/*
+port.on("data", function(data) {
+    let datos = data.toString().trim();
+    let color="";
+    // rojo = 1, verde = 2, azul = 3, amarillo = 4
+    if (datos==="1"){
+        color="rojo";
+    } 
+    else if(datos==="2"){
+        color="verde";
+    }
+    else if (datos==="3"){
+        color="azul";
+    }
+    else if (datos==="4"){
+        color="amarillo";
+    }
+    sendEvent("boton",color);
+
+    console.log(`Acción recibida del Arduino: ${color}`);
+}
+port.on("open", () => {
+    function elegirjuego(juego){
+        let juegoamayte;
+        if (juego >= 1 && juego < 4) {
+            juegoamayte = "Juegos";
+            elegirjuego(juego);
+            terminoJuego(resultado);
+        }
+        else if (juego === 4){
+            juegoamayte = "Simon";
+            elegirjuego(juego);
+            secuenciasimon(secuencia);
+            terminoJuego(resultado);
+
+        } 
+        else if (juego >= 5 && juego < 7) {
+            juegoamayte = "Pares";
+            elegirjuego(juego);
+            recibirjugador(jugador);
+            terminoJuego(resultado);
+        }
+        port.write(juegoamayte+"\n");
+        return { mensaje: `Juego iniciado: ${juegoamayte}` };
+}
+elegirjuego(juego)
 
 
-//juego = parseInt(juego);
-//console.log(`Juego recibido: ${juego}`);
-
-//let salida;
-//if (juego >= 1 && juego < 4) salida = "Juegos";
-//else if (juego === 4) salida = "Simon";
-//else if (juego >= 5 && juego < 7) salida = "Pares";
-
-//port.write(salida);
-//return { mensaje: `Juego iniciado: ${salida}` };  
 
 
 //   let salida = ("Simon"); Color a prender para el Simon. El front debe mandar  R, G, B, Y
@@ -64,7 +100,7 @@ onEvent("secuenciasimon", (secuencia) => {
         if (color === "amarillo") return 'Y';
     }).join(' ');
     console.log(`Secuencia para Arduino: ${secuenciaArduino}`);
-    port.write(secuenciaArduino); 
+    port.write(secuenciaArduino+"\n"); 
 });
 
 // Para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
@@ -80,9 +116,9 @@ onEvent("jugadorJugando", (jugador) => {
 onEvent("terminoJuego", (resultado) => {
         port.write(`1`);
         port.write(resultado);
-        port.write(`1`);
     }
 );
+*/
 // Función para determinar cuál juego ejecutar
 let palabrasData;
 
@@ -102,6 +138,7 @@ function jugarJuego(data) {
         return jugarSimonSays(nivel);
     }
 }
+
 
 function jugarJuego1(nivel) {
         let nivelJuego1 = palabrasData["juego_1"][nivel];
@@ -212,5 +249,5 @@ onEvent("reiniciar", (juego, nivel) => {
 }
 )
 
-/*
+*/
 startServer();
