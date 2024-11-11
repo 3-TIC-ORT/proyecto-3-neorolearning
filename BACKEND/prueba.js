@@ -8,24 +8,8 @@ const port = new SerialPort({
     baudRate: 9600,
 });
 //poner en server CREO 
-const parser = port.pipe(new ReadlineParser());
-port.on("open", () => {
-    if (juegoamayte==="Juegos"){
-        elegirjuego(juego);
-        terminoJuego(resultado);
-    }
-    else if(juegoamayte==="Simon"){
-        elegirjuego(juego);
-        secuenciasimon(secuencia);
-        terminoJuego(resultado);
-    }
-    else if (juegoamayte==="Pares"){
-        elegirjuego(juego);
-        recibirjugador(jugador);
-        terminoJuego(resultado);
-    }
 
-});
+
 
 /*PARES
 port.on("open", () => {
@@ -244,3 +228,4 @@ onEvent("reiniciar", (juego, nivel) => {
 
 
 startServer();
+*/
