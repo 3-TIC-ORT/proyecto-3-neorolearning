@@ -114,13 +114,17 @@ async function comprobarPatron(){
             window.location.reload();
             startButton.style.display="flex"
             perdisteMsg.style.display="block"
+            setTimeout(() => {
+                perdisteMsg.style.display = "none";  // Lo ocultamos después de 3 segundos
+            }, 10000); // 3000ms = 3 segundos
+
             document.querySelectorAll(".boton").forEach(e=>{
                 e.setAttribute("state", "off")
             })
             return 0
             // si sos medio loser y perdiste
         }
-        //alert("bien boton" + j) ------- VAMOSSSSSSSSSSSSSSSSSSSSSSSSS
+        //alert("bien boton" + j) ------- VAMOSSSSSSSSSSSSSSSSSSSSSSSSS}
     }
     setTimeout(() => {
         document.getElementById("juegoTerminado").style.display= "block";
