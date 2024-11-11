@@ -1,5 +1,5 @@
-/*
-connect2Server()
+
+
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const a = document.getElementById("a");
@@ -33,7 +33,7 @@ function onFormSubmit(event) {
     nivel = "";
   }
 }
-
+/*
 form2.addEventListener("submit", onFormSubmit);
 function onFormSubmit(event) {
 	event.preventDefault();
@@ -55,5 +55,6 @@ receive("second", () => {
   seconds.innerText = parseInt(seconds.innerText) + 1;
 });
 */
+
 
 
