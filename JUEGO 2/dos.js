@@ -25,14 +25,6 @@ let emociones = {
         "enojo", 
         "desagrado", 
         "confusión"
-    ],
-    nivel_3: [
-        "manzana", 
-        "frutilla", 
-        "banana", 
-        "sandía", 
-        "uva", 
-        "pera"
     ]
 }
 
@@ -73,19 +65,38 @@ function destapar(id) {
             tarjetasdestapadas = 0;
             aciertos++;
 
-            if (aciertos === 6) { 
-                messi++;
-                for (let index = 0; index < 12; index++) {
-                    let element = document.getElementById(index);
-                    element.disabled = false; 
-                    element.innerHTML = "";   
+            // Verificar si el jugador ha ganado
+            setTimeout(()=>{
+                if (aciertos === 6) { 
+                    if(messi==2){
+                        alert("felicidades")
+                        window.location.replace("/INICIO/menu1.html")
+                    }
+                    clearInterval(tiemporegresivoId);
+                    if(confirm("quieres pasar al siguiente nivel?")){
+                        document.querySelectorAll(".card").forEach(e=>{
+                            e.innerHTML=""
+                            e.disabled = false;
+                            tarjetasdestapadas=0
+                            tarjeta1 = null;
+                            tarjeta2 = null;
+                            primerresultado = null;
+                            segundoresultado = null;
+                            movimientos = 0;
+                            aciertos = 0;
+                            tiemporegresivoId = null;
+                            elementos;
+                        })
+                        messi++
+                        armarCartas()
+                    }else{
+                        window.location.replace("/INICIO/menu1.html")
+                    }
+                    
                 }
-                tarjetasdestapadas = 0;
-                aciertos = 0;  
-                armarCartas(); 
-                clearInterval(tiemporegresivoId); 
-            }
+            }, 100)
         } else {
+            // Si no coinciden, dar la vuelta después de un corto tiempo
             setTimeout(() => {
                 tarjeta1.innerHTML = ' ';
                 tarjeta2.innerHTML = ' ';
@@ -96,3 +107,5 @@ function destapar(id) {
         }
     }
 }
+
+

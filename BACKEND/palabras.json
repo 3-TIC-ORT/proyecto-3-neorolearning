@@ -165,27 +165,27 @@
         "palabras": [
           {
             "palabra": "Azul",
-            "imagen": "url_externa_azul"
+            "imagen": "./azul.png"
           },
           {
             "palabra": "Amarillo",
-            "imagen": "url_externa_amarillo"
+            "imagen": "./amarillo.png"
           },
           {
             "palabra": "Naranja",
-            "imagen": "url_externa_naranja"
+            "imagen": "./naranja.png"
           },
           {
             "palabra": "Rojo",
-            "imagen": "url_externa_rojo"
+            "imagen": "./rojo.png"
           },
           {
             "palabra": "Violeta",
-            "imagen": "url_externa_violeta"
+            "imagen": "./violeta.png"
           },
           {
             "palabra": "Verde",
-            "imagen": "url_externa_verde"
+            "imagen": "./verde.png"
           }
         ]
       },

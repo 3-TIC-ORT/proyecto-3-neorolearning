@@ -50,3 +50,7 @@ button {
     transition: background-color 0.3s;
 }
 
+img{
+    width: 100px;
+    height: 100px;
+}
