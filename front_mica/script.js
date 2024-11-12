@@ -1,5 +1,73 @@
+
+function ejecutarJuegoNivel(juego, nivel) {
+	console.log(`Juego: ${juego}, Nivel: ${nivel}`);
+  if (juego && nivel) {
+    postData("juego_nivel", { juego: juego , nivel:nivel}, (data) => {
+      //a.innerHTML = data.msg;
+      console.log(JSON.stringify(data));
+    });
+
+  }
+}
+
+// Simula Evento Juego Nivel
+juego = "1";
+nivel = "1";
+ejecutarJuegoNivel(juego, nivel);
+
+
+function enviarSecuencia(secuencia) {
+	console.log(`secuencia: ${secuencia}`);
+  postData("secuenciasimon", { secuencia: secuencia}, (data) => {
+    //a.innerHTML = data.msg;
+    console.log(JSON.stringify(data));
+  });
+}
+
+enviarSecuencia("amarillo, rojo, verde, verde") ;
+
+function enviarjugador(resultado) {
+
+	console.log(`resultado recibido: ${jugador}`);
+  postData("jugadorJugando", { jugador: jugador}, (data) => {
+      //a.innerHTML = data.msg;
+      console.log(JSON.stringify(data));
+    });
+}
+
+
+// Simula Evento Juego Nivel
+enviarjugador("PONE");
+
+
+// EVENTO TERMINO
+function termino(resultado) {
+	const resultado = resultado;
+	console.log(`resultado: ${resultado}`);
+  postData("terminoJuego", { resultado: resultado}, (data) => {
+  console.log(JSON.stringify(data));
+  });
+}
+
+// Simula Evento enviar jugador
+let resultado = "GANAR";
+termino(resultado);
+
+function reiniciarJuego(juego,nivel) {
+  const juego = juego;
+	const nivel = nivel;
+	const resultado = resultado;
+	console.log(`resultado: ${resultado}`);
+  postData("terminoJuego", { resultado: resultado}, (data) => {
+  console.log(JSON.stringify(data));
+  });
+}
+
+// Simula Evento enviar jugador
+let juego = "1";
+let nivel = "1";
+reiniciarJuego(juego,nivel);
 /*
-connect2Server()
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const a = document.getElementById("a");
@@ -33,7 +101,7 @@ function onFormSubmit(event) {
     nivel = "";
   }
 }
-
+/*
 form2.addEventListener("submit", onFormSubmit);
 function onFormSubmit(event) {
 	event.preventDefault();
@@ -54,7 +122,7 @@ fetchData("juego", (data) => {
 receive("second", () => {
   seconds.innerText = parseInt(seconds.innerText) + 1;
 });
+*/
 
 
-//-------------------------//
 
