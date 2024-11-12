@@ -1,7 +1,6 @@
 let cajitas = document.getElementById("divCajitas");
 let letras = document.getElementById("divLetras");
 let correcto = document.getElementById("correcto");
-let indednmkmasmkdsa = document.createElement("p");
 let img = document.getElementById("img");
 let palabra = "";
 let wordArray = [];
@@ -11,40 +10,41 @@ let shuffleWord = [];
 connect2Server();
 
 const crearCajitas = async (palabra) => {
-  for (let index = 0; index < palabra.length; index++) {
-      wordArray.push(palabra[index]);
-      sh
-      shuffleWord = shuffleWord.sort((a, b) => 0.5 - Math.random());
-      crearLetras();
-      console.log(palabra);
-      wordArray.forEach((letter, i) => {
-        listaCajitas.push({ index: i, letter: letter });
-        let div = document.createElement("h2");
-        div.setAttribute("id", `cajita${i}`);
-        div.classList.add("cajitas");
-        cajitas.appendChild(div);
-      });
-      console.log(listaCajitas);shuffleWord.push(palabra[index]);
-  }
+  wordArray = [...palabra];  // Almacena la palabra en el array
+  shuffleWord = [...wordArray].sort(() => 0.5 - Math.random());  // Mezcla las letras solo una vez
+
+  // Crea las cajitas solo una vez por cada letra
+  wordArray.forEach((letter, i) => {
+    listaCajitas.push({ index: i, letter: letter });
+    let div = document.createElement("h2");
+    div.setAttribute("id", `cajita${i}`);
+    div.classList.add("cajitas");
+    cajitas.appendChild(div);
+  });
+
+  // Llama a crearLetras solo después de crear las cajitas
+  crearLetras();
+  console.log("Palabra:", palabra);
+  console.log("Lista de cajitas:", listaCajitas);
 }
 
 const parametro = new URLSearchParams(window.location.search);
 const niveles = parametro.get('nivel');
 
 function callBack1(data) {
-  console.log("hola", data)
   let palabra = data.palabra;
   let imagen = data.imagen;
-  // crearCajitas(palabra)
-  document.getElementById("mostrarPalabra") 
-  document.getElementById("mostrarImagen")
+  crearCajitas(palabra);
+  document.getElementById("mostrarPalabra")
+  document.getElementById("mostrarImagen").src = imagen;
 }
+
 postData("juego_nivel", {
   juego: 1,
   nivel: niveles,
-}, () => console.log("hola"))
+}, callBack1);
 
-function reJuego() {
+/*function reJuego() {
     document.getElementById("juegoTerminado").style.display= "none";
     document.getElementById("juegoTerminado").style.display= "block";
     document.getElementById("comfirmar").addEventListener("click", async () =>{
@@ -56,18 +56,8 @@ function reJuego() {
     });
   }
 
-fetchData("reiniciar", reJuego)
+fetchData("reiniciar", reJuego) */
 
-
-
-
-//  const getWord = () => {
-//postData("juego_nivel", { juego: 1 , nivel: 1}, (data) => {
-//a.innerHTML = data.msg;
-//  img.src = data.imagen
-//word =  data["salida"]["palabra"]
-//});
-//};
 
 const crearLetras = () => {
   shuffleWord.forEach((letter) => {
