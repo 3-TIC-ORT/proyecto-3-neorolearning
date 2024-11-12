@@ -46,31 +46,6 @@ port.on("data", function(data) {
     console.log(`Acción recibida del Arduino: ${color}`);
 })
 
-/*
-function juegoHardware(juego){
-    let juegoamayte;
-    if (juego >= 1 && juego < 4) {
-        juegoamayte = "Juegos";
-        //elegirjuego(juego);
-        //terminoJuego(resultado);
-    }
-    else if (juego === 4){
-        juegoamayte = "Simon";
-        //elegirjuego(juego);
-        secuenciasimon(secuencia);
-        //terminoJuego(resultado);
-
-    } 
-    else if (juego >= 5 && juego < 7) {
-        juegoamayte = "Pares";
-        //elegirjuego(juego);
-        recibirjugador(jugador);
-        //terminoJuego(resultado);
-    }
-    port.write(juegoamayte+"\n");
-    return { mensaje: `Juego iniciado: ${juegoamayte}` };
-}
-*/
 
 // bloque listo
 function juegoHardware(juego) {
@@ -92,6 +67,10 @@ function juegoHardware(juego) {
 //   let salida = ("Simon"); Color a prender para el Simon. El front debe mandar  R, G, B, Y
 // bloque listo
 onEvent("secuenciasimon", (secuencia) => {
+    enviarSecuenciaArduino(secuencia);
+});
+
+function enviarSecuenciaArduino(secuencia){
     let secuenciaArduino = secuencia.split(', ').map(color => {
         if (color === "rojo") return 'R';
         if (color === "verde") return 'G';
@@ -99,10 +78,8 @@ onEvent("secuenciasimon", (secuencia) => {
         if (color === "amarillo") return 'Y';
         return ''; // Si no se reconoce el color, se retorna un string vacío.
     }).join(' ');
-
     port.write(secuenciaArduino+"\n"); 
-
-});
+};
 
 // Para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
 // bloque listo
@@ -253,4 +230,4 @@ onEvent("reiniciar", (juego, nivel) => {
 )
 
 
-//startServer();
+startServer();
