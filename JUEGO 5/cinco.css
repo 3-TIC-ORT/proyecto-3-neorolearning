@@ -1,49 +1,28 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
 main{
     width: 100vw;
-    height: 85vh;
-}
-
-body{
-    background-image: url('FABI.png');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-}
-
-main{
-    width: 100vw;
-    height: 85vh;
+    background-image: url('tateti.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-td {
-    width: 33%;
-    height: 10px;
-    text-align: center;
-    padding: 0;
-}
-button {
-    width: 100%;
-    height: 100%;
-    font-size: 40px;
-    padding: 0;
-    border: none;
-    background: none;
-    color: #000
-}
-
-.card {
-    width: 200px; 
-    height: 160px;
-    border-radius: 20px;
-    background-color: white; 
-    cursor: pointer;
-    transition: background-color 0.3s;
+main {
+    width: 100vw;
+    height: 100vh;
 }
 
 .player p {
-    font-size: 2em; 
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -60,7 +39,7 @@ button {
 
 .green {
     background-color: green;
-}   
+}
 
 .player1 {
     margin-left: 7em;
@@ -71,11 +50,11 @@ button {
 }
 
 .juegoTerminado {
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 2; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .flechar {
@@ -87,20 +66,11 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Espacio entre el tablero y cada jugador */
+    gap: 20px;
+    width: 100%;
+    height: 100%;
 }
 
-/* Ajustes para el tablero */
-table {
-    width: 50vw;
-    height: 75vh;
-    border-collapse: collapse;
-    background-color: rgba(31, 1, 95, 1);
-    border-radius: 30px;
-    padding: 30px;
-}
-
-/* Ajustes para cada jugador */
 .player {
     display: flex;
     flex-direction: column;
@@ -111,4 +81,32 @@ table {
     color: #fff;
     width: 150px;
     text-align: center;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);     
+    gap: 10px;
+    width: 50vw;
+    height: 40vw;
+    border-collapse: collapse;
+    background-color: rgba(31, 1, 95, 1);
+    border-radius: 30px;
+    padding: 20px;
+    justify-items: center;  
+    align-items: center;   
+}
+
+.cuadrado {
+    width: 90%; 
+    height: 90%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+    font-size: 3em;  
+    font-weight: bold;
+    border-radius: 20px;
 }

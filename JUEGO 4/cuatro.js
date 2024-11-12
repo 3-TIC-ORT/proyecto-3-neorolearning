@@ -34,6 +34,7 @@ function agregarColorPatron(){
             patron.push(nRandom)
         }
         
+        
     //score++;
 }
 async function singColor(color){
@@ -111,16 +112,20 @@ async function comprobarPatron(){
         // comprobar si cada elemento coincide
         if(patron[j]!=patronIngresado[j]){
         //alert("mal boton" + j)  ------- VAMOSSSSSSSSSSSSSSSSSSSSSSSSS
-            window.location.reload();
             startButton.style.display="flex"
             perdisteMsg.style.display="block"
+            setTimeout(() => {
+                perdisteMsg.style.display = "none";  // Lo ocultamos después de 3 segundos
+                window.location.reload();
+            }, 10000); // 3000ms = 3 segundos
+
             document.querySelectorAll(".boton").forEach(e=>{
                 e.setAttribute("state", "off")
             })
             return 0
             // si sos medio loser y perdiste
         }
-        //alert("bien boton" + j) ------- VAMOSSSSSSSSSSSSSSSSSSSSSSSSS
+        //alert("bien boton" + j) ------- VAMOSSSSSSSSSSSSSSSSSSSSSSSSS}
     }
     setTimeout(() => {
         document.getElementById("juegoTerminado").style.display= "block";
@@ -131,18 +136,13 @@ async function comprobarPatron(){
         document.getElementById("cancelar").addEventListener("click", async () =>{
             window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
         });
-
-        if (respuesta) {
-        } else {
-            window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
-        }
     }, 100);
     
     document.querySelectorAll(".boton").forEach(e=>{
         e.setAttribute("state", "off")
     })
     
-     setTimeout(()=>{
+    setTimeout(()=>{
         pasarNivel()
    },800) // tiempo
     //que muestre el siguiente color

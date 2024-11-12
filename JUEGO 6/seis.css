@@ -6,7 +6,7 @@ main {
 }
 
 body{
-        background-image: url('JUEGUITO.png'); 
+        background-image: url('A\ VER.png'); 
         background-size: cover; 
         background-position: center; 
         background-repeat: no-repeat; 
@@ -37,17 +37,20 @@ body{
 .token {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 50%; 
     margin-bottom: 10px;
+    background-size: cover; 
+    background-position: center; 
 }
 
 .yellow {
-    background-color: yellow;
+    background-image: url('Group\ 246.png'); 
 }
 
 .green {
-    background-color: green;
+    background-image: url('Group\ 247.png');
 }
+
 
 #tablero {
     height: 540px;
@@ -58,7 +61,6 @@ body{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* box-shadow: 0 20px 0 #4866C2 inset; */
     border-top: 30px solid #4866C2;
     margin-top: 50px;
 }
@@ -72,12 +74,21 @@ body{
     border: 5px solid #3258A7;
 }
 
+.pieza{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    margin-bottom: 10px;
+    background-size: cover; 
+    background-position: center; 
+}
+
 .pieza-roja {
-    background-color: yellow;
+    background-color: #FAA61C;
 }
 
 .pieza-amarilla {
-    background-color: green;
+    background-color: #098509;
 }
 
 
@@ -108,6 +119,8 @@ body{
 }
 
 .juegoTerminado {
+    width: 900px;
+    height: 900px ;
     position: fixed; 
     top: 50%; 
     left: 50%; 
@@ -119,4 +132,35 @@ body{
     position: fixed;
     z-index: 3;
 }
+
+
+    .VJ {
+        width: 380px;
+        height: 120px;
+        background-color: rgba(0, 12, 39, 1);
+        border:  10px solid rgba(6, 14, 56, 1);
+        border-radius: 20px;
+        font-size: 40px;
+        font-family: "Inter", sans-serif;
+        margin-left: 40px;
+        margin-top: 680px; 
+        color: white;
+        cursor: pointer;
+    }
+    
+
+.VI {
+    width: 380px;
+    height: 120px;
+    background-color: rgba(0, 12, 39, 1);
+    border:  10px solid rgba(6, 14, 56, 1);
+    border-radius: 20px;
+    font-size: 40px;
+    font-family: "Inter", sans-serif;
+    margin-left: 40px;
+    margin-top: 680px; 
+    color: white;
+    cursor: pointer ;
+}
+
 

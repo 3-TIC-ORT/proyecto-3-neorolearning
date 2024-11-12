@@ -63,7 +63,6 @@ function colocarPieza() {
     currFilas[c] -= 1; // Actualizar la fila más baja disponible en la columna
     verificarGanador(); // Llamar a la función para verificar si hay un ganador
 }
-
 function verificarGanador() {
     // horizontal
     for (let r = 0; r < filas; r++) {
@@ -72,7 +71,11 @@ function verificarGanador() {
                 if (tablero[r][c] == tablero[r][c + 1] &&
                     tablero[r][c + 1] == tablero[r][c + 2] &&
                     tablero[r][c + 2] == tablero[r][c + 3]) {
-                    declararGanador(r, c);
+                    // Resalta las fichas ganadoras y luego muestra la imagen del ganador
+                    resaltarFichasGanadoras(r, c, 'horizontal');
+                    setTimeout(() => {
+                        declararGanador(r, c);
+                    }, 100); // Espera 1 segundo antes de mostrar la imagen del ganador
                     return;
                 }
             }
@@ -86,7 +89,10 @@ function verificarGanador() {
                 if (tablero[r][c] == tablero[r + 1][c] &&
                     tablero[r + 1][c] == tablero[r + 2][c] &&
                     tablero[r + 2][c] == tablero[r + 3][c]) {
-                    declararGanador(r, c);
+                    resaltarFichasGanadoras(r, c, 'vertical');
+                    setTimeout(() => {
+                        declararGanador(r, c);
+                    }, 100); // Espera 1 segundo antes de mostrar la imagen del ganador
                     return;
                 }
             }
@@ -100,7 +106,10 @@ function verificarGanador() {
                 if (tablero[r][c] == tablero[r + 1][c + 1] &&
                     tablero[r + 1][c + 1] == tablero[r + 2][c + 2] &&
                     tablero[r + 2][c + 2] == tablero[r + 3][c + 3]) {
-                    declararGanador(r, c);
+                    resaltarFichasGanadoras(r, c, 'diagonal');
+                    setTimeout(() => {
+                        declararGanador(r, c);
+                    }, 100); // Espera 1 segundo antes de mostrar la imagen del ganador
                     return;
                 }
             }
@@ -114,7 +123,10 @@ function verificarGanador() {
                 if (tablero[r][c] == tablero[r - 1][c + 1] &&
                     tablero[r - 1][c + 1] == tablero[r - 2][c + 2] &&
                     tablero[r - 2][c + 2] == tablero[r - 3][c + 3]) {
-                    declararGanador(r, c);
+                    resaltarFichasGanadoras(r, c, 'diagonal');
+                    setTimeout(() => {
+                        declararGanador(r, c);
+                    }, 100); // Espera 1 segundo antes de mostrar la imagen del ganador
                     return;
                 }
             }
@@ -152,11 +164,6 @@ function declararGanador(r, c) {
             document.getElementById("cancelar").addEventListener("click", async () =>{
                 window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
             });
-
-            if (respuesta) {
-            } else {
-                window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
-            }
         }, 100);
     }
     
