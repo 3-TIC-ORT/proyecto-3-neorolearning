@@ -1,6 +1,6 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
-
+import { ReadlineParser } from "@serialport/parser-readline"; // Asegúrate de tener esta línea
 import { SerialPort } from "serialport";
 const port = new SerialPort({
     //Completar con el puerto correcto
@@ -193,6 +193,7 @@ function jugarJuego3(nivel) {
     return { grupoAleatorio }; 
 }
 
+
 function reiniciarJ2y3(juego, nivel) {
 
     if (palabrasData[juego] && palabrasData[juego][nivel]) {
@@ -228,5 +229,4 @@ onEvent("reiniciar", (juego, nivel) => {
     }
 }
 )
-
-//startServer()
+//startServer();
