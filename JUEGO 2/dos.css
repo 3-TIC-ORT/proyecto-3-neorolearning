@@ -47,8 +47,19 @@ button {
     cursor: pointer;
     display: inline-block;
     margin: 10px;
-    transition: background-color 0.3s;
+    transition: 0.2s ease;
 }
+
+.invalid {
+    transform: rotateX(180deg);
+    background-color: rgb(218, 0, 0) I !important;
+}
+
+.valid {
+    transform: rotateX(180deg);
+    background-color: rgb(67, 182, 0);
+}
+
 
 img{
     width: 100px;

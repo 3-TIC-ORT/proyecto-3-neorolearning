@@ -33,6 +33,16 @@ function armarCartas() {
     elementos = elementos.sort(() => Math.random() - 0.5); 
     console.log(elementos);
 }
+function displayInvalidCard(element) {
+    element.classList.add('invalid')
+    setTimeout(() => {
+        element.classList.remove('invalid')
+    }, 500)
+}   
+
+function displayValidCard(element) {
+    element.classList.add('valid')
+}
 
 armarCartas();
 
@@ -43,6 +53,7 @@ function destapar(id) {
     if (tarjetasdestapadas == 1) {
         tarjeta1 = document.getElementById(id);
         primerresultado = elementos[id];
+        displayValidCard(tarjeta1)
         if (primerresultado.endsWith('.png')) {
             tarjeta1.innerHTML = `<img src="./images/${primerresultado}" alt="">`;
         } else {
@@ -52,6 +63,7 @@ function destapar(id) {
     } else if (tarjetasdestapadas == 2) {
         tarjeta2 = document.getElementById(id);
         segundoresultado = elementos[id];
+        displayValidCard(tarjeta2)
         if (segundoresultado.endsWith('.png')) {
             tarjeta2.innerHTML = `<img src="./images/${segundoresultado}" alt="">`;
         } else {
@@ -98,6 +110,8 @@ function destapar(id) {
         } else {
             // Si no coinciden, dar la vuelta después de un corto tiempo
             setTimeout(() => {
+                displayInvalidCard(tarjeta1)
+                displayInvalidCard(tarjeta2)
                 tarjeta1.innerHTML = ' ';
                 tarjeta2.innerHTML = ' ';
                 tarjeta1.disabled = false;
