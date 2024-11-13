@@ -6,8 +6,16 @@ let palabra = "";
 let wordArray = [];
 let listaCajitas = [];
 let shuffleWord = [];
+let arduino;
 
 connect2Server();
+
+
+fetchData("boton", (color)=>{
+  arduino=color
+  console.log(`arduino:${arduino}`)
+  console.log(`color:${color}`)
+})
 
 const crearCajitas = async (palabra) => {
   wordArray = [...palabra];  // Almacena la palabra en el array
