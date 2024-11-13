@@ -1,38 +1,36 @@
-main {
-    width: 100%; 
-    height: 70vh;
+/* Estilos del video para ocupar toda la pantalla */
+.video video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; 
+    z-index: 1; 
 }
 
-.titulo {
-    text-align: center;
-    font-size: 30px;
-    width: 100%; 
-    display: flex;
-    justify-content: center;
-    margin-top: -3%;
-}
-
-.video {
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
-}
-
-button{ 
+/* Estilos del botón */
+.volver button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     width: 150px;
     height: 50px;
     padding: 12px;
     background-color: white;
-    border-color: black;
+    border: 2px solid black;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
-
+    display: inline-flex; /* Asegura que todo el botón sea clickeable */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 2; 
 }
 
-footer{
-    display: flex;
-    justify-content: flex-end;
-    padding-bottom: 100px;
+/* Efecto al pasar el cursor */
+.volver button:hover {
+    transform: scale(1.1); /* Agranda el botón ligeramente */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Añade sombra */
 }

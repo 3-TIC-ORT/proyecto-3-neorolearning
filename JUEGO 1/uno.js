@@ -1,52 +1,27 @@
 let cajitas = document.getElementById("divCajitas");
-
 let letras = document.getElementById("divLetras");
 let correcto = document.getElementById("correcto");
-let indednmkmasmkdsa = document.createElement("p");
 let img = document.getElementById("img");
-let word = "";
+let palabra = "";
 let wordArray = [];
 let listaCajitas = [];
 let shuffleWord = [];
+let arduino;
 
 connect2Server();
 
-function sendClick (botonId){
 
-  postData("juego_nivel", {
-    juego: 1,
-    nivel: botonId,
-    }, callBack1)
+fetchData("boton", (color)=>{
+  arduino=color
+  console.log(`arduino:${arduino}`)
+  console.log(`color:${color}`)
+})
 
-function callBack1(data) {
-let palabra = data.palabra;
-let imagen = data.imagen;
-crearCajitas(palabra)
-document.getElementById("mostrarPalabra")
-document.getElementById("mostrarImagen")
-}
+const crearCajitas = async (palabra) => {
+  wordArray = [...palabra];  // Almacena la palabra en el array
+  shuffleWord = [...wordArray].sort(() => 0.5 - Math.random());  // Mezcla las letras solo una vez
 
-
-}
-
-
-//  const getWord = () => {
-//postData("juego_nivel", { juego: 1 , nivel: 1}, (data) => {
-//a.innerHTML = data.msg;
-//  img.src = data.imagen
-//word =  data["salida"]["palabra"]
-//});
-//};
-
-const crearCajitas = async (word) => {
-for (let index = 0; index < word.length; index++) {
-    wordArray.push(word[index]);
-    shuffleWord.push(word[index]);
-}
-
-  shuffleWord = shuffleWord.sort((a, b) => 0.5 - Math.random());
-  crearLetras();
-  console.log(word);
+  // Crea las cajitas solo una vez por cada letra
   wordArray.forEach((letter, i) => {
     listaCajitas.push({ index: i, letter: letter });
     let div = document.createElement("h2");
@@ -54,8 +29,43 @@ for (let index = 0; index < word.length; index++) {
     div.classList.add("cajitas");
     cajitas.appendChild(div);
   });
-  console.log(listaCajitas);
-};
+
+  // Llama a crearLetras solo después de crear las cajitas
+  crearLetras();
+  console.log("Palabra:", palabra);
+  console.log("Lista de cajitas:", listaCajitas);
+}
+
+const parametro = new URLSearchParams(window.location.search);
+const niveles = parametro.get('nivel');
+
+function callBack1(data) {
+  let palabra = data.palabra;
+  let imagen = data.imagen;
+  crearCajitas(palabra);
+  document.getElementById("mostrarPalabra")
+  document.getElementById("mostrarImagen").src = imagen;
+}
+
+postData("juego_nivel", {
+  juego: 1,
+  nivel: niveles,
+}, callBack1);
+
+function reJuego() {
+    document.getElementById("juegoTerminado").style.display= "none";
+    document.getElementById("juegoTerminado").style.display= "block";
+    document.getElementById("comfirmar").addEventListener("click", async () =>{
+      reJuego(); 
+      document.getElementById("juegoTerminado").style.display= "none";
+    });
+    document.getElementById("cancelar").addEventListener("click", async () =>{
+      window.location.href = "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
+    });
+  }
+
+fetchData("reiniciar", reJuego) 
+
 
 const crearLetras = () => {
   shuffleWord.forEach((letter) => {
@@ -84,5 +94,3 @@ const clickLetter = (letter) => {
     correcto.innerText = "Letra incorrecta";
   }
 };
-
-crearCajitas();

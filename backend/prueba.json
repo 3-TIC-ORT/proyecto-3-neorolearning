@@ -4,12 +4,12 @@
       {
         "palabra": "sol",
         "imagen": "url_externa_sol",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "mesa",
         "imagen": "url_externa_mesa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "mano",
@@ -29,12 +29,12 @@
       {
         "palabra": "nube",
         "imagen": "url_externa_nube",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "auto",
         "imagen": "url_externa_auto",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "tren",
