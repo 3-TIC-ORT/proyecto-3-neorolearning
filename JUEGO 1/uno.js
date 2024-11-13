@@ -52,7 +52,7 @@ postData("juego_nivel", {
   nivel: niveles,
 }, callBack1);
 
-/*function reJuego() {
+function reJuego() {
     document.getElementById("juegoTerminado").style.display= "none";
     document.getElementById("juegoTerminado").style.display= "block";
     document.getElementById("comfirmar").addEventListener("click", async () =>{
@@ -64,7 +64,7 @@ postData("juego_nivel", {
     });
   }
 
-fetchData("reiniciar", reJuego) */
+fetchData("reiniciar", reJuego) 
 
 
 const crearLetras = () => {
