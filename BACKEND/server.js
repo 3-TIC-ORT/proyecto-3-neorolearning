@@ -1,17 +1,18 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
-import { ReadlineParser } from "@serialport/parser-readline"; // Asegúrate de tener esta línea
-import { SerialPort } from "serialport";
+import { SerialPort, ReadlineParser } from "serialport";
 const port = new SerialPort({
     //Completar con el puerto correcto
     path: "COM4",
     baudRate: 9600,
 });
+const parser = new ReadlineParser();
+port.pipe(parser);
 
 port.on("open", () => {
     console.log("Puerto abierto");
 });
-const parser = port.pipe(new ReadlineParser());
+
 // Función para manejar el evento de recibir el juego
 //Bloque listo
 onEvent("juego_nivel", (data) => {
@@ -24,14 +25,18 @@ onEvent("juego_nivel", (data) => {
 
 });
 
-// bloque listo
-port.on("data", function(data) {
+parser.on("data", (data) => {
+    console.log(data.trim())
+})
+
+//probar
+ port.on("data", function(data) {
     let datos = data.toString().trim();
     let color="";
-    // rojo = 1, verde = 2, azul = 3, amarillo = 4
+   // rojo = 1, verde = 2, azul = 3, amarillo = 4
     if (datos==="1"){
         color="rojo";
-    } 
+    }
     else if(datos==="2"){
         color="azul";
     }
@@ -42,7 +47,6 @@ port.on("data", function(data) {
         color="amarillo";
     }
     sendEvent("boton",color);
-
     console.log(`Acción recibida del Arduino: ${color}`);
 })
 
