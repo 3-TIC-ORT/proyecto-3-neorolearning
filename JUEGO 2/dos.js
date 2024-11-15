@@ -35,6 +35,7 @@ function armarCartas() {
 }
 function displayInvalidCard(element) {
     element.classList.add('invalid')
+    element.classList.remove('valid')
     setTimeout(() => {
         element.classList.remove('invalid')
     }, 500)
@@ -57,7 +58,7 @@ function destapar(id) {
         if (primerresultado.endsWith('.png')) {
             tarjeta1.innerHTML = `<img src="./images/${primerresultado}" alt="">`;
         } else {
-            tarjeta1.innerHTML = primerresultado;
+            tarjeta1.innerHTML = `<p class='textoInvertido'>${primerresultado}</p>`;
         }
         tarjeta1.disabled = true;
     } else if (tarjetasdestapadas == 2) {
@@ -67,7 +68,7 @@ function destapar(id) {
         if (segundoresultado.endsWith('.png')) {
             tarjeta2.innerHTML = `<img src="./images/${segundoresultado}" alt="">`;
         } else {
-            tarjeta2.innerHTML = segundoresultado;
+            tarjeta2.innerHTML = `<p class='textoInvertido'>${segundoresultado}</p>`;
         }
         tarjeta2.disabled = true;
 
@@ -109,6 +110,16 @@ function destapar(id) {
             }, 100)
         } else {
             // Si no coinciden, dar la vuelta después de un corto tiempo
+            setTimeout(() => {
+                displayInvalidCard(tarjeta1)
+                displayInvalidCard(tarjeta2)
+                tarjeta1.innerHTML = ' ';
+                tarjeta2.innerHTML = ' ';
+                tarjeta1.disabled = false;
+                tarjeta2.disabled = false;
+                tarjetasdestapadas = 0;
+            }, 800);
+
             setTimeout(() => {
                 displayInvalidCard(tarjeta1)
                 displayInvalidCard(tarjeta2)
