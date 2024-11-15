@@ -194,27 +194,27 @@
         "palabras": [
           {
             "palabra": "Feliz",
-            "imagen": "url_externa_feliz"
+            "imagen": "./feliz.png"
           },
           {
             "palabra": "Triste",
-            "imagen": "url_externa_triste"
+            "imagen": "./triste.png"
           },
           {
             "palabra": "Miedo",
-            "imagen": "url_externa_miedo"
+            "imagen": "./susto.png"
           },
           {
             "palabra": "Enojo",
-            "imagen": "url_externa_enojo"
+            "imagen": "./enojo.png"
           },
           {
             "palabra": "Desagrado",
-            "imagen": "url_externa_desagrado"
+            "imagen": "./desagrado.png"
           },
           {
-            "palabra": "Confunoón",
-            "imagen": "url_externa_confunoon"
+            "palabra": "Confusión",
+            "imagen": "./confusion"
           }
         ]
       }
