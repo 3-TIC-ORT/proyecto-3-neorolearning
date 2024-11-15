@@ -109,7 +109,7 @@ function jugarJuego3(nivel) {
     return { grupoAleatorio }; 
 }
 
-/*import { onEvent, sendEvent, startServer } from "soquetic";
+import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
 
 import { SerialPort, ReadlineParser } from "serialport";
@@ -122,7 +122,7 @@ const port = new SerialPort({
 
 
 
-/*PARES
+//PARES
 port.on("open", () => {
     setTimeout(() => {
         elegirjuego(5);
