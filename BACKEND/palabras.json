@@ -14,27 +14,27 @@
       {
         "palabra": "mano",
         "imagen": "url_externa_mano",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "cama",
         "imagen": "url_externa_cama",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "casa",
         "imagen": "url_externa_casa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "nube",
         "imagen": "url_externa_nube",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "auto",
         "imagen": "url_externa_auto",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "tren",
@@ -49,49 +49,49 @@
       {
         "palabra": "mono",
         "imagen": "url_externa_mono",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_2": [
       {
         "palabra": "perro",
         "imagen": "url_externa_perro",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "silla",
         "imagen": "url_externa_silla",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "avión",
         "imagen": "url_externa_avion",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "árbol",
         "imagen": "url_externa_arbol",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "gorro",
         "imagen": "url_externa_gorro",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "fuego",
         "imagen": "url_externa_fuego",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "piano",
         "imagen": "url_externa_piano",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "carpa",
         "imagen": "url_externa_carpa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "lápiz",
@@ -101,7 +101,7 @@
       {
         "palabra": "globo",
         "imagen": "url_externa_globo",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_3": [
@@ -153,7 +153,7 @@
       {
         "palabra": "helado",
         "imagen": "url_externa_helado",
-        "usada": "no"
+        "usada": "si"
       }
     ]
   },

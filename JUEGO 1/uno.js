@@ -11,7 +11,7 @@ let arduino;
 
 connect2Server();
 
-
+// CUANDO LE DES AL BOTON DE EMPEZAR QUE CHEQUE SI HHAY PALABRAS Y META UN REINICIO
 
 const crearCajitas = async (palabra) => {
   
