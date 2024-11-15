@@ -1,20 +1,19 @@
-
-function ejecutarJuegoNivel(juego, nivel) {
-	console.log(`Juego: ${juego}, Nivel: ${nivel}`);
-  if (juego && nivel) {
-    postData("juego_nivel", { juego: juego , nivel:nivel}, (data) => {
-      //a.innerHTML = data.msg;
+/*
+connect2Server();
+function ejecutarJuegoNivel() {
+  let juego = "1";
+  let nivel = "1";
+  console.log(`Juego: ${juego}, Nivel: ${nivel}`);
+  
+  postData("juego_nivel", { juego: juego, nivel: nivel }, (data) => {
       console.log(JSON.stringify(data));
-    });
-
-  }
+  });
 }
 
-// Simula Evento Juego Nivel
-juego = "1";
-nivel = "1";
-ejecutarJuegoNivel(juego, nivel);
+// Llamar a la función
+ejecutarJuegoNivel();
 
+/*
 
 function enviarSecuencia(secuencia) {
 	console.log(`secuencia: ${secuencia}`);
