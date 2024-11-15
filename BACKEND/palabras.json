@@ -4,27 +4,27 @@
       {
         "palabra": "sol",
         "imagen": "url_externa_sol",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "mesa",
         "imagen": "url_externa_mesa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "mano",
         "imagen": "url_externa_mano",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "cama",
         "imagen": "url_externa_cama",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "casa",
         "imagen": "url_externa_casa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "nube",
@@ -34,64 +34,64 @@
       {
         "palabra": "auto",
         "imagen": "url_externa_auto",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "tren",
         "imagen": "url_externa_tren",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "luna",
         "imagen": "url_externa_luna",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "mono",
         "imagen": "url_externa_mono",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_2": [
       {
         "palabra": "perro",
         "imagen": "url_externa_perro",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "silla",
         "imagen": "url_externa_silla",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "avión",
         "imagen": "url_externa_avion",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "árbol",
         "imagen": "url_externa_arbol",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "gorro",
         "imagen": "url_externa_gorro",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "fuego",
         "imagen": "url_externa_fuego",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "piano",
         "imagen": "url_externa_piano",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "carpa",
         "imagen": "url_externa_carpa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "lápiz",
@@ -101,59 +101,59 @@
       {
         "palabra": "globo",
         "imagen": "url_externa_globo",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_3": [
       {
         "palabra": "remera",
         "imagen": "url_externa_remera",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "moneda",
         "imagen": "url_externa_moneda",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "dientes",
         "imagen": "url_externa_dientes",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "tijera",
         "imagen": "url_externa_tijera",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "tomate",
         "imagen": "url_externa_tomate",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "banana",
         "imagen": "url_externa_banana",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "lluvia",
         "imagen": "url_externa_lluvia",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "conejo",
         "imagen": "url_externa_conejo",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "galleta",
         "imagen": "url_externa_galleta",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "helado",
         "imagen": "url_externa_helado",
-        "usada": "si"
+        "usada": "no"
       }
     ]
   },
@@ -213,8 +213,8 @@
             "imagen": "url_externa_desagrado"
           },
           {
-            "palabra": "Confusión",
-            "imagen": "url_externa_confusion"
+            "palabra": "Confunoón",
+            "imagen": "url_externa_confunoon"
           }
         ]
       }

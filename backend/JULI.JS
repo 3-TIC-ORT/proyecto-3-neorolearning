@@ -194,23 +194,23 @@ function reiniciarJ2y3(juego, nivel) {
     }
 }
 
-onEvent("reiniciar", (juego, nivel) => {
+onEvent("reiniciar", (data) => {
+    const {juego, nivel} = data
     let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8') || '{}');
-    
     if(juego==="1"){
-      
-      {  let p2 = `nivel_${nivel.data}`;
+        let p2 = `nivel_${nivel}`;
         let palabrasNivel = palabrasData["juego_1"][p2];
         palabrasNivel.forEach(palabra => palabra.usada = "no");
         fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
-        console.log(`Nivel ${nivel.data} de ${juego} reiniciado.`);
+        console.log(`Nivel ${nivel} de ${juego} reiniciado.`);
+        return true
     }
     else if(juego==="2" || juego==="3"){
         let p1 = `juego_${juego}`;
         let p2 = `nivel_${nivel.data}`;
         reiniciarJ2y3(p1, p2);
     }
-}
+    }
 )
 
 startServer()
