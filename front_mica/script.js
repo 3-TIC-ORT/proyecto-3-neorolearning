@@ -1,29 +1,28 @@
-/*
-connect2Server();
+
+// connect2Server();
 function ejecutarJuegoNivel() {
   let juego = "1";
   let nivel = "1";
   console.log(`Juego: ${juego}, Nivel: ${nivel}`);
-  
   postData("juego_nivel", { juego: juego, nivel: nivel }, (data) => {
-      console.log(JSON.stringify(data));
+      console.log(data);
   });
 }
 
 // Llamar a la función
-ejecutarJuegoNivel();
+//ejecutarJuegoNivel();
 
-/*
 
-function enviarSecuencia(secuencia) {
+
+function enviarSecuencia() {
+  let secuencia="amarillo, rojo, verde, verde"
 	console.log(`secuencia: ${secuencia}`);
   postData("secuenciasimon", { secuencia: secuencia}, (data) => {
     //a.innerHTML = data.msg;
-    console.log(JSON.stringify(data));
+    console.log(data);
   });
 }
-
-enviarSecuencia("amarillo, rojo, verde, verde") ;
+enviarSecuencia();
 
 function enviarjugador(resultado) {
 
