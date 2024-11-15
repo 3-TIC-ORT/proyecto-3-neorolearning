@@ -7,11 +7,11 @@ const port = new SerialPort({
     path: "COM4",
     baudRate: 9600,
 });
-const parser = port.pipe(new ReadlineParser());
 
 port.on("open", () => {
     console.log("Puerto abierto");
 });
+const parser = port.pipe(new ReadlineParser());
 // Función para manejar el evento de recibir el juego
 //Bloque listo
 onEvent("juego_nivel", (data) => {
@@ -33,10 +33,10 @@ port.on("data", function(data) {
         color="rojo";
     } 
     else if(datos==="2"){
-        color="verde";
+        color="azul";
     }
     else if (datos==="3"){
-        color="azul";
+        color="verde";
     }
     else if (datos==="4"){
         color="amarillo";
@@ -229,4 +229,4 @@ onEvent("reiniciar", (juego, nivel) => {
     }
 }
 )
-//startServer();
+startServer();
