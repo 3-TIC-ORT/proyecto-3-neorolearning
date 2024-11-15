@@ -198,7 +198,8 @@ onEvent("reiniciar", (juego, nivel) => {
     let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8') || '{}');
     
     if(juego==="1"){
-        let p2 = `nivel_${nivel.data}`;
+      
+      {  let p2 = `nivel_${nivel.data}`;
         let palabrasNivel = palabrasData["juego_1"][p2];
         palabrasNivel.forEach(palabra => palabra.usada = "no");
         fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
