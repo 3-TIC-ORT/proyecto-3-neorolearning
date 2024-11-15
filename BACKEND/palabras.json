@@ -9,7 +9,7 @@
       {
         "palabra": "mesa",
         "imagen": "url_externa_mesa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mano",
@@ -202,7 +202,7 @@
           },
           {
             "palabra": "Miedo",
-            "imagen": "./susto.png"
+            "imagen": "./miedo.png"
           },
           {
             "palabra": "Enojo",
@@ -214,7 +214,7 @@
           },
           {
             "palabra": "Confusión",
-            "imagen": "./confusion"
+            "imagen": "./confusión.png"
           }
         ]
       }
@@ -226,27 +226,27 @@
         "palabras": [
           {
             "palabra": "Cocodrilo",
-            "imagen": "url_externa_cocodrilo"
+            "imagen": "./cocodrilo.png"
           },
           {
             "palabra": "Pájaro",
-            "imagen": "url_externa_pajaro"
+            "imagen": "./pajaro.png"
           },
           {
             "palabra": "Ratón",
-            "imagen": "url_externa_raton"
+            "imagen": "./raton.png"
           },
           {
             "palabra": "Tortuga",
-            "imagen": "url_externa_tortuga"
+            "imagen": "./tortuga.png"
           },
           {
             "palabra": "Pez",
-            "imagen": "url_externa_pez"
+            "imagen": "./pez.png"
           },
           {
             "palabra": "Oso",
-            "imagen": "url_externa_oso"
+            "imagen": "./oso.png"
           }
         ]
       },
@@ -255,27 +255,27 @@
         "palabras": [
           {
             "palabra": "Hamburguesa",
-            "imagen": "url_externa_hamburguesa"
+            "imagen": "./hamburguesa.png"
           },
           {
             "palabra": "Pizza",
-            "imagen": "url_externa_pizza"
+            "imagen": "./pizza.png"
           },
           {
             "palabra": "Ensalada",
-            "imagen": "url_externa_ensalada"
+            "imagen": "./ensalada.png"
           },
           {
             "palabra": "Fideos",
-            "imagen": "url_externa_fideos"
+            "imagen": "./fideos.png"
           },
           {
             "palabra": "Milanesa",
-            "imagen": "url_externa_milanesa"
+            "imagen": "./milanesa.png"
           },
           {
             "palabra": "Arroz",
-            "imagen": "url_externa_arroz"
+            "imagen": "./arroz.png"
           }
         ]
       }
@@ -286,27 +286,27 @@
         "palabras": [
           {
             "palabra": "Soleado",
-            "imagen": "url_externa_soleado"
+            "imagen": "./sol.png"
           },
           {
             "palabra": "Arcoiris",
-            "imagen": "url_externa_arcoiris"
+            "imagen": "./arcoiris.png"
           },
           {
             "palabra": "Nublado",
-            "imagen": "url_externa_nublado"
+            "imagen": "./nublado.png"
           },
           {
             "palabra": "Viento",
-            "imagen": "url_externa_viento"
+            "imagen": "./viento.png"
           },
           {
             "palabra": "Nieve",
-            "imagen": "url_externa_nieve"
+            "imagen": "./nieve.png"
           },
           {
             "palabra": "Tormenta",
-            "imagen": "url_externa_tormenta"
+            "imagen": "./tormenta.png"
           }
         ]
       }
@@ -316,27 +316,27 @@
       "palabras": [
         {
           "palabra": "Ojo",
-          "imagen": "url_externa_ojo"
+          "imagen": "./ojo.png"
         },
         {
           "palabra": "Boca",
-          "imagen": "url_externa_boca"
+          "imagen": "./boca.png"
         },
         {
           "palabra": "Nariz",
-          "imagen": "url_externa_nariz"
+          "imagen": "./nariz.png"
         },
         {
-          "palabra": "Hombro",
-          "imagen": "url_externa_hombro"
+          "palabra": "Mano",
+          "imagen": "./mano.png"
         },
         {
           "palabra": "Pie",
-          "imagen": "url_externa_pie"
+          "imagen": "./pie.png"
         },
         {
           "palabra": "Oreja",
-          "imagen": "url_externa_oreja"
+          "imagen": "./oreja.png"
         }
       ]
     },
