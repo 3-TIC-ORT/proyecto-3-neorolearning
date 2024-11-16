@@ -29,7 +29,7 @@ parser.on("data", (data) => {
     console.log(data.trim())
 })
 
-//probar
+//anda
  port.on("data", function(data) {
     let datos = data.toString().trim();
     let color="";
@@ -69,7 +69,7 @@ function juegoHardware(juego) {
 
 
 //   let salida = ("Simon"); Color a prender para el Simon. El front debe mandar  R, G, B, Y
-// bloque listo
+// probar
 onEvent("secuenciasimon", (secuencia) => {
     enviarSecuenciaArduino(secuencia);
 });
@@ -86,7 +86,7 @@ function enviarSecuenciaArduino(secuencia){
 };
 
 // Para los juegos 4 y 3 en línea el  front debe mandar  P1 o P2
-// bloque listo
+//probar
 onEvent("jugadorJugando", (jugador) => {
     // evento recibido 
     recibirjugador(jugador);
@@ -96,7 +96,7 @@ function recibirjugador(jugador){
     return { mensaje: `Jugador actual: ${jugador}` }; 
 };
 
-// bloque listo
+// probar
 onEvent("terminoJuego", (resultado) => {
         port.write(`1`);
         port.write(resultado);
