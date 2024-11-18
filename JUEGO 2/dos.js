@@ -28,6 +28,7 @@ let emociones = {
     ]
 }
 
+
 function armarCartas() {
     elementos = emociones[`nivel_${messi}`].concat(emociones[`nivel_${messi}`].map(e => `${e}.png`));
     elementos = elementos.sort(() => Math.random() - 0.5); 

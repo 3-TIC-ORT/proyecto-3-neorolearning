@@ -4,7 +4,7 @@
       {
         "palabra": "sol",
         "imagen": "url_externa_sol",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mesa",
@@ -14,27 +14,27 @@
       {
         "palabra": "mano",
         "imagen": "url_externa_mano",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "cama",
         "imagen": "url_externa_cama",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "casa",
         "imagen": "url_externa_casa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "nube",
         "imagen": "url_externa_nube",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "auto",
         "imagen": "url_externa_auto",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "tren",
@@ -44,12 +44,12 @@
       {
         "palabra": "luna",
         "imagen": "url_externa_luna",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mono",
         "imagen": "url_externa_mono",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_2": [
@@ -61,47 +61,47 @@
       {
         "palabra": "silla",
         "imagen": "url_externa_silla",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "avión",
         "imagen": "url_externa_avion",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "árbol",
         "imagen": "url_externa_arbol",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "gorro",
         "imagen": "url_externa_gorro",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "fuego",
         "imagen": "url_externa_fuego",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "piano",
         "imagen": "url_externa_piano",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "carpa",
         "imagen": "url_externa_carpa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "lápiz",
         "imagen": "url_externa_lapiz",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "globo",
         "imagen": "url_externa_globo",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_3": [
@@ -128,7 +128,7 @@
       {
         "palabra": "tomate",
         "imagen": "url_externa_tomate",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "banana",
