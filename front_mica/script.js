@@ -10,7 +10,7 @@ function ejecutarJuegoNivel() {
 }
 
 // Llamar a la función
-//ejecutarJuegoNivel();
+ejecutarJuegoNivel();
 
 
 
@@ -22,7 +22,7 @@ function enviarSecuencia() {
     console.log(data);
   });
 }
-enviarSecuencia();
+//enviarSecuencia();
 
 function enviarjugador(resultado) {
 
@@ -35,7 +35,7 @@ function enviarjugador(resultado) {
 
 
 // Simula Evento Juego Nivel
-enviarjugador("PONE");
+//enviarjugador("PONE");
 
 
 // EVENTO TERMINO
@@ -49,7 +49,7 @@ function termino(resultado) {
 
 // Simula Evento enviar jugador
 let resultado = "GANAR";
-termino(resultado);
+//termino(resultado);
 
 function reiniciarJuego(juego,nivel) {
   const juego = juego;
@@ -64,7 +64,7 @@ function reiniciarJuego(juego,nivel) {
 // Simula Evento enviar jugador
 let juego = "1";
 let nivel = "1";
-reiniciarJuego(juego,nivel);
+//reiniciarJuego(juego,nivel);
 /*
 const form = document.getElementById("form");
 const input = document.getElementById("input");
