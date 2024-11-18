@@ -14,17 +14,17 @@
       {
         "palabra": "mano",
         "imagen": "url_externa_mano",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "cama",
         "imagen": "url_externa_cama",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "casa",
         "imagen": "url_externa_casa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "nube",
@@ -34,12 +34,12 @@
       {
         "palabra": "auto",
         "imagen": "url_externa_auto",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "tren",
         "imagen": "url_externa_tren",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "luna",
@@ -49,7 +49,7 @@
       {
         "palabra": "mono",
         "imagen": "url_externa_mono",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_2": [
@@ -66,12 +66,12 @@
       {
         "palabra": "avión",
         "imagen": "url_externa_avion",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "árbol",
         "imagen": "url_externa_arbol",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "gorro",
@@ -81,12 +81,12 @@
       {
         "palabra": "fuego",
         "imagen": "url_externa_fuego",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "piano",
         "imagen": "url_externa_piano",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "carpa",
@@ -101,7 +101,7 @@
       {
         "palabra": "globo",
         "imagen": "url_externa_globo",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_3": [
