@@ -1,35 +1,39 @@
+const form = document.getElementById("form");
+//const secuencia = document.getElementById("input");
+const resultado = document.getElementById("input");
 
-// connect2Server();
-function ejecutarJuegoNivel() {
-  let juego = "1";
-  let nivel = "1";
-  console.log(`Juego: ${juego}, Nivel: ${nivel}`);
-  postData("juego_nivel", { juego: juego, nivel: nivel }, (data) => {
-      console.log(data);
-  });
-}
+connect2Server();
 
-// Llamar a la función
-ejecutarJuegoNivel();
-
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(input.value);
+  if (input.value) {
+    console.log("Escuchó enviar resultado");
+    termino(String(input.value));
+    input.value = "";
+  }
+});
 
 
-function enviarSecuencia() {
-  let secuencia="amarillo, rojo, verde, verde"
+
+
+
+function enviarSecuencia(secuencia) {
 	console.log(`secuencia: ${secuencia}`);
-  postData("secuenciasimon", { secuencia: secuencia}, (data) => {
+  postData("secuenciasimon", secuencia, (data) => {
     //a.innerHTML = data.msg;
     console.log(data);
   });
 }
-//enviarSecuencia();
 
-function enviarjugador(resultado) {
+//let secuencia="amarillo, rojo, verde, verde"
+//enviarSecuencia(secuencia);
 
+function enviarjugador(jugador) {
 	console.log(`resultado recibido: ${jugador}`);
-  postData("jugadorJugando", { jugador: jugador}, (data) => {
+  postData("jugadorJugando", jugador , (data) => {
       //a.innerHTML = data.msg;
-      console.log(JSON.stringify(data));
+      console.log(data);
     });
 }
 
@@ -40,17 +44,16 @@ function enviarjugador(resultado) {
 
 // EVENTO TERMINO
 function termino(resultado) {
-	const resultado = resultado;
 	console.log(`resultado: ${resultado}`);
-  postData("terminoJuego", { resultado: resultado}, (data) => {
-  console.log(JSON.stringify(data));
+  postData("terminoJuego", resultado, (data) => {
+  console.log(data);
   });
 }
 
 // Simula Evento enviar jugador
-let resultado = "GANAR";
+//let resultado = "GANAR";
 //termino(resultado);
-
+/*
 function reiniciarJuego(juego,nivel) {
   const juego = juego;
 	const nivel = nivel;
@@ -124,3 +127,4 @@ receive("second", () => {
 
 
 
+connect2Server();

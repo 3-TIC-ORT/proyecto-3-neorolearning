@@ -3,25 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Front End Prueba Mica</title>
+    <title>Ejemplo SoqueTIC</title>
   </head>
 
   <body>
-    <h1>Prueba llamado al backend</h1>
-    <h2>Selección de juego y nivel <span id="juego"></span></h2>
-    <p>Segundos conectado: <span id="segundos">0</span></p>
-
+    <h1>Envío jugador</h1>
     <form action="" id="form">
-      <input type="text" name="juego" placeholder="Juego" />
-      <input type="text" name="nivel" placeholder="Nivel" />
-      <button type="submit">Enviar</button>
-    </form>       
-
-    <form action="" id="form2">
-      <button type="submit">Comenzar</button>
-    </form>       
-
-
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
     <p id="a"></p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
     <script src="socket.js"></script>
