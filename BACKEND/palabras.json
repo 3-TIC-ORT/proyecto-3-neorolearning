@@ -4,7 +4,7 @@
       {
         "palabra": "sol",
         "imagen": "url_externa_sol",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mesa",
@@ -29,7 +29,7 @@
       {
         "palabra": "nube",
         "imagen": "url_externa_nube",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "auto",
@@ -39,12 +39,12 @@
       {
         "palabra": "tren",
         "imagen": "url_externa_tren",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "luna",
         "imagen": "url_externa_luna",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "mono",
@@ -61,7 +61,7 @@
       {
         "palabra": "silla",
         "imagen": "url_externa_silla",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "avión",
@@ -76,7 +76,7 @@
       {
         "palabra": "gorro",
         "imagen": "url_externa_gorro",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "fuego",
@@ -91,12 +91,12 @@
       {
         "palabra": "carpa",
         "imagen": "url_externa_carpa",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "lápiz",
         "imagen": "url_externa_lapiz",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "globo",
@@ -128,7 +128,7 @@
       {
         "palabra": "tomate",
         "imagen": "url_externa_tomate",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "banana",
