@@ -3,7 +3,7 @@ import fs from "fs";
 import { SerialPort, ReadlineParser } from "serialport";
 const port = new SerialPort({
     //Completar con el puerto correcto
-    path: "COM3",
+    path: "COM8",
     baudRate: 9600,
   //  autoOpen: false,
 });
@@ -47,6 +47,8 @@ port.on("data", function(data) {
     }
     else if (datos==="4"){
         color="amarillo";
+    }else{
+        color = "ok"
     }
     sendEvent("boton",color);
     console.log(`Acción recibida del Arduino: ${color}`);
@@ -59,8 +61,8 @@ function juegoHardware(juego) {
     //juego = parseInt(juego);
     console.log(`Juego recibido: ${juego}`);
 
-    let salida;
-    if (juego >= 1 && juego < 4) salida = "Juegos";
+    let salida = "Juegos";
+    if (juego > 0 && juego < 4) salida = "Juegos";
     else if (juego === 4) salida = "Simon";
     else if (juego >= 5 && juego < 7) salida = "Pares";
 
@@ -208,6 +210,7 @@ function jugarJuego3(nivel) {
 }
 
 
+
 function reiniciarJ2y3(juego, nivel) {
 
     if (palabrasData[juego] && palabrasData[juego][nivel]) {
@@ -225,22 +228,24 @@ function reiniciarJ2y3(juego, nivel) {
     }
 }
 
-
-onEvent("reiniciar", (juego, nivel) => {
+onEvent("reiniciar", (data) => {
+    const {juego, nivel} = data
     let palabrasData = JSON.parse(fs.readFileSync('palabras.json', 'utf8') || '{}');
-    
     if(juego==="1"){
-        let p2 = `nivel_${nivel.data}`;
+        let p2 = `nivel_${nivel}`;
         let palabrasNivel = palabrasData["juego_1"][p2];
         palabrasNivel.forEach(palabra => palabra.usada = "no");
         fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
-        console.log(`Nivel ${nivel.data} de ${juego} reiniciado.`);
+        console.log(`Nivel ${nivel} de ${juego} reiniciado.`);
+        return true
     }
     else if(juego==="2" || juego==="3"){
         let p1 = `juego_${juego}`;
         let p2 = `nivel_${nivel.data}`;
         reiniciarJ2y3(p1, p2);
+        return true
+
     }
-}
+    }
 )
 startServer();

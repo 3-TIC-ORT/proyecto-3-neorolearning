@@ -5,47 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ta-Te-Ti</title>
-    <link rel="stylesheet" href="mica.css" />
-    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="cinco.css" />
+    <link rel="stylesheet" href="../general.css" />
     <script src="tateti.js" defer></script>
   </head>
   <body>
     <header>
-      <a href="../JUEGO 5/expli5.html" class="volver"><img src="../fluent_arrow-up-12-filled.png" class="flechar"></a>
-  </header>
-<main>
-  <div class="game-wrapper">
-    <div class="player player1" id="player1">
-        <div class="token yellow"></div>
-        <p>Jugador 1</p>
-        <b id="contador1">0</b>
-    </div>
-    <div id="contenedorGrilla">
-      <div class="cuadrado arriba"></div>
-      <div class="cuadrado arriba medio"></div>
-      <div class="cuadrado arriba"></div>
-      <div class="cuadrado"></div>
-      <div class="cuadrado medio"></div>
-      <div class="cuadrado"></div>
-      <div class="cuadrado abajo izquierda"></div>
-      <div class="cuadrado abajo medio"></div>
-      <div class="cuadrado abajo"></div>
-    </div>
-		<dialog type="modal">
-			<h2></h2>
-			<button>Reiniciar</button>
-		</dialog>
-    <div class="player player2" id="player2">
-      <div class="token green"></div>
-      <p>Jugador 2</p>
-      <b id="contador2">0</b>
-  </div>
+      <a href="../JUEGO 5/expli5.html" class="volver">
+        <img src="../fluent_arrow-up-12-filled.png" class="flechar" />
+      </a>
+    </header>
+    <main>
+      <div class="game-wrapper">
+        <div class="player player1" id="player1">
+          <div class="token yellow"></div>
+          <p>Jugador 1</p>
+          <b id="contador1">0</b> 
+        </div>
+        <div id="contenedorGrilla">
+          <div class="cuadrado arriba"></div>
+          <div class="cuadrado arriba medio"></div>
+          <div class="cuadrado arriba"></div>
+          <div class="cuadrado"></div>
+          <div class="cuadrado medio"></div>
+          <div class="cuadrado"></div>
+          <div class="cuadrado abajo izquierda"></div>
+          <div class="cuadrado abajo medio"></div>
+          <div class="cuadrado abajo"></div>
+        </div>
+        <dialog type="modal">
+          <h2></h2>
+          <button id="reiniciar">Reiniciar</button>
+        </dialog>
+        <div class="player player2" id="player2">
+          <div class="token green"></div>
+          <p>Jugador 2</p>
+          <b id="contador2">0</b> 
+        </div>
 
-  <div class="juegoTerminado" id="juegoTerminado" style="display: none;">
-    <button id="comfirmar">Volver a Jugar</button>
-    <button id="cancelar">Volver al Inicio</button>
-</div>
-  </main>
+        <div class="juegoTerminado" id="juegoTerminado" style="display: none;">
+          <button id="comfirmar">Volver a Jugar</button>
+          <button id="cancelar">Volver al Inicio</button>
+
+          <img id="imagen1" src="" alt="Ganador 1" class="Ganador" style="display: none;">
+          <img id="imagen2" src="" alt="Ganador 2" class="Ganador" style="display: none;">
+          <img id="imagen3" src="" alt="Empate" class="Ganador" style="display: none;">
+        </div>
+      </div>
+    </main>
   </body>
 </html>
-

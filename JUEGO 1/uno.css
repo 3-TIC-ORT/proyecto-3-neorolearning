@@ -13,41 +13,67 @@ main {
 
 .letras {
     display: flex;
-    justify-content: end;
-    width: 5vw;
+    width: 3vw;
     height: 5vw;
     background-color: rgba(42, 215, 215, 1);
     margin: 0.5vw; 
-
+    padding: 1vw;
+    border-radius: 10px;
 }
 
 
 .divLetras {
-    display: flex;
-    flex-direction: column;
-    gap: 1vw; 
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 20%;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+    align-items: center; /* Asegura que las letras estén centradas verticalmente */
+    row-gap: 1vw; /* Aumenta la separación entre las filas */
+    width: 31%;
+    position: relative;
+    margin-top: 200px;
+    margin-left: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+
+.divLetras > h2 {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 3em;
+aspect-ratio: 1/1;
+font-size: 30px;
+color: white;
+
 }
 
 
 .cajitas {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     border-radius: 10px;
     width: 7vw;
     height: 7vw;
     background-color: rgba(23, 149, 141, 1);
-    margin: 0.5vw; 
+    margin: 0vw; 
+    position: relative;
 }
 
 .divCajitas {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; 
     align-items: center;
     flex-direction: row;
-    gap: 1vw; 
+    gap: 2vw; 
+    width: 69%;
+    left: 31%;
+    position: fixed;
+    padding-top: 5em;
 }
+
 
 .juegoTerminado {
     position: fixed; 
@@ -55,4 +81,11 @@ main {
     left: 50%; 
     transform: translate(-50%, -50%); 
     z-index: 2; 
+    
+
+
+}
+
+.presionado{
+    border: 2px solid red;
 }
