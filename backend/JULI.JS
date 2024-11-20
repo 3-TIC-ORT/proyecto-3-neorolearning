@@ -40,19 +40,20 @@ onEvent("ColorLed", (color) => {
     console.log(`color a prender: ${color} `);
     let salidaColor = '';
     if (color==="rojo"){
-        salidaColor ==='R'
+        salidaColor ='R'
     }
     else if (color==="verde"){
-        salidaColor === 'G'
+        salidaColor = 'G'
     }
     else if (color==="azul"){
-        salidaColor=== 'B'
+        salidaColor = 'B'
     }
     else if (color==="amarillo"){
-        salidaColor==='Y'
+        salidaColor ='Y'
     }
     port.write(salidaColor); 
-    return { mensaje: `Color LED encendido: ${color}` };
+    return salidaColor;
+    // return { mensaje: `Color LED encendido: ${color}` };
     
 });
 onEvent("secuenciasimon", (secuencia) => {

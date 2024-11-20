@@ -2,54 +2,54 @@
   "juego_1": {
     "nivel_1": [
       {
-        "palabra": "sol",
+        "palabra": "SOL",
         "imagen": "url_externa_sol",
-        "usada": "si"
+        "usada": "no"
       },
       {
-        "palabra": "mesa",
+        "palabra": "MESA",
         "imagen": "url_externa_mesa",
         "usada": "si"
       },
       {
-        "palabra": "mano",
+        "palabra": "MANO",
         "imagen": "url_externa_mano",
-        "usada": "no"
+        "usada": "si"
       },
       {
-        "palabra": "cama",
+        "palabra": "CAMA",
         "imagen": "url_externa_cama",
-        "usada": "no"
+        "usada": "si"
       },
       {
-        "palabra": "casa",
+        "palabra": "CASA",
         "imagen": "url_externa_casa",
-        "usada": "no"
+        "usada": "si"
       },
       {
-        "palabra": "nube",
+        "palabra": "NUBE",
         "imagen": "url_externa_nube",
         "usada": "si"
       },
       {
-        "palabra": "auto",
+        "palabra": "AUTO",
         "imagen": "url_externa_auto",
-        "usada": "no"
+        "usada": "si"
       },
       {
-        "palabra": "tren",
+        "palabra": "TREN",
         "imagen": "url_externa_tren",
-        "usada": "no"
+        "usada": "si"
       },
       {
-        "palabra": "luna",
+        "palabra": "LUNA",
         "imagen": "url_externa_luna",
         "usada": "si"
       },
       {
-        "palabra": "mono",
+        "palabra": "MONO",
         "imagen": "url_externa_mono",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_2": [
@@ -61,54 +61,54 @@
       {
         "palabra": "silla",
         "imagen": "url_externa_silla",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "avión",
         "imagen": "url_externa_avion",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "árbol",
         "imagen": "url_externa_arbol",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "gorro",
         "imagen": "url_externa_gorro",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "fuego",
         "imagen": "url_externa_fuego",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "piano",
         "imagen": "url_externa_piano",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "carpa",
         "imagen": "url_externa_carpa",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "lápiz",
         "imagen": "url_externa_lapiz",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "globo",
         "imagen": "url_externa_globo",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_3": [
       {
         "palabra": "remera",
         "imagen": "url_externa_remera",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "moneda",
@@ -128,7 +128,7 @@
       {
         "palabra": "tomate",
         "imagen": "url_externa_tomate",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "banana",
@@ -146,9 +146,9 @@
         "usada": "no"
       },
       {
-        "palabra": "galleta",
-        "imagen": "url_externa_galleta",
-        "usada": "no"
+        "palabra": "pileta",
+        "imagen": "url_externa_pileta",
+        "usada": "si"
       },
       {
         "palabra": "helado",
