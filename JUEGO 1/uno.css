@@ -13,11 +13,12 @@ main {
 
 .letras {
     display: flex;
-    
+    justify-content: end;
     width: 5vw;
     height: 5vw;
     background-color: rgba(42, 215, 215, 1);
     margin: 0.5vw; 
+
 }
 
 
