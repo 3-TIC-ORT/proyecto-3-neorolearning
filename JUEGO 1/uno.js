@@ -183,6 +183,7 @@ const crearCajitas = async (palabra) => {
   // Llama a crearLetras solo después de crear las cajitas
   crearLetras();
   document.getElementById("juegoTerminado").style.display = "none";
+  document.getElementById("juegoTerminado").style.display = "none";
 
   console.log("Palabra:", palabra);
   console.log("Lista de cajitas:", listaCajitas);

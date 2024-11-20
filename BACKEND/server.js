@@ -5,7 +5,9 @@ const port = new SerialPort({
     //Completar con el puerto correcto
     path: "COM8",
     baudRate: 9600,
+  //  autoOpen: false,
 });
+
 const parser = new ReadlineParser();
 port.pipe(parser);
 
@@ -16,7 +18,7 @@ port.on("open", () => {
 // Función para manejar el evento de recibir el juego
 //Bloque listo
 onEvent("juego_nivel", (data) => {
-    console.log(`Juego recibido: ${data.juego} ${data.nivel} `);
+    console.log(`Juego recibido(backend): ${data.juego} ${data.nivel} `);
     
     // llamo a la función jugar_juego
     const salida = jugarJuego(data);
@@ -30,7 +32,7 @@ parser.on("data", (data) => {
 })
 
 //anda
- port.on("data", function(data) {
+port.on("data", function(data) {
     let datos = data.toString().trim();
     let color="";
    // rojo = 1, verde = 2, azul = 3, amarillo = 4
@@ -71,19 +73,27 @@ function juegoHardware(juego) {
 
 
 //   let salida = ("Simon"); Color a prender para el Simon. El front debe mandar  R, G, B, Y
-// probar
+// anda
 onEvent("secuenciasimon", (secuencia) => {
-    enviarSecuenciaArduino(secuencia);
+    console.log(secuencia);
+    enviarSecuenciaArduino(typeof secuencia === "string" ? secuencia : String(secuencia));
+    //enviarSecuenciaArduino(String(secuencia));
 });
 
 function enviarSecuenciaArduino(secuencia){
+    console.log("Secuencia recibida para split",secuencia);
+    secuencia = secuencia.trim();
     let secuenciaArduino = secuencia.split(', ').map(color => {
         if (color === "rojo") return 'R';
         if (color === "verde") return 'G';
         if (color === "azul") return 'B';
         if (color === "amarillo") return 'Y';
-        return ''; // Si no se reconoce el color, se retorna un string vacío.
+        console.warn(`Advertencia: Color no reconocido (${color})`);
+        return ''; // Retorna vacío para colores no reconocidos
+        //return ''; // Si no se reconoce el color, se retorna un string vacío.
     }).join(' ');
+    console.log("manda secuencia arduino");
+    console.log(secuenciaArduino);
     port.write(secuenciaArduino+"\n"); 
 };
 
@@ -100,8 +110,8 @@ function recibirjugador(jugador){
 
 // probar
 onEvent("terminoJuego", (resultado) => {
-        port.write(`1`);
-        port.write(resultado);
+        port.write(`1`+"\n");
+        port.write(resultado+"\n");
     }
 );
 // Función para determinar cuál juego ejecutar
