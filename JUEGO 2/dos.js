@@ -84,7 +84,7 @@ function destapar(id) {
                 if (aciertos === 6) { 
                     if(messi==2){
                         alert("felicidades")
-                        window.location.replace("/INICIO/menu1.html")
+                        window.location.replace("http://127.0.0.1:5500/proyecto-3-neorolearning/INICIO/menu1.html   ")
                     }
                     clearInterval(tiemporegresivoId);
                     if(confirm("quieres pasar al siguiente nivel?")){
