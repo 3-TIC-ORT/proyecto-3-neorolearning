@@ -150,11 +150,6 @@ receive("boton", (boton) => {
             console.log(letras.children.length)
             
           }
-         
-
-
-
-
           console.log(letras.children.length)
     default:
       break;
@@ -182,7 +177,6 @@ const crearCajitas = async (palabra) => {
 
   // Llama a crearLetras solo después de crear las cajitas
   crearLetras();
-  document.getElementById("juegoTerminado").style.display = "none";
   document.getElementById("juegoTerminado").style.display = "none";
 
   console.log("Palabra:", palabra);
@@ -237,6 +231,7 @@ postData(
 );
 
 function reJuego() {
+  
   document.getElementById("juegoTerminado").style.display = "block";
   document.getElementById("comfirmar").addEventListener("click", async () => {
     postData(
@@ -268,3 +263,4 @@ const crearLetras = () => {
     letras.appendChild(h2);
   });
 };
+
