@@ -1,21 +1,70 @@
 let imagen = document.getElementById("mostrarImagen");
-let data = {
-    palabras: ["casa", "perro", "gato", "pato"],
-    palabraCorrecta: "casa",
-    imagen: "casa.png"
-}
-let todasPalabras = document.getElementById("todasPalabras");
+let palabras = document.getElementById("todasPalabras")
 let text = document.getElementById("text");
 
+connect2Server();
+const parametro = new URLSearchParams(window.location.search);
+const niveles = parametro.get("nivel");
 
-imagen.src = data.imagen;
+function callBack2(data) {
+  console.log(data)
+  let grupo_aleatorio = data.grupo_aleatorio
+  let palabras_back = data.grupoAleatorio.palabras; // Palabra recibida del backend
+  let imagen = data.imagen;   // Imagen asociada a la palabra
 
-for (let i = 0; i < data.palabras.length; i++) {
-    let palabra = document.createElement("h2");
-    palabra.innerHTML = data.palabras[i];
-    palabra.classList.add("palabra");
-    palabra.addEventListener("click", () => clickLetter(data.palabras[i]));
-    todasPalabras.appendChild(palabra);
+  // Verificar si hay palabras disponibles
+  if (palabras_back === undefined) {
+    // No hay más palabras: ocultar "next" y mostrar "comfirmar"
+
+    document.getElementById("next").style.visibility = "hidden";
+  } else {
+    // document.getElementById("next").style.visibility = "visible";
+
+    // Mostrar la imagen asociada
+    document.getElementById("mostrarImagen").src = imagen;
+
+    for (let i = 0; i < palabras_back.length; i++) {
+      let palabra = document.createElement("h2");
+      palabra.innerHTML = palabras_back[i];
+      palabra.classList.add("palabra");
+      palabra.addEventListener("click", () => clickLetter(palabras_back[i]));
+      palabras.appendChild(palabra);
+  }
+  }
+}
+
+
+postData(
+  "juego_nivel",
+  {
+    juego: 3,
+    nivel: niveles,
+  },
+  (data) => callBack2(data)
+);
+
+function reJuego() {
+  
+  document.getElementById("juegoTerminado").style.display = "block";
+  document.getElementById("comfirmar").addEventListener("click",  () => {
+    postData(
+      "reiniciar",
+      {
+        juego: "3",
+        nivel: niveles,
+      },
+      (data) => {
+        if (data) {
+          location.reload();
+        }
+      }
+    );
+    document.getElementById("juegoTerminado").style.display = "none";
+  });
+  document.getElementById("cancelar").addEventListener("click", async () => {
+    window.location.href =
+      "file:///C:/Users/49318078/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
+  });
 }
 
 let clickLetter = (palabra) => {
@@ -25,8 +74,3 @@ let clickLetter = (palabra) => {
         text.innerText = "Palabra incorrecta";
     }
 }
-
-
-
-
-

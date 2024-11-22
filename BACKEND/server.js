@@ -19,7 +19,6 @@ port.on("open", () => {
 //Bloque listo
 onEvent("juego_nivel", (data) => {
     console.log(`Juego recibido(backend): ${data.juego} ${data.nivel} `);
-    
     // llamo a la función jugar_juego
     const salida = jugarJuego(data);
     juegoHardware(data.juego);
@@ -190,8 +189,9 @@ function jugarJuego2(nivel) {
  //Función para el Juego 3 (pregunta de opciones)
 function jugarJuego3(nivel) {
     let nivelJuego3 = palabrasData["juego_3"][nivel];
-    let gruposNoUsados = Object.values(nivelJuego3).filter(grupo => grupo[grupo.length - 1]["usada"] === "no");
-    
+    //let gruposNoUsados = Object.values(nivelJuego3).filter(grupo => grupo[grupo.length - 1]["usada"] === "no"); --> error
+    let gruposNoUsados = Object.values(nivelJuego3).filter(grupo => grupo["usada"] === "no");
+
     // Verificar si quedan grupos no usados
     if (gruposNoUsados.length === 0) {
         console.log("No hay palabras disponibles para este nivel.");
@@ -201,7 +201,9 @@ function jugarJuego3(nivel) {
 
     // Seleccionar un grupo al azar entre los no usados
     let grupoAleatorio = gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
-    grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; // Marcar el grupo como usado
+    
+    //grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si"; --> error
+    grupoAleatorio["usada"] = "si"; // Marcar el grupo como usado
 
     fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2), 'utf8');
     console.log(grupoAleatorio);

@@ -233,7 +233,7 @@ postData(
 function reJuego() {
   
   document.getElementById("juegoTerminado").style.display = "block";
-  document.getElementById("comfirmar").addEventListener("click", async () => {
+  document.getElementById("comfirmar").addEventListener("click",  () => {
     postData(
       "reiniciar",
       {

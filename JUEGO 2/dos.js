@@ -6,34 +6,24 @@ let segundoresultado = null;
 let movimientos = 0;
 let aciertos = 0;
 let tiemporegresivoId = null;
-let messi = 1;
 let elementos;
 
-let emociones = {
-    nivel_1: [
-        "azul", 
-        "amarillo", 
-        "naranja", 
-        "rojo", 
-        "violeta", 
-        "verde"
-    ],
-    nivel_2: [
-        "feliz", 
-        "triste", 
-        "miedo", 
-        "enojo", 
-        "desagrado", 
-        "confusión"
-    ]
+connect2Server();
+
+function callBack(data){
+    let palabra = data.palabra; 
+    let imagen = data.imagen;   
 }
 
-
 function armarCartas() {
-    elementos = emociones[`nivel_${messi}`].concat(emociones[`nivel_${messi}`].map(e => `${e}.png`));
+    let parametro = new URLSearchParams(document.location.search);
+    let niveles = parametro.get("nivel");
+    console.log(niveles)
+    postData("juego_nivel", {juego: 2, nivel: niveles})
     elementos = elementos.sort(() => Math.random() - 0.5); 
     console.log(elementos);
 }
+
 function displayInvalidCard(element) {
     element.classList.add('invalid')
     element.classList.remove('valid')
@@ -82,7 +72,7 @@ function destapar(id) {
             // Verificar si el jugador ha ganado
             setTimeout(()=>{
                 if (aciertos === 6) { 
-                    if(messi==2){
+                    if(niveles==2){
                         alert("felicidades")
                         window.location.replace("http://127.0.0.1:5500/proyecto-3-neorolearning/INICIO/menu1.html   ")
                     }
@@ -101,7 +91,7 @@ function destapar(id) {
                             tiemporegresivoId = null;
                             elementos;
                         })
-                        messi++
+                        niveles++
                         armarCartas()
                     }else{
                         window.location.replace("/INICIO/menu1.html")
