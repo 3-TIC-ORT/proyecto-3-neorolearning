@@ -25,11 +25,13 @@ function callBack2(data) {
 
     for (let i = 0; i < palabras_back.length; i++) {
       let palabra = document.createElement("h2");
-      palabra.innerHTML = palabras_back[i];
+      palabra.innerHTML = palabras_back[i].palabra;
       palabra.classList.add("palabra");
       palabra.addEventListener("click", () => clickLetter(palabras_back[i]));
       palabras.appendChild(palabra);
-  }
+    }
+
+
   }
 }
 
