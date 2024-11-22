@@ -1,5 +1,5 @@
 let imagen = document.getElementById("mostrarImagen");
-let palabras = document.getElementById("todasPalabras")
+let palabrota = document.getElementById("todasPalabras")
 let text = document.getElementById("text");
 
 connect2Server();
@@ -28,10 +28,15 @@ function callBack2(data) {
       palabra.innerHTML = palabras_back[i].palabra;
       palabra.classList.add("palabra");
       palabra.addEventListener("click", () => clickLetter(palabras_back[i]));
+<<<<<<< Updated upstream
       palabras.appendChild(palabra);
     }
 
 
+=======
+      palabrota.appendChild(palabra);
+  }
+>>>>>>> Stashed changes
   }
 }
 
@@ -41,9 +46,7 @@ postData(
   {
     juego: 3,
     nivel: niveles,
-  },
-  (data) => callBack2(data)
-);
+  }, callBack2)
 
 function reJuego() {
   
