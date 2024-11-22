@@ -564,11 +564,11 @@
           "palabras": [
             {
               "palabra": "Botas",
-              "imagen": "url_externa_botas"
+              "imagen": "./BOTAS.png"
             },
             {
               "palabra": "Zapatillas",
-              "imagen": "url_externa_zapatillas"
+              "imagen": "./ZAPATILLAS.png"
             },
             {
               "palabra": "Ojotas",
@@ -585,7 +585,7 @@
           "palabras": [
             {
               "palabra": "Remera",
-              "imagen": "url_externa_remera"
+              "imagen": "./REMERA.png"
             },
             {
               "palabra": "Blusa",
@@ -606,7 +606,7 @@
           "palabras": [
             {
               "palabra": "Jean",
-              "imagen": "url_externa_jean"
+              "imagen": "./JEAN.png"
             },
             {
               "palabra": "Short",
