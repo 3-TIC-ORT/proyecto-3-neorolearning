@@ -43,9 +43,12 @@ cuadrados.forEach((cuadrado) => {
 
 // Función para mostrar el resultado
 function mostrarResultado(texto, imagen) {
-    document.getElementById("juegoTerminado").style.display = "block";
-    imagen.style.display = "block";
-    estadoJuego = "PAUSA";
+    estadoJuego = "PAUSA"; // Pausa el juego inmediatamente
+
+    setTimeout(() => {
+        document.getElementById("juegoTerminado").style.display = "block";
+        imagen.style.display = "block";
+    }, 100); // 1000 ms = 1 segundo
 }
 
 // Reiniciar juego
@@ -102,4 +105,3 @@ function limpiarTablero() {
         cuadrado.classList.remove("ganador");
     });
 }
-

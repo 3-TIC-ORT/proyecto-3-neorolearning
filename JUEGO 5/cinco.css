@@ -150,7 +150,7 @@
         background-image: url('Group\ 247.png');
     }
     
-    #imagen1, #imagen2 {
+    #imagen1, #imagen2, #imagen3{
         position: fixed; 
         top: 0;
         left: 0;
@@ -184,8 +184,8 @@
         z-index: 4; /* Mayor que las imágenes (z-index: 1) */
         width: 380px;
         height: 120px;
-        background-color: rgba(0, 12, 39, 1);
-        border: 10px solid rgba(6, 14, 56, 1);
+        background-color: #1F015F;
+        border: 10px solid #2D0288;
         border-radius: 20px;
         font-size: 40px;
         font-family: "Inter", sans-serif;
@@ -196,15 +196,14 @@
         justify-content: center;
         text-align: center;
     }
-    
-    /* Ajustar posiciones específicas */
+
     .VJ {
-        bottom: 20%; /* Ajusta según sea necesario */
-        left: 10%;
+        bottom: 3%; 
+        left: 20%;
     }
     
     .VI {
-        bottom: 20%; /* Ajusta según sea necesario */
-        left: 60%;
+        bottom: 3%; 
+        left: 52%;
     }
     
