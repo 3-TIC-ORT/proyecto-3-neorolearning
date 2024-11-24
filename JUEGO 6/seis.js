@@ -162,7 +162,7 @@ function declararGanador(r, c) {
                 document.getElementById("juegoTerminado").style.display= "none";
             });
             document.getElementById("cancelar").addEventListener("click", async () =>{
-                window.location.href = "http://127.0.0.1:5500/proyecto-3-neorolearning/INICIO/menu1.html";
+                window.location.href = "http://127.0.0.1:5500/INICIO/menu1.html";
             });
         }, 100);
     }

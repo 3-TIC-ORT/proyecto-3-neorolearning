@@ -1,4 +1,4 @@
-let imagen = document.getElementById("mostrarImagen");
+let imagenes = document.getElementById("mostrarImagen");
 let palabrota = document.getElementById("todasPalabras")
 let text = document.getElementById("text");
 
@@ -20,23 +20,14 @@ function callBack2(data) {
   } else {
     // document.getElementById("next").style.visibility = "visible";
 
-    // Mostrar la imagen asociada
-    document.getElementById("mostrarImagen").src = imagen;
-
     for (let i = 0; i < palabras_back.length; i++) {
       let palabra = document.createElement("h2");
       palabra.innerHTML = palabras_back[i].palabra;
       palabra.classList.add("palabra");
       palabra.addEventListener("click", () => clickLetter(palabras_back[i]));
-<<<<<<< Updated upstream
-      palabras.appendChild(palabra);
-    }
-
-
-=======
       palabrota.appendChild(palabra);
   }
->>>>>>> Stashed changes
+  document.getElementById("mostrarImagen").src = imagen;
   }
 }
 
