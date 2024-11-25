@@ -6,6 +6,126 @@ connect2Server();
 const parametro = new URLSearchParams(window.location.search);
 const niveles = parametro.get("nivel");
 
+receive("boton", (boton) => {
+  console.log(boton)
+  switch (boton) {
+    case "verde":
+      console.log(letras.children)
+      console.log(finaliza)
+      juegoTerminado.children[selected].classList.remove("presionado")
+
+      if (letras.children.length === 0) {
+        if (juegoTerminado.children[(selected+1)].style.visibility === "hidden") {
+          selected = selected +1
+        }
+        console.log(juegoTerminado.children[(selected)])
+        juegoTerminado.children[(selected+1)].classList.add("presionado")
+        selected = selected + 1
+      }
+      try {
+        console.log("GOdmkasdaks")
+        letras.children[(selected+1)].classList.add("presionado")
+        letras.children[selected].classList.remove("presionado")
+        selected = selected + 1
+      } catch (error) {
+        letras.children[(0)].classList.add("presionado")
+        letras.children[selected].classList.remove("presionado")
+        selected =  0
+      }
+      console.log(selected)
+
+      break;
+      case "amarillo":
+        if (letras.children.length === 0) {
+          juegoTerminado.children[selected].classList.remove("presionado")
+
+          if (juegoTerminado.children[(selected-1)].style.visibility === "hidden") {
+            selected = selected -1
+          }
+          console.log(juegoTerminado.children[(selected)])
+          juegoTerminado.children[(selected-1)].classList.add("presionado")
+          selected = selected -1
+        }
+        try {
+          
+         if (selected === 0) {
+          letras.children[letras.children.length-1].classList.add("presionado")
+          letras.children[selected].classList.remove("presionado")
+          selected =  letras.children.length-1
+         }
+         else{
+          letras.children[(selected-1)].classList.add("presionado")
+          letras.children[selected].classList.remove("presionado")
+          selected = selected -1
+         }
+        } catch (error) {
+          letras.children[letras.children.length-1].classList.add("presionado")
+          letras.children[selected].classList.remove("presionado")
+          selected =  letras.children.length-1
+        }
+  
+        break;
+        case "ok":
+          console.log(finaliza)
+          if (letras.children.length === 0) {
+            finaliza = true
+
+          }
+          if (finaliza === true) {
+            switch (selected) {
+              case 0:
+                juegoTerminado.children[(0)].classList.add("presionado")
+
+            finaliza = false
+            postData(
+              "juego_nivel",
+              {
+                juego: 1,
+                nivel: niveles,
+              },
+              callBack1
+            );
+                break;
+                case 1:
+                  postData(
+                    "reiniciar",
+                    {
+                      juego: "1",
+                      nivel: niveles,
+                    },
+                    (data) => {
+                      if (data) {
+                        location.reload();
+                      }
+                    }
+                  );
+                  document.getElementById("juegoTerminado").style.display = "none";
+                break;
+                case 2: location.href = "../INICIO/menu1.html"
+                break;
+            
+              default:
+                break;
+            }
+          }
+          if (letras.children.length > 0) {
+            letras.children[selected].classList.remove("presionado")
+
+          clickLetter(letras.children[selected].innerText)
+            letras.children[(0)].classList.add("presionado")
+            selected = 0
+            console.log(letras.children.length)
+            
+          }
+          console.log(letras.children.length)
+    default:
+      break;
+  }
+  
+
+  
+});
+
 function callBack2(data) {
   console.log(data);
   let grupo_aleatorio = data.grupo_aleatorio;
