@@ -500,19 +500,19 @@
         "palabras": [
           {
             "palabra": "Cereza",
-            "imagen": "url_externa_cereza"
+            "imagen": "cereza.png"
           },
           {
             "palabra": "Kiwi",
-            "imagen": "url_externa_kiwi"
+            "imagen": "kiwi.png"
           },
           {
             "palabra": "Pera",
-            "imagen": "url_externa_pera"
+            "imagen": "pera.png"
           },
           {
             "palabra": "Durazno",
-            "imagen": "url_externa_durazno"
+            "imagen": "durazno.png"
           }
         ]
       },
@@ -521,19 +521,19 @@
         "palabras": [
           {
             "palabra": "Choclo",
-            "imagen": "url_externa_choclo"
+            "imagen": "choclo.png"
           },
           {
             "palabra": "Palta",
-            "imagen": "url_externa_palta"
+            "imagen": "palta.png"
           },
           {
             "palabra": "Calabaza",
-            "imagen": "url_externa_calabaza"
+            "imagen": "calabaza.png"
           },
           {
             "palabra": "Huevo",
-            "imagen": "url_externa_huevo"
+            "imagen": "huevo.png"
           }
         ]
       },
@@ -542,19 +542,19 @@
         "palabras": [
           {
             "palabra": "Melón",
-            "imagen": "url_externa_melon"
+            "imagen": "melon.png"
           },
           {
             "palabra": "Naranja",
-            "imagen": "url_externa_naranja"
+            "imagen": "naranja.png"
           },
           {
             "palabra": "Coco",
-            "imagen": "url_externa_coco"
+            "imagen": "coco.png"
           },
           {
             "palabra": "Uva",
-            "imagen": "url_externa_uva"
+            "imagen": "uvas.png"
           }
         ]
       }
@@ -650,19 +650,19 @@
         "palabras": [
           {
             "palabra": "Campera",
-            "imagen": "./CAMPERA.png"
+            "imagen": "CAMPERA.png"
           },
           {
             "palabra": "Buzo",
-            "imagen": "./BUZO.png"
+            "imagen": "BUZO.png"
           },
           {
             "palabra": "Pijama",
-            "imagen": "./PIJAMA.png"
+            "imagen": "PIJAMA.png"
           },
           {
             "palabra": "Medias",
-            "imagen": "./MEDIAS.png"
+            "imagen": "MEDIAS.png"
           }
         ]
       }
