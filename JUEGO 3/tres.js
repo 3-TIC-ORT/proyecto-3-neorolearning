@@ -10,7 +10,7 @@ function callBack2(data) {
   console.log(data)
   let grupo_aleatorio = data.grupo_aleatorio
   let palabras_back = data.grupoAleatorio.palabras; // Palabra recibida del backend
-  let imagen = data.imagen;   // Imagen asociada a la palabra
+  img.src = "./imagenes/" + imagen
 
   // Verificar si hay palabras disponibles
   if (palabras_back === undefined) {

@@ -1,6 +1,7 @@
 body{
-    background-image: url('JUEGO\ 5\ Crucigrama.png');
+    background-image: url('JUEGO\ 1.png');
     background-size: cover; 
+    background-repeat: no-repeat; 
 }
 
 main {
@@ -11,7 +12,11 @@ main {
     height: 85vh;
 }
 .img{
-    width: 50px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-left: 650px;
+    margin-top: 50px;
 }
 
 .letras {
@@ -24,34 +29,31 @@ main {
     border-radius: 10px;
 }
 
-
+/* Mover las letras más arriba */
 .divLetras {
     display: grid;
     grid-template-columns: 50% 20%;
     grid-template-rows: 50% 50%;
     justify-items: center;
-    align-items: center; /* Asegura que las letras estén centradas verticalmente */
-    row-gap: 1vw; /* Aumenta la separación entre las filas */
+    align-items: center;
+    row-gap: 1vw;
     width: 31%;
     position: absolute;
-    margin-top: 200px;
+    top: 35%; /* Cambié este valor para moverlas más arriba */
     margin-left: 25px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
 
-
 .divLetras > h2 {
-display: flex;
-justify-content: center;
-align-items: center;
-width: 3em;
-aspect-ratio: 1/1;
-font-size: 30px;
-color: white;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    aspect-ratio: 1/1;
+    font-size: 30px;
+    color: white;
 }
-
 
 .cajitas {
     display: flex;
@@ -74,10 +76,19 @@ color: white;
     width: 69%;
     left: 31%;
     position: fixed;
-    padding-top: 5em;
-    margin-top: 400px;
+    padding-top: 2em;
 }
 
+.divCajitas > h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    aspect-ratio: 1/1;
+    font-size: 30px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 .juegoTerminado {
     position: fixed; 
