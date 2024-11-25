@@ -189,7 +189,7 @@ const niveles = parametro.get("nivel");
 function callBack1(data) {
   let palabra = data.palabra; // Palabra recibida del backend
   let imagen = data.imagen;   // Imagen asociada a la palabra
-
+  img.src = "./imagenes/" + imagen
   // Verificar si hay palabras disponibles
   if (palabra === undefined) {
     // No hay más palabras: ocultar "next" y mostrar "comfirmar"
@@ -203,7 +203,6 @@ function callBack1(data) {
     crearCajitas(palabra);
 
     // Mostrar la imagen asociada
-    document.getElementById("mostrarImagen").src = imagen;
   }
 }
 

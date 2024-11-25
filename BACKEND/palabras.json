@@ -3,156 +3,156 @@
     "nivel_1": [
       {
         "palabra": "SOL",
-        "imagen": "./SOL.png",
+        "imagen": "SOL.png",
         "usada": "no"
       },
       {
         "palabra": "MESA",
-        "imagen": "./MESA.png",
+        "imagen": "MESA.png",
         "usada": "no"
       },
       {
         "palabra": "MANO",
-        "imagen": "./MANO.png",
+        "imagen": "MANO.png",
         "usada": "no"
       },
       {
         "palabra": "CAMA",
-        "imagen": "./CAMA.png",
-        "usada": "no"
-      },
-      {
-        "palabra": "CASA",
-        "imagen": "./CASA.png",
-        "usada": "no"
-      },
-      {
-        "palabra": "NUBE",
-        "imagen": "./NUBE.png",
+        "imagen": "CAMA.png",
         "usada": "si"
       },
       {
-        "palabra": "AUTO",
-        "imagen": "./AUTO.png",
+        "palabra": "CASA",
+        "imagen": "CASA.png",
+        "usada": "si"
+      },
+      {
+        "palabra": "NUBE",
+        "imagen": "NUBE.png",
         "usada": "no"
+      },
+      {
+        "palabra": "AUTO",
+        "imagen": "AUTO.png",
+        "usada": "si"
       },
       {
         "palabra": "TREN",
-        "imagen": "./TREN.png",
-        "usada": "no"
+        "imagen": "TREN.png",
+        "usada": "si"
       },
       {
         "palabra": "LUNA",
-        "imagen": "./LUNA.png",
+        "imagen": "LUNA.png",
         "usada": "si"
       },
       {
         "palabra": "MONO",
-        "imagen": "./MONO.png",
+        "imagen": "MONO.png",
         "usada": "si"
       }
     ],
     "nivel_2": [
       {
         "palabra": "perro",
-        "imagen": "./PERRO.png",
+        "imagen": "PERRO.png",
         "usada": "si"
       },
       {
         "palabra": "silla",
-        "imagen": "./SILLA.png",
+        "imagen": "SILLA.png",
         "usada": "si"
       },
       {
         "palabra": "avión",
-        "imagen": "./AVION.png",
+        "imagen": "AVION.png",
         "usada": "si"
       },
       {
         "palabra": "árbol",
-        "imagen": "./ARBOL.png",
+        "imagen": "ARBOL.png",
         "usada": "si"
       },
       {
         "palabra": "gorro",
-        "imagen": "./GORRO.png",
+        "imagen": "GORRO.png",
         "usada": "si"
       },
       {
         "palabra": "fuego",
-        "imagen": "./FUEGO.png",
+        "imagen": "FUEGO.png",
         "usada": "si"
       },
       {
         "palabra": "piano",
-        "imagen": "./PIANO.png",
+        "imagen": "PIANO.png",
         "usada": "si"
       },
       {
         "palabra": "carpa",
-        "imagen": "./CARPA.png",
+        "imagen": "CARPA.png",
         "usada": "si"
       },
       {
         "palabra": "lápiz",
-        "imagen": "./LAPIZ.png",
+        "imagen": "LAPIZ.png",
         "usada": "si"
       },
       {
         "palabra": "globo",
-        "imagen": "./GLOBO.png",
+        "imagen": "GLOBO.png",
         "usada": "si"
       }
     ],
     "nivel_3": [
       {
         "palabra": "remera",
-        "imagen": "./REMERA.PNG",
+        "imagen": "REMERA.PNG",
         "usada": "si"
       },
       {
         "palabra": "elefante",
-        "imagen": "./ELEFANTE.png",
+        "imagen": "ELEFANTE.png",
         "usada": "no"
       },
       {
         "palabra": "dientes",
-        "imagen": "./DIENTE.png",
+        "imagen": "DIENTE.png",
         "usada": "si"
       },
       {
         "palabra": "tijera",
-        "imagen": "./TIJERA.png",
+        "imagen": "TIJERA.png",
         "usada": "si"
       },
       {
         "palabra": "tomate",
-        "imagen": "./TOMATE.png",
+        "imagen": "TOMATE.png",
         "usada": "si"
       },
       {
         "palabra": "banana",
-        "imagen": "./BANANA.png",
+        "imagen": "BANANA.png",
         "usada": "no"
       },
       {
         "palabra": "lluvia",
-        "imagen": "./lluvia.png",
+        "imagen": "lluvia.png",
         "usada": "no"
       },
       {
         "palabra": "conejo",
-        "imagen": "./conejo.png",
+        "imagen": "conejo.png",
         "usada": "si"
       },
       {
         "palabra": "pileta",
-        "imagen": "./PILETA.png",
+        "imagen": "PILETA.png",
         "usada": "si"
       },
       {
         "palabra": "helado",
-        "imagen": "./helado.png",
+        "imagen": "helado.png",
         "usada": "si"
       }
     ]
@@ -165,27 +165,27 @@
         "palabras": [
           {
             "palabra": "Azul",
-            "imagen": "./azul.png"
+            "imagen": "azul.png"
           },
           {
             "palabra": "Amarillo",
-            "imagen": "./amarillo.png"
+            "imagen": "amarillo.png"
           },
           {
             "palabra": "Naranja",
-            "imagen": "./naranja.png"
+            "imagen": "naranja.png"
           },
           {
             "palabra": "Rojo",
-            "imagen": "./rojo.png"
+            "imagen": "rojo.png"
           },
           {
             "palabra": "Violeta",
-            "imagen": "./violeta.png"
+            "imagen": "violeta.png"
           },
           {
             "palabra": "Verde",
-            "imagen": "./verde.png"
+            "imagen": "verde.png"
           }
         ]
       },
@@ -194,27 +194,27 @@
         "palabras": [
           {
             "palabra": "Feliz",
-            "imagen": "./feliz.png"
+            "imagen": "feliz.png"
           },
           {
             "palabra": "Triste",
-            "imagen": "./triste.png"
+            "imagen": "triste.png"
           },
           {
             "palabra": "Miedo",
-            "imagen": "./miedo.png"
+            "imagen": "miedo.png"
           },
           {
             "palabra": "Enojo",
-            "imagen": "./enojo.png"
+            "imagen": "enojo.png"
           },
           {
             "palabra": "Desagrado",
-            "imagen": "./desagrado.png"
+            "imagen": "desagrado.png"
           },
           {
             "palabra": "Confusión",
-            "imagen": "./confusión.png"
+            "imagen": "confusión.png"
           }
         ]
       }
@@ -226,27 +226,27 @@
         "palabras": [
           {
             "palabra": "Cocodrilo",
-            "imagen": "./cocodrilo.png"
+            "imagen": "cocodrilo.png"
           },
           {
             "palabra": "Pájaro",
-            "imagen": "./pajaro.png"
+            "imagen": "pajaro.png"
           },
           {
             "palabra": "Ratón",
-            "imagen": "./raton.png"
+            "imagen": "raton.png"
           },
           {
             "palabra": "Tortuga",
-            "imagen": "./tortuga.png"
+            "imagen": "tortuga.png"
           },
           {
             "palabra": "Pez",
-            "imagen": "./pez.png"
+            "imagen": "pez.png"
           },
           {
             "palabra": "Oso",
-            "imagen": "./oso.png"
+            "imagen": "oso.png"
           }
         ]
       },
@@ -255,27 +255,27 @@
         "palabras": [
           {
             "palabra": "Hamburguesa",
-            "imagen": "./hamburguesa.png"
+            "imagen": "hamburguesa.png"
           },
           {
             "palabra": "Pizza",
-            "imagen": "./pizza.png"
+            "imagen": "pizza.png"
           },
           {
             "palabra": "Ensalada",
-            "imagen": "./ensalada.png"
+            "imagen": "ensalada.png"
           },
           {
             "palabra": "Fideos",
-            "imagen": "./fideos.png"
+            "imagen": "fideos.png"
           },
           {
             "palabra": "Milanesa",
-            "imagen": "./milanesa.png"
+            "imagen": "milanesa.png"
           },
           {
             "palabra": "Arroz",
-            "imagen": "./arroz.png"
+            "imagen": "arroz.png"
           }
         ]
       }
@@ -287,27 +287,27 @@
         "palabras": [
           {
             "palabra": "Soleado",
-            "imagen": "./sol.png"
+            "imagen": "sol.png"
           },
           {
             "palabra": "Arcoiris",
-            "imagen": "./arcoiris.png"
+            "imagen": "arcoiris.png"
           },
           {
             "palabra": "Nublado",
-            "imagen": "./nublado.png"
+            "imagen": "nublado.png"
           },
           {
             "palabra": "Viento",
-            "imagen": "./viento.png"
+            "imagen": "viento.png"
           },
           {
             "palabra": "Nieve",
-            "imagen": "./nieve.png"
+            "imagen": "nieve.png"
           },
           {
             "palabra": "Tormenta",
-            "imagen": "./tormenta.png"
+            "imagen": "tormenta.png"
           }
         ]
       },
@@ -316,27 +316,27 @@
         "palabras": [
           {
             "palabra": "Ojo",
-            "imagen": "./ojo.png"
+            "imagen": "ojo.png"
           },
           {
             "palabra": "Boca",
-            "imagen": "./boca.png"
+            "imagen": "boca.png"
           },
           {
             "palabra": "Nariz",
-            "imagen": "./nariz.png"
+            "imagen": "nariz.png"
           },
           {
             "palabra": "Mano",
-            "imagen": "./mano.png"
+            "imagen": "mano.png"
           },
           {
             "palabra": "Pie",
-            "imagen": "./pie.png"
+            "imagen": "pie.png"
           },
           {
             "palabra": "Oreja",
-            "imagen": "./oreja.png"
+            "imagen": "oreja.png"
           }
         ]
       }
@@ -371,19 +371,19 @@
         "palabras": [
           {
             "palabra": "Elefante",
-            "imagen": "./elefante.png"
+            "imagen": "elefante.png"
           },
           {
             "palabra": "Jirafa",
-            "imagen": "./jirafa.png"
+            "imagen": "jirafa.png"
           },
           {
             "palabra": "Ratón",
-            "imagen": "./raton.png"
+            "imagen": "raton.png"
           },
           {
             "palabra": "Tortuga",
-            "imagen": "./tortuga.png"
+            "imagen": "tortuga.png"
           }
         ]
       },
@@ -566,19 +566,19 @@
         "palabras": [
           {
             "palabra": "Botas",
-            "imagen": "./BOTAS.png"
+            "imagen": "BOTAS.png"
           },
           {
             "palabra": "Zapatillas",
-            "imagen": "./ZAPATILLAS.png"
+            "imagen": "ZAPATILLAS.png"
           },
           {
             "palabra": "Ojotas",
-            "imagen": "./OJOTAS.png"
+            "imagen": "OJOTAS.png"
           },
           {
             "palabra": "Sandalias",
-            "imagen": "./SANDALIAS.png"
+            "imagen": "SANDALIAS.png"
           }
         ]
       },
@@ -587,19 +587,19 @@
         "palabras": [
           {
             "palabra": "Remera",
-            "imagen": "./REMERA.png"
+            "imagen": "REMERA.png"
           },
           {
             "palabra": "Blusa",
-            "imagen": "./BLUSA.png"
+            "imagen": "BLUSA.png"
           },
           {
             "palabra": "Camisa",
-            "imagen": "./CAMISA.png"
+            "imagen": "CAMISA.png"
           },
           {
             "palabra": "Musculosa",
-            "imagen": "./MUSCULOSA.png"
+            "imagen": "MUSCULOSA.png"
           }
         ]
       },
@@ -608,19 +608,19 @@
         "palabras": [
           {
             "palabra": "Jean",
-            "imagen": "./JEAN.png"
+            "imagen": "JEAN.png"
           },
           {
             "palabra": "Short",
-            "imagen": "./SHORT.png"
+            "imagen": "SHORT.png"
           },
           {
             "palabra": "Pollera",
-            "imagen": "./POLLERA.png"
+            "imagen": "POLLERA.png"
           },
           {
             "palabra": "Calza",
-            "imagen": "./CALZA.PNG"
+            "imagen": "CALZA.PNG"
           }
         ]
       },
@@ -629,19 +629,19 @@
         "palabras": [
           {
             "palabra": "Vestido",
-            "imagen": "./VESTIDO.png"
+            "imagen": "VESTIDO.png"
           },
           {
             "palabra": "Traje",
-            "imagen": "./TRAJE,png"
+            "imagen": "TRAJE,png"
           },
           {
             "palabra": "Corbata",
-            "imagen": "./CORBATAS.png"
+            "imagen": "CORBATAS.png"
           },
           {
             "palabra": "Joyas",
-            "imagen": "./JOYAS.png"
+            "imagen": "JOYAS.png"
           }
         ]
       },

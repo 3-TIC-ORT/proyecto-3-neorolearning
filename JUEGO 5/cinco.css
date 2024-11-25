@@ -207,3 +207,21 @@
         left: 52%;
     }
     
+
+    .X {
+        width: 120px; 
+        height: 350px; 
+        background-color: white;
+        margin-top: 15%;
+        background-image: url(../FOTOS/candado.png);
+        background-size: cover;
+    }
+
+    .〇{
+        width: 120px; 
+        height: 350px; 
+        background-color: white;
+        margin-top: 15%;
+        background-image: url(../FOTOS/candado.png);
+        background-size: cover;
+    }

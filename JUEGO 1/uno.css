@@ -10,6 +10,9 @@ main {
     width: 100vw;
     height: 85vh;
 }
+.img{
+    width: 50px;
+}
 
 .letras {
     display: flex;

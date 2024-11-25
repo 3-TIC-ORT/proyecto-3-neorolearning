@@ -27,7 +27,7 @@ function callBack2(data) {
       palabra.addEventListener("click", () => clickLetter(palabras_back[i]));
       palabrota.appendChild(palabra);
   }
-  document.getElementById("mostrarImagen").src = imagen;
+  
   }
 }
 
