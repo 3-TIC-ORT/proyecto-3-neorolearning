@@ -2,19 +2,24 @@ let imagenes = document.getElementById("mostrarImagen");
 let palabrota = document.getElementById("todasPalabras");
 let text = document.getElementById("text");
 
+let palabraCorrecta = 0
+
 connect2Server();
 const parametro = new URLSearchParams(window.location.search);
 const niveles = parametro.get("nivel");
+let finaliza = false
+let juegoTerminado = document.getElementById("juegoTerminado")
+let selected = 0
 
 receive("boton", (boton) => {
   console.log(boton)
   switch (boton) {
     case "verde":
-      console.log(letras.children)
+      console.log(palabrota.children)
       console.log(finaliza)
       juegoTerminado.children[selected].classList.remove("presionado")
 
-      if (letras.children.length === 0) {
+      if (palabrota.children.length === 0) {
         if (juegoTerminado.children[(selected+1)].style.visibility === "hidden") {
           selected = selected +1
         }
@@ -24,19 +29,19 @@ receive("boton", (boton) => {
       }
       try {
         console.log("GOdmkasdaks")
-        letras.children[(selected+1)].classList.add("presionado")
-        letras.children[selected].classList.remove("presionado")
+        palabrota.children[(selected+1)].classList.add("presionado")
+        palabrota.children[selected].classList.remove("presionado")
         selected = selected + 1
       } catch (error) {
-        letras.children[(0)].classList.add("presionado")
-        letras.children[selected].classList.remove("presionado")
+        palabrota.children[(0)].classList.add("presionado")
+        palabrota.children[selected].classList.remove("presionado")
         selected =  0
       }
       console.log(selected)
 
       break;
       case "amarillo":
-        if (letras.children.length === 0) {
+        if (palabrota.children.length === 0) {
           juegoTerminado.children[selected].classList.remove("presionado")
 
           if (juegoTerminado.children[(selected-1)].style.visibility === "hidden") {
@@ -49,25 +54,25 @@ receive("boton", (boton) => {
         try {
           
          if (selected === 0) {
-          letras.children[letras.children.length-1].classList.add("presionado")
-          letras.children[selected].classList.remove("presionado")
-          selected =  letras.children.length-1
+          palabrota.children[palabrota.children.length-1].classList.add("presionado")
+          palabrota.children[selected].classList.remove("presionado")
+          selected =  palabrota.children.length-1
          }
          else{
-          letras.children[(selected-1)].classList.add("presionado")
-          letras.children[selected].classList.remove("presionado")
+          palabrota.children[(selected-1)].classList.add("presionado")
+          palabrota.children[selected].classList.remove("presionado")
           selected = selected -1
          }
         } catch (error) {
-          letras.children[letras.children.length-1].classList.add("presionado")
-          letras.children[selected].classList.remove("presionado")
-          selected =  letras.children.length-1
+          palabrota.children[palabrota.children.length-1].classList.add("presionado")
+          palabrota.children[selected].classList.remove("presionado")
+          selected =  palabrota.children.length-1
         }
   
         break;
         case "ok":
           console.log(finaliza)
-          if (letras.children.length === 0) {
+          if (palabrota.children.length === 0) {
             finaliza = true
 
           }
@@ -80,7 +85,7 @@ receive("boton", (boton) => {
             postData(
               "juego_nivel",
               {
-                juego: 1,
+                juego: 3,
                 nivel: niveles,
               },
               callBack1
@@ -90,7 +95,7 @@ receive("boton", (boton) => {
                   postData(
                     "reiniciar",
                     {
-                      juego: "1",
+                      juego: "3",
                       nivel: niveles,
                     },
                     (data) => {
@@ -108,16 +113,16 @@ receive("boton", (boton) => {
                 break;
             }
           }
-          if (letras.children.length > 0) {
-            letras.children[selected].classList.remove("presionado")
+          if (palabrota.children.length > 0) {
+            palabrota.children[selected].classList.remove("presionado")
 
-          clickLetter(letras.children[selected].innerText)
-            letras.children[(0)].classList.add("presionado")
+          clickLetter(palabrota.children[selected].innerText)
+            palabrota.children[(0)].classList.add("presionado")
             selected = 0
-            console.log(letras.children.length)
+            console.log(palabrota.children.length)
             
           }
-          console.log(letras.children.length)
+          console.log(palabrota.children.length)
     default:
       break;
   }
@@ -137,7 +142,7 @@ function callBack2(data) {
     document.getElementById("next").style.visibility = "hidden";
   } else {
     // Seleccionar aleatoriamente una palabra
-    let palabraCorrecta = palabras_back[Math.floor(Math.random() * palabras_back.length)];
+    palabraCorrecta = palabras_back[Math.floor(Math.random() * palabras_back.length)];
     
     // Mostrar la palabra en el HTML
     for (let i = 0; i < palabras_back.length; i++) {
@@ -146,6 +151,7 @@ function callBack2(data) {
       palabra.classList.add("palabra");
       palabra.addEventListener("click", () => clickLetter(palabras_back[i], palabraCorrecta));
       palabrota.appendChild(palabra);
+      
     }
 
     // Mostrar la imagen asociada a la palabra correcta
@@ -195,9 +201,12 @@ function mostrarImagen(palabraCorrecta) {
     }
 }
 
-let clickLetter = (palabra, palabraCorrecta) => {
-  if (palabra.palabra === palabraCorrecta.palabra) {
+let clickLetter = (palabra) => {
+  console.log(palabraCorrecta,palabra)
+  if (palabra === palabraCorrecta.palabra) {
     text.innerText = "Palabra correcta";
+    reJuego()
+
   } else {
     text.innerText = "Palabra incorrecta";
   }
