@@ -134,30 +134,31 @@ receive("boton", (boton) => {
 function callBack2(data) {
   console.log(data);
   let grupo_aleatorio = data.grupo_aleatorio;
-  let palabras_back = data.grupoAleatorio.palabras; // Palabra recibida del backend
+  let palabras_back = data.grupoAleatorio.palabras; // Palabras que vienen del backend
   
-  // Verificar si hay palabras disponibles
   if (palabras_back === undefined || palabras_back.length === 0) {
-    // No hay más palabras: ocultar "next" y mostrar "confirmar"
-    document.getElementById("next").style.visibility = "hidden";
+    document.getElementById("next").style.visibility = "hidden"; // No hay palabras
   } else {
     // Seleccionar aleatoriamente una palabra
     palabraCorrecta = palabras_back[Math.floor(Math.random() * palabras_back.length)];
     
-    // Mostrar la palabra en el HTML
-    for (let i = 0; i < palabras_back.length; i++) {
+    console.log("Palabra correcta seleccionada:", palabraCorrecta.palabra);
+    
+    // Mostrar las palabras disponibles
+    palabrota.innerHTML = ""; // Limpiar el contenedor de palabras
+    palabras_back.forEach((item) => {
       let palabra = document.createElement("h2");
-      palabra.innerHTML = palabras_back[i].palabra;
+      palabra.innerHTML = item.palabra;
       palabra.classList.add("palabra");
-      palabra.addEventListener("click", () => clickLetter(palabras_back[i], palabraCorrecta));
+      palabra.addEventListener("click", () => clickLetter(item.palabra));
       palabrota.appendChild(palabra);
-      
-    }
+    });
 
     // Mostrar la imagen asociada a la palabra correcta
     mostrarImagen(palabraCorrecta);
   }
 }
+
 
 postData(
   "juego_nivel",
@@ -194,20 +195,24 @@ function reJuego() {
 
 // Función para mostrar la imagen correspondiente
 function mostrarImagen(palabraCorrecta) {
-  // Asumimos que cada palabra tiene una imagen asociada
-  let imagenURL = palabraCorrecta.imagen; // Asegúrate de que la palabra tenga una propiedad 'imagen'
+  let imagenURL = palabraCorrecta.imagen; // Asumimos que la palabra tiene una propiedad 'imagen'
   if (imagenes) {
-    imagenes.src = "./imagenes/" + imagenURL
-    }
+    imagenes.src = "./imagenes/" + imagenURL;
+  }
 }
 
+
 let clickLetter = (palabra) => {
-  console.log(palabraCorrecta,palabra)
+  // Asegúrate de que `palabra` es un string que coincida con la propiedad `palabra` de `palabraCorrecta`
+  console.log("Palabra seleccionada: ", palabra);
+  console.log("Palabra correcta: ", palabraCorrecta.palabra);
+
+  // Asegúrate de comparar correctamente los valores
   if (palabra === palabraCorrecta.palabra) {
     text.innerText = "Palabra correcta";
-    reJuego()
-
+    reJuego(); // Esto activará el flujo de reiniciar el juego
   } else {
     text.innerText = "Palabra incorrecta";
   }
 };
+

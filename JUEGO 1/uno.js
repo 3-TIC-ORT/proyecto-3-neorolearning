@@ -2,7 +2,11 @@ let cajitas = document.getElementById("divCajitas");
 let letras = document.getElementById("divLetras");
 let correcto = document.getElementById("correcto");
 let img = document.getElementById("img");
-let next = document.getElementById("next");
+const next = document.getElementById("next");
+const modalTerminado = document.getElementById("juegoTerminado");
+const botonReiniciar = document.getElementById("comfirmar");
+const botonInicio = document.getElementById("cancelar");
+const imagen = document.getElementById("imagen1");
 let palabra = "";
 let wordArray = [];
 let listaCajitas = [];
@@ -33,6 +37,7 @@ const clickLetter = (letter) => {
       }
     }
     if (letras.children.length === 0) {
+      postData("terminoJuego", 1,() => {console.log("enviado")});
       reJuego();
       wordArray = [];
       listaCajitas = [];
@@ -205,6 +210,12 @@ function callBack1(data) {
 }
 
 next.addEventListener("click", () => {
+  // Ocultar la foto de ganador y volver a la vista original
+  imagen.style.display = "none"; 
+  cajitas.innerHTML = "";  // Limpiar las cajitas
+  letras.innerHTML = "";  // Limpiar las letras
+
+  // Recargar la palabra nueva
   postData(
     "juego_nivel",
     {
@@ -228,6 +239,15 @@ function reJuego() {
   // Mostrar el contenedor de "juego terminado" después de 2 segundos
   setTimeout(() => {
     document.getElementById("juegoTerminado").style.display = "block";
+    imagen.style.display = "block";
+
+    imagen.style.position = "fixed";
+    imagen.style.top = "0";
+    imagen.style.left = "0";
+    imagen.style.width = "100vw"; 
+    imagen.style.height = "100vh"; 
+    imagen.style.zIndex = "1";
+    imagen.style.objectFit = "cover"; 
 
     // Configurar eventos para los botones
     document.getElementById("comfirmar").addEventListener("click", () => {
@@ -244,6 +264,7 @@ function reJuego() {
         }
       );
       document.getElementById("juegoTerminado").style.display = "none";
+      imagen.style.display = "none"; // Ocultar la imagen al reiniciar
     });
 
     document.getElementById("cancelar").addEventListener("click", async () => {
@@ -253,13 +274,12 @@ function reJuego() {
   }, 200); 
 }
 
-
 const crearLetras = () => {
   shuffleWord.forEach((letter) => {
     let h2 = document.createElement("h2");
     h2.addEventListener("click", () => clickLetter(letter));
     h2.classList.add("letras");
-    h2.innerHTML = letter;
+    h2.innerText = letter;
     letras.appendChild(h2);
   });
 };

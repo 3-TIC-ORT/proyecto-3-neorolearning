@@ -1,7 +1,11 @@
-body{
+body {
     background-image: url('JUEGO\ 1.png');
-    background-size: cover; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+    margin: 0;
+    position: relative; /* Necesario para que los elementos posicionados estén dentro de este contexto */
+    z-index: 0; /* Asegura que el fondo esté en el nivel más bajo */
 }
 
 main {
@@ -11,7 +15,8 @@ main {
     width: 100vw;
     height: 85vh;
 }
-.img{
+
+.img {
     width: 500px;
     display: flex;
     justify-content: center;
@@ -21,8 +26,8 @@ main {
 
 .letras {
     display: flex;
-    width: 3vw;
-    height: 5vw;
+    width: 7vw;
+    height: 9vh;
     background-color: rgba(42, 215, 215, 1);
     margin: 0.5vw; 
     padding: 1vw;
@@ -43,6 +48,7 @@ main {
     margin-left: 25px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
+    z-index: 3; /* Los elementos de letras estarán por encima de la imagen */
 }
 
 .divLetras > h2 {
@@ -60,10 +66,8 @@ main {
     justify-content: flex-end;
     align-items: center;
     border-radius: 10px;
-    width: 7vw;
-    height: 7vw;
-    background-color: rgba(23, 149, 141, 1);
-    margin: 0vw; 
+    width: 10vw;
+    background-color: rgba(23, 149, 141, 1); 
     position: relative;
 }
 
@@ -77,9 +81,10 @@ main {
     left: 31%;
     position: fixed;
     padding-top: 2em;
+    z-index: 3; 
 }
 
-.divCajitas > h2{
+.divCajitas > h2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,26 +98,38 @@ main {
 .juegoTerminado {
     width: 100vw;
     height: 100vh;
-    position: fixed; 
+    position: fixed;
     display: flex;
     justify-content: center;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 2; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4; /* Este modal estará sobre todo */
 }
 
-.presionado{
+.presionado {
     border: 2px solid rgb(255, 255, 255);
 }
 
 .flechar {
     position: fixed;
-    z-index: 3;
+    z-index: 2; 
+}
+
+.ganador {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    z-index: 1; 
 }
 
 .VJ, .VI {
-    position: fixed; 
+    position: fixed;
     width: 380px;
     height: 120px;
     background-color: #17958D;
@@ -130,11 +147,11 @@ main {
 }
 
 .VJ {
-    bottom: 3%; 
+    bottom: 3%;
     left: 20%;
 }
 
 .VI {
-    bottom: 3%; 
+    bottom: 3%;
     left: 52%;
 }
