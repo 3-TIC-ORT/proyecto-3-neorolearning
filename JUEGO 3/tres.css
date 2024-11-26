@@ -1,6 +1,7 @@
 body{
-    background-image: url('what\ are\ you.png');
+    background-image: url('JUEGO\ 3.png');
     background-size: cover; 
+    position: fixed;
 
 }
 
@@ -9,10 +10,28 @@ main{
     height: 85vh;
 }
 
-.palabra{
+.palabra {
     font-size: 2em;
     color: white;
     text-align: center;
     margin-top: 10vh;
-    
+    display: inline-block; 
+    margin-right: 150px; 
+    margin-left: 98px;
 }
+
+.img{
+    width: 400px;
+    height: 400px
+}
+
+.presionado{
+    border: 2px solid red;
+}
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
