@@ -19,12 +19,12 @@
       {
         "palabra": "CAMA",
         "imagen": "CAMA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "CASA",
         "imagen": "CASA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "NUBE",
@@ -34,22 +34,22 @@
       {
         "palabra": "AUTO",
         "imagen": "AUTO.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "TREN",
         "imagen": "TREN.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "LUNA",
         "imagen": "LUNA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "MONO",
         "imagen": "MONO.png",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_2": [
@@ -61,7 +61,7 @@
       {
         "palabra": "SILLA",
         "imagen": "SILLA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "AVIÓN",
@@ -101,7 +101,7 @@
       {
         "palabra": "GLOBO",
         "imagen": "GLOBO.png",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_3": [
@@ -123,12 +123,12 @@
       {
         "palabra": "TIJERA",
         "imagen": "TIJERA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "TOMATE",
         "imagen": "TOMATE.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "BANANA",

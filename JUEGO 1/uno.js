@@ -40,7 +40,7 @@ const clickLetter = (letter) => {
       }
     }
     if (letras.children.length === 0) {
-      postData("terminoJuego", 1,() => {console.log("enviado")});
+    //postData("terminoJuego", "GANAR",() => {console.log("enviado")});
       reJuego();
       wordArray = [];
       listaCajitas = [];

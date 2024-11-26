@@ -15,10 +15,19 @@ main{
     color: white;
     text-align: center;
     margin-top: 10vh;
-    display: inline-block; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
     margin-right: 145px; 
-    margin-left: 98px;
-    background-color: aqua;
+    margin-left: 40px;
+    background-color: rgba(0, 125, 50, 1);
+    border-radius: 10px;
+    width: 170px;
+    height: 60px;
+    padding-top:0.7%;
+    box-sizing: border-box;
+    cursor: pointer;
 
 }
 
@@ -35,5 +44,12 @@ main{
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+}
+
+#todasPalabras {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
 }
 
