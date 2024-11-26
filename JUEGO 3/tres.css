@@ -18,6 +18,8 @@ main{
     display: inline-block; 
     margin-right: 145px; 
     margin-left: 98px;
+    background-color: aqua;
+
 }
 
 .img{

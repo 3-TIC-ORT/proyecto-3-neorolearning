@@ -14,6 +14,9 @@ let shuffleWord = [];
 let arduino;
 
 let selected = 0;
+
+connect2Server();
+
 const clickLetter = (letter) => {
   console.log(letter);
   const firstCajita = listaCajitas[0];
@@ -61,7 +64,7 @@ const clickLetter = (letter) => {
     }
   }
 };
-connect2Server();
+
 
 let finaliza = false;
 let juegoTerminado = document.getElementById("juegoTerminado");
@@ -251,6 +254,7 @@ function reJuego() {
 
     // Configurar eventos para los botones
     document.getElementById("comfirmar").addEventListener("click", () => {
+
       postData(
         "reiniciar",
         {
