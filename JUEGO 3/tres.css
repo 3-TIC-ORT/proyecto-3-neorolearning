@@ -31,11 +31,14 @@ main{
 
 }
 
-.img{
+.flechar {
+    position: fixed;
+
+}
+ .img{
     width: 400px;
     height: 400px
 }
-
 
 .img-container {
     display: flex;
@@ -55,8 +58,8 @@ main{
     position: fixed;
     width: 380px;
     height: 120px;
-    background-color: #14B053;
-    border: 10px solid #1A964B;
+    background-color: #17958D;
+    border: 10px solid #12AFA6;
     border-radius: 20px;
     font-size: 40px;
     font-family: "Inter", sans-serif;
@@ -82,4 +85,3 @@ main{
     bottom: 3%;
     left: 52%;
 }
-
