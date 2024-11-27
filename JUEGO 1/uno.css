@@ -1,7 +1,11 @@
-body{
+body {
     background-image: url('JUEGO\ 1.png');
-    background-size: cover; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+    margin: 0;
+    position: relative; /* Necesario para que los elementos posicionados estén dentro de este contexto */
+    z-index: 0; /* Asegura que el fondo esté en el nivel más bajo */
 }
 
 main {
@@ -11,8 +15,9 @@ main {
     width: 100vw;
     height: 85vh;
 }
-.img{
-    width: 500px;
+
+.img {
+    width: 400px;
     display: flex;
     justify-content: center;
     margin-left: 650px;
@@ -21,28 +26,27 @@ main {
 
 .letras {
     display: flex;
-    width: 3vw;
-    height: 5vw;
+    width: 7vw;
+    height: 9vh;
     background-color: rgba(42, 215, 215, 1);
-    margin: 0.5vw; 
+    margin: 1vw; 
     padding: 1vw;
     border-radius: 10px;
 }
 
 /* Mover las letras más arriba */
 .divLetras {
-    display: grid;
-    grid-template-columns: 50% 20%;
-    grid-template-rows: 50% 50%;
+    display: flex;
+    flex-wrap: wrap;
     justify-items: center;
     align-items: center;
-    row-gap: 1vw;
     width: 31%;
     position: absolute;
-    top: 35%; /* Cambié este valor para moverlas más arriba */
+    top: 30%; 
     margin-left: 25px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
+
 }
 
 .divLetras > h2 {
@@ -60,10 +64,8 @@ main {
     justify-content: flex-end;
     align-items: center;
     border-radius: 10px;
-    width: 7vw;
-    height: 7vw;
-    background-color: rgba(23, 149, 141, 1);
-    margin: 0vw; 
+    width: 10vw;
+    background-color: rgba(23, 149, 141, 1); 
     position: relative;
 }
 
@@ -77,9 +79,10 @@ main {
     left: 31%;
     position: fixed;
     padding-top: 2em;
+    z-index: 3; 
 }
 
-.divCajitas > h2{
+.divCajitas > h2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,13 +94,64 @@ main {
 }
 
 .juegoTerminado {
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4; /* Este modal estará sobre todo */
+}
+
+
+
+.flechar {
+    position: fixed;
     z-index: 2; 
 }
 
-.presionado{
-    border: 2px solid red;
+.ganador {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    z-index: 1; 
+}
+
+.VJ, .VI {
+    position: fixed;
+    width: 380px;
+    height: 120px;
+    background-color: #17958D;
+    border: 10px solid #12AFA6;
+    border-radius: 20px;
+    font-size: 40px;
+    font-family: "Inter", sans-serif;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 3; 
+}
+
+.presionado {
+    border: 10px solid rgb(255, 255, 255);
+}
+
+.VJ {
+    bottom: 3%;
+    left: 20%;
+}
+
+.VI {
+    bottom: 3%;
+    left: 52%;
 }

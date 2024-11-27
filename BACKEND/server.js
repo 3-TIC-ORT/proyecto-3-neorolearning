@@ -1,11 +1,14 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
 import { SerialPort, ReadlineParser } from "serialport";
+
+const BOTONERA = true;
+
 const port = new SerialPort({
     //Completar con el puerto correcto
     path: "COM8",
     baudRate: 9600,
-  //  autoOpen: false,
+    autoOpen: false,
 });
 
 const parser = new ReadlineParser();
@@ -14,6 +17,8 @@ port.pipe(parser);
 port.on("open", () => {
     console.log("Puerto abierto");
 });
+
+if (BOTONERA) port.open();
 
 // Función para manejar el evento de recibir el juego
 //Bloque listo
@@ -46,11 +51,13 @@ port.on("data", function(data) {
     }
     else if (datos==="4"){
         color="amarillo";
-    }else{
+    }else if (datos==="5"){
         color = "ok"
     }
-    sendEvent("boton",color);
-    console.log(`Acción recibida del Arduino: ${color}`);
+    if(color !== ""){
+        sendEvent("boton",color);
+    }
+    console.log(`Acción recibida del Arduino: ${datos}`);
 })
 
 
@@ -133,6 +140,19 @@ function jugarJuego(data) {
     }
 }
 
+function hayPalabras(juego,nivel) {
+    let nivelJuego1 = palabrasData[juego][nivel];
+    let cantidadUsadaNo = nivelJuego1.filter(elemento => elemento.usada === "no").length;
+    return cantidadUsadaNo > 0;
+}
+
+onEvent("hayPalabras",(data) => {
+    const {juego,nivel} = data;
+    let juegoStr = `juego_${juego}`;
+    let nivelStr = `nivel_${nivel}`;
+    return hayPalabras(juegoStr,nivelStr);
+})
+
 
 function jugarJuego1(nivel) {
         let nivelJuego1 = palabrasData["juego_1"][nivel];
@@ -214,7 +234,6 @@ function jugarJuego3(nivel) {
 
 
 function reiniciarJ2y3(juego, nivel) {
-
     if (palabrasData[juego] && palabrasData[juego][nivel]) {
         palabrasData[juego][nivel].usada = "no"; // Cambia "usada" en nivel a "no"
         // Cambia "usada" a "no" en cada grupo del nivel
@@ -243,7 +262,7 @@ onEvent("reiniciar", (data) => {
     }
     else if(juego==="2" || juego==="3"){
         let p1 = `juego_${juego}`;
-        let p2 = `nivel_${nivel.data}`;
+        let p2 = `nivel_${nivel}`;
         reiniciarJ2y3(p1, p2);
         return true
 

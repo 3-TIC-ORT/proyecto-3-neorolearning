@@ -51,6 +51,9 @@ function mostrarResultado(texto, imagen) {
     }, 100); // 1000 ms = 1 segundo
 }
 
+
+
+
 // Reiniciar juego
 botonReiniciar.addEventListener("click", () => {
     limpiarTablero();

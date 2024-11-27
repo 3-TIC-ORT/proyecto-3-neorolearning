@@ -4,27 +4,27 @@
       {
         "palabra": "SOL",
         "imagen": "SOL.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "MESA",
         "imagen": "MESA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "MANO",
         "imagen": "MANO.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "CAMA",
         "imagen": "CAMA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "CASA",
         "imagen": "CASA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "NUBE",
@@ -34,7 +34,7 @@
       {
         "palabra": "AUTO",
         "imagen": "AUTO.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "TREN",
@@ -44,19 +44,19 @@
       {
         "palabra": "LUNA",
         "imagen": "LUNA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "MONO",
         "imagen": "MONO.png",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_2": [
       {
         "palabra": "PERRO",
         "imagen": "PERRO.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "SILLA",
@@ -81,7 +81,7 @@
       {
         "palabra": "FUEGO",
         "imagen": "FUEGO.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "PIANO",
@@ -91,7 +91,7 @@
       {
         "palabra": "CARPA",
         "imagen": "CARPA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "LÁPIZ",
@@ -101,19 +101,19 @@
       {
         "palabra": "GLOBO",
         "imagen": "GLOBO.png",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_3": [
       {
         "palabra": "REMERA",
         "imagen": "REMERA.PNG",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "ELEFANTE",
         "imagen": "ELEFANTE.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "DIENTE",
@@ -138,12 +138,12 @@
       {
         "palabra": "LLUVIA",
         "imagen": "lluvia.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "CONEJO",
         "imagen": "conejo.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "PILETA",
@@ -367,7 +367,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Elefante",
@@ -430,7 +430,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Tiburón",
@@ -454,7 +454,7 @@
     "nivel_2": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Banana",
@@ -562,7 +562,7 @@
     "nivel_3": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Botas",
