@@ -2,7 +2,7 @@ import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
 import { SerialPort, ReadlineParser } from "serialport";
 
-const BOTONERA = false;
+const BOTONERA = true;
 
 const port = new SerialPort({
     //Completar con el puerto correcto
@@ -51,11 +51,13 @@ port.on("data", function(data) {
     }
     else if (datos==="4"){
         color="amarillo";
-    }else{
+    }else if (datos==="5"){
         color = "ok"
     }
-    sendEvent("boton",color);
-    console.log(`Acción recibida del Arduino: ${color}`);
+    if(color !== ""){
+        sendEvent("boton",color);
+    }
+    console.log(`Acción recibida del Arduino: ${datos}`);
 })
 
 
@@ -137,6 +139,19 @@ function jugarJuego(data) {
         return jugarSimonSays(nivel);
     }
 }
+
+function hayPalabras(juego,nivel) {
+    let nivelJuego1 = palabrasData[juego][nivel];
+    let cantidadUsadaNo = nivelJuego1.filter(elemento => elemento.usada === "no").length;
+    return cantidadUsadaNo > 0;
+}
+
+onEvent("hayPalabras",(data) => {
+    const {juego,nivel} = data;
+    let juegoStr = `juego_${juego}`;
+    let nivelStr = `nivel_${nivel}`;
+    return hayPalabras(juegoStr,nivelStr);
+})
 
 
 function jugarJuego1(nivel) {

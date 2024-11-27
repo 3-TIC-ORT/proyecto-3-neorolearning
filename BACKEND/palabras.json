@@ -14,7 +14,7 @@
       {
         "palabra": "MANO",
         "imagen": "MANO.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "CAMA",
@@ -29,12 +29,12 @@
       {
         "palabra": "NUBE",
         "imagen": "NUBE.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "AUTO",
         "imagen": "AUTO.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "TREN",
@@ -56,7 +56,7 @@
       {
         "palabra": "PERRO",
         "imagen": "PERRO.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "SILLA",
@@ -81,7 +81,7 @@
       {
         "palabra": "FUEGO",
         "imagen": "FUEGO.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "PIANO",
@@ -91,7 +91,7 @@
       {
         "palabra": "CARPA",
         "imagen": "CARPA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "LÁPIZ",
@@ -101,7 +101,7 @@
       {
         "palabra": "GLOBO",
         "imagen": "GLOBO.png",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_3": [
@@ -367,7 +367,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Elefante",
@@ -430,7 +430,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Tiburón",
