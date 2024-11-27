@@ -140,12 +140,8 @@ function callBack2(data) {
   if (palabras_back === undefined || palabras_back.length === 0) {
     document.getElementById("next").style.visibility = "hidden"; // No hay palabras
   } else {
-    // Función para actualizar la palabra y mostrarla
-    const mostrarPalabra = () => {
-      palabraCorrecta = palabras_back[palabraIndex]; // Selecciona la palabra actual
-      console.log("Palabra correcta seleccionada:", palabraCorrecta.palabra);
+    palabraCorrecta = palabras_back[Math.floor(Math.random() * palabras_back.length)];
 
-      // Mostrar las palabras disponibles
       palabrota.innerHTML = ""; // Limpiar el contenedor de palabras
       palabras_back.forEach((item, index) => {
         let palabra = document.createElement("h2");
@@ -184,7 +180,7 @@ function callBack2(data) {
       mostrarPalabra();
     });
   }
-}
+
 
 
 

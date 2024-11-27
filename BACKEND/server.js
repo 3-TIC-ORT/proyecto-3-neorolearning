@@ -2,7 +2,7 @@ import { onEvent, sendEvent, startServer } from "soquetic";
 import fs from "fs";
 import { SerialPort, ReadlineParser } from "serialport";
 
-const BOTONERA = false;
+const BOTONERA = true;
 
 const port = new SerialPort({
     //Completar con el puerto correcto

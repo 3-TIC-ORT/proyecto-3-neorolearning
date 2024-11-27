@@ -102,7 +102,7 @@ async function comprobarPatron() {
         if (patron[j] != patronIngresado[j]) {
             perdisteMsg.style.display = "block";
 
-            document.getElementById("juegoTerminado").style.display = "block";
+            document.getElementById("juegoTerminado").style.display = "flex";
             document.querySelectorAll(".boton").forEach(e => {
                 e.setAttribute("state", "off");
             });

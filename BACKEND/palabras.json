@@ -4,12 +4,12 @@
       {
         "palabra": "SOL",
         "imagen": "SOL.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "MESA",
         "imagen": "MESA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "MANO",
@@ -346,7 +346,7 @@
     "nivel_1": {
       "usada": "no",
       "grupo_1": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Perro",
@@ -367,7 +367,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Elefante",
@@ -409,7 +409,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Pez",
@@ -430,7 +430,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Tiburón",

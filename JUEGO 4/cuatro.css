@@ -91,24 +91,15 @@ body{
     animation: recordAnimation 1s infinite alternate;
 }
 
-.perdisteMsg{
-    position: fixed; 
-    top: 0%;
-    right: 0%;
-    object-fit: cover; 
-    z-index: 1;
-    display: none; 
+.perdisteMsg, .ganasteMsg {
+    position: absolute; 
     
+    align-items: center;
+    justify-content: center;
+    z-index: 1; 
+    display: none; 
 }
 
-.ganasteMsg{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    z-index: 1;
-}
 .flechar {
     position: fixed;
     z-index: 3;
