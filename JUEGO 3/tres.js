@@ -1,6 +1,7 @@
 let imagenes = document.getElementById("mostrarImagen");
 let palabrota = document.getElementById("todasPalabras");
 let text = document.getElementById("text");
+const ganaste = document.getElementById("imagen1");
 
 let palabraCorrecta = 0
 
@@ -193,36 +194,59 @@ postData(
   callBack2
 );
 
-function reJuego() {
-  document.getElementById("juegoTerminado").style.display = "block";
-  document.getElementById("comfirmar").addEventListener("click", () => {
-    postData(
-      "reiniciar",
-      {
-        juego: "3",
-        nivel: niveles,
-      },
-      (data) => {
-        if (data) {
-          location.reload();
-        }
-      }
-    );
-    document.getElementById("juegoTerminado").style.display = "none";
-  });
-
-  document.getElementById("cancelar").addEventListener("click", async () => {
-    window.location.href =
-      "http://127.0.0.1:5500/INICIO/menu1.html";
-  });
-}
-
-// Función para mostrar la imagen correspondiente
 function mostrarImagen(palabraCorrecta) {
   let imagenURL = palabraCorrecta.imagen; // Asumimos que la palabra tiene una propiedad 'imagen'
   if (imagenes) {
     imagenes.src = "./imagenes/" + imagenURL;
   }
+}
+
+function reJuego() {
+  // Mostrar el contenedor de "juego terminado" después de 2 segundos
+  setTimeout(() => {
+    document.getElementById("juegoTerminado").style.display = "block";
+    ganaste.style.display = "block";
+
+    ganaste.style.position = "fixed";
+    ganaste.style.top = "0";
+    ganaste.style.left = "0";
+    ganaste.style.width = "100vw"; 
+    ganaste.style.height = "100vh"; 
+    ganaste.style.zIndex = "1";
+    ganaste.style.objectFit = "cover";
+    postData("hayPalabras",{
+      juego: "1",
+      nivel: niveles,
+    },(hayPalabras) => {
+      if(!hayPalabras){
+        document.getElementById("comfirmar").style.visibility = "visible";
+        document.getElementById("next").style.visibility = "hidden";
+      }
+    })
+    // Configurar eventos para los botones
+    document.getElementById("comfirmar").addEventListener("click", () => {
+
+      postData(
+        "reiniciar",
+        {
+          juego: "1",
+          nivel: niveles,
+        },
+        (data) => {
+          if (data) {
+            location.reload(); // Recargar la página para reiniciar el juego
+          }
+        }
+      );
+      document.getElementById("juegoTerminado").style.display = "none";
+      ganaste.style.display = "none"; // Ocultar la imagen al reiniciar
+    });
+
+    document.getElementById("cancelar").addEventListener("click", async () => {
+      window.location.href =
+        "http://127.0.0.1:5500/INICIO/menu1.html";
+    });
+  }, 200); 
 }
 
 

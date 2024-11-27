@@ -36,9 +36,7 @@ main{
     height: 400px
 }
 
-.presionado{
-    border: 2px solid red;
-}
+
 .img-container {
     display: flex;
     justify-content: center;
@@ -51,5 +49,37 @@ main{
     justify-content: center;
     align-items: center;
     padding-left: 5%;
+}
+
+.VJ, .VI {
+    position: fixed;
+    width: 380px;
+    height: 120px;
+    background-color: #14B053;
+    border: 10px solid #1A964B;
+    border-radius: 20px;
+    font-size: 40px;
+    font-family: "Inter", sans-serif;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 3; 
+}
+
+.presionado {
+    border: 10px solid rgb(255, 255, 255);
+}
+
+.VJ {
+    bottom: 3%;
+    left: 20%;
+}
+
+.VI {
+    bottom: 3%;
+    left: 52%;
 }
 
