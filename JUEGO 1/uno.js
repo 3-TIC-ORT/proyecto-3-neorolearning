@@ -40,7 +40,7 @@ const clickLetter = (letter) => {
       }
     }
     if (letras.children.length === 0) {
-    //postData("terminoJuego", "GANAR",() => {console.log("enviado")});
+      postData("terminoJuego", "GANAR",() => {console.log("enviado")});
       reJuego();
       wordArray = [];
       listaCajitas = [];
@@ -203,10 +203,9 @@ function callBack1(data) {
 
   if (palabra === undefined) {
     document.getElementById("comfirmar").style.visibility = "visible";
-    document.getElementById("next").style.visibility = "hidden";
   } else {
     document.getElementById("next").style.visibility = "visible";
-    document.getElementById("comfirmar").style.visibility = "hidden";
+
 
     crearCajitas(palabra);
   }

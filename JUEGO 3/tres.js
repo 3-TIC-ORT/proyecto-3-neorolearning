@@ -88,7 +88,7 @@ receive("boton", (boton) => {
                 juego: 3,
                 nivel: niveles,
               },
-              callBack1
+              callBack2
             );
                 break;
                 case 1:
@@ -135,29 +135,57 @@ function callBack2(data) {
   console.log(data);
   let grupo_aleatorio = data.grupo_aleatorio;
   let palabras_back = data.grupoAleatorio.palabras; // Palabras que vienen del backend
-  
+  let palabraIndex = 0; // Índice para controlar qué palabra se está mostrando
+
   if (palabras_back === undefined || palabras_back.length === 0) {
     document.getElementById("next").style.visibility = "hidden"; // No hay palabras
   } else {
-    // Seleccionar aleatoriamente una palabra
-    palabraCorrecta = palabras_back[Math.floor(Math.random() * palabras_back.length)];
-    
-    console.log("Palabra correcta seleccionada:", palabraCorrecta.palabra);
-    
-    // Mostrar las palabras disponibles
-    palabrota.innerHTML = ""; // Limpiar el contenedor de palabras
-    palabras_back.forEach((item) => {
-      let palabra = document.createElement("h2");
-      palabra.innerHTML = item.palabra;
-      palabra.classList.add("palabra");
-      palabra.addEventListener("click", () => clickLetter(item.palabra));
-      palabrota.appendChild(palabra);
+    // Función para actualizar la palabra y mostrarla
+    const mostrarPalabra = () => {
+      palabraCorrecta = palabras_back[palabraIndex]; // Selecciona la palabra actual
+      console.log("Palabra correcta seleccionada:", palabraCorrecta.palabra);
+
+      // Mostrar las palabras disponibles
+      palabrota.innerHTML = ""; // Limpiar el contenedor de palabras
+      palabras_back.forEach((item, index) => {
+        let palabra = document.createElement("h2");
+        palabra.innerHTML = item.palabra;
+        palabra.classList.add("palabra");
+        if (index === palabraIndex) palabra.classList.add("presionado");
+        palabra.addEventListener("click", () => clickLetter(item.palabra));
+        palabrota.appendChild(palabra);
+      });
+
+      // Mostrar la imagen asociada a la palabra correcta
+      mostrarImagen(palabraCorrecta);
+
+      // Actualizar visibilidad de botones
+      document.getElementById("next").style.display =
+        palabraIndex < palabras_back.length - 1 ? "block" : "none";
+      document.getElementById("reiniciar").style.display =
+        palabraIndex >= palabras_back.length - 1 ? "block" : "none";
+    };
+
+    // Mostrar la primera palabra
+    mostrarPalabra();
+   
+
+    // Configurar botón "Siguiente palabra"
+    document.getElementById("next").addEventListener("click", () => {
+      if (palabraIndex < palabras_back.length - 1) {
+        palabraIndex++;
+        mostrarPalabra();
+      }
     });
 
-    // Mostrar la imagen asociada a la palabra correcta
-    mostrarImagen(palabraCorrecta);
+    // Configurar botón "Volver a jugar"
+    document.getElementById("reiniciar").addEventListener("click", () => {
+      palabraIndex = 0;
+      mostrarPalabra();
+    });
   }
 }
+
 
 
 postData(
@@ -216,3 +244,18 @@ let clickLetter = (palabra) => {
   }
 };
 
+let next = document.getElementById("next")
+next.addEventListener("click", () => {
+
+  // Ocultar la foto de ganador y volver a la vista original
+
+  // Recargar la palabra nueva
+  postData(
+    "juego_nivel",
+    {
+      juego: 3,
+      nivel: niveles,
+    },
+    callBack2
+  );
+});
