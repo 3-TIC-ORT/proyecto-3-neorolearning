@@ -142,7 +142,22 @@ function jugarJuego(data) {
 
 function hayPalabras(juego,nivel) {
     let nivelJuego1 = palabrasData[juego][nivel];
-    let cantidadUsadaNo = nivelJuego1.filter(elemento => elemento.usada === "no").length;
+    console.log("acaaaaaa")
+    console.log(palabrasData)
+    console.log("------------------------------------------")
+    console.log(nivelJuego1)
+    console.log("termino")
+    let cantidadUsadaNo=0
+    try{
+        cantidadUsadaNo = nivelJuego1.filter(elemento => elemento.usada === "no").length;
+    }catch{
+        cantidadUsadaNo=0;
+        for(let i=1;i<=nivelJuego1.length;i++){
+            if(nivelJuego1["grupo_"+i].usada==="no"){
+                cantidadUsadaNo+=1
+            }
+        }
+    }
     return cantidadUsadaNo > 0;
 }
 

@@ -4,17 +4,17 @@
       {
         "palabra": "SOL",
         "imagen": "SOL.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "MESA",
         "imagen": "MESA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "MANO",
         "imagen": "MANO.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "CAMA",
@@ -29,17 +29,17 @@
       {
         "palabra": "NUBE",
         "imagen": "NUBE.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "AUTO",
         "imagen": "AUTO.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "TREN",
         "imagen": "TREN.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "LUNA",
@@ -66,12 +66,12 @@
       {
         "palabra": "AVIÓN",
         "imagen": "AVION.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "ÁRBOL",
         "imagen": "ARBOL.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "GORRO",
@@ -86,12 +86,12 @@
       {
         "palabra": "PIANO",
         "imagen": "PIANO.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "CARPA",
         "imagen": "CARPA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "LÁPIZ",
@@ -108,7 +108,7 @@
       {
         "palabra": "REMERA",
         "imagen": "REMERA.PNG",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "ELEFANTE",
@@ -118,27 +118,27 @@
       {
         "palabra": "DIENTE",
         "imagen": "DIENTE.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "TIJERA",
         "imagen": "TIJERA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "TOMATE",
         "imagen": "TOMATE.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "BANANA",
         "imagen": "BANANA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "LLUVIA",
         "imagen": "lluvia.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "CONEJO",
@@ -153,7 +153,7 @@
       {
         "palabra": "HELADO",
         "imagen": "helado.png",
-        "usada": "si"
+        "usada": "no"
       }
     ]
   },
@@ -346,7 +346,7 @@
     "nivel_1": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Perro",
@@ -367,7 +367,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Elefante",
@@ -409,7 +409,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Pez",
@@ -475,7 +475,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Tomate",

@@ -1,7 +1,7 @@
 let imagenes = document.getElementById("mostrarImagen");
 let palabrota = document.getElementById("todasPalabras");
 let text = document.getElementById("text");
-const imagen = document.getElementById("imagen1");
+const foto = document.getElementById("imagen1");
 
 let palabraCorrecta = 0
 
@@ -135,11 +135,13 @@ receive("boton", (boton) => {
 function callBack2(data) {
   console.log(data);
   let grupo_aleatorio = data.grupo_aleatorio;
-  let palabras_back = data.grupoAleatorio.palabras; // Palabras que vienen del backend
-  let palabraIndex = 0; // Índice para controlar qué palabra se está mostrando
+  let palabras_back = data.grupoAleatorio.palabras; 
+  let palabraIndex = 0;
 
   if (palabras_back === undefined || palabras_back.length === 0) {
-    document.getElementById("next").style.visibility = "hidden"; // No hay palabras
+
+    document.getElementById("next").style.visibility = "hidden";
+    document.getElementById("comfirmar").style.visibility = "visible";   
   } else {
     palabraCorrecta = palabras_back[Math.floor(Math.random() * palabras_back.length)];
 
@@ -195,27 +197,53 @@ postData(
 );
 
 function reJuego() {
-  document.getElementById("juegoTerminado").style.display = "block";
-  document.getElementById("comfirmar").addEventListener("click", () => {
-    postData(
-      "reiniciar",
-      {
-        juego: "3",
-        nivel: niveles,
-      },
-      (data) => {
-        if (data) {
-          location.reload();
-        }
-      }
-    );
-    document.getElementById("juegoTerminado").style.display = "none";
-  });
 
-  document.getElementById("cancelar").addEventListener("click", async () => {
-    window.location.href =
-      "http://127.0.0.1:5500/INICIO/menu1.html";
-  });
+  setTimeout(() => {
+    document.getElementById("juegoTerminado").style.display = "block";
+    postData("terminoJuego", "GANAR",() => {console.log("enviado")});
+    foto.style.display = "block";
+
+    foto.style.position = "fixed";
+    foto.style.top = "0";
+    foto.style.left = "0";
+    foto.style.width = "100vw"; 
+    foto.style.height = "100vh"; 
+    foto.style.zIndex = "1";
+    foto.style.objectFit = "cover";
+
+    postData("hayPalabras",{
+      juego: "3",
+      nivel: niveles,
+    },(hayPalabras) => {
+      if(!hayPalabras){
+        document.getElementById("comfirmar").style.visibility = "visible";
+        document.getElementById("next").style.visibility = "hidden";
+      }
+    })
+    // Configurar eventos para los botones
+    document.getElementById("comfirmar").addEventListener("click", () => {
+
+      postData(
+        "reiniciar",
+        {
+          juego: "3",
+          nivel: niveles,
+        },
+        (data) => {
+          if (data) {
+            location.reload(); // Recargar la página para reiniciar el juego
+          }
+        }
+      );
+      document.getElementById("juegoTerminado").style.display = "none";
+      foto.style.display = "none"; // Ocultar la imagen al reiniciar
+    });
+
+    document.getElementById("cancelar").addEventListener("click", async () => {
+      window.location.href =
+        "http://127.0.0.1:5500/INICIO/menu1.html";
+    });
+  }, 200); 
 }
 
 // Función para mostrar la imagen correspondiente
