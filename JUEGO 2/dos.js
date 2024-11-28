@@ -8,6 +8,11 @@ let aciertos = 0;
 let tiemporegresivoId = null;
 let messi = 1
 let elementos;
+const next = document.getElementById("next");
+const modalTerminado = document.getElementById("juegoTerminado");
+const botonReiniciar = document.getElementById("comfirmar");
+const botonInicio = document.getElementById("cancelar");
+const imagen = document.getElementById("imagen1");
 
 let emociones = {
     nivel_1: [
@@ -54,7 +59,7 @@ function destapar(id) {
         } else {
             tarjeta2.innerHTML = segundoresultado;
         }
-
+        
         tarjeta2.disabled = true;
 
         movimientos++;
@@ -64,19 +69,24 @@ function destapar(id) {
             tarjetasdestapadas = 0;
 
             aciertos++;
-
+            
             if (aciertos === 6) {
-                messi ++
-                for (let index = 0; index < 12; index++) {
-                    let element = document.getElementById(index)
-                    element.disabled = false
-                    element.innerHTML = ""
-                    tarjetasdestapadas = 0                    
-                }
-                armarCartas()
-                clearInterval(tiemporegresivoId);
-
+                setTimeout(()=>{
+                    messi ++
+                    for (let index = 0; index < 12; index++) {
+                        let element = document.getElementById(index)
+                        element.disabled = false
+                        element.innerHTML = ""
+                        tarjetasdestapadas = 0                    
+                    }
+                    
+                    
+                    //window.location.href="/INICIO/menu1.html" // enlace al que se va despues de un
+                    armarCartas()
+                    clearInterval(tiemporegresivoId);
+                },1000)
             }
+            
         } else {
 
             setTimeout(() => {

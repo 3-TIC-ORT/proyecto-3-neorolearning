@@ -26,6 +26,7 @@ onEvent("juego_nivel", (data) => {
     console.log(`Juego recibido(backend): ${data.juego} ${data.nivel} `);
     // llamo a la función jugar_juego
     const salida = jugarJuego(data);
+    console.log(salida)
     juegoHardware(data.juego);
     return salida ;
 
@@ -142,11 +143,7 @@ function jugarJuego(data) {
 
 function hayPalabras(juego,nivel) {
     let nivelJuego1 = palabrasData[juego][nivel];
-    console.log("acaaaaaa")
-    console.log(palabrasData)
-    console.log("------------------------------------------")
-    console.log(nivelJuego1)
-    console.log("termino")
+
     let cantidadUsadaNo=0
     try{
         cantidadUsadaNo = nivelJuego1.filter(elemento => elemento.usada === "no").length;
@@ -249,7 +246,7 @@ function jugarJuego3(nivel) {
 
 
 function reiniciarJ2y3(juego, nivel) {
-    if (palabrasData[juego] && palabrasData[juego][nivel]) {
+    if (palabrasData[juego] && palabrasData[juego][nivel]) {    
         palabrasData[juego][nivel].usada = "no"; // Cambia "usada" en nivel a "no"
         // Cambia "usada" a "no" en cada grupo del nivel
         Object.values(palabrasData[juego][nivel]).forEach(grupo => {
@@ -257,6 +254,7 @@ function reiniciarJ2y3(juego, nivel) {
                 grupo.usada = "no";
             }
         });
+    
 
         fs.writeFileSync('palabras.json', JSON.stringify(palabrasData, null, 2));
     } else {

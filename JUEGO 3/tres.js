@@ -134,10 +134,11 @@ receive("boton", (boton) => {
 
 function callBack2(data) {
   console.log(data);
+  
   let grupo_aleatorio = data.grupo_aleatorio;
   let palabras_back = data.grupoAleatorio.palabras; 
   let palabraIndex = 0;
-
+  
   if (palabras_back === undefined || palabras_back.length === 0) {
 
     document.getElementById("next").style.visibility = "hidden";
@@ -161,6 +162,7 @@ function callBack2(data) {
       // Actualizar visibilidad de botones
       document.getElementById("next").style.display =
         palabraIndex < palabras_back.length - 1 ? "block" : "none";
+      console.log(document.getElementById("reiniciar"))
       document.getElementById("reiniciar").style.display =
         palabraIndex >= palabras_back.length - 1 ? "block" : "none";
     };
@@ -184,9 +186,6 @@ function callBack2(data) {
     });
   }
 
-
-
-
 postData(
   "juego_nivel",
   {
@@ -196,8 +195,33 @@ postData(
   callBack2
 );
 
-function reJuego() {
+let sig = document.getElementById("next")
+sig.addEventListener("click", () => {
+  // Ocultar la foto de ganador y volver a la vista original
+  foto.style.display = "none"; 
 
+  // Recargar la palabra nueva
+  postData(
+    "juego_nivel",
+    {
+      juego: 3,
+      nivel: niveles,
+    },
+    callBack2
+  );
+});
+
+postData(
+  "juego_nivel",
+  {
+    juego: 3,
+    nivel: niveles,
+  },
+  (data) => callBack2(data)
+);
+
+function reJuego() {
+  // Mostrar el contenedor de "juego terminado" después de 2 segundos
   setTimeout(() => {
     document.getElementById("juegoTerminado").style.display = "block";
     postData("terminoJuego", "GANAR",() => {console.log("enviado")});
@@ -210,7 +234,6 @@ function reJuego() {
     foto.style.height = "100vh"; 
     foto.style.zIndex = "1";
     foto.style.objectFit = "cover";
-
     postData("hayPalabras",{
       juego: "3",
       nivel: niveles,
@@ -245,6 +268,7 @@ function reJuego() {
     });
   }, 200); 
 }
+
 
 // Función para mostrar la imagen correspondiente
 function mostrarImagen(palabraCorrecta) {
