@@ -8,10 +8,9 @@ let aciertos = 0;
 let tiemporegresivoId = null;
 let messi = 1
 let elementos;
-const next = document.getElementById("next");
 const modalTerminado = document.getElementById("juegoTerminado");
-const botonReiniciar = document.getElementById("comfirmar");
-const botonInicio = document.getElementById("cancelar");
+const botonReiniciar = document.getElementById("restart");
+const botonInicio = document.getElementById("exit");
 const imagen = document.getElementById("imagen1");
 
 let emociones = {
@@ -33,6 +32,23 @@ console.log(elementos);
 }
 armarCartas()
 
+
+function showWinnerImg(imagenGanar, boton1, boton2) {
+
+    imagenGanar.style.display = 'block';
+    imagenGanar.style.position = 'absolute';
+    imagenGanar.style.top = '0'
+    imagenGanar.style.height = '100vh';
+    imagenGanar.style.width = '100vw';
+
+
+    boton1.style.display = 'block';
+    boton1.style.zindex = '999'
+
+    boton2.style.display = 'block';
+    boton2.style.zindex = '999'
+
+}
 
 
 function destapar(id) {
@@ -72,18 +88,21 @@ function destapar(id) {
             
             if (aciertos === 6) {
                 setTimeout(()=>{
-                    messi ++
-                    for (let index = 0; index < 12; index++) {
-                        let element = document.getElementById(index)
-                        element.disabled = false
-                        element.innerHTML = ""
-                        tarjetasdestapadas = 0                    
-                    }
+
+                    showWinnerImg(imagen, botonInicio, botonReiniciar)
+
+                    // messi ++
+                    // for (let index = 0; index < 12; index++) {
+                    //     let element = document.getElementById(index)
+                    //     element.disabled = false
+                    //     element.innerHTML = ""
+                    //     tarjetasdestapadas = 0                    
+                    // }
                     
                     
-                    //window.location.href="/INICIO/menu1.html" // enlace al que se va despues de un
-                    armarCartas()
-                    clearInterval(tiemporegresivoId);
+                    // //window.location.href="/INICIO/menu1.html" // enlace al que se va despues de un
+                    // armarCartas()
+                    // clearInterval(tiemporegresivoId);
                 },1000)
             }
             

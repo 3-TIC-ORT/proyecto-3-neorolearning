@@ -4,12 +4,12 @@
       {
         "palabra": "SOL",
         "imagen": "SOL.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "MESA",
         "imagen": "MESA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "MANO",
@@ -19,12 +19,12 @@
       {
         "palabra": "CAMA",
         "imagen": "CAMA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "CASA",
         "imagen": "CASA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "NUBE",
@@ -39,7 +39,7 @@
       {
         "palabra": "TREN",
         "imagen": "TREN.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "LUNA",
@@ -388,7 +388,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Medusa",
@@ -409,7 +409,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Pez",
@@ -430,7 +430,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Tiburón",
