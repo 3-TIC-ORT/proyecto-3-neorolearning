@@ -20,11 +20,14 @@ int estado = 0; // estado inicial del while SIEMPRE 0
 
 void setup() {
   Serial.begin(9600); // inicia la comunicación serial
-  pinMode(BOTON1A, INPUT);
-  pinMode(BOTON2B, INPUT);
-  pinMode(BOTON3D, INPUT);
-  pinMode(BOTON4I, INPUT);
-  pinMode(BOTONOK, INPUT);
+
+  // Botones con INPUT_PULLUP
+  pinMode(BOTON1A, INPUT_PULLUP);
+  pinMode(BOTON2B, INPUT_PULLUP);
+  pinMode(BOTON3D, INPUT_PULLUP);
+  pinMode(BOTON4I, INPUT_PULLUP);
+  pinMode(BOTONOK, INPUT_PULLUP);
+
   pinMode(red, OUTPUT);
   pinMode(yellow, OUTPUT);
   pinMode(green, OUTPUT);
@@ -32,11 +35,9 @@ void setup() {
   pinMode(bocina, OUTPUT);
   pinMode(interruptorLeds, INPUT);
   pinMode(interruptorBocina, INPUT);
-  
 }
 
 void PerdisteQueTriste() {
-  // probamos si esta prendido el interrupor de bocina para hacerlo funcionar
   if (digitalRead(interruptorBocina) == HIGH) {
     if (Serial.available()) {
       String valor = Serial.readStringUntil('\n');
@@ -58,18 +59,18 @@ void PerdisteQueTriste() {
   }
 }
 
-int LeerBotones() { // para leer botones
+int LeerBotones() {
   int x = 0;
 
-  if (digitalRead(BOTON1A) == HIGH) {
+  if (digitalRead(BOTON1A) == LOW) {
     x = 1;
-  } else if (digitalRead(BOTON2B) == HIGH) {
+  } else if (digitalRead(BOTON2B) == LOW) {
     x = 2;
-  } else if (digitalRead(BOTON3D) == HIGH) {
+  } else if (digitalRead(BOTON3D) == LOW) {
     x = 3;
-  } else if (digitalRead(BOTON4I) == HIGH) {
+  } else if (digitalRead(BOTON4I) == LOW) {
     x = 4;
-  } else if (digitalRead(BOTONOK) == HIGH) {
+  } else if (digitalRead(BOTONOK) == LOW) {
     x = 5;
   } else {
     x = 0;
@@ -78,7 +79,6 @@ int LeerBotones() { // para leer botones
   return x;
 }
 
-// función para prender leds si esta encendido el interruptor
 void EncenderLED(int ledPin) {
   if (digitalRead(interruptorLeds) == HIGH) {
     digitalWrite(ledPin, HIGH);
@@ -88,11 +88,10 @@ void EncenderLED(int ledPin) {
 }
 
 String data = "";
-char colores[8]; // Lista para almacenar hasta 8 letras
-int orden = 0;   // Posición del vector
+char colores[8];
+int orden = 0;
 
 void loop() {
-  // empezamos a ver si me mando algo mica 
   if (Serial.available()) {
     data = Serial.readStringUntil('\n');
 
@@ -100,7 +99,7 @@ void loop() {
       while (estado == 0) {
         int aux = LeerBotones();
         if (aux != 0) {
-          Serial.println(aux);  //  continuar leyendo los botones hasta que salga del while
+          Serial.println(aux);
         }
 
         if (Serial.available()) {
@@ -129,15 +128,14 @@ void loop() {
         }
 
         for (int i = 0; i < orden; i++) {
-
           if (colores[i] == 'Y') {
-            EncenderLED(yellow);  // Encender LED amarillo
+            EncenderLED(yellow);
           } else if (colores[i] == 'R') {
-            EncenderLED(red);     // Encender LED rojo
+            EncenderLED(red);
           } else if (colores[i] == 'G') {
-            EncenderLED(green);   // Encender LED verde
+            EncenderLED(green);
           } else if (colores[i] == 'B') {
-            EncenderLED(blue);    // Encender LED azul
+            EncenderLED(blue);
           }
           delay(pausita);
         }
@@ -164,10 +162,10 @@ void loop() {
         if (Serial.available()) {
           String llega = Serial.readStringUntil('\n');
           if (llega.equals("PONE")) {
-            EncenderLED(red);  // encendes el led rojo si esta el interruptor
+            EncenderLED(red);
             LeerBotones();
           } else if (llega.equals("PTWO")) {
-            EncenderLED(blue); // encender el led azul si esta el interruptor
+            EncenderLED(blue);
             LeerBotones();
           }
         }
@@ -175,10 +173,9 @@ void loop() {
     }
   }
 
-  // si no llega a haaaber info en el serial segui leyendo los botones
   int aux = LeerBotones();
   if (aux != 0) {
-    Serial.println(aux);  // los botones se van a leer y mandar por el serial
+    Serial.println(aux);
   }
 }
 

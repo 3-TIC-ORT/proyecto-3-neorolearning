@@ -6,7 +6,7 @@ const BOTONERA = true;
 
 const port = new SerialPort({
     //Completar con el puerto correcto
-    path: "COM8",
+    path: "COM3",
     baudRate: 9600,
     autoOpen: false,
 });
