@@ -9,10 +9,10 @@
     z-index: 1; 
 }
 
-/* Estilos del botón */
+/* Estilos del botón de saltar/volver */
 .volver button {
     position: absolute;
-    top: 20px;
+    bottom: 650px;
     right: 20px;
     width: 150px;
     height: 50px;
@@ -26,11 +26,50 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    z-index: 2; 
+    z-index: 2; /* más que el video pero menos que la flecha */
 }
 
 /* Efecto al pasar el cursor */
 .volver button:hover {
-    transform: scale(1.1); /* Agranda el botón ligeramente */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Añade sombra */
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Header con flecha fija */
+header {
+    width: 80vw;
+    height: 15vh;
+    position: fixed; /* siempre visible */
+    top: 0;
+    left: 0;
+    z-index: 1000;   /* encima de todo */
+    background: transparent;
+}
+
+header a {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.flechar {
+    width: 90px; 
+    height: 70px;
+    background-color: transparent; 
+    padding: 9px 18px; 
+    border-radius: 25px;
+}
+
+.volve {
+    display: flex;
+    align-items: center;
+    padding-left: 23px;
+    padding-top: 34px;
+}
+
+.flechar:hover {
+    border: solid rgba(0, 0, 0, 0.8); 
+    transform: scale(1.1); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
 }

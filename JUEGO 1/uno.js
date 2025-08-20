@@ -40,7 +40,9 @@ const clickLetter = (letter) => {
       }
     }
     if (letras.children.length === 0) {
-      postData("terminoJuego", "GANAR",() => {console.log("enviado")});
+      postData("terminoJuego", "GANAR", () => {
+        console.log("enviado");
+      });
       reJuego();
       wordArray = [];
       listaCajitas = [];
@@ -65,7 +67,6 @@ const clickLetter = (letter) => {
   }
 };
 
-
 let finaliza = false;
 let juegoTerminado = document.getElementById("juegoTerminado");
 
@@ -84,18 +85,17 @@ receive("boton", (boton) => {
         console.log(juegoTerminado.children[selected]);
         juegoTerminado.children[selected + 1].classList.add("presionado");
         selected = selected + 1;
+      } else {
+        try {
+          letras.children[selected + 1].classList.add("presionado");
+          letras.children[selected].classList.remove("presionado");
+          selected = selected + 1;
+        } catch (error) {
+          letras.children[0].classList.add("presionado");
+          letras.children[selected].classList.remove("presionado");
+          selected = 0;
+        }
       }
-     else{
-      try {
-        letras.children[selected + 1].classList.add("presionado");
-        letras.children[selected].classList.remove("presionado");
-        selected = selected + 1;
-      } catch (error) {
-        letras.children[0].classList.add("presionado");
-        letras.children[selected].classList.remove("presionado");
-        selected = 0;
-      }
-     }
       break;
     case "amarillo":
       if (letras.children.length === 0) {
@@ -134,19 +134,19 @@ receive("boton", (boton) => {
 
             finaliza = false;
             // Ocultar la foto de ganador y volver a la vista original
-  imagen.style.display = "none"; 
-  cajitas.innerHTML = "";  // Limpiar las cajitas
-  letras.innerHTML = "";  // Limpiar las letras
+            imagen.style.display = "none";
+            cajitas.innerHTML = ""; // Limpiar las cajitas
+            letras.innerHTML = ""; // Limpiar las letras
 
-  // Recargar la palabra nueva
-  postData(
-    "juego_nivel",
-    {
-      juego: 1,
-      nivel: niveles,
-    },
-    callBack1
-  );
+            // Recargar la palabra nueva
+            postData(
+              "juego_nivel",
+              {
+                juego: 1,
+                nivel: niveles,
+              },
+              callBack1
+            );
             break;
           case 1:
             postData(
@@ -164,7 +164,17 @@ receive("boton", (boton) => {
             document.getElementById("juegoTerminado").style.display = "none";
             break;
           case 2:
-            location.href = "../INICIO/menu1.html";
+            // 🔹 Reinicio ANTES de volver al menú
+            postData(
+              "reiniciar",
+              {
+                juego: "1",
+                nivel: niveles,
+              },
+              () => {
+                location.href = "../INICIO/menu1.html";
+              }
+            );
             break;
 
           default:
@@ -211,16 +221,16 @@ function callBack1(data) {
 
   if (palabra !== undefined) {
     document.getElementById("next").style.visibility = "visible";
-    document.getElementById("comfirmar").style.visibility = "hidden";   
+    document.getElementById("comfirmar").style.visibility = "hidden";
     crearCajitas(palabra);
   }
 }
 
 next.addEventListener("click", () => {
   // Ocultar la foto de ganador y volver a la vista original
-  imagen.style.display = "none"; 
-  cajitas.innerHTML = "";  // Limpiar las cajitas
-  letras.innerHTML = "";  // Limpiar las letras
+  imagen.style.display = "none";
+  cajitas.innerHTML = ""; // Limpiar las cajitas
+  letras.innerHTML = ""; // Limpiar las letras
 
   // Recargar la palabra nueva
   postData(
@@ -251,22 +261,21 @@ function reJuego() {
     imagen.style.position = "fixed";
     imagen.style.top = "0";
     imagen.style.left = "0";
-    imagen.style.width = "100vw"; 
-    imagen.style.height = "100vh"; 
+    imagen.style.width = "100vw";
+    imagen.style.height = "100vh";
     imagen.style.zIndex = "1";
     imagen.style.objectFit = "cover";
-    postData("hayPalabras",{
+    postData("hayPalabras", {
       juego: "1",
       nivel: niveles,
-    },(hayPalabras) => {
-      if(!hayPalabras){
+    }, (hayPalabras) => {
+      if (!hayPalabras) {
         document.getElementById("comfirmar").style.visibility = "visible";
         document.getElementById("next").style.visibility = "hidden";
       }
-    })
+    });
     // Configurar eventos para los botones
     document.getElementById("comfirmar").addEventListener("click", () => {
-
       postData(
         "reiniciar",
         {
@@ -283,11 +292,20 @@ function reJuego() {
       imagen.style.display = "none"; // Ocultar la imagen al reiniciar
     });
 
-    document.getElementById("cancelar").addEventListener("click", async () => {
-      window.location.href =
-        "http://127.0.0.1:5500/INICIO/menu1.html";
+    document.getElementById("cancelar").addEventListener("click", () => {
+      // 🔹 Reinicio ANTES de volver al menú
+      postData(
+        "reiniciar",
+        {
+          juego: "1",
+          nivel: niveles,
+        },
+        () => {
+          window.location.href = "../INICIO/menu1.html";
+        }
+      );
     });
-  }, 200); 
+  }, 200);
 }
 
 const crearLetras = () => {

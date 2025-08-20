@@ -66,7 +66,7 @@ botonReiniciar.addEventListener("click", () => {
 
 // Volver al inicio
 botonInicio.addEventListener("click", () => {
-    window.location.href = "../INICIO/menu1.html";
+    window.location.href = "file:///C:/Users/ADM/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
 });
 
 // Revisión de posibles ganadores

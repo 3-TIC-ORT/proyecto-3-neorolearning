@@ -23,12 +23,14 @@ table {
     border-radius: 30px;
     padding: 30px;
 }
+
 td {
     width: 33%;
     height: 100px;
     text-align: center;
     padding: 0;
 }
+
 button {
     width: 100%;
     height: 100%;
@@ -36,7 +38,7 @@ button {
     padding: 0;
     border: none;
     background: none;
-    color: #ffffff
+    color: #ffffff;
 }
 
 .card {
@@ -52,20 +54,83 @@ button {
 
 .invalid {
     transform: rotateY(180deg);
-    background-color: rgb(218, 0, 0) I !important;
+    background-color: rgb(218, 0, 0) !important;
 }
 
 .valid {
     transform: rotateY(180deg);
-    background-color: rgb(180, 180, 180) ;
+    background-color: rgb(180, 180, 180);
 }
 
 .textoInvertido {
     transform: rotateY(180deg);
 }
 
-
 img{
     width: 100px;
     height: 100px;
+}
+
+/* Estilos para modal de Juego Terminado */
+.juegoTerminado {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4; /* Se muestra sobre todo */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Botones de Volver a Jugar y Volver al Inicio */
+.VJ, .VI {
+    width: 380px;
+    height: 120px;
+    background-color: #17958D;
+    border: 10px solid #12AFA6;
+    border-radius: 20px;
+    font-size: 40px;
+    font-family: "Inter", sans-serif;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0;
+    z-index: 5;
+}
+
+.VJ {
+    /* Volver a Jugar */
+    bottom: 20%;
+    left: 20%;
+    position: fixed;
+}
+
+.VI {
+    /* Volver al Inicio */
+    bottom: 20%;
+    left: 52%;
+    position: fixed;
+}
+
+.presionado {
+    border: 10px solid rgb(255, 255, 255);
+}
+
+/* Imagen de Ganador */
+.Ganador {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    z-index: 3;
 }
