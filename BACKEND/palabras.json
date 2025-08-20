@@ -24,17 +24,17 @@
       {
         "palabra": "CASA",
         "imagen": "CASA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "NUBE",
         "imagen": "NUBE.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "AUTO",
         "imagen": "AUTO.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "TREN",
@@ -49,7 +49,7 @@
       {
         "palabra": "MONO",
         "imagen": "MONO.png",
-        "usada": "no"
+        "usada": "si"
       }
     ],
     "nivel_2": [
