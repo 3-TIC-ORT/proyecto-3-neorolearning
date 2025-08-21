@@ -139,17 +139,19 @@ function declararGanador(r, c) {
     let player2 = document.getElementById("contador2");  // puntaje verde
     let imagen1 = document.getElementById("imagen1");
     let imagen2 = document.getElementById("imagen2");
+    let imagenEmpate = document.getElementById("imagen3")
 
     imagen1.style.display = "none";
     imagen2.style.display = "none";
+    imagen3.style.display = "none";
 
     if (tablero[r][c] == jugadorRojo) { 
         player1.innerText = parseInt(player1.innerText) + 1; 
         imagen1.style.display = "block";
-    } else {
+    } else if (tablero[r][c] == jugadorAmarillo){
         player2.innerText = parseInt(player2.innerText) + 1; 
         imagen2.style.display = "block";
-    }
+    }else // COMO MIERDA PONGO LA FOTO DE EMPATE
 
     juegoTerminado = true; //terminooooooooo
 

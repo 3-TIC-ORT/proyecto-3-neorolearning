@@ -81,7 +81,7 @@
       {
         "palabra": "FUEGO",
         "imagen": "FUEGO.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "PIANO",
@@ -148,7 +148,7 @@
       {
         "palabra": "PILETA",
         "imagen": "PILETA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "HELADO",
