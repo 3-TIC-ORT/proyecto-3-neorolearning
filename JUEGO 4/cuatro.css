@@ -133,10 +133,6 @@ body{
     margin: 0;
 }
 
-.flechar {
-    position: fixed;
-    z-index: 3;
-}
 
 @keyframes recordAnimation{
     0% {

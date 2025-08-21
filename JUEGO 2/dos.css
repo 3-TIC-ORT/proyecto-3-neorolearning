@@ -86,12 +86,12 @@ img{
     align-items: center;
 }
 
-/* Botones de Volver a Jugar y Volver al Inicio */
 .VJ, .VI {
+    position: fixed;
     width: 380px;
     height: 120px;
-    background-color: #17958D;
-    border: 10px solid #12AFA6;
+    background-color: #B01472;
+    border: 10px solid #961A5A;
     border-radius: 20px;
     font-size: 40px;
     font-family: "Inter", sans-serif;
@@ -101,26 +101,21 @@ img{
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 10px 0;
-    z-index: 5;
-}
-
-.VJ {
-    /* Volver a Jugar */
-    bottom: 20%;
-    left: 20%;
-    position: fixed;
-}
-
-.VI {
-    /* Volver al Inicio */
-    bottom: 20%;
-    left: 52%;
-    position: fixed;
+    z-index: 3; 
 }
 
 .presionado {
-    border: 10px solid rgb(255, 255, 255);
+    border: 5px solid rgb(255, 255, 255);
+}
+
+.VJ {
+    bottom: 3%;
+    left: 20%;
+}
+
+.VI {
+    bottom: 3%;
+    left: 52%;
 }
 
 /* Imagen de Ganador */

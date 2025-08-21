@@ -175,10 +175,6 @@
         z-index: 2; 
     }
     
-    .flechar {
-        position: fixed;
-        z-index: 3;
-    }
     .VJ, .VI {
         position: fixed; /* Mantén los botones en una posición fija */
         z-index: 4; /* Mayor que las imágenes (z-index: 1) */
