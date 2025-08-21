@@ -4,7 +4,7 @@
       {
         "palabra": "SOL",
         "imagen": "SOL.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "MESA",
@@ -148,7 +148,7 @@
       {
         "palabra": "PILETA",
         "imagen": "PILETA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "HELADO",
