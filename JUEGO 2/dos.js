@@ -1,10 +1,10 @@
 // ---------------------------
-// MEMOTEST + INTEGRACIÓN ARDUINO
+// MEMOTEST + INTEGRACIÓN ARDUINO (SIN CAMBIOS VISUALES)
 // ---------------------------
 
-// Conexión al servidor
+// Intento de conectar al servidor (usa la función que compartiste)
 try {
-  connect2Server(); // si ya estaba conectada no pasa nada; si no, la inicia
+  connect2Server();
 } catch (e) {
   console.error("Error al conectar al servidor:", e);
 }
@@ -21,13 +21,25 @@ let messi = 1;
 let elementos = [];
 let selectedCard = 0; // índice de la carta con foco
 
+// Elementos del DOM (uso los mismos IDs que mostraste)
 const modalTerminado = document.getElementById("juegoTerminado");
 const botonReiniciar = document.getElementById("restart");
 const botonInicio = document.getElementById("exit");
 const imagen = document.getElementById("imagen1");
 
+// Datos de cartas (pares: texto y su .png correspondiente)
+let emociones = {
+  nivel_1: [
+    "Azul",
+    "Amarillo",
+    "Naranja",
+    "Rojo",
+    "Violeta",
+    "Verde"
+  ]
+};
 
-// Contenedor del tablero. Si no existe, lo creo.
+// Contenedor del tablero: si no existe, lo creo pero sin aplicar estilos.
 let tablero = document.getElementById("tablero");
 if (!tablero) {
   tablero = document.createElement("div");
@@ -35,10 +47,10 @@ if (!tablero) {
   document.body.appendChild(tablero);
 }
 
-// Construye y mezcla las cartas
+// Construye y mezcla las cartas (mantiene tu formato: texto y 'texto.png')
 function armarCartas() {
-  elementos = [`nivel_${messi}`]
-    .concat[`nivel_${messi}`].map(e => `${e}.png`); // pares (texto, imagen)
+  elementos = emociones[`nivel_${messi}`]
+    .concat(emociones[`nivel_${messi}`].map(e => `${e}.png`));
   elementos = elementos.sort(() => Math.random() - 0.5);
   renderBoard();
   // reset estado
@@ -48,66 +60,66 @@ function armarCartas() {
   movimientos = 0;
   aciertos = 0;
   selectedCard = 0;
+  // Si existe alguna carta, ponemos el foco sobre la primera (solo agregamos/quitamos clase,
+  // no modificamos estilos)
   setFocus(selectedCard);
 }
 armarCartas();
 
-// Renderiza botones/cartas en el DOM
+// Renderiza el tablero sin tocar estilos visuales
 function renderBoard() {
   tablero.innerHTML = "";
   for (let i = 0; i < elementos.length; i++) {
     const btn = document.createElement("button");
     btn.id = String(i);
+    // dejamos la clase para que, si tenés CSS, la respete; no inyectamos estilos.
     btn.className = "card";
     btn.type = "button";
     btn.innerHTML = ""; // boca abajo
-
-    // click manual con mouse
     btn.addEventListener("click", () => {
+      // al click del mouse, colocamos foco en la tarjeta y la destapamos
       removeFocus(selectedCard);
       selectedCard = i;
       setFocus(selectedCard);
       destapar(i);
     });
-
     tablero.appendChild(btn);
   }
-
-  // al final del render ponemos foco en la primera carta
-  setFocus(selectedCard);
 }
 
-// Manejo visual de foco con borde
+// Manejo visual de foco (añade/quita clase, sin definir estilos aquí)
 function setFocus(index) {
   const el = document.getElementById(String(index));
-  if (el) el.classList.add("presionado"); // borde blanco como en juego de letras
+  if (el) el.classList.add("presionado");
 }
 function removeFocus(index) {
   const el = document.getElementById(String(index));
   if (el) el.classList.remove("presionado");
 }
 
-// Mostrar imagen ganadora/modal
+// Mostrar imagen ganadora/modal (uso la misma lógica que tenías)
 function showWinnerImg() {
-  modalTerminado.style.display = 'block'; // Mostrar modal
-  imagen.style.display = 'block';
-  imagen.style.position = 'fixed';
-  imagen.style.top = '0';
-  imagen.style.left = '0';
-  imagen.style.width = '100vw';
-  imagen.style.height = '100vh';
-  imagen.style.objectFit = 'cover';
-  imagen.style.zIndex = '3';
-
-  botonReiniciar.style.display = 'block';
-  botonInicio.style.display = 'block';
+  if (!modalTerminado) return;
+  modalTerminado.style.display = 'block';
+  if (imagen) {
+    imagen.style.display = 'block';
+    imagen.style.position = 'fixed';
+    imagen.style.top = '0';
+    imagen.style.left = '0';
+    imagen.style.width = '100vw';
+    imagen.style.height = '100vh';
+    imagen.style.objectFit = 'cover';
+    imagen.style.zIndex = '3';
+  }
+  if (botonReiniciar) botonReiniciar.style.display = 'block';
+  if (botonInicio) botonInicio.style.display = 'block';
 }
 
 // Evento para volver a jugar (botón)
 if (botonReiniciar) {
   botonReiniciar.addEventListener("click", () => {
-    modalTerminado.style.display = 'none';
-    imagen.style.display = 'none';
+    if (modalTerminado) modalTerminado.style.display = 'none';
+    if (imagen) imagen.style.display = 'none';
     armarCartas();
   });
 }
@@ -119,12 +131,13 @@ if (botonInicio) {
   });
 }
 
-// Lógica para destapar cartas
+// Lógica para destapar cartas (adaptada de tu código original)
 function destapar(id) {
   const el = document.getElementById(String(id));
   if (!el || el.disabled) return;
 
   tarjetasdestapadas++;
+
   if (tarjetasdestapadas === 1) {
     tarjeta1 = el;
     primerresultado = elementos[id];
@@ -143,26 +156,27 @@ function destapar(id) {
       tarjetasdestapadas = 0;
       aciertos++;
 
-      if (aciertos === [`nivel_${messi}`].length) {
+      if (aciertos === emociones[`nivel_${messi}`].length) {
         setTimeout(() => {
           showWinnerImg();
         }, 1000);
       }
     } else {
-      // error - destapar nuevamente después de un tiempo
+      // error - volvemos a ocultar
       setTimeout(() => {
-        tarjeta1.innerHTML = '';
-        tarjeta2.innerHTML = '';
-        tarjeta1.disabled = false;
-        tarjeta2.disabled = false;
+        if (tarjeta1) tarjeta1.innerHTML = '';
+        if (tarjeta2) tarjeta2.innerHTML = '';
+        if (tarjeta1) tarjeta1.disabled = false;
+        if (tarjeta2) tarjeta2.disabled = false;
         tarjetasdestapadas = 0;
       }, 800);
     }
   }
 }
 
-// helper para mostrar texto o imagen en una carta
+// helper para mostrar texto o imagen en una carta (sin cambiar estilos)
 function mostrarEnCarta(element, contenido) {
+  if (!element) return;
   if (typeof contenido !== "string") {
     element.innerHTML = contenido;
     return;
@@ -203,7 +217,7 @@ try {
   console.warn("No se pudo registrar receive('boton', ...). ¿La conexión al backend está activa?", e);
 }
 
-// ---------- Controles por teclado ----------
+// ---------- Controles por teclado (debug) ----------
 document.addEventListener("keydown", (ev) => {
   if (ev.key === "ArrowRight") {
     removeFocus(selectedCard);

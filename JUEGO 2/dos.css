@@ -1,12 +1,21 @@
-main{
-    width: 100vw;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* evita la raya o scroll extra */
+}
+
+main {
+    width: 100%;
     height: 85vh;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-body{
-    background-image: url('JUEGO\ 2.png');
+body {
+    background-image: url('JUEGO 2.png');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -17,7 +26,6 @@ table {
     height: 68vh;
     margin: auto;
     border-collapse: collapse;
-    justify-content: center;
     table-layout: fixed;
     background-color: white;
     border-radius: 30px;
@@ -25,7 +33,7 @@ table {
 }
 
 td {
-    width: 33%;
+    width: 25%;
     height: 100px;
     text-align: center;
     padding: 0;
