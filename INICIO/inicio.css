@@ -6,15 +6,13 @@
 body{
     height: 100vh;
     width: 100vw;
-    background-image: url('pagina\ principal\ \(1\).png');
+    background-image: url('pagina principal (1).png');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
 }
 
-
 .container{
-
     height: 100%; 
     box-sizing: border-box;
     display: flex; 
@@ -24,19 +22,19 @@ body{
 } 
 
 .container img{
-
     width: 250px;
     height: auto;
-
 }
 
+/* Animación de pulsar */
 .comenzar img {
-    transition: transform 0.3s ease; 
     display: flex;
     justify-content: center;
+    animation: pulsar 1.5s infinite; /* Duración 1.5s y repetición infinita */
 }
 
-.comenzar:hover img {
-    transform: scale(1.1); 
-    cursor: pointer;
+@keyframes pulsar {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.1); } /* máximo agrandamiento */
+    100% { transform: scale(1); }
 }
