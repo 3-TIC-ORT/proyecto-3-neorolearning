@@ -113,7 +113,7 @@ async function comprobarPatron() {
             });
 
             document.getElementById("cancelar").addEventListener("click", async () => {
-                window.location.href = "file:///C:/Users/ADM/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
+                window.location.href = "../INICIO/menu1.html";
             });
 
             return 0;
@@ -129,7 +129,7 @@ async function comprobarPatron() {
     });
 
     document.getElementById("cancelar").addEventListener("click", async () => {
-        window.location.href = "file:///C:/Users/ADM/Documents/GitHub/proyecto-3-neorolearning/INICIO/menu1.html";
+        window.location.href = "../INICIO/menu1.html";
     });
 
     document.querySelectorAll(".boton").forEach(e => {

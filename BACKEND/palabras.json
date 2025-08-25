@@ -81,7 +81,7 @@
       {
         "palabra": "FUEGO",
         "imagen": "FUEGO.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "PIANO",
@@ -101,7 +101,7 @@
       {
         "palabra": "GLOBO",
         "imagen": "GLOBO.png",
-        "usada": "si"
+        "usada": "no"
       }
     ],
     "nivel_3": [
@@ -367,7 +367,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Elefante",
@@ -517,7 +517,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Choclo",
@@ -646,7 +646,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Campera",
