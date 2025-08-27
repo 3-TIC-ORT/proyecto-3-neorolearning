@@ -8,6 +8,8 @@ try {
 } catch (e) {
   console.error("Error al conectar al servidor:", e);
 }
+const parametro = new URLSearchParams(window.location.search);
+const niveles = parametro.get("nivel");
 
 // Estado del juego
 let tarjetasdestapadas = 0;
@@ -17,7 +19,8 @@ let primerresultado = null;
 let segundoresultado = null;
 let movimientos = 0;
 let aciertos = 0;
-let messi = 1;
+let messi = niveles;
+let grupo=0;
 let elementos = [];
 let selectedCard = 0; // índice de la carta con foco
 
@@ -26,18 +29,15 @@ const modalTerminado = document.getElementById("juegoTerminado");
 const botonReiniciar = document.getElementById("restart");
 const botonInicio = document.getElementById("exit");
 const imagen = document.getElementById("imagen1");
+var emociones;
+postData("getJson", "json", (data)=>{
+  emociones=data["juego_2"]
+  console.log(emociones)
+  armarCartas();
 
+})
 // Datos de cartas (pares: texto y su .png correspondiente)
-let emociones = {
-  nivel_1: [
-    "Azul",
-    "Amarillo",
-    "Naranja",
-    "Rojo",
-    "Violeta",
-    "Verde"
-  ]
-};
+
 
 // Contenedor del tablero
 let tablero = document.getElementById("tablero");
@@ -49,12 +49,13 @@ if (!tablero) {
 
 // Construye y mezcla las cartas
 function armarCartas() {
-  elementos = emociones[`nivel_${messi}`]
-    .concat(emociones[`nivel_${messi}`].map(e => `${e}.png`));
+  elementos = emociones[`nivel_${messi}`][`grupo_${grupo+1}`]["palabras"].map(e => e.palabra)
+    .concat(emociones[`nivel_${messi}`][`grupo_${grupo+1}`]["palabras"].map(e => `${e.palabra}.png`));
+
   elementos = elementos.sort(() => Math.random() - 0.5);
   renderBoard();
 
-  // Reset estado
+  // Reset estado 
   tarjetasdestapadas = 0;
   tarjeta1 = tarjeta2 = null;
   primerresultado = segundoresultado = null;
@@ -171,8 +172,11 @@ function destapar(id) {
       // acierto
       tarjetasdestapadas = 0;
       aciertos++;
-      if (aciertos === emociones[`nivel_${messi}`].length) {
+      if (aciertos === elementos.length/2) {
+        grupo=1-grupo
         setTimeout(showWinnerImg, 1000);
+        console.log("terminado")
+        
       }
     } else {
       // error - volvemos a ocultar
@@ -247,5 +251,4 @@ document.addEventListener("keydown", (ev) => {
 });
 
 // Inicialización
-armarCartas();
 

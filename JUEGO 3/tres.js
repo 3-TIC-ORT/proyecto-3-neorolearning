@@ -171,9 +171,11 @@ function mostrarImagen(palabraCorrecta) {
 
 let clickLetter = (palabra) => {
   if (palabra === palabraCorrecta.palabra) {
-    text.innerText = "Palabra correcta";
     reJuego();
   } else {
-    text.innerText = "Palabra incorrecta";
+    document.querySelector(".wrong").style.display="flex"
+    setTimeout(()=>{
+          document.querySelector(".wrong").style.display="none"
+    }, 1000)
   }
 };

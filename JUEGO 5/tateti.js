@@ -12,7 +12,11 @@ const imagenGanador1 = document.getElementById("imagen1");
 const imagenGanador2 = document.getElementById("imagen2");
 const imagenEmpate = document.getElementById("imagen3");
 
+const cuadroJug1=document.getElementById("player1")
+const cuadroJug2=document.getElementById("player2")
+
 let estadoJuego = "P1"; // P1 | P2 | PAUSA
+cuadroJug1.classList.add("brillete")
 let puntosJugador1 = 0;
 let puntosJugador2 = 0;
 
@@ -24,6 +28,7 @@ cuadrados.forEach((cuadrado) => {
 
         cuadrado.textContent = estadoJuego === "P1" ? x : o;
         const ganador = revisarSiHayGanador();
+
 
         if (ganador === "P1") {
             puntosJugador1++;
@@ -37,6 +42,13 @@ cuadrados.forEach((cuadrado) => {
             mostrarResultado("Empate", imagenEmpate);
         } else {
             estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
+            if (estadoJuego === "P1"){
+                cuadroJug1.classList.add("brillete")
+                cuadroJug2.classList.remove("brillete")
+            }else if(estadoJuego==="P2"){
+                cuadroJug2.classList.add("brillete")
+                cuadroJug1.classList.remove("brillete")
+            }
         }
     });
 });

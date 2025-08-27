@@ -1,7 +1,6 @@
-var jugadorRojo = "R";
-var jugadorAmarillo = "A";
+var jugadorRojo = "R"; // verde
+var jugadorAmarillo = "A"; // amarillo
 var jugadorActual = jugadorRojo;
-
 var juegoTerminado = false;
 var tablero;
 
@@ -54,9 +53,14 @@ function colocarPieza() {
 
     if (jugadorActual == jugadorRojo) {
         casilla.classList.add("pieza-roja"); // Añadir clase de jugador rojo
+        document.querySelector("#player2").classList.add("brillete")
+        document.querySelector("#player1").classList.remove("brillete")
         jugadorActual = jugadorAmarillo; // Cambiar turno
     } else {
         casilla.classList.add("pieza-amarilla"); // Añadir clase de jugador amarillo
+        document.querySelector("#player1").classList.add("brillete")
+        document.querySelector("#player2").classList.remove("brillete")
+
         jugadorActual = jugadorRojo; // Cambiar turno
     }
 
