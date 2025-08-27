@@ -19,12 +19,12 @@
       {
         "palabra": "CAMA",
         "imagen": "CAMA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "CASA",
         "imagen": "CASA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "NUBE",
@@ -148,7 +148,7 @@
       {
         "palabra": "PILETA",
         "imagen": "PILETA.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "HELADO",
