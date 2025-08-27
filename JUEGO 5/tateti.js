@@ -2,6 +2,70 @@
 const x = "✖";
 const o = "〇";
 
+let row=1;
+let col=1;
+
+connect2Server();
+
+// r
+//a v
+// a
+
+
+receive("boton", (btn)=>{
+    document.querySelectorAll(".cuadrado").forEach(e=>{
+        e.classList.remove("active")
+    })
+    document.getElementById(`${row}${col}`).classList.add("active")
+
+    
+    if(btn==="rojo"){
+        row-=1
+        row = (row===0) ? 1 : row
+    }else if (btn==="amarillo"){
+        col-=1
+        col = (row===0) ? 1 : col
+    }else if (btn==="azul"){
+        row+=1
+        row = (row===4) ? 3 : row
+    }else if (btn==="verde"){
+        col+=1
+        col = (col===4) ? 3 : col
+    }else if (btn==="ok"){
+
+        cuadradoActivo=document.getElementById(`${row}${col}`)
+
+        if (estadoJuego === "PAUSA") return;
+        if (cuadradoActivo.textContent !== "") return;
+
+        cuadradoActivo.textContent = estadoJuego === "P1" ? x : o;
+        const ganador = revisarSiHayGanador();
+
+        if (ganador === "P1") {
+            puntosJugador1++;
+            document.getElementById("contador1").textContent = puntosJugador1;
+            mostrarResultado("Ganador: Jugador 1", imagenGanador1);
+        } else if (ganador === "P2") {
+            puntosJugador2++;
+            document.getElementById("contador2").textContent = puntosJugador2;
+            mostrarResultado("Ganador: Jugador 2", imagenGanador2);
+        } else if (ganador === "empate") {
+            mostrarResultado("Empate", imagenEmpate);
+        } else {
+            estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
+            if (estadoJuego === "P1"){
+                cuadroJug1.classList.add("brillete")
+                cuadroJug2.classList.remove("brillete")
+            }else if(estadoJuego==="P2"){
+                cuadroJug2.classList.add("brillete")
+                cuadroJug1.classList.remove("brillete")
+            }
+        }
+    }
+
+})
+
+
 // Elementos de la página
 const cuadrados = document.querySelectorAll(".cuadrado");
 const modalTerminado = document.getElementById("juegoTerminado");

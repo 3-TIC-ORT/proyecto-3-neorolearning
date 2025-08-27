@@ -72,6 +72,36 @@ async function multiColor() {
     }
 }
 
+receive("boton", (btn)=>{
+    if(btn==="verde"){
+        patronIngresado.push(2)
+        document.querySelector(".verde").classList.add("botonClick")
+        setTimeout(()=>{
+            document.querySelector(".verde").classList.remove("botonClick")
+        },1000)
+    }else if(btn==="amarillo"){
+        patronIngresado.push(3)
+        document.querySelector(".amarillo").classList.add("botonClick")
+        setTimeout(()=>{
+            document.querySelector(".amarillo").classList.remove("botonClick")
+        },1000)
+    }else if(btn==="rojo"){
+        patronIngresado.push(4)
+        document.querySelector(".rojo").classList.add("botonClick")
+        setTimeout(()=>{
+            document.querySelector(".rojo").classList.remove("botonClick")
+        },1000)
+    }else if(btn==="azul"){
+        patronIngresado.push(1)
+        document.querySelector(".azul").classList.add("botonClick")
+        setTimeout(()=>{
+            document.querySelector(".azul").classList.remove("botonClick")
+        },100)
+    }else if(btn==="ok"){
+    }
+})
+
+
 azul.addEventListener("click", () => {
     patronIngresado.push(1)
 })
