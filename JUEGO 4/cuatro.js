@@ -13,6 +13,9 @@ const scoreHTML = document.getElementById("score")
 const perdisteMsg = document.getElementById("perdisteMsg")
 const ganasteMsg = document.getElementById("ganasteMsg") 
 let randomPatron;
+connect2Server();
+
+
 
 function reiniciarJuego() {
     patron = [];
@@ -143,6 +146,27 @@ async function comprobarPatron() {
 
 startButton.addEventListener("click", empezar)
 
+function numeroAColor(num) {
+  switch (num) {
+    case 1: return "rojo";
+    case 2: return "verde";
+    case 3: return "amarillo";
+    case 4: return "azul";
+    default: return "desconocido";
+  }
+}
+
+
+
+function enviarSecuenciaArduino(){
+    const secuencia = patron.map(numeroAColor); // copia transformada
+    console.log(secuencia.join(", "));
+    postData("secuenciasimon", secuencia.join(", "), ()=>{
+        console.log("enviado al back")
+    });
+}
+
+
 async function empezar() {
     document.querySelectorAll(".boton").forEach(e => {
         e.setAttribute("state", "on")
@@ -156,10 +180,10 @@ async function empezar() {
         }
         patron.push(randomPatron);
     }
+    enviarSecuenciaArduino()
     score = -1;
     perdisteMsg.style.display = "none";
     ganasteMsg.style.display = "none";
-    agregarColorPatron()
     await multiColor()
     comprobarPatron()
 }
