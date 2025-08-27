@@ -91,7 +91,7 @@
       {
         "palabra": "CARPA",
         "imagen": "CARPA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "LÁPIZ",
@@ -346,7 +346,7 @@
     "nivel_1": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Perro",
@@ -388,7 +388,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Medusa",
@@ -409,7 +409,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Pez",
@@ -454,7 +454,7 @@
     "nivel_2": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Banana",
@@ -517,7 +517,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Choclo",
@@ -538,7 +538,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Melón",
@@ -625,7 +625,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Vestido",

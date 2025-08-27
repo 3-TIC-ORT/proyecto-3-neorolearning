@@ -13,18 +13,12 @@ connect2Server();
 
 
 receive("boton", (btn)=>{
-    document.querySelectorAll(".cuadrado").forEach(e=>{
-        e.classList.remove("active")
-    })
-    document.getElementById(`${row}${col}`).classList.add("active")
-
-    
     if(btn==="rojo"){
         row-=1
         row = (row===0) ? 1 : row
     }else if (btn==="amarillo"){
         col-=1
-        col = (row===0) ? 1 : col
+        col = (col===0) ? 1 : col
     }else if (btn==="azul"){
         row+=1
         row = (row===4) ? 3 : row
@@ -32,7 +26,6 @@ receive("boton", (btn)=>{
         col+=1
         col = (col===4) ? 3 : col
     }else if (btn==="ok"){
-
         cuadradoActivo=document.getElementById(`${row}${col}`)
 
         if (estadoJuego === "PAUSA") return;
@@ -62,6 +55,11 @@ receive("boton", (btn)=>{
             }
         }
     }
+
+    document.querySelectorAll(".cuadrado").forEach(e=>{
+        e.classList.remove("active")
+    })
+    document.getElementById(`${row}${col}`).classList.add("active")
 
 })
 
@@ -138,6 +136,8 @@ botonReiniciar.addEventListener("click", () => {
     imagenGanador2.style.display = "none";
     imagenEmpate.style.display = "none";
     estadoJuego = "P1";
+    cuadroJug1.classList.add("brillete")
+    cuadroJug2.classList.remove("brillete")
 });
 
 // Volver al inicio
