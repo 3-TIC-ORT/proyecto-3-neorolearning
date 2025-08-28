@@ -19,12 +19,12 @@
       {
         "palabra": "CAMA",
         "imagen": "CAMA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "CASA",
         "imagen": "CASA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "NUBE",
@@ -148,7 +148,7 @@
       {
         "palabra": "PILETA",
         "imagen": "PILETA.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "HELADO",
@@ -409,7 +409,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Pez",
@@ -625,7 +625,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Vestido",

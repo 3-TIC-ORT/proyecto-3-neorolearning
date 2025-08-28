@@ -24,5 +24,16 @@
         <a href="../JUEGO 2/niveles2.html" class="volver"><button>Saltar</button></a>
     </div>
         </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="socket.js"></script>
+    <script>
+        connect2Server();
+
+        receive("boton", (btn)=>{
+            if(btn==="ok"){
+                window.location.href="../JUEGO 2/niveles2.html"
+            }
+        })
+    </script>
 </body>
 </html>

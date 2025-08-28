@@ -159,8 +159,9 @@ body{
     cursor: pointer ;
 }
 
-
-
+.colActive{
+    border: 4px dotted #098509;
+}
 
 .brillete {
   background: #8732a8; /* color base */

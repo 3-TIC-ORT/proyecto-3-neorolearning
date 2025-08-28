@@ -3,12 +3,17 @@ var jugadorAmarillo = "A"; // amarillo
 var jugadorActual = jugadorRojo;
 var juegoTerminado = false;
 var tablero;
-
+let colSelected=0;
 var filas = 6;
 var columnas = 7;
 var currFilas = []; // Mantiene el seguimiento de qué fila está en cada columna.
+var coords
+
+connect2Server();
+
 
 window.onload = function() {
+
     iniciarJuego();
 }
 
@@ -25,25 +30,35 @@ function iniciarJuego() {
             // HTML
             let casilla = document.createElement("div");
             casilla.id = r.toString() + "-" + c.toString(); // ID para cada casilla.
+            casilla.classList.add(`col${c}`)
             casilla.classList.add("tile");
             casilla.addEventListener("click", colocarPieza); // Asigna el evento click a cada casilla.
             document.getElementById("tablero").append(casilla); // Añade la casilla al tablero en HTML.
         }
         tablero.push(fila); // Añade la fila al tablero.
     }
+    document.querySelectorAll(`.tile`).forEach(e=>{
+        e.classList.remove("colActive")
+    })
+    document.querySelectorAll(`.col${colSelected}`).forEach(e => {
+        e.classList.add("colActive")
+    });
 }
 
-function colocarPieza() {
-    console.dir(this);
+function colocarPieza(coordsDefined) {
     if (juegoTerminado) {
         return; // Si el juego ha terminado, no hacer nada.
     }
-
+    let c,r
+    if(typeof(coordsDefined)==="string"){
+        c= coordsDefined
+        r = currFilas[c];
+    }else{
+        coords = this.id.split("-");
+        c = coords[1]; // Obtener la columna desde la ID // Obtener la fila más baja disponible en la columna
+    }
     // Obtener las coordenadas de la casilla clickeada
-    let coords = this.id.split("-");
-    let c = parseInt(coords[1]); // Obtener la columna desde la ID
-    let r = currFilas[c]; // Obtener la fila más baja disponible en la columna
-
+    
     if (r < 0) {
         return; // Si no hay filas disponibles, salir de la función
     }
@@ -200,4 +215,24 @@ function declararGanador(r, c) {
         tablero = tablero.map(fila => fila.map(() => ' ')); // Limpiar los valores del tablero
         currFilas = [5, 5, 5, 5, 5, 5, 5]; // Restablecer filas disponibles en cada columna
     }
+
+receive("boton", (btn)=>{
+    if(btn==="amarillo"){
+        colSelected-=1
+        colSelected=(colSelected===-1) ? 0 : colSelected
+    }else if(btn==="verde"){
+        colSelected+=1
+        colSelected=(colSelected===7) ? 6 : colSelected
+    }else if(btn==="ok"){
+        colocarPieza(colSelected)
+    }
+    document.querySelectorAll(`.tile`).forEach(e=>{
+        e.classList.remove("colActive")
+    })
+    document.querySelectorAll(`.col${colSelected}`).forEach(e => {
+        e.classList.add("colActive")
+    });
+})
+
+
     

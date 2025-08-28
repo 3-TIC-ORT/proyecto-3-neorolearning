@@ -217,45 +217,33 @@ function mostrarEnCarta(element, contenido) {
     element.innerHTML = contenido;
   }
 }
-
+row=1 // 1,2,3
+col=1 // 1,2,3,4
 // Controles por hardware
 try {
   receive("boton", (boton) => {
     try {
-      // Si el modal está visible, controlamos el menú terminado
-      if (modalTerminado && modalTerminado.style.display === "block") {
-        switch (boton) {
-          case "verde":
-            selectedMenu = (selectedMenu + 1) % 2;
-            focusMenu();
-            break;
-          case "amarillo":
-            selectedMenu = (selectedMenu - 1 + 2) % 2;
-            focusMenu();
-            break;
-          case "ok":
-            if (selectedMenu === 0) botonReiniciar.click();
-            else botonInicio.click();
-            break;
-        }
-      } else {
-        // Control del tablero normal
-        switch (boton) {
-          case "verde":
-            removeFocus(selectedCard);
-            selectedCard = (selectedCard + 1) % elementos.length;
-            setFocus(selectedCard);
-            break;
-          case "amarillo":
-            removeFocus(selectedCard);
-            selectedCard = (selectedCard - 1 + elementos.length) % elementos.length;
-            setFocus(selectedCard);
-            break;
-          case "ok":
-            destapar(selectedCard);
-            break;
-        }
+      if(btn==="rojo"){
+        row-=1
+        row = (row===0) ? 1 : row
+      }else if (btn==="amarillo"){
+        col-=1
+        col = (col===0) ? 1 : col
+      }else if (btn==="azul"){
+        row+=1
+        row = (row===4) ? 3 : row
+      }else if (btn==="verde"){
+        col+=1
+        col = (col===5) ? 4 : col
+      }else if (btn==="ok"){
+        destapar(document.querySelector(`.r${row}.c${col}`).id)
       }
+
+      document.querySelectorAll(".card").forEach(e=>{
+        e.classList.remove("selected")
+      })
+      document.querySelector(`.r${row}.c${col}`).classList.add("selected")
+
     } catch (err) {
       console.error("Error manejando boton recibido:", err);
     }

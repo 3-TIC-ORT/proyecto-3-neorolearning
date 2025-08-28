@@ -68,3 +68,7 @@ body{
     z-index: 10;
 
 }
+
+.selected{
+    border: 10px double #ff4800;
+}

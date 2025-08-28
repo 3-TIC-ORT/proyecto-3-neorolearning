@@ -126,6 +126,10 @@ img{
     left: 52%;
 }
 
+.selected{
+    border: 5px solid black;
+}
+
 /* Imagen de Ganador */
 .Ganador {
     position: fixed;
