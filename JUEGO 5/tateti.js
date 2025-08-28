@@ -2,31 +2,26 @@
 const x = "✖";
 const o = "〇";
 
-let row=1;
-let col=1;
+let row = 1;
+let col = 1;
 
 connect2Server();
 
-// r
-//a v
-// a
-
-
-receive("boton", (btn)=>{
-    if(btn==="rojo"){
-        row-=1
-        row = (row===0) ? 1 : row
-    }else if (btn==="amarillo"){
-        col-=1
-        col = (col===0) ? 1 : col
-    }else if (btn==="azul"){
-        row+=1
-        row = (row===4) ? 3 : row
-    }else if (btn==="verde"){
-        col+=1
-        col = (col===4) ? 3 : col
-    }else if (btn==="ok"){
-        cuadradoActivo=document.getElementById(`${row}${col}`)
+receive("boton", (btn) => {
+    if (btn === "rojo") {
+        row -= 1;
+        row = (row === 0) ? 1 : row;
+    } else if (btn === "amarillo") {
+        col -= 1;
+        col = (col === 0) ? 1 : col;
+    } else if (btn === "azul") {
+        row += 1;
+        row = (row === 4) ? 3 : row;
+    } else if (btn === "verde") {
+        col += 1;
+        col = (col === 4) ? 3 : col;
+    } else if (btn === "ok") {
+        let cuadradoActivo = document.getElementById(`${row}${col}`);
 
         if (estadoJuego === "PAUSA") return;
         if (cuadradoActivo.textContent !== "") return;
@@ -46,23 +41,16 @@ receive("boton", (btn)=>{
             mostrarResultado("Empate", imagenEmpate);
         } else {
             estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
-            if (estadoJuego === "P1"){
-                cuadroJug1.classList.add("brillete")
-                cuadroJug2.classList.remove("brillete")
-            }else if(estadoJuego==="P2"){
-                cuadroJug2.classList.add("brillete")
-                cuadroJug1.classList.remove("brillete")
-            }
+            cuadroJug1.classList.toggle("brillete", estadoJuego === "P1");
+            cuadroJug2.classList.toggle("brillete", estadoJuego === "P2");
         }
     }
 
-    document.querySelectorAll(".cuadrado").forEach(e=>{
-        e.classList.remove("active")
-    })
-    document.getElementById(`${row}${col}`).classList.add("active")
-
-})
-
+    document.querySelectorAll(".cuadrado").forEach(e => {
+        e.classList.remove("active");
+    });
+    document.getElementById(`${row}${col}`).classList.add("active");
+});
 
 // Elementos de la página
 const cuadrados = document.querySelectorAll(".cuadrado");
@@ -74,11 +62,12 @@ const imagenGanador1 = document.getElementById("imagen1");
 const imagenGanador2 = document.getElementById("imagen2");
 const imagenEmpate = document.getElementById("imagen3");
 
-const cuadroJug1=document.getElementById("player1")
-const cuadroJug2=document.getElementById("player2")
+const cuadroJug1 = document.getElementById("player1");
+const cuadroJug2 = document.getElementById("player2");
 
 let estadoJuego = "P1"; // P1 | P2 | PAUSA
-cuadroJug1.classList.add("brillete")
+let turnoInicio = "P1"; // Alterna inicio cada partida
+cuadroJug1.classList.add("brillete");
 let puntosJugador1 = 0;
 let puntosJugador2 = 0;
 
@@ -90,7 +79,6 @@ cuadrados.forEach((cuadrado) => {
 
         cuadrado.textContent = estadoJuego === "P1" ? x : o;
         const ganador = revisarSiHayGanador();
-
 
         if (ganador === "P1") {
             puntosJugador1++;
@@ -104,13 +92,8 @@ cuadrados.forEach((cuadrado) => {
             mostrarResultado("Empate", imagenEmpate);
         } else {
             estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
-            if (estadoJuego === "P1"){
-                cuadroJug1.classList.add("brillete")
-                cuadroJug2.classList.remove("brillete")
-            }else if(estadoJuego==="P2"){
-                cuadroJug2.classList.add("brillete")
-                cuadroJug1.classList.remove("brillete")
-            }
+            cuadroJug1.classList.toggle("brillete", estadoJuego === "P1");
+            cuadroJug2.classList.toggle("brillete", estadoJuego === "P2");
         }
     });
 });
@@ -122,11 +105,8 @@ function mostrarResultado(texto, imagen) {
     setTimeout(() => {
         document.getElementById("juegoTerminado").style.display = "block";
         imagen.style.display = "block";
-    }, 100); // 1000 ms = 1 segundo
+    }, 100);
 }
-
-
-
 
 // Reiniciar juego
 botonReiniciar.addEventListener("click", () => {
@@ -135,9 +115,13 @@ botonReiniciar.addEventListener("click", () => {
     imagenGanador1.style.display = "none";
     imagenGanador2.style.display = "none";
     imagenEmpate.style.display = "none";
-    estadoJuego = "P1";
-    cuadroJug1.classList.add("brillete")
-    cuadroJug2.classList.remove("brillete")
+
+    // Alternar quién empieza cada partida
+    turnoInicio = turnoInicio === "P1" ? "P2" : "P1";
+    estadoJuego = turnoInicio;
+
+    cuadroJug1.classList.toggle("brillete", estadoJuego === "P1");
+    cuadroJug2.classList.toggle("brillete", estadoJuego === "P2");
 });
 
 // Volver al inicio

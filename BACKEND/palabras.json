@@ -29,7 +29,7 @@
       {
         "palabra": "NUBE",
         "imagen": "NUBE.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "AUTO",
@@ -409,7 +409,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Pez",
@@ -454,7 +454,7 @@
     "nivel_2": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Banana",
@@ -475,7 +475,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Tomate",
@@ -496,7 +496,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Cereza",
@@ -517,7 +517,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Choclo",
@@ -538,7 +538,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Melón",
@@ -562,7 +562,7 @@
     "nivel_3": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Botas",
@@ -583,7 +583,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Remera",
@@ -604,7 +604,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Jean",
@@ -625,7 +625,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Vestido",

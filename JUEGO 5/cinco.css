@@ -69,7 +69,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
     .active{
-        border: 5px solid #73fc03;
+        border: 5px solid #7b6fc4;
     }
 
     dialog{
@@ -233,8 +233,8 @@
     }
 
 .brillete {
-  background: #8732a8; /* color base */
-  box-shadow: 0 0 20px rgba(135, 50, 168, 0.8);
+  background: hwb(261 16% 10%); /* color base */
+  box-shadow: 0 0 20px rgba(56, 50, 168, 0.8);
   animation: brillo 2s infinite alternate;
 }
 
