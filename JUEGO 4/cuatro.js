@@ -13,6 +13,7 @@ const scoreHTML = document.getElementById("score")
 const perdisteMsg = document.getElementById("perdisteMsg")
 const ganasteMsg = document.getElementById("ganasteMsg") 
 let randomPatron;
+let jugando;
 connect2Server();
 
 
@@ -103,6 +104,11 @@ receive("boton", (btn)=>{
             document.querySelector(".rojo").classList.remove("botonClick")
         },200)
     }else if(btn==="ok"){
+        if(!jugando){
+            empezar()
+        }else{
+
+        }
     }
 })
 
@@ -139,7 +145,8 @@ async function comprobarPatron() {
         await comprobarArrays(patronIngresado, j);
         if (patron[j] != patronIngresado[j]) {
             perdisteMsg.style.display = "block";
-
+            jugando=false
+            console.log(jugando)
             document.getElementById("juegoTerminado").style.display = "flex";
             document.querySelectorAll(".boton").forEach(e => {
                 e.setAttribute("state", "off");
@@ -182,13 +189,13 @@ async function comprobarPatron() {
 startButton.addEventListener("click", empezar)
 
 function numeroAColor(num) {
-  switch (num) {
-    case 1: return "rojo";
-    case 2: return "verde";
-    case 3: return "amarillo";
-    case 4: return "azul";
-    default: return "desconocido";
-  }
+    switch (num) {
+        case 1: return "rojo";
+        case 2: return "verde";
+        case 3: return "amarillo";
+        case 4: return "azul";
+        default: return "desconocido";
+    }
 }
 
 
@@ -203,6 +210,8 @@ function enviarSecuenciaArduino(){
 
 
 async function empezar() {
+    jugando=true
+    console.log(jugando)
     document.querySelectorAll(".boton").forEach(e => {
         e.setAttribute("state", "on")
     })
@@ -230,3 +239,4 @@ async function pasarNivel() {
     await multiColor()
     comprobarPatron()
 }
+
