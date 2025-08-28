@@ -34,6 +34,8 @@ function iniciarJuego() {
             casilla.classList.add("tile");
             casilla.addEventListener("click", colocarPieza); // Asigna el evento click a cada casilla.
             document.getElementById("tablero").append(casilla); // Añade la casilla al tablero en HTML.
+            
+            
         }
         tablero.push(fila); // Añade la fila al tablero.
     }
@@ -54,8 +56,17 @@ function colocarPieza(coordsDefined) {
         c= coordsDefined
         r = currFilas[c];
     }else{
+        console.log(this.id.split("-"))
         coords = this.id.split("-");
         c = coords[1]; // Obtener la columna desde la ID // Obtener la fila más baja disponible en la columna
+        r=currFilas[c]
+        colSelected=c
+        document.querySelectorAll(`.tile`).forEach(e=>{
+            e.classList.remove("colActive")
+        })
+        document.querySelectorAll(`.col${colSelected}`).forEach(e => {
+            e.classList.add("colActive")
+        });
     }
     // Obtener las coordenadas de la casilla clickeada
     
@@ -208,7 +219,7 @@ function declararGanador(r, c) {
         }
     
         // Reiniciar el estado del juego
-        jugadorActual = jugadorRojo; // Restablecer el jugador actual
+        // jugadorActual = jugadorRojo; // Restablecer el jugador actual
         juegoTerminado = false; // Permitir continuar el juego
     
         // Reiniciar la lógica del tablero y las filas actuales disponibles
@@ -224,7 +235,7 @@ receive("boton", (btn)=>{
         colSelected+=1
         colSelected=(colSelected===7) ? 6 : colSelected
     }else if(btn==="ok"){
-        colocarPieza(colSelected)
+        colocarPieza(String(colSelected))
     }
     document.querySelectorAll(`.tile`).forEach(e=>{
         e.classList.remove("colActive")

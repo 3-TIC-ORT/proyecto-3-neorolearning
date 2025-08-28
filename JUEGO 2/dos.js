@@ -221,7 +221,7 @@ row=1 // 1,2,3
 col=1 // 1,2,3,4
 // Controles por hardware
 try {
-  receive("boton", (boton) => {
+  receive("boton", (btn) => {
     try {
       if(btn==="rojo"){
         row-=1

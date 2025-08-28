@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../generalNiveles.css">
     <link rel="stylesheet" href="../general.css">
 </head>
-<body>   
+<body>
     <header>
             <a href="../JUEGO 2/expli2.html" class="volver"><img src="../fluent_arrow-up-12-filled.png" class="flechar"></a>
     </header>
@@ -15,12 +15,48 @@
         <main>
                     <section>
                         <div class="grid-container">
-                    <a href="dos.html?nivel=1" class="link"><button class= "caja">1</button></a>
-                    <a href="dos.html?nivel=2" class="link"><button class= "caja">2</button></a>
-                    <a href="dos.html?nivel=3" class="link"><button class= "caja">3</button></a>
+                    <a href="dos.html?nivel=1" class="link"><button class= "caja r1 selected">1</button></a>
+                    <a href="dos.html?nivel=2" class="link"><button class= "caja r2">2</button></a>
+                    <a href="dos.html?nivel=3" class="link"><button class= "caja r3">3</button></a>
                         </div>
                     </section>
 
         </main>
+    <style>
+        .selected{
+            border: 5px solid white;
+        }
+    </style> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="socket.js"></script>
+    <script>
+        connect2Server();
+        let r=1
+        receive("boton", (btn)=>{
+            if(btn==="amarillo"){
+                r-=1
+                r=(r===0) ? 1 : r
+            }else if(btn==="verde"){
+                r+=1
+                r=(r===4) ? 3 : r
+            }else if(btn==="ok"){
+                if(r===1){
+                    window.location.href="dos.html?nivel=1"
+                }else if(r===2){
+                    window.location.href="dos.html?nivel=2"
+                }else if(r===3){
+                    window.location.href="dos.html?nivel=3"    
+                }
+            }
+
+            document.querySelectorAll(".caja").forEach(e=>{
+                e.classList.remove("selected")
+            })
+            document.querySelector(`.r${r}`).classList.add("selected")
+
+        })
+
+    </script>
+
 </body>
 </html>

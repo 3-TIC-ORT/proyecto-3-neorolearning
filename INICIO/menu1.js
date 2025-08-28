@@ -13,19 +13,20 @@ receive("boton", (btn)=>{
             (c===0) ? window.location.href="../JUEGO 3/expli3.html" : window.location.href="../JUEGO 6/expli6.html" 
         }
     }else if(btn==="rojo"){
-        row-=1
-        row = (row===-1) ? 0 : row
+        r-=1
+        r = (r===-1) ? 0 : r
     }else if (btn==="amarillo"){
-        col=1-col
+        c=1-c
     }else if (btn==="azul"){
-        row+=1
-        row = (row===3) ? 2 : row
+        r+=1
+        r = (r===3) ? 2 : r
     }else if (btn==="verde"){
-        col=1-col
+        c=1-c
     }
+    console.log(`r:${r} - c:${c}`)
 
     document.querySelectorAll(".caja").forEach(e=>{
         e.classList.remove("selected")
     })
-    document.querySelector(`.c${col}.r${row}`)
+    document.querySelector(`.c${c}.r${r}`).classList.add("selected")
 })
