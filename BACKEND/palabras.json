@@ -346,7 +346,7 @@
     "nivel_1": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Perro",
@@ -367,7 +367,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Elefante",
@@ -388,7 +388,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Medusa",
@@ -409,7 +409,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Pez",
@@ -454,7 +454,7 @@
     "nivel_2": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Banana",
@@ -496,7 +496,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Cereza",
@@ -583,7 +583,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Remera",
@@ -604,7 +604,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Jean",
@@ -625,7 +625,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "no",
+        "usada": "si",
         "palabras": [
           {
             "palabra": "Vestido",

@@ -8,6 +8,8 @@ try {
 } catch (e) {
   console.error("Error al conectar al servidor:", e);
 }
+const parametro = new URLSearchParams(window.location.search);
+const niveles = parametro.get("nivel");
 
 // Estado del juego
 let tarjetasdestapadas = 0;
@@ -17,27 +19,34 @@ let primerresultado = null;
 let segundoresultado = null;
 let movimientos = 0;
 let aciertos = 0;
-let messi = 1;
+let messi = niveles;
+let grupo=0;
 let elementos = [];
 let selectedCard = 0; // índice de la carta con foco
+
+let selectedMenu = 0; // índice del menú terminado
+function focusMenu() {
+  if (!modalTerminado) return;
+  const botones = [botonReiniciar, botonInicio];
+  botones.forEach((btn, i) => btn.classList.remove("presionado"));
+  if (botones[selectedMenu]) botones[selectedMenu].classList.add("presionado");
+}
+
 
 // Elementos del DOM
 const modalTerminado = document.getElementById("juegoTerminado");
 const botonReiniciar = document.getElementById("restart");
 const botonInicio = document.getElementById("exit");
 const imagen = document.getElementById("imagen1");
+var emociones;
+postData("getJson", "json", (data)=>{
+  emociones=data["juego_2"]
+  console.log(emociones)
+  armarCartas();
 
+})
 // Datos de cartas (pares: texto y su .png correspondiente)
-let emociones = {
-  nivel_1: [
-    "Azul",
-    "Amarillo",
-    "Naranja",
-    "Rojo",
-    "Violeta",
-    "Verde"
-  ]
-};
+
 
 // Contenedor del tablero
 let tablero = document.getElementById("tablero");
@@ -49,12 +58,13 @@ if (!tablero) {
 
 // Construye y mezcla las cartas
 function armarCartas() {
-  elementos = emociones[`nivel_${messi}`]
-    .concat(emociones[`nivel_${messi}`].map(e => `${e}.png`));
+  elementos = emociones[`nivel_${messi}`][`grupo_${grupo+1}`]["palabras"].map(e => e.palabra)
+    .concat(emociones[`nivel_${messi}`][`grupo_${grupo+1}`]["palabras"].map(e => `${e.palabra}.png`));
+
   elementos = elementos.sort(() => Math.random() - 0.5);
   renderBoard();
 
-  // Reset estado
+  // Reset estado 
   tarjetasdestapadas = 0;
   tarjeta1 = tarjeta2 = null;
   primerresultado = segundoresultado = null;
@@ -109,6 +119,10 @@ function showWinnerImg() {
   }
   if (botonReiniciar) botonReiniciar.style.display = 'block';
   if (botonInicio) botonInicio.style.display = 'block';
+
+  selectedMenu = 0;
+  focusMenu();
+
 }
 
 // Botones del modal
@@ -171,8 +185,11 @@ function destapar(id) {
       // acierto
       tarjetasdestapadas = 0;
       aciertos++;
-      if (aciertos === emociones[`nivel_${messi}`].length) {
+      if (aciertos === elementos.length/2) {
+        grupo=1-grupo
         setTimeout(showWinnerImg, 1000);
+        console.log("terminado")
+        
       }
     } else {
       // error - volvemos a ocultar
@@ -205,22 +222,39 @@ function mostrarEnCarta(element, contenido) {
 try {
   receive("boton", (boton) => {
     try {
-      switch (boton) {
-        case "verde":
-          removeFocus(selectedCard);
-          selectedCard = (selectedCard + 1) % elementos.length;
-          setFocus(selectedCard);
-          break;
-        case "amarillo":
-          removeFocus(selectedCard);
-          selectedCard = (selectedCard - 1 + elementos.length) % elementos.length;
-          setFocus(selectedCard);
-          break;
-        case "ok":
-          destapar(selectedCard);
-          break;
-        default:
-          console.log("boton desconocido recibido:", boton);
+      // Si el modal está visible, controlamos el menú terminado
+      if (modalTerminado && modalTerminado.style.display === "block") {
+        switch (boton) {
+          case "verde":
+            selectedMenu = (selectedMenu + 1) % 2;
+            focusMenu();
+            break;
+          case "amarillo":
+            selectedMenu = (selectedMenu - 1 + 2) % 2;
+            focusMenu();
+            break;
+          case "ok":
+            if (selectedMenu === 0) botonReiniciar.click();
+            else botonInicio.click();
+            break;
+        }
+      } else {
+        // Control del tablero normal
+        switch (boton) {
+          case "verde":
+            removeFocus(selectedCard);
+            selectedCard = (selectedCard + 1) % elementos.length;
+            setFocus(selectedCard);
+            break;
+          case "amarillo":
+            removeFocus(selectedCard);
+            selectedCard = (selectedCard - 1 + elementos.length) % elementos.length;
+            setFocus(selectedCard);
+            break;
+          case "ok":
+            destapar(selectedCard);
+            break;
+        }
       }
     } catch (err) {
       console.error("Error manejando boton recibido:", err);
@@ -229,6 +263,8 @@ try {
 } catch (e) {
   console.warn("No se pudo registrar receive('boton', ...). ¿La conexión al backend está activa?", e);
 }
+
+
 
 // Controles por teclado (debug)
 document.addEventListener("keydown", (ev) => {
@@ -247,5 +283,4 @@ document.addEventListener("keydown", (ev) => {
 });
 
 // Inicialización
-armarCartas();
 

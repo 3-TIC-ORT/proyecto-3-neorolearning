@@ -85,3 +85,37 @@ main{
     bottom: 3%;
     left: 52%;
 }
+.wrong{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: clamp(100px, 20vmin, 180px);
+  height: clamp(100px, 20vmin, 180px);
+  border-radius: 50%;
+  background-color: #e53935;
+  color: #fff;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(48px, 10vmin, 120px);
+  font-weight: 700;
+  text-align: center;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35), 0 0 18px rgba(229,57,53,0.45);
+  z-index: 9999;
+  user-select: none;
+
+  animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}

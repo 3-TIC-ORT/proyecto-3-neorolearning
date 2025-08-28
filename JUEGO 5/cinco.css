@@ -63,6 +63,14 @@
         font-family: "Instrument Sans", sans-serif;
     }
 
+    .cuadrado:hover{
+        transform: scale(1.08);
+        background-color: #f0f8ff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .active{
+        border: 5px solid #73fc03;
+    }
 
     dialog{
         text-align: center;
@@ -223,3 +231,18 @@
         background-size: cover;
         border-radius: 20px;
     }
+
+.brillete {
+  background: #8732a8; /* color base */
+  box-shadow: 0 0 20px rgba(135, 50, 168, 0.8);
+  animation: brillo 2s infinite alternate;
+}
+
+@keyframes brillo {
+  from {
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(52, 152, 219, 1);
+  }
+}

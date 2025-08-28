@@ -2,27 +2,36 @@
 const x = "✖";
 const o = "〇";
 
-// Elementos de la página
-const cuadrados = document.querySelectorAll(".cuadrado");
-const modalTerminado = document.getElementById("juegoTerminado");
-const botonReiniciar = document.getElementById("comfirmar");
-const botonInicio = document.getElementById("cancelar");
+let row=1;
+let col=1;
 
-const imagenGanador1 = document.getElementById("imagen1");
-const imagenGanador2 = document.getElementById("imagen2");
-const imagenEmpate = document.getElementById("imagen3");
+connect2Server();
 
-let estadoJuego = "P1"; // P1 | P2 | PAUSA
-let puntosJugador1 = 0;
-let puntosJugador2 = 0;
+// r
+//a v
+// a
 
-// Manejador de clics en los cuadrados
-cuadrados.forEach((cuadrado) => {
-    cuadrado.addEventListener("click", () => {
+
+receive("boton", (btn)=>{
+    if(btn==="rojo"){
+        row-=1
+        row = (row===0) ? 1 : row
+    }else if (btn==="amarillo"){
+        col-=1
+        col = (col===0) ? 1 : col
+    }else if (btn==="azul"){
+        row+=1
+        row = (row===4) ? 3 : row
+    }else if (btn==="verde"){
+        col+=1
+        col = (col===4) ? 3 : col
+    }else if (btn==="ok"){
+        cuadradoActivo=document.getElementById(`${row}${col}`)
+
         if (estadoJuego === "PAUSA") return;
-        if (cuadrado.textContent !== "") return;
+        if (cuadradoActivo.textContent !== "") return;
 
-        cuadrado.textContent = estadoJuego === "P1" ? x : o;
+        cuadradoActivo.textContent = estadoJuego === "P1" ? x : o;
         const ganador = revisarSiHayGanador();
 
         if (ganador === "P1") {
@@ -37,6 +46,71 @@ cuadrados.forEach((cuadrado) => {
             mostrarResultado("Empate", imagenEmpate);
         } else {
             estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
+            if (estadoJuego === "P1"){
+                cuadroJug1.classList.add("brillete")
+                cuadroJug2.classList.remove("brillete")
+            }else if(estadoJuego==="P2"){
+                cuadroJug2.classList.add("brillete")
+                cuadroJug1.classList.remove("brillete")
+            }
+        }
+    }
+
+    document.querySelectorAll(".cuadrado").forEach(e=>{
+        e.classList.remove("active")
+    })
+    document.getElementById(`${row}${col}`).classList.add("active")
+
+})
+
+
+// Elementos de la página
+const cuadrados = document.querySelectorAll(".cuadrado");
+const modalTerminado = document.getElementById("juegoTerminado");
+const botonReiniciar = document.getElementById("comfirmar");
+const botonInicio = document.getElementById("cancelar");
+
+const imagenGanador1 = document.getElementById("imagen1");
+const imagenGanador2 = document.getElementById("imagen2");
+const imagenEmpate = document.getElementById("imagen3");
+
+const cuadroJug1=document.getElementById("player1")
+const cuadroJug2=document.getElementById("player2")
+
+let estadoJuego = "P1"; // P1 | P2 | PAUSA
+cuadroJug1.classList.add("brillete")
+let puntosJugador1 = 0;
+let puntosJugador2 = 0;
+
+// Manejador de clics en los cuadrados
+cuadrados.forEach((cuadrado) => {
+    cuadrado.addEventListener("click", () => {
+        if (estadoJuego === "PAUSA") return;
+        if (cuadrado.textContent !== "") return;
+
+        cuadrado.textContent = estadoJuego === "P1" ? x : o;
+        const ganador = revisarSiHayGanador();
+
+
+        if (ganador === "P1") {
+            puntosJugador1++;
+            document.getElementById("contador1").textContent = puntosJugador1;
+            mostrarResultado("Ganador: Jugador 1", imagenGanador1);
+        } else if (ganador === "P2") {
+            puntosJugador2++;
+            document.getElementById("contador2").textContent = puntosJugador2;
+            mostrarResultado("Ganador: Jugador 2", imagenGanador2);
+        } else if (ganador === "empate") {
+            mostrarResultado("Empate", imagenEmpate);
+        } else {
+            estadoJuego = estadoJuego === "P1" ? "P2" : "P1";
+            if (estadoJuego === "P1"){
+                cuadroJug1.classList.add("brillete")
+                cuadroJug2.classList.remove("brillete")
+            }else if(estadoJuego==="P2"){
+                cuadroJug2.classList.add("brillete")
+                cuadroJug1.classList.remove("brillete")
+            }
         }
     });
 });
@@ -62,6 +136,8 @@ botonReiniciar.addEventListener("click", () => {
     imagenGanador2.style.display = "none";
     imagenEmpate.style.display = "none";
     estadoJuego = "P1";
+    cuadroJug1.classList.add("brillete")
+    cuadroJug2.classList.remove("brillete")
 });
 
 // Volver al inicio

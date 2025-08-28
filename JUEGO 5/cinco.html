@@ -7,8 +7,6 @@
     <title>Ta-Te-Ti</title>
     <link rel="stylesheet" href="cinco.css" />
     <link rel="stylesheet" href="../general.css" />
-    <script src="tateti.js" defer></script>
-    <script src="socket.js"></script>
   </head>
   <body>
     <header>
@@ -25,15 +23,15 @@
           <b id="contador1">0</b> 
         </div>
         <div id="contenedorGrilla">
-          <div class="cuadrado arriba"></div>
-          <div class="cuadrado arriba medio"></div>
-          <div class="cuadrado arriba"></div>
-          <div class="cuadrado"></div>
-          <div class="cuadrado medio"></div>
-          <div class="cuadrado"></div>
-          <div class="cuadrado abajo izquierda"></div>
-          <div class="cuadrado abajo medio"></div>
-          <div class="cuadrado abajo"></div>
+          <div class="cuadrado arriba" id="11"></div>
+          <div class="cuadrado arriba medio" id="12"></div>
+          <div class="cuadrado arriba" id="13"></div>
+          <div class="cuadrado" id="21"></div>
+          <div class="cuadrado medio" id="22"></div>
+          <div class="cuadrado" id="23"></div>
+          <div class="cuadrado abajo izquierda" id="31"></div>
+          <div class="cuadrado abajo medio" id="32"></div>
+          <div class="cuadrado abajo" id="33"></div>
         </div>
         <dialog type="modal">
           <h2></h2>
@@ -56,5 +54,8 @@
         </div>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+    <script src="socket.js"></script>
+    <script src="tateti.js" defer></script>
   </body>
 </html>

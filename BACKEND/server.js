@@ -66,16 +66,50 @@ port &&
     console.log("Puerto abierto");
   });
 
+  let reiniciar = () =>{
+        const filePath = "palabras.json";
+
+    const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+
+// Leer el archivo
+
+// Función recursiva para reiniciar todas las propiedades "usada"
+function reiniciarUsadas(obj) {
+  if (Array.isArray(obj)) {
+    obj.forEach(reiniciarUsadas);
+  } else if (typeof obj === "object" && obj !== null) {
+    for (const key in obj) {
+      if (key === "usada") {
+        obj[key] = "no";
+      } else {
+        reiniciarUsadas(obj[key]);
+      }
+    }
+  }
+}
+reiniciarUsadas(data)
+
+// Aplicar la función al JSON completo
+
+// Guardar los cambios
+fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
+
+  }
+
 // Función para manejar el evento de recibir el juego
 //Bloque listo
 onEvent("juego_nivel", (data) => {
   console.log(`Juego recibido(backend): ${data.juego} ${data.nivel} `);
+  data.juego === "2" ? reiniciar() : ""
   // llamo a la función jugar_juego
   const salida = jugarJuego(data);
   console.log(salida);
   juegoHardware(data.juego);
   return salida;
 });
+
+// Ruta del archivo JSON
 
 parser.on("data", (data) => {
   console.log(data.trim());
@@ -169,9 +203,16 @@ onEvent("terminoJuego", (resultado) => {
 // Función para determinar cuál juego ejecutar
 let palabrasData;
 
+onEvent("getJson", (req)=>{
+  if(req==="json"){
+      return JSON.parse(fs.readFileSync("palabras.json", "utf8"))
+
+  }
+})
+
 function jugarJuego(data) {
   palabrasData = JSON.parse(fs.readFileSync("palabras.json", "utf8"));
-  let juego = data.juego;
+  let juego = Number(data.juego);
   let nivel = `nivel_${data.nivel}`;
   //nivel = `nivel_${numeroNivel}`;  // Crea "nivel_n"
 
@@ -249,8 +290,9 @@ function jugarJuego1(nivel) {
 
 function jugarJuego2(nivel) {
   let nivelJuego2 = palabrasData["juego_2"][nivel];
+  
   let gruposNoUsados = Object.values(nivelJuego2).filter(
-    (grupo) => grupo[grupo.length - 1]["usada"] === "no"
+    (grupo) => grupo["usada"] === "no"
   );
 
   // Verificar si quedan grupos no usados
@@ -261,15 +303,14 @@ function jugarJuego2(nivel) {
   }
 
   // Seleccionar un grupo al azar entre los no usados
-  let grupoAleatorio =
-    gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
-  grupoAleatorio[grupoAleatorio.length - 1]["usada"] = "si";
+  let grupoAleatorio = gruposNoUsados[Math.floor(Math.random() * gruposNoUsados.length)];
+  grupoAleatorio.usada = "si";
   fs.writeFileSync(
     "palabras.json",
     JSON.stringify(palabrasData, null, 2),
     "utf8"
   );
-  console.log(grupoAleatorio);
+  console.log("Holaaaa",grupoAleatorio);
 
   return { grupoAleatorio };
 }
