@@ -9,7 +9,7 @@
     z-index: 1; 
 }
 
-/* Estilos del botón de saltar/volver */
+
 .volver button {
     position: absolute;
     bottom: 650px;
@@ -22,7 +22,7 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    display: inline-flex; /* Asegura que todo el botón sea clickeable */
+    display: inline-flex; 
     justify-content: center;
     align-items: center;
     transition: transform 0.3s, box-shadow 0.3s;
