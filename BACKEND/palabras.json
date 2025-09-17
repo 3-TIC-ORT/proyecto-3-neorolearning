@@ -29,7 +29,7 @@
       {
         "palabra": "NUBE",
         "imagen": "NUBE.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "AUTO",
@@ -604,7 +604,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Jean",
@@ -646,7 +646,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Campera",

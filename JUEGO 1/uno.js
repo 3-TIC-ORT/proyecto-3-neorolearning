@@ -43,11 +43,15 @@ const clickLetter = (letter) => {
       postData("terminoJuego", "GANAR", () => {
         console.log("enviado");
       });
-      reJuego();
-      wordArray = [];
-      listaCajitas = [];
-      shuffleWord = [];
-      cajitas.innerHTML = "";
+
+      // Retrasar la aparición de la imagen 1 segundo después de completar la palabra
+      setTimeout(() => {
+        reJuego();  // Esta función muestra la imagen y el mensaje de "Juego Terminado"
+        wordArray = [];
+        listaCajitas = [];
+        shuffleWord = [];
+        cajitas.innerHTML = "";
+      }, 1000);  // Retrasar 1 segundo
     }
   } else {
     // Encontrar la letra en el área de letras
