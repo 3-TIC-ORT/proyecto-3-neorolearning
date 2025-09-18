@@ -29,7 +29,7 @@
       {
         "palabra": "NUBE",
         "imagen": "NUBE.png",
-        "usada": "si"
+        "usada": "no"
       },
       {
         "palabra": "AUTO",
@@ -66,7 +66,7 @@
       {
         "palabra": "AVIÓN",
         "imagen": "AVION.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "ÁRBOL",
@@ -96,7 +96,7 @@
       {
         "palabra": "LÁPIZ",
         "imagen": "LAPIZ.png",
-        "usada": "no"
+        "usada": "si"
       },
       {
         "palabra": "GLOBO",
@@ -346,7 +346,7 @@
     "nivel_1": {
       "usada": "no",
       "grupo_1": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Perro",
@@ -367,7 +367,7 @@
         ]
       },
       "grupo_2": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Elefante",
@@ -388,7 +388,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Medusa",
@@ -409,7 +409,7 @@
         ]
       },
       "grupo_4": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Pez",
@@ -430,7 +430,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Tiburón",
@@ -604,7 +604,7 @@
         ]
       },
       "grupo_3": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Jean",
@@ -646,7 +646,7 @@
         ]
       },
       "grupo_5": {
-        "usada": "si",
+        "usada": "no",
         "palabras": [
           {
             "palabra": "Campera",
